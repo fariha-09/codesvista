@@ -1,0 +1,190 @@
+import React from "react";
+import { PiBuildingApartmentFill, PiClipboardTextBold } from "react-icons/pi";
+import {
+  FaShoppingCart,
+  FaTags,
+  FaPencilRuler,
+  FaLightbulb,
+} from "react-icons/fa";
+import grid from "../assets/grid.jpg";
+import {
+  MdAlternateEmail,
+  MdOutlineLocalPhone,
+  MdOutlineSupportAgent,
+} from "react-icons/md";
+import { BsClockHistory } from "react-icons/bs";
+
+export default function ContactBannerSection() {
+   const stats = [
+      {
+        label: "Email",
+        sub: "info@codesvista.com",
+        color: "bg-[#4ADE80]",
+        icon: MdAlternateEmail,
+      },
+      {
+        label: "Phone",
+        sub: "+92-34-65987369",
+        color: "bg-[#FF6800]",
+        icon: MdOutlineLocalPhone,
+      },
+      {
+        label: "8-14",
+        sub: "Days Delivery",
+        color: "bg-[#FACC15]",
+        icon: () => (
+          <svg
+            width="23"
+            height="23"
+            viewBox="0 0 23 23"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 20V18H2V15C2 13.9833 2.2375 13.0292 2.7125 12.1375C3.1875 11.2458 3.85 10.5333 4.7 10C3.85 9.46667 3.1875 8.75417 2.7125 7.8625C2.2375 6.97083 2 6.01667 2 5V2H0V0H16V2H14V5C14 5.8 13.85 6.56667 13.55 7.3C13.25 8.03333 12.825 8.675 12.275 9.225C11.6417 9.39167 11.05 9.63333 10.5 9.95C9.95 10.2667 9.45 10.6583 9 11.125C8.83333 11.0917 8.67083 11.0625 8.5125 11.0375C8.35417 11.0125 8.18333 11 8 11C6.9 11 5.95833 11.3917 5.175 12.175C4.39167 12.9583 4 13.9 4 15V18H7.3C7.41667 18.3667 7.55417 18.7167 7.7125 19.05C7.87083 19.3833 8.05833 19.7 8.275 20H0ZM8 9C9.1 9 10.0417 8.60833 10.825 7.825C11.6083 7.04167 12 6.1 12 5V2H4V5C4 6.1 4.39167 7.04167 5.175 7.825C5.95833 8.60833 6.9 9 8 9ZM14 21C12.6167 21 11.4375 20.5125 10.4625 19.5375C9.4875 18.5625 9 17.3833 9 16C9 14.6167 9.4875 13.4375 10.4625 12.4625C11.4375 11.4875 12.6167 11 14 11C15.3833 11 16.5625 11.4875 17.5375 12.4625C18.5125 13.4375 19 14.6167 19 16C19 17.3833 18.5125 18.5625 17.5375 19.5375C16.5625 20.5125 15.3833 21 14 21ZM13.3 18.25L16.85 14.7L16.1 13.95L13.3 16.75L11.9 15.35L11.15 16.1L13.3 18.25Z"
+                fill="#4C4480"
+              />
+            </svg>
+          </svg>
+        ),
+      },
+    ];
+    return (
+      <section className="relative bg-[#0fc8ca] min-h-[88vh] w-full flex justify-center lg:px-10 font-sans">
+        {/* 2. INNER CARD - Changed min-h-screen to h-[85vh] or h-full to prevent bottom overflow */}
+        <div className="relative w-full max-w-[1500px] h-full lg:h-[88vh] overflow-hidden shadow-2xl">
+          <div className="absolute inset-0 z-0">
+            <img
+              src={grid}
+              alt="grid overlay"
+              className="w-full h-full object-cover opacity-[5%] mix-blend-overlay"
+            />
+          </div>
+  
+          {/* 3. THE CONTENT */}
+          <div className="container mx-auto px-10 relative z-10 flex flex-col lg:flex-row justify-between h-full lg:py-4">
+            {/* LEFT COLUMN */}
+            <div className="w-full lg:w-1/2 space-y-10 ">
+              <div className="inline-flex items-center gap-2 bg-white/20 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/20 hover:bg-[#F1F3F4] hover: cursor-default ">
+                <PiBuildingApartmentFill size={20} className="text-[#0e9c9d]" />
+                <span className="text-white font-medium text-[14px] whitespace-nowrap hover:text-black">
+                  Contact Us
+                 
+                </span>
+              </div>
+  
+              {/* Heading Fix: Adjusted leading and size */}
+              <h1 className="text-5xl md:text-6xl font-serif font-bold text-white whitespace-nowrap leading-5">
+               Let's Connect
+              </h1>
+  
+              <p className="text-[#F1F3F4] text-[18px] font-normal max-w-xl leading-relaxed">
+                Ready to start your project? Get in touch with our team for a free consultation and discover how we can help transform your<br/> business with technology.
+              </p>
+  
+              <div className="flex flex-wrap gap-3">
+                {/* Tags ... */}
+                <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg text-[12px] font-bold text-[#4C4480] ">
+                  <FaTags size={15} className="text-[#3B82F6] -rotate-35" /> 24/7
+                  Support
+                </span>
+                <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg text-[12px] font-bold text-[#4C4480]">
+                  <FaPencilRuler size={15} className="text-[#FF6800]" /> Free
+                  Consultation{" "}
+                </span>
+                <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg text-[12px] font-bold text-[#4C4480]">
+                  <FaLightbulb size={15} className="text-[#4ADE80]" /> Quick
+                  Response
+                </span>
+              </div>
+  
+              <div className="flex flex-wrap gap-4 ">
+                {/* Buttons ... */}
+                <button className="flex items-center gap-2 bg-[#0FC8CA] hover:bg-[#00B8B8] text-[14px] text-[#2B2C34] px-8 py-3 rounded-xl font-bold shadow-lg transition-transform active:scale-95">
+                  <PiClipboardTextBold size={20} /> Get Free Quote
+                </button>
+                <button className="flex items-center gap-2 bg-white hover:bg-gray-100 text-[14px] text-[#4C4480] px-8 py-3 rounded-xl font-bold shadow-lg transition-transform active:scale-95">
+                  <FaShoppingCart /> Explore Services
+                </button>
+              </div>
+            </div>
+  
+            {/* RIGHT COLUMN - Removed pt-18, replaced with auto-centering */}
+            <div className="w-full lg:w-1/2 flex items-center justify-center lg:justify-end gap-5 mt-18">
+              <div className="bg-white/20 backdrop-blur-xl border border-white/30 p-8 rounded-[40px] shadow-2xl w-full max-w-md">
+                <div className="flex justify-between items-center mb-6">
+                  <div className="flex gap-1.5">
+                    <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-400"></div>
+                  </div>
+                  <span className="text-white text-sm font-semibold opacity-90">
+                    Contact Info
+                  </span>
+                </div>
+  
+                <div className="space-y-4">
+                  {stats.map((stat, i) => {
+                    const Icon = stat.icon;
+                    return (
+                      <div
+                        key={i}
+                        className="bg-white/10 p-4 rounded-2xl flex items-center gap-4 border border-white/10 backdrop-blur-sm"
+                      >
+                        <div
+                          className={`w-12 h-12 rounded-lg ${stat.color} flex items-center justify-center shadow-inner`}
+                        >
+                          <Icon className="text-[#4C4480] text-xl" />
+                        </div>
+                        <div>
+                          <h4 className="text-white font-bold text-xl leading-none">
+                            {stat.label}
+                          </h4>
+                          <p className="text-white/70 text-sm">{stat.sub}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+  
+              <div className="flex flex-col gap-3">
+                {[
+                  MdOutlineSupportAgent,
+                  BsClockHistory,
+                  () => (
+                    <svg
+                      width="22"
+                      height="20"
+                      viewBox="0 0 22 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.0833 0 12.1083 0.158333 13.075 0.475C14.0417 0.791667 14.9333 1.23333 15.75 1.8L14.3 3.275C13.6667 2.875 12.9917 2.5625 12.275 2.3375C11.5583 2.1125 10.8 2 10 2C7.78333 2 5.89583 2.77917 4.3375 4.3375C2.77917 5.89583 2 7.78333 2 10C2 12.2167 2.77917 14.1042 4.3375 15.6625C5.89583 17.2208 7.78333 18 10 18C10.5333 18 11.05 17.95 11.55 17.85C12.05 17.75 12.5333 17.6083 13 17.425L14.5 18.95C13.8167 19.2833 13.1 19.5417 12.35 19.725C11.6 19.9083 10.8167 20 10 20ZM17 18V15H14V13H17V10H19V13H22V15H19V18H17ZM8.6 14.6L4.35 10.35L5.75 8.95L8.6 11.8L18.6 1.775L20 3.175L8.6 14.6Z"
+                        fill="#F1F3F4"
+                      />
+                    </svg>
+                  ),
+                ].map((Icon, idx) => (
+                  <div
+                    key={idx}
+                    className="w-10 h-10 bg-white/20 backdrop-blur-md border border-white/40 rounded-lg flex items-center justify-center text-white shadow-lg hover:bg-[#0FC8CA] transition-all cursor-pointer"
+                  >
+                    <Icon size={18} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  );
+}

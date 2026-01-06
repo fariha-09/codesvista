@@ -1,32 +1,34 @@
-import ClosingSection from "./components/ClosingSection"
-import FAQS from "./components/FAQS"
-import Footer from "./components/Footer"
-import HeroSection from "./components/HeroSection"
-import Navbar from "./components/Navbar"
-import OurDesignPortfolio from "./components/OurDesignPortfolio"
-import OurTechnology from "./components/OurTechnology"
-import OurWork from "./components/OurWork"
-import OurWorkProcess from "./components/OurWorkProcess"
-import Services from "./components/Services"
-import Stats from "./components/Stats"
-import WhyChooseUs from "./components/WhyChooseUs";
-
+import React from "react";
+import Home from "./Layout/Home";
+import OurMissionAndVision from "./Layout/OurMissionAndVision";
+import SelectedService from "./Layout/SelectedService";
+import AllServices from "./Layout/AllServices";
+import Portfolio from "./Layout/Portfolio";
+import ContactUs from "./Layout/ContactUs";
+import OurBlog from "./Layout/OurBlog";
+import { Route,Routes } from "react-router-dom";
+import GetFreeQuote from "./components/GetFreeQuote";
 function App() {
 
   return (
     <>
-     <Navbar/>
-     <HeroSection/>
-     <Services/>
-     <OurWork/>
-     <Stats/>
-     <WhyChooseUs/>
-     <OurTechnology/>
-     <OurWorkProcess/>
-     <OurDesignPortfolio/>
-     <FAQS/>
-     <ClosingSection/>
-     <Footer/>
+    <Routes>
+    <Route path="/" element={<Home/>}/>
+    <Route path="/about" element={<OurMissionAndVision />} />
+    <Route path="/services" element={<AllServices />} />
+        <Route path="/service-details" element={<SelectedService />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/blog" element={<OurBlog />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/getquote" element={<GetFreeQuote />} />
+    </Routes>
+    {/* <Home/> */}
+    {/* <OurMissionAndVision/> */}
+    {/* <SelectedService/> */}
+    {/* <AllServices/> */}
+    {/* <Portfolio/> */}
+    {/* <ContactUs/> */}
+    {/* <OurBlog/>  */}
     </>
   )
 }
