@@ -1,6 +1,7 @@
 import React from 'react';
 import grids from "../assets/grids.png";
 import pfimg1 from "../assets/pfimg1.jpg";
+import { motion } from 'framer-motion';
 
 export default function OurStory() {
   return (
@@ -10,9 +11,22 @@ export default function OurStory() {
           {/* 1. Container Card with Grid Overlay */}
           <div className="relative w-full max-w-[1400px] md:flex flex-row  overflow-hidden bg-white/[98%] p-10 md:p-20">
 <div className='md:w-1/2 flex flex-col gap-6'>
-    <h1 className="text-[#4C4480] font-bold text-[40px] leading-tight">
-           Our Story
-         </h1>
+    <motion.h2
+                                  initial={{ y: 40, opacity: 0 }}
+                                  whileInView={{ y: 0, opacity: 1 }}
+                                  viewport={{ once: true }}
+                                  transition={{ duration: 0.6 }}
+                                  className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
+                                  style={{
+                                    textShadow: `
+                            0 0 38px rgba(0, 206, 209, 0.45),
+                            0 0 20px rgba(0, 206, 209, 0.25)
+                          `,
+                                  }}
+                                >
+                                    Our Story
+                                </motion.h2>
+        
          <div className="flex flex-col gap-6 text-[#555] text-[16px] leading-relaxed ">
            <p className='w-120'>
              Founded in 2019, Astron Hosts began with a simple mission: to 

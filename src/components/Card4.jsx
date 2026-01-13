@@ -6,8 +6,8 @@ import phone4c from "../assets/phone4c.png";
 
 export default function Card4() {
   return (
-    <div className="flex justify-center">
-      <section className="bg-[#F1F3F4] w-[80%] p-8 flex justify-center rounded-[143px]">
+    <div className="w-full flex justify-center">
+      <section className="bg-[#F1F3F4] w-full p-8 flex justify-center rounded-[143px] shadow-2xl">
         {/* Container for the card */}
         <div className="flex flex-col items-center  space-y-6">
           <h1 className="text-[#4C4480] text-[42.2px] font-medium tracking-widest">

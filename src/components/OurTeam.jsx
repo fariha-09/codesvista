@@ -1,5 +1,6 @@
-import React from 'react';
-import { FaUser } from 'react-icons/fa';
+import React from "react";
+import { FaUser } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const teamData = [1, 2, 3]; // Placeholder for 3 team members
 
@@ -9,28 +10,51 @@ export default function OurTeam() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-serif font-bold text-[#4C4480]">Our Team</h2>
+          <motion.h2
+            initial={{ y: 40, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
+            style={{
+              textShadow: `
+                            0 0 38px rgba(0, 206, 209, 0.45),
+                            0 0 20px rgba(0, 206, 209, 0.25)
+                          `,
+            }}
+          >
+            Our Team
+          </motion.h2>
           <p className="text-[#4C448080] text-lg md:text-[16px] max-w-3xl mx-auto leading-relaxed">
-            Driving digital transformation through innovation, expertise, and unwavering commitment to excellence
+            Driving digital transformation through innovation, expertise, and
+            unwavering commitment to excellence
           </p>
         </div>
 
         {/* Team Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
           {teamData.map((_, index) => (
-            <div key={index} className="bg-white p-6 rounded-[32px] shadow-sm flex flex-col items-center text-center py-10">
+            <div
+              key={index}
+              className="bg-white p-6 rounded-[32px] shadow-sm flex flex-col items-center text-center py-10"
+            >
               {/* Profile Image Placeholder */}
               <div className="w-full aspect-square bg-[#4C4480] rounded-[24px] mb-6 flex items-center justify-center text-white flex-col">
-                 <div className='flex flex-row justify-center items-center'>
-                    <FaUser className="w-12 h-12 mb-2"/> 
-                <span className="text-xs opacity-70 text-center">CEO</span>
-                    </div>
+                <div className="flex flex-row justify-center items-center">
+                  <FaUser className="w-12 h-12 mb-2" />
+                  <span className="text-xs opacity-70 text-center">CEO</span>
+                </div>
               </div>
-              
-              <h3 className="text-[#4C4480] font-bold text-[24px] mb-1">Name</h3>
-              <p className="text-[#4C4480] font-semibold text-[16px] mb-4">Operations Manager</p>
+
+              <h3 className="text-[#4C4480] font-bold text-[24px] mb-1">
+                Name
+              </h3>
+              <p className="text-[#4C4480] font-semibold text-[16px] mb-4">
+                Operations Manager
+              </p>
               <p className="text-[#4C448080]/50 text-[15px] font-sans leading-relaxed w-60">
-                Technology expert specializing in scalable architectures and cutting-edge development practices.
+                Technology expert specializing in scalable architectures and
+                cutting-edge development practices.
               </p>
             </div>
           ))}
@@ -40,10 +64,8 @@ export default function OurTeam() {
   );
 }
 
-
 // import React from 'react';
 // import grids from "../assets/grids.png";
-
 
 // export default function OurTeam() {
 //   return (

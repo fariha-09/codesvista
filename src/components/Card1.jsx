@@ -4,11 +4,10 @@ import phone1a from "../assets/phone1a.png";
 import phone1b from "../assets/phone1b.png";
 import phone1c from "../assets/phone1c.png";
 
-
 export default function Card1() {
   return (
-    <div className="flex justify-center">
-      <section className="bg-[#F1F3F4] w-[80%] p-8 flex justify-center rounded-[143px]">
+    <div className="w-full flex justify-center">
+      <section className="bg-[#F1F3F4] w-full p-8 flex justify-center rounded-[143px] shadow-2xl">
         {/* Container for the card */}
         <div className="flex flex-col items-center  space-y-6">
           <h1 className="text-[#4C4480] text-[42.2px] font-medium tracking-widest">

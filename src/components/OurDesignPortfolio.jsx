@@ -4,6 +4,7 @@ import pfimg1 from "../assets/pfimg1.jpg";
 import pfimg2 from "../assets/pfimg2.jpg";
 import pfimg3 from "../assets/pfimg3.jpg";
 import { FaEye } from "react-icons/fa";
+import { motion } from 'framer-motion';
 
 
 
@@ -17,9 +18,21 @@ export default function OurDesignPortfolio() {
    
            {/* 2. Header Content */}
            <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-16">
-             <h1 className="text-4xl md:text-6xl font-serif font-bold text-[#4C4480]">
-               Our Design Portfolio
-             </h1>
+              <motion.h2
+                                  initial={{ y: 40, opacity: 0 }}
+                                  whileInView={{ y: 0, opacity: 1 }}
+                                  viewport={{ once: true }}
+                                  transition={{ duration: 0.6 }}
+                                  className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
+                                  style={{
+                                    textShadow: `
+                            0 0 38px rgba(0, 206, 209, 0.45),
+                            0 0 20px rgba(0, 206, 209, 0.25)
+                          `,
+                                  }}
+                                >
+                                   Our Design Portfolio
+                                </motion.h2>
              <p className="text-[#4C448080] text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
               See some of our recent design work across different categories.
              </p>

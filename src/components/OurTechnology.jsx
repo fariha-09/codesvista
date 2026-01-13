@@ -8,6 +8,7 @@ import php from "../assets/php.png";
 import python from "../assets/python.png";
 import laravel from "../assets/laravel.png";
 import mongodb from "../assets/mongodb.png";
+import { motion } from 'framer-motion';
 
 export default function OurTechnology() {
   const technology = [
@@ -30,9 +31,21 @@ export default function OurTechnology() {
         
         {/* Header Content */}
         <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-20">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold text-[#4C4480]">
-            Our Technology Stack
-          </h1>
+          <motion.h2
+                     initial={{ y: 40, opacity: 0 }}
+                     whileInView={{ y: 0, opacity: 1 }}
+                     viewport={{ once: true }}
+                     transition={{ duration: 0.6 }}
+                     className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text"
+                     style={{
+                       textShadow: `
+               0 0 38px rgba(0, 206, 209, 0.45),
+               0 0 20px rgba(0, 206, 209, 0.25)
+             `,
+                     }}
+                   >
+                        Our Technology Stack
+                   </motion.h2>
           <p className="text-[#4C448080] text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             We use cutting-edge technologies to build robust, scalable, and modern solutions
           </p>

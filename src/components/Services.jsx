@@ -1,5 +1,4 @@
 import React from "react";
-import grid from "../assets/grid.jpg";
 import application from "../assets/application.png";
 import code from "../assets/code.png";
 import datascience from "../assets/datascience.png";
@@ -10,33 +9,32 @@ import uiux from "../assets/uiux.png";
 import videoediting from "../assets/videoediting.png";
 import webdevelopment from "../assets/webdevelopment.png";
 import grids from "../assets/grids.png";
-
-
+import { motion } from "framer-motion";
 
 export default function Services() {
   const services = [
     {
       title: "Web Development",
       desc: "We build responsive, high-performance websites and dynamic web applications tailored to meet your specific business goals.",
-      image: code, 
+      image: code,
       tags: ["Responsive Design", "Seo Optimized"],
     },
     {
       title: "App Development",
       desc: "We build responsive, high-performance websites and dynamic web applications tailored to meet your specific business goals.",
-      image: application, 
+      image: application,
       tags: ["Responsive Design", "Seo Optimized"],
     },
     {
       title: "Software Development",
       desc: "Engineering custom, scalable software solutions to streamline your operations, solve complex challenges, and improve efficiency.",
-      image: layers, 
+      image: layers,
       tags: ["Responsive Design", "Seo Optimized"],
     },
     {
       title: "Machine Learning",
       desc: "Implementing intelligent algorithms and predictive models that enable systems to learn from data and automate decision-making processes.",
-      image: machinelearning, 
+      image: machinelearning,
       tags: ["Responsive Design", "Seo Optimized"],
     },
     {
@@ -52,7 +50,7 @@ export default function Services() {
       tags: ["Responsive Design", "Seo Optimized"],
     },
     {
-      title: "Web Development",
+      title: "Graphics Design",
       desc: "Creating visually compelling graphics, branding assets, and marketing materials that effectively communicate your brand's message.",
       image: webdevelopment,
       tags: ["Responsive Design", "Seo Optimized"],
@@ -63,85 +61,129 @@ export default function Services() {
       image: uiux,
       tags: ["Responsive Design", "Seo Optimized"],
     },
-     {
-      title: "Web Development",
+    {
+      title: "Video Editing",
       desc: "We build responsive, high-performance websites and dynamic web applications tailored to meet your specific business goals.",
-      image: videoediting, 
+      image: videoediting,
       tags: ["Responsive Design", "Seo Optimized"],
     },
   ];
-  return (
-    <section className="relative bg-white flex justify-center object-cover "  style={{ 
-    backgroundImage: `url(${grids})`,
-  }}>
-      {/* 1. Container Card with Grid Overlay */}
-      <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] p-10 md:p-20">
 
-        {/* 2. Header Content */}
+  return (
+    <section
+      className="relative bg-white flex justify-center object-cover"
+      style={{ backgroundImage: `url(${grids})` }}
+    >
+      <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] p-10 md:p-20">
         <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-16">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold text-[#4C4480]">
-            Our Core Services
-          </h1>
+          <motion.h2
+            initial={{ y: 40, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text"
+            style={{
+              textShadow: `0 0 38px rgba(0, 206, 209, 0.45), 0 0 20px rgba(0, 206, 209, 0.25)`,
+            }}
+          >
+            Our Services
+          </motion.h2>
           <p className="text-[#4C448080] text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            comprehensive Technology solution to drive your business Growth and
-            digital transformation
+            Comprehensive technology solutions to drive your business growth and digital transformation.
           </p>
         </div>
 
-        {/* 3. Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-transparent border border-[#4C4480] rounded-[30px] py-8 px-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow group"
+              initial="initial"
+              whileHover="hover"
+              className="relative bg-transparent border border-[#4C4480] rounded-[30px] py-8 px-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow group overflow-hidden"
             >
-              {/* Service Icon/Image */}
-              <div className="w-20 h-20 mb-6 flex items-center justify-center">
-                <img 
-                  src={service.image} 
-                  alt={service.title} 
-                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
-                />
+              {/* 1. Expansion Circle */}
+              <motion.div
+                variants={{
+                  initial: { scale: 0, opacity: 0 },
+                  hover: { scale: 1.8, opacity: 1 },
+                }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                className="absolute inset-0 bg-gray-400/20 rounded-full origin-center pointer-events-none z-0"
+              />
+
+              <div className="relative z-10 flex flex-col items-center h-full">
+                <div className="w-20 h-20 mb-6 flex items-center justify-center">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+
+                {/* 2. Title with Color Change */}
+                <motion.h3 
+                  variants={{
+                    initial: { color: "#4C4480" },
+                    hover: { color: "#AC1B9E" }
+                  }}
+                  className="text-xl font-bold mb-4"
+                >
+                  {service.title}
+                </motion.h3>
+
+                <p className="text-[#4C448099]/60 text-[18px] max-w-100 font-medium leading-relaxed mb-6">
+                  {service.desc}
+                </p>
+
+                {/* 3. Tags with Corrected Background Animation */}
+                <div className="flex gap-2 mb-8">
+                  {service.tags.map((tag, tIdx) => (
+                    <motion.span
+                      key={tIdx}
+                      variants={{
+                        initial: { backgroundColor: "#F3F4F6", color: "#4C4480" },
+                        hover: { backgroundColor: "#4C4480", color: "#FFFFFF" },
+                      }}
+                      transition={{ duration: 0.4 }}
+                      className="text-[14px] font-medium px-3 py-2 rounded-full"
+                    >
+                      {tag}
+                    </motion.span>
+                  ))}
+                </div>
+                <motion.button
+                  variants={{
+                    initial: { 
+                      backgroundColor: "rgba(172, 27, 158, 0)", 
+                      color: "#4C4480",
+                      borderColor: "#AC1B9E"
+                    },
+                    hover: { 
+                      backgroundColor: "#AC1B9E", 
+                      color: "#FFFFFF",
+                      borderColor: "#AC1B9E"
+                    },
+                  }}
+                  transition={{ duration: 0.4 }}
+                  className="mt-auto border-2 px-8 py-2 rounded-xl text-sm font-bold"
+                >
+                  Read More
+                </motion.button>
               </div>
-
-              {/* Service Title */}
-              <h3 className="text-[#4C4480] text-xl font-bold mb-4">
-                {service.title}
-              </h3>
-
-              {/* Service Description */}
-              <p className="text-[#4C448099]/60 text-[18px] max-w-100 font-medium leading-relaxed mb-6">
-                {service.desc}
-              </p>
-
-              {/* Tags */}
-              <div className="flex gap-2 mb-8">
-                {service.tags.map((tag, tIdx) => (
-                  <span
-                    key={tIdx}
-                    className="bg-gray-100 text-[#4C4480] text-[14px] font-medium px-3 py-2 rounded-full"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              {/* Read More Button */}
-              <button className="mt-auto border border-[#AC1B9E] text-[#4C4480] px-8 py-2 rounded-xl text-sm font-bold hover:bg-[#AC1B9E] hover:text-white transition-colors">
-                Read More
-              </button>
-            </div>
+            </motion.div>
           ))}
-         
         </div>
 
-<div className="mt-16 flex justify-center relative z-10">
-  <button className="bg-[#AC1B9E] hover:bg-[#8a157e] text-white px-10 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all active:scale-95">
-    View All Services
-  </button>
-</div>
-
-
+        <div className="mt-16 flex justify-center relative z-10">
+          <motion.button
+            whileHover={{ scale: 1.07, boxShadow: "0 0 10px #AC1B9E, 0 0 25px #AC1B9E" }}
+            whileTap={{ scale: 0.97 }}
+            className="px-8 py-4 rounded-full bg-[#AC1B9E] border-2 font-bold text-white text-lg transition-all duration-300"
+            style={{ boxShadow: "0 0 4px #AC1B9E, 0 0 14px #AC1B9E" }}
+          >
+            View All Services
+          </motion.button>
+        </div>
       </div>
     </section>
   );

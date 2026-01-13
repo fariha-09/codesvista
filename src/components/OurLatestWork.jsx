@@ -12,6 +12,7 @@ import realestate from "../assets/realestate.jpg";
 import hospital from "../assets/hospital.jpg";
 import corporate from "../assets/corporate.jpg";
 import educational from "../assets/educational.jpg";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -101,9 +102,22 @@ export default function OurLatestWork() {
       <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] p-10 md:p-20">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl md:text-6xl font-serif font-bold text-[#2B2C34] mb-6">
-            Our Latest Work
-          </h1>
+           <motion.h2
+                      initial={{ y: 40, opacity: 0 }}
+                      whileInView={{ y: 0, opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6 }}
+                      className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text"
+                      style={{
+                        textShadow: `
+                                      0 0 38px rgba(0, 206, 209, 0.45),
+                                      0 0 20px rgba(0, 206, 209, 0.25)
+                                    `,
+                      }}
+                    >
+                      Our Latest Work
+                    </motion.h2>
+          
           <p className="text-[#2B2C3480]/50 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
             Explore our diverse portfolio showcasing innovative solutions across
             various industries. Each project represents our dedication to
@@ -126,7 +140,6 @@ export default function OurLatestWork() {
                     : "text-gray-600 hover:bg-gray-50 border border-transparent hover:border-gray-200"
                 }`}
               >
-                {/* 2. Apply your color logic directly to the icon component */}
                 <IconComponent
                   className={`text-lg transition-colors duration-300 ${
                     isActive ? "text-[#FFFFFF]" : "text-[#2B2C34]"

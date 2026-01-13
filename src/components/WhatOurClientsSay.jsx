@@ -1,25 +1,25 @@
 import React from 'react';
 import grids from "../assets/grids.png";
 import { FaStar } from "react-icons/fa";
+import { motion } from 'framer-motion';
 
-// Testimonial Data from your design
 const testimonials = [
   {
     name: "Ahmed Khan",
     location: "pakistan",
-    image: "https://randomuser.me/api/portraits/men/1.jpg", // Replace with your asset
+    image: "https://randomuser.me/api/portraits/men/1.jpg", 
     text: "We've been using CodesVista for ongoing software technical expertise have been outstanding for our IT support services."
   },
   {
     name: "Sarah Ali",
     role: "Director",
-    image: "https://randomuser.me/api/portraits/women/2.jpg", // Replace with your asset
+    image: "https://randomuser.me/api/portraits/women/2.jpg", 
     text: "We've been using CodesVista for ongoing software technical expertise have been outstanding for our IT support services."
   },
   {
     name: "Usman Malik",
     role: "Founder,",
-    image: "https://randomuser.me/api/portraits/men/3.jpg", // Replace with your asset
+    image: "https://randomuser.me/api/portraits/men/3.jpg",
     text: "We've been using CodesVista for ongoing software technical expertise have been outstanding for our IT support services."
   }
 ];
@@ -31,9 +31,21 @@ export default function WhatOurClientsSay() {
         
         {/* Header Content */}
         <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-16">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold text-[#2B2C34]">
-            What Our Clients Say
-          </h1>
+         <motion.h2
+              initial={{ y: 40, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
+              style={{
+                textShadow: `
+                            0 0 38px rgba(0, 206, 209, 0.45),
+                            0 0 20px rgba(0, 206, 209, 0.25)
+                          `,
+              }}
+            >
+              What Our Clients Say
+            </motion.h2>
           <p className="text-[#2B2C3480]/50 text-[16px] md:text-xl max-w-3xl mx-auto leading-relaxed">
             Don't just take our word for it. Here's what our clients have to say about our<br className="hidden md:block"/> work
           </p>

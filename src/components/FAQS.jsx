@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import grids from "../assets/grids.png";
+import { motion } from "framer-motion";
 
 export default function FAQS() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -8,20 +9,24 @@ export default function FAQS() {
   const faqs = [
     {
       question: "What file formats do you provide?",
-      answer: "We provide all industry-standard formats including AI, EPS, PDF, SVG for vectors, and high-resolution PNG and JPG for web use."
+      answer:
+        "We provide all industry-standard formats including AI, EPS, PDF, SVG for vectors, and high-resolution PNG and JPG for web use.",
     },
     {
       question: "How many revisions are included?",
-      answer: "Our standard packages typically include 3 rounds of revisions to ensure you are 100% satisfied with the final design."
+      answer:
+        "Our standard packages typically include 3 rounds of revisions to ensure you are 100% satisfied with the final design.",
     },
     {
       question: "Do you provide print-ready files?",
-      answer: "Yes, all our designs are delivered with proper bleeds, CMYK color profiles, and high-resolution settings ready for professional printing."
+      answer:
+        "Yes, all our designs are delivered with proper bleeds, CMYK color profiles, and high-resolution settings ready for professional printing.",
     },
     {
       question: "Can you match my existing brand colors?",
-      answer: "Absolutely. Simply provide us with your HEX, RGB, or Pantone codes, and we will ensure perfect color consistency."
-    }
+      answer:
+        "Absolutely. Simply provide us with your HEX, RGB, or Pantone codes, and we will ensure perfect color consistency.",
+    },
   ];
 
   const toggleAccordion = (index) => {
@@ -35,12 +40,24 @@ export default function FAQS() {
     >
       <div className="relative w-full max-w-[1400px] flex justify-center overflow-hidden bg-white/[98%] p-10 md:px-20">
         <div className="bg-[#FFFFFF] w-[98%] justify-center py-10">
-          
           {/* Header Content */}
           <div className="text-center space-y-4 relative z-10 mb-20">
-            <h1 className="text-4xl md:text-6xl font-serif font-bold text-[#4C4480]">
+            <motion.h2
+              initial={{ y: 40, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
+              style={{
+                textShadow: `
+                            0 0 38px rgba(0, 206, 209, 0.45),
+                            0 0 20px rgba(0, 206, 209, 0.25)
+                          `,
+              }}
+            >
               Frequently Asked Questions
-            </h1>
+            </motion.h2>
+
             <p className="text-[#4C448080] text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
               Common questions about our graphic design services.
             </p>
@@ -49,9 +66,11 @@ export default function FAQS() {
           {/* Accordion Container */}
           <div className="max-w-5xl mx-auto">
             {faqs.map((faq, index) => (
-              <div 
-                key={index} 
-                className={`border-b border-gray-200 ${index === 0 ? 'border-t' : ''} mx-4 md:mx-32`}
+              <div
+                key={index}
+                className={`border-b border-gray-200 ${
+                  index === 0 ? "border-t" : ""
+                } mx-4 md:mx-32`}
               >
                 <button
                   onClick={() => toggleAccordion(index)}
@@ -60,15 +79,15 @@ export default function FAQS() {
                   <span className="text-lg md:text-xl font-medium text-[#4C4480] group-hover:text-[#AC1B9E] transition-colors">
                     {faq.question}
                   </span>
-                  <FaChevronDown 
+                  <FaChevronDown
                     className={`text-[#4C4480] transition-transform duration-300 ${
                       openIndex === index ? "rotate-180" : ""
-                    }`} 
+                    }`}
                   />
                 </button>
-                
+
                 {/* Answer Content */}
-                <div 
+                <div
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${
                     openIndex === index ? "max-h-60 pb-8 px-4" : "max-h-0"
                   }`}
@@ -80,7 +99,6 @@ export default function FAQS() {
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </section>

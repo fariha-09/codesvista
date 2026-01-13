@@ -29,9 +29,9 @@ export default function HeroSection() {
           
           {/* LEFT COLUMN */}
           <div className="w-full lg:w-1/2 space-y-4  ">
-            <div className="inline-flex items-center gap-2 bg-white/20 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/20 hover:bg-[#F1F3F4] hover: cursor-default ">
+            <div className="inline-flex items-center gap-2 text-white hover:text-black bg-white/20 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/20 hover:bg-[#F1F3F4] hover: cursor-default ">
               <PiBuildingApartmentFill size={20} className="text-[#0e9c9d]" />
-              <span className="text-white font-medium text-[14px] hover:text-black">Codes Vista</span>
+              <span className=" font-medium text-[14px] ">Codes Vista</span>
             </div>
 
             {/* Heading Fix: Adjusted leading and size */}

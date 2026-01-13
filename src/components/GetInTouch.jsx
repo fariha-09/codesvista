@@ -53,13 +53,15 @@ export default function GetInTouch() {
           </div>
         </div>
 
-        {/* Right Side: Map */}
-        <div className="flex-1 rounded-b-[40px] md:rounded-bl-none md:rounded-r-[40px] overflow-hidden shadow-sm">
-          <img
-            src={map}
-            alt="location map"
-            className="w-full h-full object-cover min-h-[400px]"
-          />
+       
+        <div className="flex-1 rounded-b-[40px] md:rounded-bl-none md:rounded-r-[40px] overflow-hidden shadow-sm min-h-[400px]">
+          <iframe
+            title="Google Map"
+            src="https://www.google.com/maps?q=Rawalpindi,Pakistan&output=embed"
+            className="w-full h-full border-0"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
     </section>
