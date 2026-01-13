@@ -27,13 +27,13 @@ export default function Navbar() {
           {/* Desktop Links - Horizontal Alignment */}
           <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 className="text-[#4C4480] font-medium hover:text-indigo-600 transition-colors"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </div>
 
