@@ -5,6 +5,7 @@ import pfimg2 from "../assets/pfimg2.jpg";
 import pfimg3 from "../assets/pfimg3.jpg";
 import { FaEye } from "react-icons/fa";
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 
 
@@ -50,7 +51,7 @@ export default function OurDesignPortfolio() {
 <div className="mt-16 flex flex-row justify-center relative z-10">
   <button className="flex items-center gap-2 bg-[#AC1B9E] hover:bg-[#8a157e] text-white px-10 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all active:scale-95">
     <FaEye /> 
-    <span>View Full Portfolio</span>
+    <Link to="/portfolio">View Full Portfolio</Link>
   </button>
 </div>
 

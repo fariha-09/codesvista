@@ -11,6 +11,7 @@ export default function ExploreByCategory() {
       articles: "12 Articles",
       icon: FaCode,
       bgColor: "bg-[#8A38F5]",
+      hoverBg: "rgba(138, 56, 245, 0.1)",
     },
     {
       title: "Digital Marketing",
@@ -18,6 +19,7 @@ export default function ExploreByCategory() {
       articles: "8 Articles",
       icon: FaChartLine,
       bgColor: "bg-[#E45858]",
+      hoverBg: "rgba(228, 88, 88, 0.1)",
     },
     {
       title: "UI/UX Design",
@@ -25,6 +27,7 @@ export default function ExploreByCategory() {
       articles: "10 Articles",
       icon: FaPenNib,
       bgColor: "bg-[#2DD4BF]",
+      hoverBg: "rgba(45, 212, 191, 0.1)",
     },
     {
       title: "Tech Trends",
@@ -32,6 +35,7 @@ export default function ExploreByCategory() {
       articles: "15 Articles",
       icon: FaRocket,
       bgColor: "bg-[#F97316]",
+      hoverBg: "rgba(249, 115, 22, 0.1)",
     },
   ];
 
@@ -71,32 +75,44 @@ export default function ExploreByCategory() {
           {categories.map((cat, index) => {
             const Icon = cat.icon;
             return (
-              <div
+              <motion.div
                 key={index}
-                className="bg-white p-[42px] rounded-[16px] border border-gray-100 flex flex-col items-center text-center shadow-[0_10px_40px_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group"
+                initial="initial"
+                whileHover="hover"
+                className="relative bg-white p-[42px] rounded-[16px] border border-gray-100 flex flex-col items-center text-center shadow-[0_10px_40px_rgba(0,0,0,0.05)] overflow-hidden group cursor-pointer"
               >
-                {/* Icon Container */}
-                <div
-                  className={`${cat.bgColor} w-16 h-16 rounded-[8px] flex items-center justify-center mb-6 shadow-lg shadow-black/10 transition-transform group-hover:scale-110`}
-                >
-                  <Icon className="text-[#FFFFFF] text-[30px]" />
-                </div>
+                <motion.div
+                  variants={{
+                    initial: { scaleX: 0, opacity: 0 },
+                    hover: { scaleX: 1, opacity: 1 },
+                  }}
+                  transition={{ duration: 0.4, ease: "circOut" }}
+                  style={{ backgroundColor: cat.hoverBg }}
+                  className="absolute inset-0 z-0 origin-center"
+                />
 
-                {/* Text Content */}
-                <h3 className="text-[#2B2C34] text-[20px] font-bold mb-3">
-                  {cat.title}
-                </h3>
-                <p className="text-[#2B2C3499]/60 text-[14px] leading-relaxed mb-8 px-2">
-                  {cat.desc}
-                </p>
+                {/* 2. Content Wrapper (Keeps text/icons on top) */}
+                <div className="relative z-10 flex flex-col items-center">
+                  <div
+                    className={`${cat.bgColor} w-16 h-16 rounded-[8px] flex items-center justify-center mb-6 shadow-lg shadow-black/10 transition-transform group-hover:scale-110`}
+                  >
+                    <Icon className="text-[#FFFFFF] text-[30px]" />
+                  </div>
 
-                {/* Footer Link */}
-                <div className="mt-auto">
-                  <span className="text-[#2B2C3499]/60 text-[14px] font-semibold uppercase tracking-wider">
-                    {cat.articles}
-                  </span>
+                  <h3 className="text-[#2B2C34] text-[20px] font-bold mb-3">
+                    {cat.title}
+                  </h3>
+                  <p className="text-[#2B2C3499]/60 text-[14px] leading-relaxed mb-8 px-2">
+                    {cat.desc}
+                  </p>
+
+                  <div className="mt-auto">
+                    <span className="text-[#2B2C3499]/60 text-[14px] font-semibold uppercase tracking-wider group-hover:text-[#2B2C34] transition-colors">
+                      {cat.articles}
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
@@ -104,29 +120,3 @@ export default function ExploreByCategory() {
     </section>
   );
 }
-
-// import React from 'react';
-// import grids from "../assets/grids.png";
-
-// export default function ExploreByCategory() {
-//   return (
-// <section className="relative bg-white flex justify-center object-cover "  style={{
-//    backgroundImage: `url(${grids})`,
-//  }}>
-//      {/* 1. Container Card with Grid Overlay */}
-//      <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] p-10 md:p-20">
-
-//            {/* 2. Header Content */}
-//            <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-16">
-//              <h1 className="text-4xl md:text-6xl font-serif font-bold text-[#2B2C34]">
-//              Explore by Category
-//              </h1>
-//              <p className="text-[#2B2C3499]/60 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-//                Choose your area of interest and dive into specialized content
-//              </p>
-//            </div>
-
-//     </div>
-//     </section>
-//   );
-// }

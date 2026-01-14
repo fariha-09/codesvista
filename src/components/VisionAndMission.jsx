@@ -2,7 +2,8 @@ import React from 'react';
 import { Target } from 'lucide-react';
 import { BsCheckCircleFill } from "react-icons/bs";
 import { FaEye } from "react-icons/fa";
-
+import grids from "../assets/grids.png";
+import { motion } from 'framer-motion'; 
 
 
 export default function VisionAndMission() {
@@ -18,18 +19,29 @@ export default function VisionAndMission() {
                  rgba(255, 255, 255, 0.03)`
   };
   return (
-    <div className="min-h-screen w-full bg-[#060411] text-white py-24 px-4 font-sans selection:bg-purple-500/30">
-      <div className="max-w-6xl mx-auto">
-        
-        {/* Header */}
-        <div className="text-center mb-20">
-          <h1 className="text-5xl md:text-7xl font-serif font-medium mb-6">
-            Our Mission <span className="italic font-serif">&</span> Vision
-          </h1>
-          <p className="text-[#F1F3F480]/50 text-[16px] md:text-base max-w-2xl mx-auto  ">
-            Driving digital transformation through innovation, expertise, and unwavering commitment to excellence
+    <section
+      className="relative bg-white flex justify-center object-cover"
+      style={{ backgroundImage: `url(${grids})` }}
+    >
+      <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] p-10 md:p-20">
+        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-16">
+          <motion.h2
+            initial={{ y: 40, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text"
+            style={{
+              textShadow: `0 0 38px rgba(0, 206, 209, 0.45), 0 0 20px rgba(0, 206, 209, 0.25)`,
+            }}
+          >
+             Our Mission <span className="italic font-serif">&</span> Vision
+          </motion.h2>
+          <p className="text-[#4C448080] text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+           Driving digital transformation through innovation, expertise, and unwavering commitment to excellence
           </p>
         </div>
+        
 
         {/* Cards Grid */}
         <div className="grid md:grid-cols-2 gap-8">
@@ -37,22 +49,22 @@ export default function VisionAndMission() {
           {/* Mission Card */}
           <div 
             style={missionCardStyle}
-            className="border border-white/10 rounded-[40px] p-10 md:p-14 flex flex-col items-center text-center relative overflow-hidden"
+            className="border border-black/10 rounded-[40px] p-10 md:p-14 flex flex-col items-center text-center relative overflow-hidden"
           >
             <div className="w-20 h-20 rounded-2xl flex items-center justify-center mb-8 bg-[#10B981]">
               <Target size={38} className="text-white" />
             </div>
             
             <h2 className="text-3xl font-serif font-semibold mb-6">Our Mission</h2>
-              <p className="text-gray-300 leading-relaxed mb-10 text-lg">
+              <p className="text-[#4C448080]/50 text-[17px] leading-relaxed mb-10">
                 To empower businesses with cutting-edge technology solutions that drive innovation, efficiency, and sustainable growth.
               </p>
               
               <div className="w-full space-y-3">
               {['Build long-term partnerships', 'Deliver exceptional value to our clients', 'Faster innovation and creativity'].map((item) => (
-                <div key={item} className="flex items-center gap-4 bg-white/[0.03] p-5 rounded-2xl border border-white/5 group hover:bg-white/[0.05] transition-all">
+                <div key={item} className="flex items-center gap-4 bg-black/5 p-4 rounded-2xl border border-black/10 group hover:bg-white/[0.05] transition-all">
                     <BsCheckCircleFill size={20} className="text-[#10B981]" />
-                    <span className="text-gray-200 text-sm font-medium">{item}</span>
+                    <span className="text-[#4C448080]/50 text-sm font-medium">{item}</span>
                   </div>
               ))}
             </div>
@@ -60,21 +72,23 @@ export default function VisionAndMission() {
           {/* Vision Card */}
           <div 
             style={visionCardStyle}
-            className="border border-white/10 rounded-[40px] p-10 md:p-14 flex flex-col items-center text-center relative overflow-hidden"
+            className="border border-black/10 rounded-[40px] p-10 md:p-14 flex flex-col items-center text-center relative overflow-hidden"
           >
-            <div className="w-20 h-20 bg-gradient-to-r from-[#8B5CF6] to-[#EC4899] rounded-2xl flex items-center justify-center mb-8 shadow-[0_0_30px_rgba(147,51,234,0.3)]">
+            <div
+            
+            className="w-20 h-20 bg-[#EC4899] rounded-2xl flex items-center justify-center mb-8 shadow-[0_0_30px_rgba(147,51,234,0.3)]">
                 <FaEye size={40} className="text-white" />
               </div>
               <h2 className="text-3xl font-serif font-bold mb-6">Our Vision</h2>
-              <p className="text-gray-300 leading-relaxed mb-10 text-lg">
+              <p className="text-[#4C448080]/50 text-[17px] leading-relaxed  mb-10 ">
                 To be the leading software house that transforms how businesses leverage technology, creating a future where digital innovation drives global progress.
               </p>
 
               <div className="w-full space-y-4">
                 {['Shape digital future', 'Lead industry innovation', 'Expand global reach'].map((item) => (
-                  <div key={item} className="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5">
+                   <div key={item} className="flex items-center gap-4 bg-black/5 p-4 rounded-2xl border border-black/10 group hover:bg-white/[0.05] transition-all">
                     <BsCheckCircleFill size={20} className="text-[#10B981]" />
-                    <span className="text-gray-200 text-sm font-medium">{item}</span>
+                    <span className="text-[#4C448080]/50 text-sm font-medium">{item}</span>
                   </div>
                 ))}
               </div>
@@ -82,6 +96,6 @@ export default function VisionAndMission() {
 
         </div>
       </div>
-    </div>
+    </section>
   );
 }

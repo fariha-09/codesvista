@@ -7,7 +7,7 @@ import phone1c from "../assets/phone1c.png";
 export default function Card1() {
   return (
     <div className="w-full flex justify-center">
-      <section className="bg-[#F1F3F4] w-full p-8 flex justify-center rounded-[143px] shadow-2xl">
+      <section className="bg-[#F1F3F4] w-full p-8 flex justify-center rounded-[143px] shadow-2xl shadow-black-300">
         {/* Container for the card */}
         <div className="flex flex-col items-center  space-y-6">
           <h1 className="text-[#4C4480] text-[42.2px] font-medium tracking-widest">

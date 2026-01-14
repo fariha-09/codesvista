@@ -10,6 +10,7 @@ import videoediting from "../assets/videoediting.png";
 import webdevelopment from "../assets/webdevelopment.png";
 import grids from "../assets/grids.png";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function Services() {
   const services = [
@@ -175,14 +176,11 @@ export default function Services() {
         </div>
 
         <div className="mt-16 flex justify-center relative z-10">
-          <motion.button
-            whileHover={{ scale: 1.07, boxShadow: "0 0 10px #AC1B9E, 0 0 25px #AC1B9E" }}
-            whileTap={{ scale: 0.97 }}
+          <Link to="/services"
             className="px-8 py-4 rounded-full bg-[#AC1B9E] border-2 font-bold text-white text-lg transition-all duration-300"
-            style={{ boxShadow: "0 0 4px #AC1B9E, 0 0 14px #AC1B9E" }}
           >
             View All Services
-          </motion.button>
+          </Link>
         </div>
       </div>
     </section>

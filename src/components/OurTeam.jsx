@@ -6,26 +6,17 @@ const teamData = [1, 2, 3]; // Placeholder for 3 team members
 
 export default function OurTeam() {
   return (
-    <section className="bg-[#F1F3F4] py-20 px-6">
+    <section className="bg-[#0E9C9D] py-20 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <motion.h2
-            initial={{ y: 40, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
-            style={{
-              textShadow: `
-                            0 0 38px rgba(0, 206, 209, 0.45),
-                            0 0 20px rgba(0, 206, 209, 0.25)
-                          `,
-            }}
+          <h2
+           className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#F1F3F4] tracking-tight"
+          
           >
             Our Team
-          </motion.h2>
-          <p className="text-[#4C448080] text-lg md:text-[16px] max-w-3xl mx-auto leading-relaxed">
+          </h2>
+          <p className="text-[#F1F3F4] text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             Driving digital transformation through innovation, expertise, and
             unwavering commitment to excellence
           </p>

@@ -21,6 +21,7 @@ function App() {
         <Route path="/blog" element={<OurBlog />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/getquote" element={<GetFreeQuote />} />
+        <Route path="/selectedservice" element={<SelectedService />} /> 
     </Routes>
     {/* <Home/> */}
     {/* <OurMissionAndVision/> */}

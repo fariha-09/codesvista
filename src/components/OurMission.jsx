@@ -62,20 +62,35 @@ export default function OurMission() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {missionData.map((item, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-[#F1F3F480]/50 p-10 rounded-[20px] shadow-sm flex flex-col items-center text-center border border-gray-50"
+              initial="initial"
+              whileHover="hover"
+              className="relative p-10 rounded-[20px] shadow-sm flex flex-col items-center text-center border border-gray-50 overflow-hidden cursor-default bg-[#F1F3F480]/50"
             >
-              <div className="w-14 h-14 bg-[#437EF7] rounded-[12px] flex items-center justify-center mb-6 text-white shadow-xl">
-                <item.Icon size={28} />
+              {/* Middle to Sides Background Layer */}
+              <motion.div
+                variants={{
+                  initial: { scaleX: 0, opacity: 0 },
+                  hover: { scaleX: 1, opacity: 1 }
+                }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="absolute inset-0 bg-[#0FC8CA]/10 z-0 origin-center"
+              />
+
+              {/* Content Wrapped in relative z-10 so it stays above the hover bg */}
+              <div className="relative z-10 flex flex-col items-center">
+                <div className="w-14 h-14 bg-[#437EF7] rounded-[12px] flex items-center justify-center mb-6 text-white shadow-xl">
+                  <item.Icon size={28} />
+                </div>
+                <h3 className="text-[#4C4480] font-bold text-[24px] mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-[#4C448080]/50 text-[17px] leading-relaxed ">
+                  {item.desc}
+                </p>
               </div>
-              <h3 className="text-[#4C4480] font-bold text-[24px] mb-3">
-                {item.title}
-              </h3>
-              <p className="text-[#4C448080]/50 text-[17px] leading-relaxed ">
-                {item.desc}
-              </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -83,63 +98,3 @@ export default function OurMission() {
   );
 }
 
-// import React from 'react';
-// import grids from "../assets/grids.png";
-// import { Handshake, Lightbulb, Users, Star } from 'lucide-react';
-
-// const missionData = [
-//   {
-//     title: "Integrity",
-//     desc: "We maintain the highest ethical standards in all our business relationships and deliver on our promises.",
-//     Icon: Handshake
-//   },
-//   {
-//     title: "Innovation",
-//     desc: "We constantly explore new technologies and creative solutions to solve complex business challenges.",
-//     Icon: Lightbulb
-//   },
-//   {
-//     title: "Collaboration",
-//     desc: "We believe in the power of teamwork and foster strong partnerships with our clients and team members.",
-//     Icon: Users
-//   },
-//   {
-//     title: "Excellence",
-//     desc: "We strive for excellence in every project, ensuring the highest quality standards and client satisfaction.",
-//     Icon: Star
-//   }
-// ];
-
-// export default function OurMission() {
-//   return (
-//     <section
-//       className="relative w-full py-20 px-6 bg-white"
-//       style={{ backgroundImage: `url(${grids})`, backgroundSize: 'cover' }}
-//     >
-//       <div className="max-w-7xl mx-auto">
-//         {/* Header */}
-//         <div className="text-center mb-16">
-//           <h2 className="text-[#4C4480] font-bold text-[48px] mb-2">Our Mission</h2>
-//           <p className="text-[#4C448080] text-[14px] uppercase tracking-wide">
-//             Driving digital transformation through innovation, expertise, and unwavering commitment to excellence
-//           </p>
-//         </div>
-
-//         {/* Cards Grid */}
-// <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-//   {missionData.map((item, index) => (
-//     <div key={index} className="bg-white p-8 rounded-[20px] shadow-sm flex flex-col items-center text-center border border-gray-50">
-//       <div className="w-14 h-14 bg-[#437EF7] rounded-[12px] flex items-center justify-center mb-6 text-white">
-//         <item.Icon size={28} />
-//       </div>
-//       <h3 className="text-[#1A1A1A] font-bold text-[20px] mb-3">{item.title}</h3>
-//       <p className="text-[#666] text-[14px] leading-relaxed">
-//         {item.desc}
-//       </p>
-//     </div>
-//   ))}
-// </div>
-//       </div>
-//     </section>
-//   );
-// }

@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import grid from "../assets/grid.jpg";
 import { IoCodeSharp } from "react-icons/io5";
-
+import { motion } from "framer-motion";
 
 export default function ServicesBannerSection() {
   const stats = [
@@ -84,9 +84,9 @@ export default function ServicesBannerSection() {
         <div className="container mx-auto px-10 relative z-10 flex flex-col lg:flex-row justify-between h-full lg:py-4">
           {/* LEFT COLUMN */}
           <div className="w-full lg:w-1/2 space-y-6  ">
-            <div className="inline-flex items-center gap-2 bg-white/20 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/20 hover:bg-[#F1F3F4] hover: cursor-default ">
+            <div className="inline-flex text-white hover:text-black items-center gap-2 bg-white/20 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/20 hover:bg-[#F1F3F4] hover: cursor-default ">
               <PiBuildingApartmentFill size={20} className="text-[#0e9c9d]" />
-              <span className="text-white font-medium text-[14px] whitespace-nowrap hover:text-black">
+              <span className=" font-medium text-[14px] whitespace-nowrap ">
                 Our Services
               </span>
             </div>
@@ -100,20 +100,88 @@ export default function ServicesBannerSection() {
              From concept to deployment, we provide end-to-end technology services that drive business growth and<br/> digital transformation.
             </p>
 
-            <div className="flex flex-wrap gap-3">
-              {/* Tags ... */}
-              <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg text-[12px] font-bold text-[#4C4480] ">
-                <FaTags size={15} className="text-[#3B82F6] -rotate-35" /> BRAND
-                IDENTITY
-              </span>
-              <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg text-[12px] font-bold text-[#4C4480]">
-                <FaPencilRuler size={15} className="text-[#FF6800]" />{" "}
-                PROFESSIONAL QUALITY
-              </span>
-              <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg text-[12px] font-bold text-[#4C4480]">
-                <FaLightbulb size={15} className="text-[#4ADE80]" /> CREATIVE
-                DESIGN
-              </span>
+           <div className="flex flex-wrap gap-3">
+              <motion.span
+                initial="initial"
+                whileHover="hover"
+                className="relative flex items-center gap-2 bg-white px-4 py-3 rounded-lg text-[12px] font-bold text-[#4C4480] cursor-pointer overflow-hidden shadow-sm"
+              >
+                <motion.div
+                  variants={{
+                    initial: { scaleX: 0, opacity: 0 },
+                    hover: { scaleX: 1, opacity: 1 },
+                  }}
+                  transition={{ duration: 0.9, ease: "easeInOut" }}
+                  className="absolute inset-0 bg-gray-200 z-0 origin-center"
+                />
+
+                <motion.div
+                  variants={{
+                    initial: { rotate: -35 },
+                    hover: { rotate: 0 },
+                  }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="relative z-10"
+                >
+                  <FaTags size={15} className="text-[#3B82F6]" />
+                </motion.div>
+
+                <span className="relative z-10">BRAND IDENTITY</span>
+              </motion.span>
+              <motion.span
+                initial="initial"
+                whileHover="hover"
+                className="relative flex items-center gap-2 bg-white px-4 py-3 rounded-lg text-[12px] font-bold text-[#4C4480] cursor-pointer overflow-hidden shadow-sm"
+              >
+                <motion.div
+                  variants={{
+                    initial: { scaleX: 0, opacity: 0 },
+                    hover: { scaleX: 1, opacity: 1 },
+                  }}
+                  transition={{ duration: 0.9, ease: "easeInOut" }}
+                  className="absolute inset-0 bg-gray-200 z-0 origin-center"
+                />
+
+                <motion.div
+                  variants={{
+                    initial: { rotate: -35 },
+                    hover: { rotate: 0 },
+                  }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="relative z-10"
+                >
+                  <FaPencilRuler size={15} className="text-[#FF6800]" />
+                </motion.div>
+
+                <span className="relative z-10"> PROFESSIONAL QUALITY</span>
+              </motion.span>
+              <motion.span
+                initial="initial"
+                whileHover="hover"
+                className="relative flex items-center gap-2 bg-white px-4 py-3 rounded-lg text-[12px] font-bold text-[#4C4480] cursor-pointer overflow-hidden shadow-sm"
+              >
+                <motion.div
+                  variants={{
+                    initial: { scaleX: 0, opacity: 0 },
+                    hover: { scaleX: 1, opacity: 1 },
+                  }}
+                  transition={{ duration: 0.9, ease: "easeInOut" }}
+                  className="absolute inset-0 bg-gray-200 z-0 origin-center"
+                />
+
+                <motion.div
+                  variants={{
+                    initial: { rotate: -35 },
+                    hover: { rotate: 0 },
+                  }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="relative z-10"
+                >
+                  <FaLightbulb size={15} className="text-[#4ADE80]" />{" "}
+                </motion.div>
+
+                <span className="relative z-10"> CREATIVE DESIGN</span>
+              </motion.span>
             </div>
 
             <div className="flex flex-wrap gap-4 ">
@@ -121,7 +189,10 @@ export default function ServicesBannerSection() {
               <button className="flex items-center gap-2 bg-[#0FC8CA] hover:bg-[#00B8B8] text-[14px] text-[#2B2C34] px-8 py-3 rounded-xl font-bold shadow-lg transition-transform active:scale-95">
                 <PiClipboardTextBold size={20} /> Get Free Quote
               </button>
-              <button className="flex items-center gap-2 bg-white hover:bg-gray-100 text-[14px] text-[#4C4480] px-8 py-3 rounded-xl font-bold shadow-lg transition-transform active:scale-95">
+              <button
+                className="flex items-center gap-2 bg-white hover:bg-[#4C4480] hover:text-white  text-[14px] text-[#4C4480] px-8 py-3 rounded-xl font-bold shadow-lg transition-all  duration-300 ease-in-out
+ active:scale-95"
+              >
                 <FaShoppingCart /> Explore Services
               </button>
             </div>
@@ -145,20 +216,36 @@ export default function ServicesBannerSection() {
                 {stats.map((stat, i) => {
                   const Icon = stat.icon;
                   return (
-                    <div
+                     <div
                       key={i}
-                      className="bg-white/10 p-4 rounded-2xl flex items-center gap-4 border border-white/10 backdrop-blur-sm"
+                      className="group bg-white/10 p-4 rounded-2xl flex items-center gap-4
+                   border border-white/10 backdrop-blur-sm
+                   transition-all duration-300 hover:bg-[#F1F3F4]"
                     >
-                      <div
-                        className={`w-12 h-12 rounded-lg ${stat.color} flex items-center justify-center shadow-inner`}
+                       <div
+                        className={`w-12 h-12 rounded-lg flex items-center justify-center shadow-inner
+                      transition-all duration-300
+                      ${stat.color} group-hover:bg-green-600`}
                       >
-                        <Icon className="text-[#4C4480] text-xl" />
+                       <Icon
+                          className="text-[#4C4480] text-xl transition-colors duration-300
+                       "
+                        />
                       </div>
                       <div>
-                        <h4 className="text-white font-bold text-xl leading-none">
+                        <h4
+                          className="text-white font-bold text-2xl leading-none
+                       transition-colors duration-300 ease-in-out
+                       group-hover:text-green-600"
+                        >
                           {stat.label}
                         </h4>
-                        <p className="text-white/70 text-sm">{stat.sub}</p>
+                        <p
+                          className="text-white/70 text-sm transition-colors transit duration-300
+                       group-hover:text-green-600/80"
+                        >
+                          {stat.sub}
+                        </p>
                       </div>
                     </div>
                   );
