@@ -14,6 +14,7 @@ import {
 } from "react-icons/md";
 import { BsClockHistory } from "react-icons/bs";
 import { motion } from "framer-motion";
+import Typewriter from "typewriter-effect";
 
 export default function PortfolioBannerSection() {
   const stats = [
@@ -82,9 +83,20 @@ export default function PortfolioBannerSection() {
 
             {/* Heading Fix: Adjusted leading and size */}
             <h1 className="text-5xl md:text-6xl font-serif font-bold text-white whitespace-nowrap leading-5">
-              Our Work Speaks for
-              <br />
-              Itself.
+              <Typewriter
+                options={{
+                  strings: [
+                    "Our Work Speaks for<br/> Itself.",
+                    "Innovative Digital <br/>Solutions.",
+                    "Building Future-<br/>Ready  Apps.",
+                    "Design That Inspires.",
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  delay: 60,
+                  deleteSpeed: 40,
+                }}
+              />
             </h1>
 
             <p className="text-[#F1F3F4] text-[18px] font-normal max-w-xl leading-relaxed">

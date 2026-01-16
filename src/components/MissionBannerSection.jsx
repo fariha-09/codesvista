@@ -14,6 +14,7 @@ import { RiPencilFill } from "react-icons/ri";
 import grid from "../assets/grid.jpg";
 import { BsClockHistory, BsCheckCircleFill } from "react-icons/bs";
 import { motion } from "framer-motion";
+import Typewriter from "typewriter-effect";
 
 export default function MissionBannerSection() {
   const stats = [
@@ -51,14 +52,21 @@ export default function MissionBannerSection() {
             <div className="inline-flex items-center gap-2 text-white hover:text-black bg-white/20 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/20 hover:bg-[#F1F3F4] ">
               <PiBuildingApartmentFill size={20} className="text-[#0e9c9d]" />
               <span className=" font-medium text-[14px] hove">
-                {" "}
+                
                 About Our Company
               </span>
             </div>
 
             {/* Heading Fix: Adjusted leading and size */}
             <h1 className="text-5xl md:text-6xl font-serif pt-8 font-bold text-white leading-[1.1]">
-              About Codes Vista
+             <Typewriter
+                options={{
+                  strings: ["Empowering Businesses", "Innovative Solutions", "About Codes Vista"],
+                  autoStart: true,
+                  loop: true,
+                  deleteSpeed: 50,
+                }}
+              />
             </h1>
 
             <p className="text-[#F1F3F4] text-[18px] pt-8 font-normal max-w-xl leading-relaxed">

@@ -13,6 +13,7 @@ import { MdOutlineBrush } from "react-icons/md";
 import { RiAwardFill, RiPencilFill } from "react-icons/ri";
 import grid from "../assets/grid.jpg";
 import { motion } from "framer-motion";
+import Typewriter from "typewriter-effect";
 
 export default function HeroSection() {
   const stats = [
@@ -58,11 +59,20 @@ export default function HeroSection() {
             </div>
 
             {/* Heading Fix: Adjusted leading and size */}
-            <h1 className="text-5xl md:text-6xl font-serif font-bold text-white leading-[1.1]">
-              Empowering <br />
-              <span className="whitespace-nowrap">Businesses with</span>
-              <br />
-              Technology
+           <h1 className="text-5xl md:text-6xl font-serif font-bold text-white leading-[1.1]">
+              <Typewriter
+                options={{
+                  strings: [
+                    "Empowering <br /> Businesses with <br /> Technology",
+                    "Driving <br /> Innovation with <br /> Custom Code",
+                    "Creating <br /> Seamless Digital <br /> Experiences"
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  deleteSpeed: 65,
+                  delay: 85,
+                }}
+              />
             </h1>
 
             <p className="text-[#F1F3F4] text-[18px] font-normal max-w-xl leading-relaxed">

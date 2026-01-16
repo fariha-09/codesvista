@@ -2,60 +2,40 @@ import React from "react";
 import { PiBuildingApartmentFill, PiClipboardTextBold } from "react-icons/pi";
 import {
   FaShoppingCart,
-  FaTags,
   FaPencilRuler,
   FaLightbulb,
+  FaSearch,
+  FaUsers,
+  FaRocket,
 } from "react-icons/fa";
-import grid from "../assets/grid.jpg";
-import {
-  MdAlternateEmail,
-  MdOutlineLocalPhone,
-  MdOutlineSupportAgent,
-} from "react-icons/md";
-import { BsClockHistory } from "react-icons/bs";
-import { motion } from "framer-motion";
+import { HiSpeakerphone } from "react-icons/hi";
 import Typewriter from "typewriter-effect";
 
-export default function BlogBannerSection() {
+import grid from "../assets/grid.jpg";
+import { LuTarget } from "react-icons/lu";
+import { FaShareNodes } from "react-icons/fa6";
+import { BsGraphUp } from "react-icons/bs";
+import { motion } from "framer-motion";
+
+export default function DmBannerSection() {
   const stats = [
     {
-      label: "Email",
-      sub: "info@codesvista.com",
+      label: "250+",
+      sub: "Traffic Increase",
+      color: "bg-[#3B82F6]",
+      icon: BsGraphUp,
+    },
+    {
+      label: "30+",
+      sub: "Happy Clients",
       color: "bg-[#4ADE80]",
-      icon: MdAlternateEmail,
+      icon: FaUsers,
     },
     {
-      label: "Phone",
-      sub: "+92-34-65987369",
+      label: "5X",
+      sub: "ROI Growth",
       color: "bg-[#FF6800]",
-      icon: MdOutlineLocalPhone,
-    },
-    {
-      label: "8-14",
-      sub: "Days Delivery",
-      color: "bg-[#FACC15]",
-      icon: () => (
-        <svg
-          width="23"
-          height="23"
-          viewBox="0 0 23 23"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 20V18H2V15C2 13.9833 2.2375 13.0292 2.7125 12.1375C3.1875 11.2458 3.85 10.5333 4.7 10C3.85 9.46667 3.1875 8.75417 2.7125 7.8625C2.2375 6.97083 2 6.01667 2 5V2H0V0H16V2H14V5C14 5.8 13.85 6.56667 13.55 7.3C13.25 8.03333 12.825 8.675 12.275 9.225C11.6417 9.39167 11.05 9.63333 10.5 9.95C9.95 10.2667 9.45 10.6583 9 11.125C8.83333 11.0917 8.67083 11.0625 8.5125 11.0375C8.35417 11.0125 8.18333 11 8 11C6.9 11 5.95833 11.3917 5.175 12.175C4.39167 12.9583 4 13.9 4 15V18H7.3C7.41667 18.3667 7.55417 18.7167 7.7125 19.05C7.87083 19.3833 8.05833 19.7 8.275 20H0ZM8 9C9.1 9 10.0417 8.60833 10.825 7.825C11.6083 7.04167 12 6.1 12 5V2H4V5C4 6.1 4.39167 7.04167 5.175 7.825C5.95833 8.60833 6.9 9 8 9ZM14 21C12.6167 21 11.4375 20.5125 10.4625 19.5375C9.4875 18.5625 9 17.3833 9 16C9 14.6167 9.4875 13.4375 10.4625 12.4625C11.4375 11.4875 12.6167 11 14 11C15.3833 11 16.5625 11.4875 17.5375 12.4625C18.5125 13.4375 19 14.6167 19 16C19 17.3833 18.5125 18.5625 17.5375 19.5375C16.5625 20.5125 15.3833 21 14 21ZM13.3 18.25L16.85 14.7L16.1 13.95L13.3 16.75L11.9 15.35L11.15 16.1L13.3 18.25Z"
-              fill="#4C4480"
-            />
-          </svg>
-        </svg>
-      ),
+      icon: FaRocket,
     },
   ];
   return (
@@ -73,23 +53,22 @@ export default function BlogBannerSection() {
         {/* 3. THE CONTENT */}
         <div className="container mx-auto px-10 relative z-10 flex flex-col lg:flex-row justify-between h-full lg:py-4">
           {/* LEFT COLUMN */}
-          <div className="w-full lg:w-1/2 space-y-8 ">
+          <div className="w-full lg:w-1/2 space-y-4  ">
             <div className="inline-flex text-white hover:text-black items-center gap-2 bg-white/20 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/20 hover:bg-[#F1F3F4] hover: cursor-default ">
               <PiBuildingApartmentFill size={20} className="text-[#0e9c9d]" />
               <span className=" font-medium text-[14px] whitespace-nowrap ">
-                Our Blog
+                Digital Marketing
               </span>
             </div>
 
             {/* Heading Fix: Adjusted leading and size */}
-            <h1 className="text-5xl md:text-6xl font-serif font-bold text-white leading-5">
+            <h1 className="text-5xl md:text-6xl font-serif font-bold text-white leading-[1.1]">
              <Typewriter
                 options={{
                   strings: [
-                    "Latest Insights & Updates",
-                    "Expert Tech Solutions",
-                    "Digital Growth Strategies",
-                    "Web Design Trends"
+                    "Strategic Digital Marketing Solutions",
+                    "Data-Driven Growth Strategies",
+                    "Maximize Your Online Presence"
                   ],
                   autoStart: true,
                   loop: true,
@@ -100,11 +79,12 @@ export default function BlogBannerSection() {
             </h1>
 
             <p className="text-[#F1F3F4] text-[18px] font-normal max-w-xl leading-relaxed">
-              Stay ahead with our expert insights on technology trends, web
-              development, digital marketing, and industry best practices.
+              Strategically promoting your brand across digital channels to
+              increase visibility, engage your audience, and drive conversions.
             </p>
 
             <div className="flex flex-wrap gap-3">
+              {/* Tags ... */}
               <motion.span
                 initial="initial"
                 whileHover="hover"
@@ -121,16 +101,15 @@ export default function BlogBannerSection() {
 
                 <motion.div
                   variants={{
-                    initial: { rotate: -35 },
-                    hover: { rotate: 0 },
+                    initial: { rotate: 0 },
+                    hover: { rotate: -35 },
                   }}
                   transition={{ type: "spring", stiffness: 300 }}
                   className="relative z-10"
                 >
-                  <FaTags size={15} className="text-[#3B82F6]" />
+                  <FaSearch size={15} className="text-[#3B82F6]" />
                 </motion.div>
-
-                <span className="relative z-10"> 24/7 Support</span>
+                <span className="relative z-10">SEO Optimization</span>
               </motion.span>
               <motion.span
                 initial="initial"
@@ -148,16 +127,15 @@ export default function BlogBannerSection() {
 
                 <motion.div
                   variants={{
-                    initial: { rotate: -35 },
-                    hover: { rotate: 0 },
+                    initial: { rotate: 0 },
+                    hover: { rotate: -35 },
                   }}
                   transition={{ type: "spring", stiffness: 300 }}
                   className="relative z-10"
                 >
-                  <FaPencilRuler size={15} className="text-[#FF6800]" />
+                  <FaShareNodes size={15} className="text-[#FF6800]" />
                 </motion.div>
-
-                <span className="relative z-10"> Free Consultation</span>
+                <span className="relative z-10"> Social Media</span>
               </motion.span>
               <motion.span
                 initial="initial"
@@ -175,16 +153,15 @@ export default function BlogBannerSection() {
 
                 <motion.div
                   variants={{
-                    initial: { rotate: -35 },
-                    hover: { rotate: 0 },
+                    initial: { rotate: 0 },
+                    hover: { rotate: -35 },
                   }}
                   transition={{ type: "spring", stiffness: 300 }}
                   className="relative z-10"
                 >
-                  <FaLightbulb size={15} className="text-[#4ADE80]" />{" "}
+                  <LuTarget size={15} className="text-[#FF6800]" />
                 </motion.div>
-
-                <span className="relative z-10"> Quick Response</span>
+                <span className="relative z-10">Paid Advertising</span>
               </motion.span>
             </div>
 
@@ -193,10 +170,7 @@ export default function BlogBannerSection() {
               <button className="flex items-center gap-2 bg-[#0FC8CA] hover:bg-[#00B8B8] text-[14px] text-[#2B2C34] px-8 py-3 rounded-xl font-bold shadow-lg transition-transform active:scale-95">
                 <PiClipboardTextBold size={20} /> Get Free Quote
               </button>
-              <button
-                className="flex items-center gap-2 bg-white hover:bg-[#4C4480] hover:text-white  text-[14px] text-[#4C4480] px-8 py-3 rounded-xl font-bold shadow-lg transition-all  duration-300 ease-in-out
-               active:scale-95"
-              >
+              <button className="flex items-center gap-2 bg-white hover:bg-[#4C4480] hover:text-white  text-[14px] text-[#4C4480] px-8 py-3 rounded-xl font-bold shadow-lg transition-all  duration-300 ease-in-out active:scale-95">
                 <FaShoppingCart /> Explore Services
               </button>
             </div>
@@ -212,7 +186,7 @@ export default function BlogBannerSection() {
                   <div className="w-3 h-3 rounded-full bg-green-400"></div>
                 </div>
                 <span className="text-white text-sm font-semibold opacity-90">
-                  Contact Info
+                  Design Portfolio
                 </span>
               </div>
 
@@ -247,9 +221,7 @@ export default function BlogBannerSection() {
                         <p
                           className="text-white/70 text-sm transition-colors transit duration-300
                        group-hover:text-green-600/80"
-                        >
-                          {stat.sub}
-                        </p>
+                        >{stat.sub}</p>
                       </div>
                     </div>
                   );
@@ -259,18 +231,44 @@ export default function BlogBannerSection() {
 
             <div className="flex flex-col gap-3">
               {[
-                MdOutlineSupportAgent,
-                BsClockHistory,
                 () => (
                   <svg
-                    width="22"
-                    height="20"
-                    viewBox="0 0 22 20"
+                    width="20"
+                    height="16"
+                    viewBox="0 0 20 16"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.0833 0 12.1083 0.158333 13.075 0.475C14.0417 0.791667 14.9333 1.23333 15.75 1.8L14.3 3.275C13.6667 2.875 12.9917 2.5625 12.275 2.3375C11.5583 2.1125 10.8 2 10 2C7.78333 2 5.89583 2.77917 4.3375 4.3375C2.77917 5.89583 2 7.78333 2 10C2 12.2167 2.77917 14.1042 4.3375 15.6625C5.89583 17.2208 7.78333 18 10 18C10.5333 18 11.05 17.95 11.55 17.85C12.05 17.75 12.5333 17.6083 13 17.425L14.5 18.95C13.8167 19.2833 13.1 19.5417 12.35 19.725C11.6 19.9083 10.8167 20 10 20ZM17 18V15H14V13H17V10H19V13H22V15H19V18H17ZM8.6 14.6L4.35 10.35L5.75 8.95L8.6 11.8L18.6 1.775L20 3.175L8.6 14.6Z"
+                      d="M2 16C1.45 16 0.979167 15.8042 0.5875 15.4125C0.195833 15.0208 0 14.55 0 14V2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0H18C18.55 0 19.0208 0.195833 19.4125 0.5875C19.8042 0.979167 20 1.45 20 2V14C20 14.55 19.8042 15.0208 19.4125 15.4125C19.0208 15.8042 18.55 16 18 16H2ZM2 14H18V4H2V14ZM8.95 12.55L5.4 9L6.85 7.55L8.95 9.65L13.15 5.45L14.6 6.9L8.95 12.55Z"
+                      fill="#F1F3F4"
+                    />
+                  </svg>
+                ),
+                () => (
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7 16H12.5C12.7833 16 13.0458 15.9292 13.2875 15.7875C13.5292 15.6458 13.7 15.45 13.8 15.2L15.9 10.3C15.9333 10.2167 15.9583 10.1333 15.975 10.05C15.9917 9.96667 16 9.88333 16 9.8V9C16 8.71667 15.9042 8.47917 15.7125 8.2875C15.5208 8.09583 15.2833 8 15 8H10.4L11 4.6C11.0333 4.43333 11.025 4.275 10.975 4.125C10.925 3.975 10.8417 3.84167 10.725 3.725L10 3L5.4 8C5.26667 8.13333 5.16667 8.28333 5.1 8.45C5.03333 8.61667 5 8.8 5 9V14C5 14.55 5.19583 15.0208 5.5875 15.4125C5.97917 15.8042 6.45 16 7 16ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20ZM10 18C12.2333 18 14.125 17.225 15.675 15.675C17.225 14.125 18 12.2333 18 10C18 7.76667 17.225 5.875 15.675 4.325C14.125 2.775 12.2333 2 10 2C7.76667 2 5.875 2.775 4.325 4.325C2.775 5.875 2 7.76667 2 10C2 12.2333 2.775 14.125 4.325 15.675C5.875 17.225 7.76667 18 10 18Z"
+                      fill="#F1F3F4"
+                    />
+                  </svg>
+                ),
+                () => (
+                  <svg
+                    width="11"
+                    height="18"
+                    viewBox="0 0 11 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0.25 18L0 15.8L2.85 7.95C3.1 8.18333 3.37083 8.37917 3.6625 8.5375C3.95417 8.69583 4.26667 8.81667 4.6 8.9L1.85 16.45L0.25 18ZM10.75 18L9.15 16.45L6.4 8.9C6.73333 8.81667 7.04583 8.69583 7.3375 8.5375C7.62917 8.37917 7.9 8.18333 8.15 7.95L11 15.8L10.75 18ZM5.5 8C4.66667 8 3.95833 7.70833 3.375 7.125C2.79167 6.54167 2.5 5.83333 2.5 5C2.5 4.35 2.6875 3.77083 3.0625 3.2625C3.4375 2.75417 3.91667 2.4 4.5 2.2V0H6.5V2.2C7.08333 2.4 7.5625 2.75417 7.9375 3.2625C8.3125 3.77083 8.5 4.35 8.5 5C8.5 5.83333 8.20833 6.54167 7.625 7.125C7.04167 7.70833 6.33333 8 5.5 8ZM5.5 6C5.78333 6 6.02083 5.90417 6.2125 5.7125C6.40417 5.52083 6.5 5.28333 6.5 5C6.5 4.71667 6.40417 4.47917 6.2125 4.2875C6.02083 4.09583 5.78333 4 5.5 4C5.21667 4 4.97917 4.09583 4.7875 4.2875C4.59583 4.47917 4.5 4.71667 4.5 5C4.5 5.28333 4.59583 5.52083 4.7875 5.7125C4.97917 5.90417 5.21667 6 5.5 6Z"
                       fill="#F1F3F4"
                     />
                   </svg>

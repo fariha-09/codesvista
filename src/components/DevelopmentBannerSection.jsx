@@ -7,6 +7,7 @@ import {
   FaLightbulb,
 } from "react-icons/fa";
 import grid from "../assets/grid.jpg";
+import Typewriter from "typewriter-effect";
 
 export default function DevelopmentBannerSection() {
   const stats = [
@@ -94,7 +95,19 @@ export default function DevelopmentBannerSection() {
 
             {/* Heading Fix: Adjusted leading and size */}
             <h1 className="text-5xl md:text-6xl font-serif font-bold text-white leading-[1.1]">
-              Professional Web Development Services
+             <Typewriter
+                options={{
+                  strings: [
+                    "Professional Web Development Services",
+                    "Custom Business Solutions",
+                    "Modern User Experiences"
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  delay: 75,
+                  deleteSpeed: 50,
+                }}
+              />
             </h1>
 
             <p className="text-[#F1F3F4] text-[18px] font-normal max-w-xl leading-relaxed">

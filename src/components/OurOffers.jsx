@@ -11,12 +11,14 @@ import videoediting from "../assets/videoediting.png";
 import webdevelopment from "../assets/webdevelopment.png";
 import { FaArrowRight } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function OurOffers() {
   const services = [
     {
       title: "Web Development",
       img: code,
+      slug: "web-development",
       description:
         "We build responsive, high-performance websites and dynamic web applications tailored to meet your specific business goals.",
       features: [
@@ -26,10 +28,12 @@ export default function OurOffers() {
         "Cross Browser",
       ],
       techs: ["React.js", "Vue.js", "Node.js", "PHP/Laravel"],
+      
     },
     {
       title: "App Development",
       img: application,
+      slug: "app-development",
       description:
         "We build responsive, high-performance websites and dynamic web applications tailored to meet your specific business goals.",
       features: [
@@ -43,6 +47,7 @@ export default function OurOffers() {
     {
       title: "Web Development",
       img: webdevelopment,
+      slug: "web-development",
       description:
         "We build responsive, high-performance websites and dynamic web applications tailored to meet your specific business goals.",
       features: [
@@ -56,6 +61,7 @@ export default function OurOffers() {
     {
       title: "Machine Learning",
       img: machinelearning,
+      slug: "web-development",
       description:
         "We build responsive, high-performance websites and dynamic web applications tailored to meet your specific business goals.",
       features: [
@@ -69,6 +75,7 @@ export default function OurOffers() {
     {
       title: "SEO",
       img: seo,
+      slug: "seo",
       description:
         "We build responsive, high-performance websites and dynamic web applications tailored to meet your specific business goals.",
       features: [
@@ -82,6 +89,7 @@ export default function OurOffers() {
     {
       title: "Data Science",
       img: datascience,
+      slug: "data-science",
       description:
         "We build responsive, high-performance websites and dynamic web applications tailored to meet your specific business goals.",
       features: [
@@ -95,6 +103,7 @@ export default function OurOffers() {
     {
       title: "Graphic Designing",
       img: layers,
+      slug: "graphic-designing",
       description:
         "We build responsive, high-performance websites and dynamic web applications tailored to meet your specific business goals.",
       features: [
@@ -108,6 +117,7 @@ export default function OurOffers() {
     {
       title: "UI/UX Design",
       img: uiux,
+      slug: "ui-ux-design",
       description:
         "Crafting intuitive interfaces (UI) and seamless experiences (UX) to ensure digital products are aesthetically pleasing and easy to use.",
       features: [
@@ -138,9 +148,9 @@ export default function OurOffers() {
             className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
             style={{
               textShadow: `
-                                        0 0 38px rgba(0, 206, 209, 0.45),
-                                        0 0 20px rgba(0, 206, 209, 0.25)
-                                      `,
+             0 0 38px rgba(0, 206, 209, 0.45),
+             0 0 20px rgba(0, 206, 209, 0.25)
+             `,
             }}
           >
             What we Offer
@@ -237,12 +247,12 @@ export default function OurOffers() {
 
                 {/* Buttons */}
                 <div className="flex gap-4 pt-2">
-                  <button className="flex-1 bg-[#AC1B9E] text-white py-3 rounded-xl text-sm font-bold flex items-center justify-center gap-2 hover:bg-[#9b1487] transition-colors">
-                    Learn More{" "}
+                  <Link to={`/services/${service.slug}`} className="flex-1 bg-[#AC1B9E] text-white py-3 rounded-xl text-sm font-bold flex items-center justify-center gap-2 hover:bg-[#9b1487] transition-colors">
+                    Learn More
                     <span>
                       <FaArrowRight />
                     </span>
-                  </button>
+                  </Link>
                   <button className="flex-1 border border-[#AC1B9E] text-[#4C4480CC]/80 py-3 rounded-xl text-sm font-bold hover:bg-[#B5179E10] transition-colors">
                     Get Free Quote
                   </button>

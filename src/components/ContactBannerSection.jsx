@@ -14,6 +14,7 @@ import {
 } from "react-icons/md";
 import { BsClockHistory } from "react-icons/bs";
 import { motion } from "framer-motion";
+import Typewriter from "typewriter-effect";
 
 export default function ContactBannerSection() {
    const stats = [
@@ -70,7 +71,7 @@ export default function ContactBannerSection() {
           </div>
   
           {/* 3. THE CONTENT */}
-          <div className="container mx-auto px-10 relative z-10 flex flex-col lg:flex-row justify-between h-full lg:py-4">
+          <div className="container mx-auto px-10 relative z-10 flex flex-col lg:flex-row justify-between h-full lg:py-2">
             {/* LEFT COLUMN */}
             <div className="w-full lg:w-1/2 space-y-10 ">
               <div className="inline-flex text-white hover:text-black  items-center gap-2 bg-white/20 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/20 hover:bg-[#F1F3F4] hover: cursor-default ">
@@ -82,15 +83,28 @@ export default function ContactBannerSection() {
               </div>
   
               {/* Heading Fix: Adjusted leading and size */}
-              <h1 className="text-5xl md:text-6xl font-serif font-bold text-white whitespace-nowrap leading-5">
-               Let's Connect
-              </h1>
+              <h1 className="text-5xl md:text-6xl font-serif font-bold text-white leading-3">
+              <Typewriter
+                options={{
+                  strings: [
+                    "Let's Connect!",
+                    "Build Your Idea!",
+                    "Start Your Project!",
+                    "Grow Your Business!"
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  delay: 60,
+                  deleteSpeed: 40,
+                }}
+              />
+            </h1>
   
               <p className="text-[#F1F3F4] text-[18px] font-normal max-w-xl leading-relaxed">
                 Ready to start your project? Get in touch with our team for a free consultation and discover how we can help transform your<br/> business with technology.
               </p>
   
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-x-3">
                 <motion.span
                                 initial="initial"
                                 whileHover="hover"
@@ -174,7 +188,7 @@ export default function ContactBannerSection() {
                               </motion.span>
                             </div>
                 
-                            <div className="flex flex-wrap gap-4 ">
+                            <div className="flex flex-wrap gap-x-3 ">
                               {/* Buttons ... */}
                               <button className="flex items-center gap-2 bg-[#0FC8CA] hover:bg-[#00B8B8] text-[14px] text-[#2B2C34] px-8 py-3 rounded-xl font-bold shadow-lg transition-transform active:scale-95">
                                 <PiClipboardTextBold size={20} /> Get Free Quote

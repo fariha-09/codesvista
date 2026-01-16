@@ -16,59 +16,94 @@ export default function Services() {
   const services = [
     {
       title: "Web Development",
+      slug: "web-development",
       desc: "We build responsive, high-performance websites and dynamic web applications tailored to meet your specific business goals.",
       image: code,
       tags: ["Responsive Design", "Seo Optimized"],
     },
     {
       title: "App Development",
-      desc: "We build responsive, high-performance websites and dynamic web applications tailored to meet your specific business goals.",
+      slug: "app-development",
+      desc: "Creating user-friendly mobile applications for iOS and Android platforms that deliver seamless performance and engaging user experiences.",
       image: application,
-      tags: ["Responsive Design", "Seo Optimized"],
+      tags: ["iOS", "Android"],
+    },
+    {
+      title: "Digital Marketing",
+      slug: "digital-marketing",
+      desc: "Strategically promoting your brand across digital channels to increase visibility, engage your audience, and drive conversions.",
+      image: application,
+      tags: ["Social Media", "PPC Campaigns"],
+    },
+     {
+      title: "Graphics Design",
+      slug: "graphics-design",
+      desc: "Creating visually compelling graphics, branding assets, and marketing materials that effectively communicate your brand's message.",
+      image: webdevelopment,
+      tags: ["Visual Design", "Brand Identity"],
     },
     {
       title: "Software Development",
+      slug: "software-development",
       desc: "Engineering custom, scalable software solutions to streamline your operations, solve complex challenges, and improve efficiency.",
       image: layers,
-      tags: ["Responsive Design", "Seo Optimized"],
+      tags: ["Responsive Design", "Custom Solutions"],
     },
-    {
-      title: "Machine Learning",
-      desc: "Implementing intelligent algorithms and predictive models that enable systems to learn from data and automate decision-making processes.",
-      image: machinelearning,
-      tags: ["Responsive Design", "Seo Optimized"],
-    },
+  
     {
       title: "SEO",
+      slug: "seo",
       desc: "We optimize your online presence to improve visibility on search engines like Google, driving quality organic traffic to your site.",
       image: seo,
-      tags: ["Responsive Design", "Seo Optimized"],
+      tags: ["On-Page SEO", "Off-Page SEO"],
+    },
+      
+    {
+      title: "Machine Learning",
+      slug: "machine-learning",
+      desc: "Implementing intelligent algorithms and predictive models that enable systems to learn from data and automate decision-making processes.",
+      image: machinelearning,
+      tags: ["AI/ML Models", "Data Analysis"],
     },
     {
       title: "Data Science",
+      slug: "data-science",
       desc: "Implementing intelligent algorithms and predictive models that enable systems to learn from data and automate decision-making processes.",
       image: datascience,
-      tags: ["Responsive Design", "Seo Optimized"],
+      tags: ["Data Analysis", " Predictive Modeling"],
+    },
+     {
+      title: "E-commerce Solutions",
+      slug: "ecommerce-solutions",
+      desc: "Developing robust e-commerce platforms that provide seamless shopping experiences, secure transactions, and efficient inventory management.",
+      image: application,
+      tags: ["Multi-platform", "Secure Transactions"],
     },
     {
-      title: "Graphics Design",
-      desc: "Creating visually compelling graphics, branding assets, and marketing materials that effectively communicate your brand's message.",
-      image: webdevelopment,
-      tags: ["Responsive Design", "Seo Optimized"],
+      title: "Software Development",
+      slug: "software-development",
+      desc: "Engineering custom, scalable software solutions to streamline your operations, solve complex challenges, and improve efficiency.",
+      image: layers,
+      tags: ["Responsive Design", "Custom Solutions"],
     },
+   
     {
       title: "UI/UX Design",
+      slug: "ui-ux-design",
       desc: "Crafting intuitive interfaces (UI) and seamless experiences (UX) to ensure digital products are aesthetically pleasing and easy to use.",
       image: uiux,
-      tags: ["Responsive Design", "Seo Optimized"],
+      tags: ["UI Design", "UX Design"],
     },
     {
       title: "Video Editing",
-      desc: "We build responsive, high-performance websites and dynamic web applications tailored to meet your specific business goals.",
+      slug: "video-editing",
+      desc: "Producing and editing high-quality videos for marketing, training, and promotional purposes that captivate your audience.",
       image: videoediting,
-      tags: ["Responsive Design", "Seo Optimized"],
+      tags: ["PRO QUALITY", "CREATIVE"],
     },
   ];
+
+  const visibleServices = services.slice(0, 6);
 
   return (
     <section
@@ -95,7 +130,7 @@ export default function Services() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
-          {services.map((service, index) => (
+          {visibleServices.map((service, index) => (
             <motion.div
               key={index}
               initial="initial"
@@ -152,7 +187,27 @@ export default function Services() {
                     </motion.span>
                   ))}
                 </div>
-                <motion.button
+                <Link to={`/services/${service.slug}`} className="mt-auto">
+                    <motion.button
+                       variants={{
+                    initial: { 
+                      backgroundColor: "rgba(172, 27, 158, 0)", 
+                      color: "#4C4480",
+                      borderColor: "#AC1B9E"
+                    },
+                    hover: { 
+                      backgroundColor: "#AC1B9E", 
+                      color: "#FFFFFF",
+                      borderColor: "#AC1B9E"
+                    },
+                  }}
+                  transition={{ duration: 0.4 }}
+                  className="mt-auto border-2 px-8 py-2 rounded-xl text-sm font-bold"
+                >
+                  Read More
+                    </motion.button>
+                </Link>
+                {/* <motion.button
                   variants={{
                     initial: { 
                       backgroundColor: "rgba(172, 27, 158, 0)", 
@@ -169,7 +224,7 @@ export default function Services() {
                   className="mt-auto border-2 px-8 py-2 rounded-xl text-sm font-bold"
                 >
                   Read More
-                </motion.button>
+                </motion.button> */}
               </div>
             </motion.div>
           ))}
