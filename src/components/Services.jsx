@@ -117,7 +117,7 @@ export default function Services() {
           >
             Our Services
           </motion.h2>
-          <p className="text-[#4C448080] text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             Comprehensive technology solutions to drive your business growth and digital transformation.
           </p>
         </div>
@@ -128,7 +128,7 @@ export default function Services() {
               key={index}
               initial="initial"
               whileHover="hover"
-              className="relative bg-transparent border border-[#4C4480] rounded-[30px] py-8 px-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow group overflow-hidden"
+              className="relative bg-transparent border border-[#4C4480] rounded-[30px] py-5 px-3 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow group overflow-hidden"
             >
               {/* 1. Expansion Circle */}
               <motion.div
@@ -137,7 +137,7 @@ export default function Services() {
                   hover: { scale: 1.8, opacity: 1 },
                 }}
                 transition={{ duration: 0.6, ease: "easeInOut" }}
-                className="absolute inset-0 bg-gray-400/20 rounded-full origin-center pointer-events-none z-0"
+                className="absolute inset-0 bg-gray-100 rounded-full origin-center pointer-events-none z-0"
               />
 
               <div className="relative z-10 flex flex-col items-center h-full">
