@@ -104,7 +104,7 @@ export default function OurOffers() {
             What we Offer
           </motion.h2>
 
-          <p className="text-[#4C448080] text-base md:text-xl max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-gray-600 text-base md:text-xl max-w-3xl mx-auto leading-relaxed px-4">
             Comprehensive Technology solutions to drive your business Growth and
             digital transformation
           </p>

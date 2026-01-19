@@ -68,7 +68,7 @@ export default function WhatWeOffers() {
             >
               What we Offer
             </motion.h2>
-            <p className="text-[#4C448080]/50 text-lg md:text-[24px]  mx-auto leading-relaxed">
+            <p className="text-gray-600 text-lg md:text-[24px]  mx-auto leading-relaxed">
               comprehensive Technology solution to drive your business Growth
               and digital
               <br /> transformation

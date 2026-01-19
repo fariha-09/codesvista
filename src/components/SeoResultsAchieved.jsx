@@ -49,7 +49,7 @@ export default function SeoResultsAchieved() {
             SEO Results We've Achieved
           </motion.h2>
           <div className="w-16 h-1 bg-[#0FC8CA] mx-auto rounded-full"></div>
-          <p className="text-[#4C448080] text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
             Real results from our SEO campaigns for various clients
           </p>
         </div>

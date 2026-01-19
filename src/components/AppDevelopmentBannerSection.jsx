@@ -102,7 +102,7 @@ export default function AppDevelopmentBannerSection() {
 
             <div className="flex flex-wrap gap-4 ">
               {/* Buttons ... */}
-              <button className="flex items-center gap-2 bg-[#0FC8CA] hover:bg-[#00B8B8] text-[14px] text-[#2B2C34] px-8 py-3 rounded-xl font-bold shadow-lg transition-transform active:scale-95">
+              <button className="flex items-center gap-2 bg-white hover:bg-[#00B8B8] text-[14px] text-[#2B2C34] px-8 py-3 rounded-xl font-bold shadow-lg transition-transform active:scale-95">
                 <PiClipboardTextBold size={20} /> Get Free Quote
               </button>
               <button className="flex items-center gap-2 bg-white hover:bg-gray-100 text-[14px] text-[#4C4480] px-8 py-3 rounded-xl font-bold shadow-lg transition-transform active:scale-95">

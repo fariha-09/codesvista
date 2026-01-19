@@ -67,7 +67,7 @@ export default function OurSeoProcess() {
             Our SEO Process
          </motion.h2>
           <div className="w-16 h-1 bg-[#0FC8CA] mx-auto rounded-full"></div>
-          <p className="text-[#4C448080]   text-lg md:text-xl max-w-3xl mx-auto">
+          <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto">
             Our proven SEO methodology that delivers sustainable results and growth.
           </p>
         </div>

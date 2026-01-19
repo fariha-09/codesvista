@@ -61,7 +61,7 @@ export default function FeaturedArticles() {
             >
               Featured Articles
             </motion.h2>
-            <p className="text-[#2B2C34]/60 text-lg md:text-[20px]  mx-auto leading-relaxed">
+            <p className="text-gray-600 text-lg md:text-[20px]  mx-auto leading-relaxed">
               Our most popular and trending articles handpicked for you
             </p>
           </div>

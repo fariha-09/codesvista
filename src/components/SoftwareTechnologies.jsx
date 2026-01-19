@@ -54,7 +54,7 @@ export default function SoftwareTechnologies() {
             Technologies We Master
           </motion.h2>
           <div className="w-16 h-1 bg-[#0FC8CA] mx-auto rounded-full"></div>
-          <p className="text-[#4C448080] text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             We use cutting-edge technologies to build robust and scalable software
           </p>
         </div>

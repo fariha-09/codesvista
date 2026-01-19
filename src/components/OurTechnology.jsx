@@ -27,10 +27,10 @@ export default function OurTechnology() {
         backgroundImage: `url(${grids})`,
       }}>
           {/* 1. Container Card with Grid Overlay */}
-          <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] p-10 md:p-20">
+          <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] p-4 md:p-20">
         
         {/* Header Content */}
-        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-20">
+        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 my-10">
           <motion.h2
                      initial={{ y: 40, opacity: 0 }}
                      whileInView={{ y: 0, opacity: 1 }}
@@ -46,17 +46,17 @@ export default function OurTechnology() {
                    >
                         Our Technology Stack
                    </motion.h2>
-          <p className="text-[#4C448080] text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             We use cutting-edge technologies to build robust, scalable, and modern solutions
           </p>
         </div>
 
         {/* Technology Grid */}
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10'>
+        <div className='grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-8 relative z-10'>
           {technology.map((tech, index) => (
             <div 
               key={index} 
-              className="bg-white p-8 rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-50 flex flex-col items-center text-center transition-transform hover:scale-105 duration-300"
+              className="bg-gray-100 md:p-8 p-4 mb-4 md:mb-0 rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-50 flex flex-col items-center text-center transition-transform hover:scale-105 duration-300"
             >
               {/* Image Container */}
               <div className="w-20 h-20 flex items-center justify-center mb-6">

@@ -94,7 +94,7 @@ export default function AutomationServices() {
           >
             Intelligent Systems & <br/> <span className="text-[#0E9C9D]">Automation</span>
           </motion.h2>
-          <p className="text-[#4C448080] text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             We design smart solutions that automate repetitive tasks, improve workflow efficiency, and reduce operational costs.
           </p>
         </div>

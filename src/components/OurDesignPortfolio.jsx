@@ -15,7 +15,7 @@ export default function OurDesignPortfolio() {
        backgroundImage: `url(${grids})`,
      }}>
          {/* 1. Container Card with Grid Overlay */}
-         <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] p-10 md:p-20">
+         <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] p-2 md:p-20">
    
            {/* 2. Header Content */}
            <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-16">
@@ -34,16 +34,16 @@ export default function OurDesignPortfolio() {
                                 >
                                    Our Design Portfolio
                                 </motion.h2>
-             <p className="text-[#4C448080] text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+             <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
               See some of our recent design work across different categories.
              </p>
            </div>
 
 
-           <div className='flex flex-row gap-8 justify-center'>
-            <img src={pfimg1} alt='portfolio-image' className='rounded-[10px] w-[392px]'/>
-            <img src={pfimg2} alt='portfolio-image' className='rounded-[10px] w-[392px]'/>
-            <img src={pfimg3} alt='portfolio-image' className='rounded-[10px] w-[392px]'/>
+           <div className='flex md:gap-8 gap-2 justify-center overflow-x-scroll md:overflow-x-visible pb-10'>
+            <img src={pfimg1} alt='portfolio-image' className='rounded-[10px] w-64 md:w-[392px]'/>
+            <img src="/pfimg2.jpg" alt='portfolio-image' className='rounded-[10px] w-64 md:w-[392px]'/>
+            <img src={pfimg3} alt='portfolio-image' className='rounded-[10px] w-64 md:w-[392px]'/>
 
            </div>
 

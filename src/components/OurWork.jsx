@@ -61,7 +61,7 @@ export default function OurWork() {
             Our Work Speaks For Itself
           </motion.h2>
 
-          <p className="text-[#4C448080] text-lg md:text-xl max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed px-4">
             Take a look at some of our recent projects and see how we've helped
             <br className="hidden md:block" /> businesses achieve their goals
           </p>

@@ -101,7 +101,7 @@ export default function MissionBannerSection() {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-6">
-              <button className="flex items-center justify-center gap-2 bg-[#0FC8CA] hover:bg-[#00B8B8] text-[14px] text-[#2B2C34] px-8 py-3 rounded-xl font-bold shadow-lg transition-transform active:scale-95 w-full sm:w-auto">
+              <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#00B8B8] text-[14px] text-[#2B2C34] px-8 py-3 rounded-xl font-bold shadow-lg transition-transform active:scale-95 w-full sm:w-auto">
                 <PiClipboardTextBold size={20} /> Get Free Quote
               </button>
               <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#4C4480] hover:text-white text-[14px] text-[#4C4480] px-8 py-3 rounded-xl font-bold shadow-lg transition-all active:scale-95 w-full sm:w-auto">

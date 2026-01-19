@@ -56,7 +56,7 @@ export default function TechnologiesWeUse() {
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif font-bold text-[#0fc8ca]">
             Technologies We Use
           </h1>
-          <p className="text-[#4C448080] text-base md:text-xl max-w-2xl mx-auto leading-relaxed px-4">
+          <p className="text-gray-600 text-base md:text-xl max-w-2xl mx-auto leading-relaxed px-4">
             We use the latest and most reliable technologies to build your website for peak performance and scale.
           </p>
         </motion.div>

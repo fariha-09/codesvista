@@ -79,9 +79,9 @@ export default function WhyChooseUs() {
       }}
     >
       {/* 1. Container Card with Grid Overlay */}
-      <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] p-10 md:p-20">
+      <div className="relative w-full md:max-w-[1400px]  overflow-hidden bg-white/[98%] p-4 md:p-20">
         {/* 2. Header Content */}
-        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-16">
+        <div className="md:max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-16">
           <motion.h2
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -98,7 +98,7 @@ export default function WhyChooseUs() {
             Why Choose Codes Vista
           </motion.h2>
 
-          <p className="text-[#4C448080] text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             We combine creative vision, technical mastery, and strategic
             thinking to deliver
             <br /> design solutions that elevate your brand.

@@ -37,7 +37,7 @@ export default function VisionAndMission() {
           >
              Our Mission <span className="italic font-serif">&</span> Vision
           </motion.h2>
-          <p className="text-[#4C448080] text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
            Driving digital transformation through innovation, expertise, and unwavering commitment to excellence
           </p>
         </div>

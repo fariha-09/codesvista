@@ -67,7 +67,7 @@ export default function OurDesignServices() {
             Our Design Services
           </motion.h2>
           <div className="w-16 h-1 bg-[#0FC8CA] mx-auto rounded-full"></div>
-          <p className="text-[#4C448080] text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
             Complete graphic design solutions for all your visual communication needs
           </p>
         </div>

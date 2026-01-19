@@ -46,7 +46,7 @@ export default function WhatOurClientsSay() {
             >
               What Our Clients Say
             </motion.h2>
-          <p className="text-[#2B2C3480]/50 text-[16px] md:text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-600 text-[16px] md:text-xl max-w-3xl mx-auto leading-relaxed">
             Don't just take our word for it. Here's what our clients have to say about our<br className="hidden md:block"/> work
           </p>
         </div>

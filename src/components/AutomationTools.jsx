@@ -51,7 +51,7 @@ export default function AutomationTools() {
           </motion.h2>
           
           <div className="w-20 h-1 bg-[#0FC8CA] mx-auto rounded-full"></div>
-          <p className="text-[#4C448080] text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             We leverage cutting-edge frameworks and cloud technologies to build high-performance automation systems.
           </p>
         </div>

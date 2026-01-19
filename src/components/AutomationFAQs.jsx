@@ -64,7 +64,7 @@ export default function AutomationFAQs() {
               Frequently Asked Questions
             </motion.h2>
 
-            <p className="text-[#4C448080] text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+            <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
               Common questions about our graphic design services.
             </p>
           </div>

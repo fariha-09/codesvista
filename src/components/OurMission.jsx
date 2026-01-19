@@ -55,7 +55,7 @@ export default function OurMission() {
             Our Mission
           </motion.h2>
 
-          <p className="text-[#4C448080] text-base md:text-lg lg:text-[16px] max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-gray-600 text-base md:text-lg lg:text-[16px] max-w-3xl mx-auto leading-relaxed px-4">
             Driving digital transformation through innovation, expertise, and
             unwavering commitment to excellence
           </p>

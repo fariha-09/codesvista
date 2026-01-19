@@ -1,42 +1,60 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { FaTools, FaUsers, FaCalendarAlt, FaHeadset } from "react-icons/fa";
+import { motion, useMotionValue, useSpring, useTransform, useInView } from "framer-motion";
+
+// Reusable Counter Component
+const Counter = ({ value, suffix = "" }) => {
+  const ref = useRef(null);
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, {
+    damping: 30,
+    stiffness: 100,
+  });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  useEffect(() => {
+    if (isInView) {
+      motionValue.set(value);
+    }
+  }, [isInView, value, motionValue]);
+
+  // Round the decimal numbers to integers
+  const displayValue = useTransform(springValue, (latest) => 
+    Math.round(latest).toLocaleString()
+  );
+
+  return (
+    <span ref={ref}>
+      <motion.span>{displayValue}</motion.span>
+      {suffix}
+    </span>
+  );
+};
 
 export default function Stats() {
+  const statsData = [
+    { icon: <FaTools size={36} />, value: 800, suffix: "+", label: "PROJECTS COMPLETED" },
+    { icon: <FaUsers size={36} />, value: 3000, suffix: "+", label: "HAPPY CLIENTS" },
+    { icon: <FaCalendarAlt size={36} />, value: 15, suffix: "+", label: "YEARS EXPERIENCE" },
+    { icon: <FaHeadset size={36} />, value: 12000, suffix: "+", label: "SUPPORT HOURS" },
+  ];
+
   return (
-    /* Added vertical padding (py-16) and horizontal padding (px-6) */
-    <section className='bg-[#0E9C9D] py-10 px-6'>
-      
-      {/* Container to center content and manage layout on different screens */}
-      <div className='max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8'>
-        
-        {/* Stat Item 1 */}
-        <div className='flex flex-col items-center text-[#FFFFFF] text-center'>
-            <FaTools size={36} />
-            <h1 className='font-bold text-[40px] md:text-[48px] mt-2'>800+</h1>
-            <p className='font-semibold text-[14px] tracking-wider uppercase'>PROJECTS COMPLETED</p>
-        </div>
-
-        {/* Stat Item 2 */}
-        <div className='flex flex-col items-center text-[#FFFFFF] text-center'>
-            <FaUsers size={36} />
-            <h1 className='font-bold text-[40px] md:text-[48px] mt-2'>3K+</h1>
-            <p className='font-semibold text-[14px] tracking-wider uppercase'>HAPPY CLIENTS</p>
-        </div>
-
-        {/* Stat Item 3 */}
-        <div className='flex flex-col items-center text-[#FFFFFF] text-center'>
-            <FaCalendarAlt size={36} />
-            <h1 className='font-bold text-[40px] md:text-[48px] mt-2'>15+</h1>
-            <p className='font-semibold text-[14px] tracking-wider uppercase'>YEARS EXPERIENCE</p>
-        </div>
-
-        {/* Stat Item 4 */}
-        <div className='flex flex-col items-center text-[#FFFFFF] text-center'>
-            <FaHeadset size={36} />
-            <h1 className='font-bold text-[40px] md:text-[48px] mt-2'>12000+</h1>
-            <p className='font-semibold text-[14px] tracking-wider uppercase'>SUPPORT HOURS</p>
-        </div>
-        
+    <section className='bg-[#0E9C9D] py-16 md:py-24 px-6'>
+      <div className='max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12'>
+        {statsData.map((item, index) => (
+          <div key={index} className='flex flex-col items-center text-[#FFFFFF] text-center'>
+            <div className="mb-4 opacity-90">
+              {item.icon}
+            </div>
+            <h1 className='font-bold text-[36px] md:text-[54px] mt-2 leading-none'>
+              <Counter value={item.value} suffix={item.suffix} />
+            </h1>
+            <p className='font-semibold text-[12px] md:text-[14px] mt-2 tracking-wider uppercase opacity-80'>
+              {item.label}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );

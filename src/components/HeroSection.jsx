@@ -53,13 +53,13 @@ export default function HeroSection() {
         <div className="container mx-auto px-6 md:px-10 relative z-10 flex flex-col lg:flex-row justify-between h-full py-2 lg:py-4 gap-12 lg:gap-0">
           
           {/* LEFT COLUMN */}
-          <div className="w-full lg:w-1/2 space-y-6 lg:space-y-4 flex flex-col justify-center">
+          <div className="w-full lg:w-1/2 space-y-2 lg:space-y-4 flex flex-col justify-center">
             <div className="inline-flex self-start items-center gap-2 text-white hover:text-black bg-white/20 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/20 hover:bg-[#F1F3F4] transition-all cursor-default">
-              <PiBuildingApartmentFill size={20} className="text-[#0e9c9d]" />
+              <PiBuildingApartmentFill size={20} className="text-white group-hover:text-[#0e9c9d]" />
               <span className="font-medium text-[14px]">Codes Vista</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.1] min-h-[150px] md:min-h-auto">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.1] min-h-[100px] md:min-h-auto">
               <Typewriter
                 options={{
                   strings: [
@@ -80,11 +80,11 @@ export default function HeroSection() {
             </p>
 
             {/* Feature Tags */}
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 pt-2 md:pt-0">
               {[
                 { label: "BRAND IDENTITY", icon: FaTags, color: "#3B82F6" },
+                { label: "CREATIVE DESIGN", icon: FaLightbulb, color: "#4ADE80" },
                 { label: "PROFESSIONAL QUALITY", icon: FaPencilRuler, color: "#FF6800" },
-                { label: "CREATIVE DESIGN", icon: FaLightbulb, color: "#4ADE80" }
               ].map((tag, idx) => (
                 <motion.span
                   key={idx}
@@ -115,11 +115,11 @@ export default function HeroSection() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#00B8B8] text-[14px] text-[#2B2C34] px-8 py-3.5 rounded-xl font-bold shadow-lg transition-transform active:scale-95 w-full sm:w-auto">
+            <div className="flex gap-2 md:gap-4 pt-4">
+              <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#00B8B8] text-[14px] text-[#2B2C34] px-2 md:px-8 py-3.5 rounded-xl font-bold shadow-lg transition-transform active:scale-95 sm:w-auto">
                 <PiClipboardTextBold size={20} /> Get Free Quote
               </button>
-              <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#4C4480] hover:text-white text-[14px] text-[#4C4480] px-8 py-3.5 rounded-xl font-bold shadow-lg transition-all duration-300 active:scale-95 w-full sm:w-auto">
+              <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#4C4480] hover:text-white text-[14px] text-[#4C4480] px-2 md:px-8 py-3.5 rounded-xl font-bold shadow-lg transition-all duration-300 active:scale-95 sm:w-auto">
                 <FaShoppingCart /> Explore Services
               </button>
             </div>
@@ -134,7 +134,7 @@ export default function HeroSection() {
                 <div className="flex gap-1.5">
                   <div className="w-3 h-3 rounded-full bg-red-400"></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-400"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-600"></div>
                 </div>
                 <span className="text-white text-xs font-semibold opacity-90 uppercase tracking-wider">
                  Design Portfolio

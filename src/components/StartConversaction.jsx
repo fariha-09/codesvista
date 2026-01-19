@@ -31,7 +31,7 @@ export default function StartConversation() {
             Let's Start a Conversation
           </motion.h2>
          
-          <p className="text-[#4C448080] text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             Agency provides a full service range including technical skills,
             design, business understanding.
           </p>

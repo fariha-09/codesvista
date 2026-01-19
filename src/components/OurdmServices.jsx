@@ -63,7 +63,7 @@
                 Our Digital Marketing Services
             </motion.h2>
             <div className="w-20 h-1 bg-[#0FC8CA] mx-auto rounded-full"></div>
-            <p className="text-[#4C448080] text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+            <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
                 Comprehensive digital marketing solutions to grow your online presence.
             </p>
             

@@ -118,7 +118,7 @@ export default function OurLatestWork() {
                       Our Latest Work
                     </motion.h2>
           
-          <p className="text-[#2B2C3480]/50 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
+          <p className="text-gray-600 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
             Explore our diverse portfolio showcasing innovative solutions across
             various industries. Each project represents our dedication to
             delivering exceptional digital experiences.

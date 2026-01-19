@@ -49,7 +49,7 @@ export default function ResultsWeAchieve() {
            
          
           <div className="w-16 h-1 bg-[#0FC8CA] mx-auto"></div>
-          <p className="text-[#4C448080] text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             See the measurable impact our digital marketing services have had on our clients
           </p>
         </div>

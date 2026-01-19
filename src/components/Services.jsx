@@ -103,14 +103,14 @@ export default function Services() {
       className="relative bg-white flex justify-center object-cover"
       style={{ backgroundImage: `url(${grids})` }}
     >
-      <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] p-10 md:p-20">
-        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-16">
+      <div className="relative w-full md:max-w-[1400px] overflow-hidden bg-white/[98%] px-4 py-4 md:p-20">
+        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 my-6">
           <motion.h2
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text"
+            className="text-4xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text"
             style={{
               textShadow: `0 0 38px rgba(0, 206, 209, 0.45), 0 0 20px rgba(0, 206, 209, 0.25)`,
             }}
@@ -122,13 +122,13 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 relative z-10">
           {visibleServices.map((service, index) => (
             <motion.div
               key={index}
               initial="initial"
               whileHover="hover"
-              className="relative bg-transparent border border-[#4C4480] rounded-[30px] py-5 px-3 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow group overflow-hidden"
+              className="relative bg-transparent border border-[#4C4480] rounded-[30px] py-5 px-3 flex flex-col items-center text-center shadow-sm hover:shadow-md  group overflow-hidden  transition-all duration-300"
             >
               {/* 1. Expansion Circle */}
               <motion.div
@@ -137,7 +137,7 @@ export default function Services() {
                   hover: { scale: 1.8, opacity: 1 },
                 }}
                 transition={{ duration: 0.6, ease: "easeInOut" }}
-                className="absolute inset-0 bg-gray-100 rounded-full origin-center pointer-events-none z-0"
+                className="absolute inset-0 bg-gray-200 rounded-full origin-center pointer-events-none z-0"
               />
 
               <div className="relative z-10 flex flex-col items-center h-full">
@@ -145,7 +145,7 @@ export default function Services() {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-contain  transition-transform duration-300"
                   />
                 </div>
 

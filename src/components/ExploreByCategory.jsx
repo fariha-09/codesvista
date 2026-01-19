@@ -65,7 +65,7 @@ export default function ExploreByCategory() {
           >
             Explore by Category
           </motion.h2>
-          <p className="text-[#2B2C3499]/60 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             Choose your area of interest and dive into specialized content
           </p>
         </div>
