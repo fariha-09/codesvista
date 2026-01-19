@@ -99,27 +99,30 @@ export default function FeaturedArticles() {
                   that are reshaping web development.
                 </p>
 
-                <div className="mt-auto flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gray-200 overflow-hidden">
-                      <img
-                        src="https://i.pravatar.cc/100?u=ahmad"
-                        alt="Author"
-                      />
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-[#1F2937] font-semibold text-[14px]">
-                        Ahmad Ali
-                      </span>
-                      <span className="text-[#2B2C3499]/60 text-[14px]">
-                        December 15, 2024
-                      </span>
-                    </div>
-                  </div>
-                  <button className="bg-[#8A38F5] hover:bg-[#6D28D9] text-[#F1F3F4] px-6 py-3 rounded-[8px] text-[16px] font-bold flex items-center gap-2 transition-all">
-                    Read Article <FaArrowRight size={10} />
-                  </button>
-                </div>
+               <div className="mt-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+  <div className="flex items-center gap-3">
+    <div className="w-10 h-10 rounded-full bg-gray-200 overflow-hidden shrink-0">
+      <img
+        src="https://i.pravatar.cc/100?u=ahmad"
+        alt="Author"
+      />
+    </div>
+    <div className="flex flex-col">
+      <span className="text-[#1F2937] font-semibold text-[14px]">
+        Ahmad Ali
+      </span>
+      <span className="text-[#2B2C3499]/60 text-[14px]">
+        December 15, 2024
+      </span>
+    </div>
+  </div>
+
+  {/* RESPONSIVE BUTTON START */}
+  <button className="w-full sm:w-auto bg-[#8A38F5] hover:bg-[#6D28D9] text-[#F1F3F4] px-6 py-3.5 rounded-[8px] text-[16px] font-bold flex items-center justify-center gap-2 transition-all active:scale-95">
+    Read Article <FaArrowRight size={10} className="mt-0.5" />
+  </button>
+  {/* RESPONSIVE BUTTON END */}
+</div>
               </div>
             </div>
 

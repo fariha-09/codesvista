@@ -27,46 +27,49 @@ export default function OurMission() {
       Icon: FaStar,
     },
   ];
+
   return (
     <section
-      className="relative bg-white flex justify-center object-cover "
+      className="relative bg-white flex justify-center object-cover"
       style={{
         backgroundImage: `url(${grids})`,
       }}
     >
       {/* 1. Container Card with Grid Overlay */}
-      <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] p-10 md:p-20">
+      <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] p-6 md:p-10 lg:p-20">
         {/* 2. Header Content */}
-        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-16">
+        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-12 md:mb-16">
           <motion.h2
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
+            className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text"
             style={{
               textShadow: `
-                            0 0 38px rgba(0, 206, 209, 0.45),
-                            0 0 20px rgba(0, 206, 209, 0.25)
-                          `,
+                0 0 38px rgba(0, 206, 209, 0.45),
+                0 0 20px rgba(0, 206, 209, 0.25)
+              `,
             }}
           >
             Our Mission
           </motion.h2>
 
-          <p className="text-[#4C448080] text-lg md:text-[16px] max-w-3xl mx-auto leading-relaxed">
+          <p className="text-[#4C448080] text-base md:text-lg lg:text-[16px] max-w-3xl mx-auto leading-relaxed px-4">
             Driving digital transformation through innovation, expertise, and
             unwavering commitment to excellence
           </p>
         </div>
 
+        {/* 3. Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {missionData.map((item, index) => (
             <motion.div
               key={index}
               initial="initial"
               whileHover="hover"
-              className="relative p-10 rounded-[20px] shadow-sm flex flex-col items-center text-center border border-gray-50 overflow-hidden cursor-default bg-[#F1F3F480]/50"
+              whileTap="hover" // Added whileTap to ensure the same hover effect triggers on mobile touch
+              className="relative p-8 md:p-10 rounded-[20px] shadow-sm flex flex-col items-center text-center border border-gray-50 overflow-hidden cursor-default bg-[#F1F3F480]/50"
             >
               {/* Middle to Sides Background Layer */}
               <motion.div
@@ -83,10 +86,10 @@ export default function OurMission() {
                 <div className="w-14 h-14 bg-[#437EF7] rounded-[12px] flex items-center justify-center mb-6 text-white shadow-xl">
                   <item.Icon size={28} />
                 </div>
-                <h3 className="text-[#4C4480] font-bold text-[24px] mb-3">
+                <h3 className="text-[#4C4480] font-bold text-[22px] md:text-[24px] mb-3">
                   {item.title}
                 </h3>
-                <p className="text-[#4C448080]/50 text-[17px] leading-relaxed ">
+                <p className="text-[#4C448080]/70 text-[15px] md:text-[17px] leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -97,4 +100,3 @@ export default function OurMission() {
     </section>
   );
 }
-

@@ -56,22 +56,15 @@ export default function Services() {
       desc: "We optimize your online presence to improve visibility on search engines like Google, driving quality organic traffic to your site.",
       image: seo,
       tags: ["On-Page SEO", "Off-Page SEO"],
-    },
-      
+    },  
     {
-      title: "Machine Learning",
-      slug: "machine-learning",
-      desc: "Implementing intelligent algorithms and predictive models that enable systems to learn from data and automate decision-making processes.",
+      title: "Automation Solutions",
+      slug: "automation-solutions",
+      desc: "Implementing intelligent automation systems to streamline business processes, enhance productivity, and reduce operational costs.",
       image: machinelearning,
-      tags: ["AI/ML Models", "Data Analysis"],
+      tags: ["Machine Learning", "Data Analysis"],
     },
-    {
-      title: "Data Science",
-      slug: "data-science",
-      desc: "Implementing intelligent algorithms and predictive models that enable systems to learn from data and automate decision-making processes.",
-      image: datascience,
-      tags: ["Data Analysis", " Predictive Modeling"],
-    },
+    
      {
       title: "E-commerce Solutions",
       slug: "ecommerce-solutions",

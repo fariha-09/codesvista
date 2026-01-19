@@ -28,22 +28,23 @@ export default function Footer() {
   return (
     <footer className="bg-[#4C4480] text-white pt-16 pb-8 px-6 md:px-20 font-sans">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 md:gap-12 mb-16">
+          
           {/* Column 1: Brand & Social */}
-          <div className="space-y-6 lg:col-span-4">
+          <div className="space-y-6 lg:col-span-4 flex flex-col items-start">
             <div className="flex items-center gap-2">
-              <img src={codevista} alt="codevista" className="w-16" />
-              <h2 className="text-[25px] text-[#AC1B9E] font-semibold tracking-tight">
+              <img src={codevista} alt="codevista" className="w-14 md:w-16" />
+              <h2 className="text-[22px] md:text-[25px] text-[#AC1B9E] font-semibold tracking-tight">
                 Codes <span className="text-[#0E9C9D] ">Vista</span>
               </h2>
             </div>
             <p className="text-[#F1F3F4] text-[14px] leading-relaxed max-w-sm">
               A leading software house empowering businesses
-              <br /> with cutting-edge technology solutions. We
-              <br /> specialize in web development, digital marketing,
-              <br /> and custom software solutions.
+              with cutting-edge technology solutions. We
+              specialize in web development, digital marketing,
+              and custom software solutions.
             </p>
-            <div className="flex gap-10">
+            <div className="flex gap-6 md:gap-10">
               {[
                 FaFacebookF,
                 FaTwitter,
@@ -64,7 +65,7 @@ export default function Footer() {
 
           {/* Column 2: Quick Links */}
           <div className="lg:col-span-2">
-            <h3 className="text-xl text-[#F1F3F4] font-serif font-bold mb-6">
+            <h3 className="text-lg md:text-xl text-[#F1F3F4] font-serif font-bold mb-6">
               Quick Links
             </h3>
             <ul className="space-y-4 text-[#F1F3F4] text-[14px]">
@@ -91,7 +92,7 @@ export default function Footer() {
 
           {/* Column 3: Our Services */}
           <div className="lg:col-span-3">
-            <h3 className="text-xl text-[#F1F3F4] font-serif font-bold mb-6">
+            <h3 className="text-lg md:text-xl text-[#F1F3F4] font-serif font-bold mb-6">
               Our Services
             </h3>
             <ul className="space-y-4 text-[#F1F3F4] text-[14px]">
@@ -118,27 +119,27 @@ export default function Footer() {
 
           {/* Column 4: Contact Info */}
           <div className="lg:col-span-3">
-            <h3 className="text-xl text-[#F1F3F4] font-serif font-bold mb-6">
+            <h3 className="text-lg md:text-xl text-[#F1F3F4] font-serif font-bold mb-6">
               Contact Info
             </h3>
             <ul className="space-y-5 text-[#F1F3F4] text-[14px]">
               <li className="flex gap-3">
-                <FaMapMarkerAlt size={25} className=" " />
+                <FaMapMarkerAlt size={22} className="flex-shrink-0" />
                 <span>
                   Office # S-50, S-52, S-138, 2nd Floor, Malikabad Plaza, Murree
                   Road, Rawalpindi.
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <FaPhoneAlt />
+                <FaPhoneAlt className="flex-shrink-0" />
                 <span>+92-34-85987369</span>
               </li>
               <li className="flex items-center gap-3">
-                <FaEnvelope />
+                <FaEnvelope className="flex-shrink-0" />
                 <span><a className="underline cursor-pointer">info@codesvista.com</a></span>
               </li>
               <li className="flex items-center gap-3">
-                <FaClock />
+                <FaClock className="flex-shrink-0" />
                 <span>Mon-Sat 10:00AM-6:00PM</span>
               </li>
             </ul>
@@ -146,36 +147,36 @@ export default function Footer() {
         </div>
 
         {/* Newsletter Section */}
-        <div className="bg-[#F1F3F4] rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
-          <div className="text-left">
-            <h3 className="text-[#4C4480] text-[24px] md:text-3xl font-serif font-bold mb-2 whitespace-nowrap">
+        <div className="bg-[#F1F3F4] rounded-2xl p-6 md:p-12 flex flex-col xl:flex-row items-center justify-between gap-8 mb-12">
+          <div className="text-center md:text-left w-full">
+            <h3 className="text-[#4C4480] text-[20px] md:text-3xl font-serif font-bold mb-2">
               Stay Updated with Our Newsletter
             </h3>
-            <p className="text-[#4C448080]/50 text-[16px] font-normal">
+            <p className="text-[#4C448080]/70 text-[14px] md:text-[16px] font-normal">
               Get the latest updates on technology trends and our services.
             </p>
           </div>
-          <div className="relative w-full md:w-1/2">
+          <div className="relative w-full max-w-lg">
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-full bg-[#4C4480]/30 text-gray-700 rounded-lg py-4 px-6 focus:outline-none placeholder:text-[#4C4480] placeholder:text-[16px]"
+              className="w-full bg-[#4C4480]/20 text-gray-700 rounded-lg py-4 px-6 focus:outline-none placeholder:text-[#4C4480] text-[14px] md:text-[16px]"
             />
-            <button className="absolute right-2 top-11 -translate-y-1/2 bg-[#4C4480] p-2 rounded-full hover:bg-[#3b3464] transition-colors">
-              <FaPaperPlane className="text-white" />
+            <button className="absolute right-2 top-11 -translate-y-1/2 bg-[#4C4480] p-2.5 rounded-full hover:bg-[#3b3464] transition-colors">
+              <FaPaperPlane className="text-white size-4" />
             </button>
           </div>
         </div>
 
-        {/* <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 gap-4"> */}
-        <div className="flex flex-col md:flex-row text-[14px] text-[#F1F3F4] gap-4 items-center justify-between mx-auto px-4">
-          <p>© 2024 Codes Vista. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white">
+        {/* Bottom Bar */}
+        <div className="flex flex-col md:flex-row text-[13px] md:text-[14px] text-[#F1F3F4] gap-4 items-center justify-between border-t border-white/10 pt-8">
+          <p className="text-center">© 2024 Codes Vista. All rights reserved.</p>
+          <div className="flex gap-4 md:gap-6">
+            <a href="#" className="hover:text-white transition-colors">
               Privacy Policy
             </a>
-            <span>|</span>
-            <a href="#" className="hover:text-white">
+            <span className="opacity-40">|</span>
+            <a href="#" className="hover:text-white transition-colors">
               Terms of Service
             </a>
           </div>
