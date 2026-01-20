@@ -12,10 +12,10 @@ export default function GetInTouch() {
       }}
     >
       {/* 1. Container Card with Grid Overlay  */}
-      <div className="relative w-full max-w-[1400px] flex flex-col gap-6 px-6 md:flex-row overflow-hidden bg-white/[98%] p-10 md:p-20">
+      <div className="relative w-full max-w-[1400px] flex flex-col gap-6 px-6 md:flex-row overflow-hidden bg-white/[98%] p-4 md:p-20">
         {/* Left Side: Form Card */}
-        <div className="flex-1 bg-[#F1F3F4] p-10 md:p-16 rounded-t-[40px] md:rounded-tr-none md:rounded-l-[40px] flex flex-col justify-center">
-          <h1 className="text-[#4C4480] text-3xl font-bold mb-10">
+        <div className="flex-1 bg-[#F1F3F4] p-6 md:p-16 rounded-t-[40px] md:rounded-tr-none md:rounded-l-[40px] flex flex-col justify-center">
+          <h1 className="text-[#4C4480] text-3xl font-bold md:mb-10 mb-4">
             Get In Touch
           </h1>
 
@@ -45,7 +45,7 @@ export default function GetInTouch() {
             />
 
             {/* Submit Button */}
-            <div className="flex justify-end mt-4">
+            <div className="flex md:justify-end justify-center mt-4">
               <button className="bg-[#AC1B9E] text-[#F1F3F4] px-12 py-3 rounded-full text-lg font-semibold shadow-lg shadow-purple-200 hover:bg-[#8e1682] transition-all active:scale-95">
                 Submit Now
               </button>

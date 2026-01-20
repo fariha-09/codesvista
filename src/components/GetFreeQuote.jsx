@@ -12,16 +12,16 @@ export default function GetFreeQuote() {
       }}
     >
       {/* 1. Container Card with Grid Overlay */}
-      <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] p-10 md:p-20">
-        <div className=" mx-auto w-full max-w-[900px] bg-[#F1F3F4] rounded-[60px] p-10 md:p-20">
+      <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] p-4 md:p-20">
+        <div className=" mx-auto w-full max-w-[900px] bg-[#F1F3F4] rounded-[60px] p-6  md:p-20">
           {/* 2. Header Content */}
-          <div className="max-w-4xl mx-auto text-center space-y-4 mb-12">
+          <div className="max-w-4xl mx-auto text-center space-y-2 md:space-y-4 md:mb-12 mb-4">
             <motion.h2
               initial={{ y: 40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
+              className="text-3xl md:text-5xl md:pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
               style={{
                 textShadow: `
       0 0 38px rgba(0, 206, 209, 0.45),
@@ -138,7 +138,7 @@ export default function GetFreeQuote() {
             </div>
 
             {/* Submit Button */}
-            <div className="flex justify-center pt-4">
+            <div className="flex justify-center md:pt-4">
               <button className="bg-[#AC1B9E] text-[#F1F3F4] px-10 py-3 rounded-xl text-[16px] font-bold hover:bg-[#8e1682] transition-all active:scale-95 shadow-lg shadow-purple-200">
                 Join us
               </button>

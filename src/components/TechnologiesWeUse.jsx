@@ -51,7 +51,7 @@ export default function TechnologiesWeUse() {
         {/* Header Content */}
         <motion.div 
           {...fadeInUp}
-          className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-12 md:mb-20"
+          className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-8 md:mb-20"
         >
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif font-bold text-[#0fc8ca]">
             Technologies We Use

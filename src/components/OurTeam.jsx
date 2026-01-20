@@ -6,12 +6,12 @@ const teamData = [1, 2, 3]; // Placeholder for 3 team members
 
 export default function OurTeam() {
   return (
-    <section className="bg-[#0E9C9D] py-20 px-6">
+    <section className="bg-[#0E9C9D] md:py-20 py-10 px-2 md:px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-6 md:mb-16">
           <h2
-           className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#F1F3F4] tracking-tight"
+           className="text-4xl md:text-5xl pb-2 font-semibold font-serif text-[#F1F3F4] tracking-tight"
           
           >
             Our Team
@@ -23,24 +23,24 @@ export default function OurTeam() {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
+        <div className="grid grid-cols-1 md:grid-cols-3 md:gap-8 gap-4">
           {teamData.map((_, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-[32px] shadow-sm flex flex-col items-center text-center py-10"
+              className="bg-white p-6 rounded-[32px] shadow-sm flex flex-col items-center text-center md:py-10"
             >
               {/* Profile Image Placeholder */}
-              <div className="w-full aspect-square bg-[#4C4480] rounded-[24px] mb-6 flex items-center justify-center text-white flex-col">
+              <div className="w-full aspect-square bg-[#4C4480] rounded-[24px] md:mb-6 flex items-center justify-center text-white flex-col">
                 <div className="flex flex-row justify-center items-center">
                   <FaUser className="w-12 h-12 mb-2" />
                   <span className="text-xs opacity-70 text-center">CEO</span>
                 </div>
               </div>
 
-              <h3 className="text-[#4C4480] font-bold text-[24px] mb-1">
+              <h3 className="text-[#4C4480] font-bold text-[24px] md:mb-1">
                 Name
               </h3>
-              <p className="text-[#4C4480] font-semibold text-[16px] mb-4">
+              <p className="text-[#4C4480] font-semibold text-[16px] md:mb-4">
                 Operations Manager
               </p>
               <p className="text-[#4C448080]/50 text-[15px] font-sans leading-relaxed w-60">

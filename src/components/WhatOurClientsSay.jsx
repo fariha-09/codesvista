@@ -27,16 +27,16 @@ const testimonials = [
 export default function WhatOurClientsSay() {
   return (
     <section className="relative bg-white flex justify-center" style={{ backgroundImage: `url(${grids})`, backgroundSize: 'cover' }}>
-      <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] p-10 md:p-20">
+      <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] p-4 md:p-20">
         
         {/* Header Content */}
-        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-16">
+        <div className="max-w-4xl mx-auto text-center md:space-y-4 space-y-2 relative z-10 md:mb-16 mb-4">
          <motion.h2
               initial={{ y: 40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
+              className="text-4xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
               style={{
                 textShadow: `
                             0 0 38px rgba(0, 206, 209, 0.45),
@@ -52,9 +52,9 @@ export default function WhatOurClientsSay() {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 md:gap-8 gap-2 relative z-10">
           {testimonials.map((item, index) => (
-            <div key={index} className="bg-white p-8 rounded-2xl shadow-[0_10px_50px_rgba(0,0,0,0.05)] border border-gray-50 flex flex-col h-full">
+            <div key={index} className="bg-white md:p-8 p-3  rounded-2xl shadow-[0_10px_50px_rgba(0,0,0,0.05)] border border-gray-50 flex flex-col h-full">
               
               {/* Star Rating */}
               <div className="flex gap-1 mb-4">
@@ -64,7 +64,7 @@ export default function WhatOurClientsSay() {
               </div>
 
               {/* Testimonial Text */}
-              <p className="text-[#2B2C3499]/60 text-[16px] italic leading-relaxed mb-8 flex-grow">
+              <p className="text-[#2B2C3499]/60 md:text-[16px] text-[12px] italic leading-relaxed md:mb-8 mb-2 flex-grow">
                 "{item.text}"
               </p>
 

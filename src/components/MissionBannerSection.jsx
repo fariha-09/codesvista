@@ -46,32 +46,33 @@ export default function MissionBannerSection() {
         </div>
 
         {/* CONTENT CONTAINER */}
-        <div className="container mx-auto px-6 md:px-10 relative z-10 flex flex-col lg:flex-row justify-between h-full py-12 lg:py-4 gap-10 lg:gap-0">
+        <div className="container mx-auto px-6 md:px-10 relative z-10 flex flex-col lg:flex-row justify-between h-full py-2 lg:py-4 gap-12 lg:gap-0">
           
           {/* LEFT COLUMN */}
-          <div className="w-full lg:w-1/2 space-y-4 flex flex-col justify-center">
+          <div className="w-full lg:w-1/2 space-y-2 flex flex-col justify-center">
             <div className="inline-flex self-start items-center gap-2 text-white hover:text-black bg-white/20 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/20 hover:bg-[#F1F3F4] transition-all">
               <PiBuildingApartmentFill size={20} className="text-[#0e9c9d]" />
               <span className="font-medium text-[14px]">About Our Company</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.1] min-h-[100px] md:min-h-auto pt-4">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.1] min-h-[60px] md:min-h-auto">
               <Typewriter
                 options={{
                   strings: ["Empowering Businesses", "Innovative Solutions", "About Codes Vista"],
                   autoStart: true,
                   loop: true,
                   deleteSpeed: 50,
+                  delay:85,
                 }}
               />
             </h1>
 
-            <p className="text-[#F1F3F4] text-base md:text-[18px] font-normal max-w-xl leading-relaxed pt-2">
+            <p className="text-[#F1F3F4] text-base md:text-[18px] font-normal max-w-xl leading-relaxed ">
               We are passionate about empowering businesses with innovative technology solutions that drive growth, efficiency, and success in the digital age.
             </p>
 
             {/* Feature Tags */}
-            <div className="flex flex-wrap gap-3 md:gap-4 pt-4">
+            <div className="flex flex-wrap gap-3 pt-2 md:pt-0">
               {[
                 { label: "Expert Team", icon: FaTags, color: "#3B82F6" },
                 { label: "Innovation First", icon: FaPencilRuler, color: "#FF6800" },
@@ -81,7 +82,7 @@ export default function MissionBannerSection() {
                   key={idx}
                   initial="initial"
                   whileHover="hover"
-                  className="relative flex items-center gap-2 bg-white px-3 md:px-4 py-2.5 rounded-lg text-[11px] md:text-[12px] font-bold text-[#4C4480] cursor-pointer overflow-hidden shadow-sm"
+                  className="relative flex items-center gap-2 bg-white px-4 py-2.5 lg:py-3 rounded-lg text-[10px] md:text-[12px] font-bold text-[#4C4480] cursor-pointer overflow-hidden shadow-sm"
                 >
                   <motion.div
                     variants={{
@@ -100,11 +101,11 @@ export default function MissionBannerSection() {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-6">
-              <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#00B8B8] text-[14px] text-[#2B2C34] px-8 py-3 rounded-xl font-bold shadow-lg transition-transform active:scale-95 w-full sm:w-auto">
+            <div className="flex gap-2 md:gap-4 pt-4">
+              <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#00B8B8] text-[14px] text-[#2B2C34] px-2 md:px-8 py-35 rounded-xl font-bold shadow-lg transition-transform active:scale-95  sm:w-auto">
                 <PiClipboardTextBold size={20} /> Get Free Quote
               </button>
-              <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#4C4480] hover:text-white text-[14px] text-[#4C4480] px-8 py-3 rounded-xl font-bold shadow-lg transition-all active:scale-95 w-full sm:w-auto">
+              <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#4C4480] hover:text-white text-[14px] text-[#4C4480] px-2 md:px-8 py-3.5 rounded-xl font-bold shadow-lg transition-all duration-300 active:scale-95 sm:w-auto">
                 <FaShoppingCart /> Explore Services
               </button>
             </div>
@@ -154,7 +155,7 @@ export default function MissionBannerSection() {
               {[FaHeadset, BsClockHistory, BsCheckCircleFill].map((Icon, idx) => (
                 <div
                   key={idx}
-                  className="w-10 h-10 md:w-12 md:h-12 bg-white/20 backdrop-blur-md border border-white/40 rounded-xl flex items-center justify-center text-white shadow-lg hover:bg-white hover:text-[#0FC8CA] transition-all cursor-pointer active:scale-90"
+                  className="w-10 h-10 md:w-12 md:h-12 bg-white/20 backdrop-blur-md animate-bounce border border-white/40 rounded-xl flex items-center justify-center text-white shadow-lg hover:bg-white hover:text-[#0FC8CA] transition-all cursor-pointer active:scale-90"
                 >
                   <Icon size={18} />
                 </div>

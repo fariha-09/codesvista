@@ -36,15 +36,15 @@ export default function OurMission() {
       }}
     >
       {/* 1. Container Card with Grid Overlay */}
-      <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] p-6 md:p-10 lg:p-20">
+      <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] px-4 pt-10  md:p-10 lg:p-20 ">
         {/* 2. Header Content */}
-        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-12 md:mb-16">
+        <div className="max-w-4xl mx-auto text-center space-x-2 md:space-y-4 relative z-10 mb-6 md:mb-16">
           <motion.h2
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text"
+            className="text-4xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text"
             style={{
               textShadow: `
                 0 0 38px rgba(0, 206, 209, 0.45),
@@ -62,14 +62,14 @@ export default function OurMission() {
         </div>
 
         {/* 3. Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6 mb-10">
           {missionData.map((item, index) => (
             <motion.div
               key={index}
               initial="initial"
               whileHover="hover"
               whileTap="hover" // Added whileTap to ensure the same hover effect triggers on mobile touch
-              className="relative p-8 md:p-10 rounded-[20px] shadow-sm flex flex-col items-center text-center border border-gray-50 overflow-hidden cursor-default bg-[#F1F3F480]/50"
+              className="relative p-2 md:p-10 rounded-[20px] shadow-sm flex flex-col items-center text-center border border-gray-50 overflow-hidden cursor-default bg-[#F1F3F480]/50"
             >
               {/* Middle to Sides Background Layer */}
               <motion.div
@@ -78,18 +78,18 @@ export default function OurMission() {
                   hover: { scaleX: 1, opacity: 1 }
                 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
-                className="absolute inset-0 bg-[#0FC8CA]/10 z-0 origin-center"
+                className="absolute inset-0 bg-[#0FC8CA]/10 z-0 origin-center "
               />
 
               {/* Content Wrapped in relative z-10 so it stays above the hover bg */}
               <div className="relative z-10 flex flex-col items-center">
-                <div className="w-14 h-14 bg-[#437EF7] rounded-[12px] flex items-center justify-center mb-6 text-white shadow-xl">
+                <div className="w-14 h-14 bg-[#437EF7] rounded-[12px] flex items-center justify-center md:mb-6 mb-2 text-white shadow-xl">
                   <item.Icon size={28} />
                 </div>
-                <h3 className="text-[#4C4480] font-bold text-[22px] md:text-[24px] mb-3">
+                <h3 className="text-[#4C4480] font-bold text-[22px] md:text-[24px] md:mb-3 mb-1">
                   {item.title}
                 </h3>
-                <p className="text-[#4C448080]/70 text-[15px] md:text-[17px] leading-relaxed">
+                <p className="text-[#4C448080]/70 text-[14px] md:text-[17px] leading-relaxed">
                   {item.desc}
                 </p>
               </div>

@@ -59,7 +59,7 @@ export default function HeroSection() {
               <span className="font-medium text-[14px]">Codes Vista</span>
             </div>
 
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.1] min-h-[100px] md:min-h-auto">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.1] min-h-[100px] md:min-h-auto">
               <Typewriter
                 options={{
                   strings: [

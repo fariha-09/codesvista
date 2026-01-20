@@ -12,16 +12,16 @@ export default function OurStory() {
       }}
     >
       {/* 1. Container Card with Grid Overlay */}
-      <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] p-6 md:p-10 lg:p-20">
+      <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] px-6 md:p-10 lg:p-20">
         
         {/* Main Heading */}
-        <div className="text-center mb-10 md:mb-16">
+        <div className="text-center mb-6 md:mb-16">
           <motion.h2
             initial={{ y: -20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-3xl md:text-5xl lg:text-6xl font-semibold font-serif text-[#0FC8CA] tracking-tight leading-tight px-2"
+            className="text-4xl md:text-5xl lg:text-6xl font-semibold font-serif text-[#0FC8CA] tracking-tight leading-tight px-2"
             style={{
               textShadow: `
                 0 0 38px rgba(0, 206, 209, 0.45),
@@ -48,7 +48,7 @@ export default function OurStory() {
               Our Story
             </h2>
 
-            <div className="flex flex-col gap-6 text-[#555] text-base md:text-[16px] leading-relaxed">
+            <div className="flex flex-col md:gap-6 text-[#555] text-base md:text-[16px] leading-relaxed">
               <p className="max-w-xl">
                 Founded in 2019, Astron Hosts began with a simple mission: to make
                 technology accessible and beneficial for businesses of all sizes.

@@ -56,8 +56,8 @@ export default function AutomationFAQs() {
               className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
               style={{
                 textShadow: `
-                            0 0 38px rgba(0, 206, 209, 0.45),
-                            0 0 20px rgba(0, 206, 209, 0.25)
+                  0 0 38px rgba(0, 206, 209, 0.45),
+                  0 0 20px rgba(0, 206, 209, 0.25)
                           `,
               }}
             >

@@ -29,7 +29,6 @@ export default function Footer() {
     <footer className="bg-[#4C4480] text-white pt-16 pb-8 px-6 md:px-20 font-sans">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 md:gap-12 mb-16">
-          
           {/* Column 1: Brand & Social */}
           <div className="space-y-6 lg:col-span-4 flex flex-col items-start">
             <div className="flex items-center gap-2">
@@ -39,10 +38,9 @@ export default function Footer() {
               </h2>
             </div>
             <p className="text-[#F1F3F4] text-[14px] leading-relaxed max-w-sm">
-              A leading software house empowering businesses
-              with cutting-edge technology solutions. We
-              specialize in web development, digital marketing,
-              and custom software solutions.
+              A leading software house empowering businesses with cutting-edge
+              technology solutions. We specialize in web development, digital
+              marketing, and custom software solutions.
             </p>
             <div className="flex gap-6 md:gap-10">
               {[
@@ -136,7 +134,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <FaEnvelope className="flex-shrink-0" />
-                <span><a className="underline cursor-pointer">info@codesvista.com</a></span>
+                <span>
+                  <a className="underline cursor-pointer">
+                    info@codesvista.com
+                  </a>
+                </span>
               </li>
               <li className="flex items-center gap-3">
                 <FaClock className="flex-shrink-0" />
@@ -170,7 +172,9 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row text-[13px] md:text-[14px] text-[#F1F3F4] gap-4 items-center justify-between border-t border-white/10 pt-8">
-          <p className="text-center">© 2024 Codes Vista. All rights reserved.</p>
+          <p className="text-center">
+            © 2024 Codes Vista. All rights reserved.
+          </p>
           <div className="flex gap-4 md:gap-6">
             <a href="#" className="hover:text-white transition-colors">
               Privacy Policy

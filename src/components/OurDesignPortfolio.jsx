@@ -18,13 +18,13 @@ export default function OurDesignPortfolio() {
          <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] p-2 md:p-20">
    
            {/* 2. Header Content */}
-           <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-16">
+           <div className="max-w-4xl mx-auto text-center md:space-y-4 space-y-2 relative z-10 md:mb-16 mb-6">
               <motion.h2
                                   initial={{ y: 40, opacity: 0 }}
                                   whileInView={{ y: 0, opacity: 1 }}
                                   viewport={{ once: true }}
                                   transition={{ duration: 0.6 }}
-                                  className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
+                                  className="text-4xl md:text-5xl md:pb-2 pb-0 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text mt-6"
                                   style={{
                                     textShadow: `
                             0 0 38px rgba(0, 206, 209, 0.45),
@@ -40,7 +40,7 @@ export default function OurDesignPortfolio() {
            </div>
 
 
-           <div className='flex md:gap-8 gap-2 justify-center overflow-x-scroll md:overflow-x-visible pb-10'>
+           <div className='flex md:gap-8 gap-2 md:justify-center overflow-x-scroll md:overflow-x-visible md:pb-10 pb-0'>
             <img src={pfimg1} alt='portfolio-image' className='rounded-[10px] w-64 md:w-[392px]'/>
             <img src="/pfimg2.jpg" alt='portfolio-image' className='rounded-[10px] w-64 md:w-[392px]'/>
             <img src={pfimg3} alt='portfolio-image' className='rounded-[10px] w-64 md:w-[392px]'/>
@@ -48,7 +48,7 @@ export default function OurDesignPortfolio() {
            </div>
 
 
-<div className="mt-16 flex flex-row justify-center relative z-10">
+<div className="md:mt-16 mt-6 flex flex-row justify-center relative z-10">
   <button className="flex items-center gap-2 bg-[#AC1B9E] hover:bg-[#8a157e] text-white px-10 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all active:scale-95">
     <FaEye /> 
     <Link to="/portfolio">View Full Portfolio</Link>

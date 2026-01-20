@@ -126,7 +126,7 @@ export default function OurLatestWork() {
         </div>
 
         {/* Filter Bar - Exactly as in Figma Screenshot */}
-        <div className="flex flex-wrap justify-center items-center gap-4 bg-white/80 backdrop-blur-md p-4 rounded-2xl shadow-sm border border-gray-100 mb-16 max-w-fit mx-auto">
+        <div className="md:flex md:flex-wrap grid grid-cols-2 justify-center items-center gap-2 md:gap-4 bg-white/80 backdrop-blur-md p-4 rounded-2xl shadow-sm border border-gray-100 mb-16 max-w-fit mx-auto">
           {categories.map((cat) => {
             const IconComponent = cat.icon;
             const isActive = activeTab === cat.name;
@@ -134,14 +134,14 @@ export default function OurLatestWork() {
               <button
                 key={cat.name}
                 onClick={() => setActiveTab(cat.name)}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 ${
+                className={`flex items-center md:gap-2 gap-1  md:px-5 px-1 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 ${
                   isActive
                     ? "bg-[#6D28D9] text-white shadow-lg shadow-indigo-200"
                     : "text-gray-600 hover:bg-gray-50 border border-transparent hover:border-gray-200"
                 }`}
               >
                 <IconComponent
-                  className={`text-lg transition-colors duration-300 ${
+                  className={`md:text-lg text-sm transition-colors duration-300 ${
                     isActive ? "text-[#FFFFFF]" : "text-[#2B2C34]"
                   }`}
                 />

@@ -1,11 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  FaMobileAlt, 
-  FaPaintBrush, 
-  FaCode,  
-  FaCreditCard, 
-  FaRocket 
+import {
+  FaMobileAlt,
+  FaPaintBrush,
+  FaCode,
+  FaCreditCard,
+  FaRocket,
 } from "react-icons/fa";
 import { FiLayout } from "react-icons/fi";
 
@@ -54,7 +54,6 @@ export default function FlutterWhatWeOffer() {
     >
       <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] py-10 md:py-20">
         <div className="bg-[#F1F3F4] py-20 px-6 w-full">
-          
           {/* Header */}
           <div className="text-center mb-16">
             <motion.h2
@@ -73,7 +72,7 @@ export default function FlutterWhatWeOffer() {
               What we Offer for Flutter
             </motion.h2>
             <p className="text-[#4C448080]/50 text-lg md:text-[24px] max-w-3xl mx-auto leading-relaxed mt-4">
-              Build Scalable & High-Performance Mobile Applications with our 
+              Build Scalable & High-Performance Mobile Applications with our
               comprehensive Flutter technology solutions.
             </p>
           </div>

@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
 import { motion } from "framer-motion";
-import { 
-  FaRobot, 
-  FaBrain, 
-  FaDatabase, 
-  FaNetworkWired, 
-  FaShieldAlt, 
-  FaLayerGroup, 
-  FaCommentDots, 
-  FaHeadset, 
-  FaCogs 
+import {
+  FaRobot,
+  FaBrain,
+  FaDatabase,
+  FaNetworkWired,
+  FaShieldAlt,
+  FaLayerGroup,
+  FaCommentDots,
+  FaHeadset,
+  FaCogs,
 } from "react-icons/fa";
 import grids from "../assets/grids.png"; // Your grid background asset
 
@@ -19,83 +19,120 @@ export default function AutomationServices() {
       title: "Smart Automation Solutions",
       desc: "Reduce manual work and increase productivity with intelligent workflow systems.",
       icon: FaCogs,
-      features: ["Business Process Automation", "Software & Marketing Automation", "CRM & ERP Integration"]
+      features: [
+        "Business Process Automation",
+        "Software & Marketing Automation",
+        "CRM & ERP Integration",
+      ],
     },
     {
       title: "AI & Machine Learning",
       desc: "Data-driven solutions for smart decision making and trend prediction.",
       icon: FaBrain,
-      features: ["ML Model Development", "Predictive Analytics", "Recommendation Systems"]
+      features: [
+        "ML Model Development",
+        "Predictive Analytics",
+        "Recommendation Systems",
+      ],
     },
     {
       title: "Data Science & Analysis",
       desc: "Turn raw data into meaningful business insights and visual dashboards.",
       icon: FaDatabase,
-      features: ["Data Cleaning & Processing", "Visualization Dashboards", "Forecasting & Strategy"]
+      features: [
+        "Data Cleaning & Processing",
+        "Visualization Dashboards",
+        "Forecasting & Strategy",
+      ],
     },
     {
       title: "Deep Learning & Research",
       desc: "Advanced neural networks for image, voice, and pattern recognition.",
       icon: FaLayerGroup,
-      features: ["Neural Network Design", "Natural Language Processing", "AI Prototyping"]
+      features: [
+        "Neural Network Design",
+        "Natural Language Processing",
+        "AI Prototyping",
+      ],
     },
     {
       title: "Cyber Security Solutions",
       desc: "Enterprise-level security to safeguard your digital assets and user data.",
       icon: FaShieldAlt,
-      features: ["Vulnerability Assessment", "Penetration Testing", "Compliance Audits"]
+      features: [
+        "Vulnerability Assessment",
+        "Penetration Testing",
+        "Compliance Audits",
+      ],
     },
     {
       title: "AI Model Training",
       desc: "High-quality data preparation for accurate and high-performance AI models.",
       icon: FaNetworkWired,
-      features: ["Dataset Labeling", "Model Testing", "Performance Optimization"]
+      features: [
+        "Dataset Labeling",
+        "Model Testing",
+        "Performance Optimization",
+      ],
     },
     {
       title: "Chatbots & AI Assistants",
       desc: "24/7 automated communication for support and lead generation.",
       icon: FaCommentDots,
-      features: ["WhatsApp & Web Bots", "Lead Generation Automation", "Customer Support AI"]
+      features: [
+        "WhatsApp & Web Bots",
+        "Lead Generation Automation",
+        "Customer Support AI",
+      ],
     },
     {
       title: "Dialer & Marketing Tools",
       desc: "Powerful communication systems for sales teams and call centers.",
       icon: FaHeadset,
-      features: ["Auto Dialer Systems", "Bulk SMS & Email Tools", "WhatsApp API Integration"]
+      features: [
+        "Auto Dialer Systems",
+        "Bulk SMS & Email Tools",
+        "WhatsApp API Integration",
+      ],
     },
     {
       title: "Robotics & IoT",
       desc: "Intelligent hardware integration for industrial and research applications.",
       icon: FaRobot,
-      features: ["AI-Powered Robotics", "Smart Control Systems", "IoT Automation"]
-    }
+      features: [
+        "AI-Powered Robotics",
+        "Smart Control Systems",
+        "IoT Automation",
+      ],
+    },
   ];
 
   return (
-     <section
-               className="relative bg-white flex justify-center object-cover"
-               style={{ backgroundImage: `url(${grids})` }}
-               >
-               <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] p-10 md:p-20">
-        
+    <section
+      className="relative bg-white flex justify-center object-cover"
+      style={{ backgroundImage: `url(${grids})` }}
+    >
+      <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] p-10 md:p-20">
         {/* Header Section */}
         <div className="text-center mb-20 space-y-4">
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="text-[#0E9C9D] font-bold tracking-widest uppercase text-sm"
           >
             Efficiency Redefined
           </motion.span>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-[#2B2C34] text-4xl md:text-6xl font-serif font-bold"
           >
-            Intelligent Systems & <br/> <span className="text-[#0E9C9D]">Automation</span>
+            Intelligent Systems & <br />{" "}
+            <span className="text-[#0E9C9D]">Automation</span>
           </motion.h2>
           <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            We design smart solutions that automate repetitive tasks, improve workflow efficiency, and reduce operational costs.
+            We design smart solutions that automate repetitive tasks, improve
+            workflow efficiency, and reduce operational costs.
           </p>
         </div>
 
@@ -126,7 +163,10 @@ export default function AutomationServices() {
               {/* Feature List */}
               <ul className="space-y-3 border-t border-gray-100 pt-6">
                 {service.features.map((feature, fIndex) => (
-                  <li key={fIndex} className="flex items-center gap-2 text-sm font-medium text-[#4C4480]">
+                  <li
+                    key={fIndex}
+                    className="flex items-center gap-2 text-sm font-medium text-[#4C4480]"
+                  >
                     <div className="w-1.5 h-1.5 rounded-full bg-[#0E9C9D]" />
                     {feature}
                   </li>

@@ -14,13 +14,13 @@ export default function StartConversation() {
       {/* 1. Container Card with Grid Overlay */}
       <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] p-10 md:p-20">
         {/* Header Content */}
-        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-16">
+        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 md:mb-16 mb-6">
            <motion.h2
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
+            className="text-4xl md:text-5xl md:pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
             style={{
               textShadow: `
       0 0 38px rgba(0, 206, 209, 0.45),
@@ -40,7 +40,7 @@ export default function StartConversation() {
         {/* Triple Contact Bar - Exactly as in Figma */}
         <div className="grid grid-cols-1 md:grid-cols-3 w-full border border-[#4C4480] rounded-[40px] overflow-hidden shadow-sm bg-white">
           {/* Phone Section */}
-          <div className="flex items-center p-10 gap-6">
+          <div className="flex items-center md:p-10 p-4 gap-6">
             <div className="w-14 h-14 bg-[#4C4480] rounded-full flex items-center justify-center flex-shrink-0">
               <FaPhoneAlt className="text-[#F1F3F4] text-xl" />
             </div>
@@ -58,7 +58,7 @@ export default function StartConversation() {
           </div>
 
           {/* Email Section (Dark Center) */}
-          <div className="bg-[#4C4480] flex items-center p-10 gap-6 text-white border-y md:border-y-0 md:border-x border-white/10">
+          <div className="bg-[#4C4480] flex items-center md:p-10 p-4 gap-6 text-white border-y md:border-y-0 md:border-x border-white/10">
             <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center flex-shrink-0">
               <FaEnvelope className="text-[#4C4480] text-xl" />
             </div>
@@ -76,7 +76,7 @@ export default function StartConversation() {
           </div>
 
           {/* Address Section */}
-          <div className="flex items-center p-10 gap-6">
+          <div className="flex items-center md:p-10 p-4 gap-6">
             <div className="w-14 h-14 bg-[#4C4480] rounded-full flex items-center justify-center flex-shrink-0">
               <FaMapMarkerAlt className="text-[#F1F3F4] text-xl" />
             </div>

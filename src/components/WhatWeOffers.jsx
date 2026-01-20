@@ -49,16 +49,16 @@ export default function WhatWeOffers() {
         backgroundImage: `url(${grids})`,
       }}
     >
-      <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] py-10 md:py-20">
-        <div className="bg-[#F1F3F4] py-20 px-6 w-full">
+      <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] py-6 md:py-20">
+        <div className="bg-[#F1F3F4] md:py-20 p-4 px-6 w-full">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-center md:mb-16 mb-4">
             <motion.h2
               initial={{ y: 40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
+              className="text-4xl md:text-5xl md:pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
               style={{
                 textShadow: `
                             0 0 38px rgba(0, 206, 209, 0.45),
@@ -75,18 +75,18 @@ export default function WhatWeOffers() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-10">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 md:gap-8 gap-4 md:mx-10">
             {offers.map((item, index) => (
               <div
                 key={index}
-                className="bg-white p-10 rounded-[24px] shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1)] flex flex-col items-center text-center transition-transform hover:scale-[1.02]"
+                className="bg-white md:p-10 p-4 rounded-[24px] shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1)] flex flex-col items-center text-center transition-transform hover:scale-[1.02]"
               >
                 {/* img Container */}
-                <div className=" bg-[#F1F3F4] w-[72px] h-[72px] rounded-[16px] flex items-center justify-center mb-6 border border-gray-100 shadow-sm">
+                <div className=" bg-[#F1F3F4] h-12 w-12 md:w-[72px] md:h-[72px] rounded-[16px] flex items-center justify-center md:mb-6 mb-1 border border-gray-100 shadow-sm">
                   <img
                     src={item.img}
                     alt="img"
-                    className="w-[40px] h-[40px]"
+                    className="w-8 h-8 md:w-[40px] md:h-[40px]"
                   ></img>
                 </div>
 
@@ -94,7 +94,7 @@ export default function WhatWeOffers() {
                   {item.title}
                 </h3>
 
-                <p className="text-[#4C448080]/50 text-[14px] leading-relaxed">
+                <p className="text-[#4C448080]/50 md:text-[14px] text-[12px] leading-relaxed">
                   {item.desc}
                 </p>
               </div>

@@ -47,15 +47,15 @@ export default function ExploreByCategory() {
       }}
     >
       {/* 1. Container Card with Grid Overlay */}
-      <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] p-10 md:p-20">
+      <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] p-4 md:p-20">
         {/* 2. Header Content */}
-        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-16">
+        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 md:mb-16 mb-4 mt-4">
           <motion.h2
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text"
+            className="text-4xl md:text-5xl md:pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text"
             style={{
               textShadow: `
                             0 0 38px rgba(0, 206, 209, 0.45),
@@ -71,7 +71,7 @@ export default function ExploreByCategory() {
         </div>
 
         {/* 3. Category Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 md:gap-6 gap-2 relative z-10">
           {categories.map((cat, index) => {
             const Icon = cat.icon;
             return (
@@ -79,7 +79,7 @@ export default function ExploreByCategory() {
                 key={index}
                 initial="initial"
                 whileHover="hover"
-                className="relative bg-white p-[42px] rounded-[16px] border border-gray-100 flex flex-col items-center text-center shadow-[0_10px_40px_rgba(0,0,0,0.05)] overflow-hidden group cursor-pointer"
+                className="relative bg-white md:p-[42px] p-4 rounded-[16px] border border-gray-100 flex flex-col items-center text-center shadow-[0_10px_40px_rgba(0,0,0,0.05)] overflow-hidden group cursor-pointer"
               >
                 <motion.div
                   variants={{
@@ -94,15 +94,15 @@ export default function ExploreByCategory() {
                 {/* 2. Content Wrapper (Keeps text/icons on top) */}
                 <div className="relative z-10 flex flex-col items-center">
                   <div
-                    className={`${cat.bgColor} w-16 h-16 rounded-[8px] flex items-center justify-center mb-6 shadow-lg shadow-black/10 transition-transform group-hover:scale-110`}
+                    className={`${cat.bgColor} md:w-16 md:h-16 w-12 h-12 rounded-[8px] flex items-center justify-center md:mb-6 mb-2 shadow-lg shadow-black/10 transition-transform group-hover:scale-110`}
                   >
-                    <Icon className="text-[#FFFFFF] text-[30px]" />
+                    <Icon className="text-[#FFFFFF] md:text-[30px] text-[20px]" />
                   </div>
 
-                  <h3 className="text-[#2B2C34] text-[20px] font-bold mb-3">
+                  <h3 className="text-[#2B2C34] text-[20px] font-bold md:mb-3">
                     {cat.title}
                   </h3>
-                  <p className="text-[#2B2C3499]/60 text-[14px] leading-relaxed mb-8 px-2">
+                  <p className="text-[#2B2C3499]/60 text-[14px] leading-relaxed md:mb-8 px-2">
                     {cat.desc}
                   </p>
 

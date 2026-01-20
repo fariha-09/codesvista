@@ -58,20 +58,20 @@ export default function PortfolioBannerSection() {
         </div>
 
         {/* CONTENT WRAPPER */}
-        <div className="container mx-auto px-6 md:px-10 py-10 lg:py-4 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
+        <div className="container h-full px-6 md:px-10 py-2 lg:py-4 lg:gap-0 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
           
           {/* LEFT COLUMN */}
-          <div className="w-full lg:w-1/2 space-y-6 md:space-y-8 text-left">
+          <div className="w-full lg:w-1/2 space-y-2 md:space-y-4 text-left">
             <div className="inline-flex text-white hover:text-black items-center gap-2 bg-white/20 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/20 hover:bg-[#F1F3F4] transition-colors cursor-default">
               <PiBuildingApartmentFill size={20} className="text-[#0e9c9d]" />
               <span className="font-medium text-[14px] whitespace-nowrap">Portfolio</span>
             </div>
 
-            <div className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight min-h-[120px] md:min-h-[160px]">
+            <div className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight min-h-[100px] md:min-h-[160px]">
               <Typewriter
                 options={{
                   strings: [
-                    "Our Work Speaks for<br/> Itself.",
+                    "Our Work Speaks for Itself.",
                     "Innovative Digital <br/>Solutions.",
                     "Building Future-<br/>Ready Apps.",
                     "Design That Inspires.",
@@ -90,7 +90,7 @@ export default function PortfolioBannerSection() {
             </p>
 
             {/* Feature Tags */}
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 ">
               {[
                 { label: "24/7 Support", icon: FaTags, iconColor: "#3B82F6" },
                 { label: "Free Consultation", icon: FaPencilRuler, iconColor: "#FF6800" },
@@ -114,15 +114,15 @@ export default function PortfolioBannerSection() {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="flex items-center justify-center gap-2 bg-white hover:bg-white hover:text-[#0FC8CA] text-[14px] text-[#2B2C34] px-8 py-4 rounded-xl font-bold shadow-lg transition-all active:scale-95 w-full sm:w-auto">
-                <PiClipboardTextBold size={20} /> Get Free Quote
-              </button>
-              <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#4C4480] hover:text-white text-[14px] text-[#4C4480] px-8 py-4 rounded-xl font-bold shadow-lg transition-all duration-300 active:scale-95 w-full sm:w-auto">
-                <FaShoppingCart /> Explore Services
-              </button>
-            </div>
-          </div>
+            <div className="flex gap-2 md:gap-4 pt-4">
+                         <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#00B8B8] text-[14px] text-[#2B2C34] px-2 md:px-8 py-3.5 rounded-xl font-bold shadow-lg transition-transform active:scale-95 sm:w-auto">
+                           <PiClipboardTextBold size={20} /> Get Free Quote
+                         </button>
+                         <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#4C4480] hover:text-white text-[14px] text-[#4C4480] px-2 md:px-8 py-3.5 rounded-xl font-bold shadow-lg transition-all duration-300 active:scale-95 sm:w-auto">
+                           <FaShoppingCart /> Explore Services
+                         </button>
+                       </div>
+                     </div>
 
           {/* RIGHT COLUMN */}
           <div className="w-full lg:w-1/2 flex flex-col md:flex-row items-center justify-center lg:justify-end gap-6">
@@ -178,7 +178,7 @@ export default function PortfolioBannerSection() {
               ].map((Icon, idx) => (
                 <div
                   key={idx}
-                  className="w-10 h-10 bg-white/20 backdrop-blur-md border border-white/40 rounded-lg flex items-center justify-center text-white shadow-lg hover:bg-white hover:text-[#0FC8CA] transition-all cursor-pointer"
+                  className="w-10 h-10 bg-white/20 backdrop-blur-md border border-white/40 animate-bounce rounded-lg flex items-center justify-center text-white shadow-lg hover:bg-white hover:text-[#0FC8CA] transition-all cursor-pointer"
                 >
                   <Icon size={18} />
                 </div>

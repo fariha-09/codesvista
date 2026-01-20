@@ -3,18 +3,18 @@ import { FaChevronDown } from "react-icons/fa";
 import grids from "../assets/grids.png";
 import { motion } from "framer-motion";
 
-
 export default function AppFAQs() {
-   const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState(null);
 
   const faqs = [
-   {
+    {
       question: "Will the app work on both iOS and Android?",
       answer:
         "Yes! Using Flutter's single codebase, we develop high-performance applications that work seamlessly on both Apple App Store and Google Play Store, reducing your development time and costs.",
     },
     {
-      question: "Do you handle the App Store and Play Store publishing process?",
+      question:
+        "Do you handle the App Store and Play Store publishing process?",
       answer:
         "Absolutely. We manage the entire deployment process, including store compliance, generating release builds, setting up app descriptions, and navigating the review process for both platforms.",
     },

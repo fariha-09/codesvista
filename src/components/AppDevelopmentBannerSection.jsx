@@ -6,39 +6,32 @@ import {
   FaPencilRuler,
   FaLightbulb,
 } from "react-icons/fa";
-import {  FaCodeBranch, FaStar } from "react-icons/fa";
-import { FaMobileAlt, FaCode, FaRocket } from 'react-icons/fa';
+import { FaCodeBranch, FaStar } from "react-icons/fa";
+import { FaMobileAlt, FaCode, FaRocket } from "react-icons/fa";
 import grid from "../assets/grid.jpg";
 import Typewriter from "typewriter-effect";
 
-
 export default function AppDevelopmentBannerSection() {
-   const stats = [
-  {
-    label: "50+",
-    sub: "Apps Developed",
-    color: "bg-[#3B82F6]",
-    icon: () => (
-      <FaMobileAlt size={20} className="text-[#2B2C34]" />
-    ),
-  },
-  {
-    label: "2-Week",
-    sub: "Sprint Cycles",
-    color: "bg-[#4ADE80]",
-    icon: () => (
-      <FaCodeBranch size={20} className="text-[#2B2C34]" />
-    ),
-  },
-  {
-    label: "4.9/5",
-    sub: "App Store Rating",
-    color: "bg-[#FF6800]",
-    icon: () => (
-      <FaStar size={20} className="text-[#2B2C34]" />
-    ),
-  },
-];
+  const stats = [
+    {
+      label: "50+",
+      sub: "Apps Developed",
+      color: "bg-[#3B82F6]",
+      icon: () => <FaMobileAlt size={20} className="text-[#2B2C34]" />,
+    },
+    {
+      label: "2-Week",
+      sub: "Sprint Cycles",
+      color: "bg-[#4ADE80]",
+      icon: () => <FaCodeBranch size={20} className="text-[#2B2C34]" />,
+    },
+    {
+      label: "4.9/5",
+      sub: "App Store Rating",
+      color: "bg-[#FF6800]",
+      icon: () => <FaStar size={20} className="text-[#2B2C34]" />,
+    },
+  ];
   return (
     <section className="relative bg-[#0fc8ca] min-h-[88vh] w-full flex justify-center lg:px-10 font-sans">
       {/* 2. INNER CARD - Changed min-h-screen to h-[85vh] or h-full to prevent bottom overflow */}
@@ -64,39 +57,40 @@ export default function AppDevelopmentBannerSection() {
 
             {/* Heading Fix: Adjusted leading and size */}
             <h1 className="text-5xl md:text-6xl font-serif font-bold text-white leading-[1.1]">
-          <Typewriter
-    options={{
-      strings: [
-        "Professional App Development Services",
-        "Custom iOS & Android Solutions",
-        "Cross-Platform Mobile Experiences",
-        "Scalable Enterprise App Solutions"
-      ],
-      autoStart: true,
-      loop: true,
-      delay: 75,
-      deleteSpeed: 50,
-    }}
-  />
-</h1>
+              <Typewriter
+                options={{
+                  strings: [
+                    "Professional App Development Services",
+                    "Custom iOS & Android Solutions",
+                    "Cross-Platform Mobile Experiences",
+                    "Scalable Enterprise App Solutions",
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  delay: 75,
+                  deleteSpeed: 50,
+                }}
+              />
+            </h1>
 
             <p className="text-[#F1F3F4] text-[18px] font-normal max-w-xl leading-relaxed">
-  Empower your business with high-performance mobile applications 
-  <br /> built for iOS and Android using cutting-edge frameworks 
-  <br /> to deliver seamless user experiences and drive growth.
-</p>
+              Empower your business with high-performance mobile applications
+              <br /> built for iOS and Android using cutting-edge frameworks
+              <br /> to deliver seamless user experiences and drive growth.
+            </p>
 
             <div className="flex flex-wrap gap-3">
               {/* Tags ... */}
               <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg text-[12px] font-bold text-[#4C4480] ">
-                <FaMobileAlt size={15} className="text-[#3B82F6] " /> MOBILE FIRST
+                <FaMobileAlt size={15} className="text-[#3B82F6] " /> MOBILE
+                FIRST
               </span>
               <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg text-[12px] font-bold text-[#4C4480]">
-                <FaCode size={15} className="text-[#FF6800]" />{" "}
-               SCALABLE CODE
+                <FaCode size={15} className="text-[#FF6800]" /> SCALABLE CODE
               </span>
               <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg text-[12px] font-bold text-[#4C4480]">
-                <FaRocket size={15} className="text-[#4ADE80]" /> HIGH PERFORMANCE
+                <FaRocket size={15} className="text-[#4ADE80]" /> HIGH
+                PERFORMANCE
               </span>
             </div>
 

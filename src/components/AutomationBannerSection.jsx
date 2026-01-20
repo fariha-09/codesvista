@@ -75,14 +75,20 @@ export default function AutomationBannerSection() {
                 }}
               />
             </h1>
-            
+
             <p className="text-[#F1F3F4] text-base md:text-[18px] font-normal max-w-lg leading-relaxed">
-              Designing intelligent automation and AI-driven systems that reduce manual work, save time, and turn your data into actionable business growth.
+              Designing intelligent automation and AI-driven systems that reduce
+              manual work, save time, and turn your data into actionable
+              business growth.
             </p>
 
             <div className="flex flex-wrap gap-3">
               {[
-                { label: "Business Automation", icon: FaRobot, color: "#3B82F6" }, // Replaced missing MdSettingsSuggest with FaRobot for safety
+                {
+                  label: "Business Automation",
+                  icon: FaRobot,
+                  color: "#3B82F6",
+                }, // Replaced missing MdSettingsSuggest with FaRobot for safety
                 { label: "Deep Learning", icon: FaBrain, color: "#FF6800" },
                 { label: "Data Science", icon: FaDatabase, color: "#4ADE80" },
               ].map((tag, index) => (
@@ -100,7 +106,11 @@ export default function AutomationBannerSection() {
                     transition={{ duration: 0.5, ease: "easeInOut" }}
                     className="absolute inset-0 bg-gray-200 z-0 origin-center"
                   />
-                  <tag.icon size={15} className="relative z-10" style={{ color: tag.color }} />
+                  <tag.icon
+                    size={15}
+                    className="relative z-10"
+                    style={{ color: tag.color }}
+                  />
                   <span className="relative z-10">{tag.label}</span>
                 </motion.span>
               ))}
@@ -138,7 +148,9 @@ export default function AutomationBannerSection() {
                       key={i}
                       className="group bg-white/10 p-4 rounded-2xl flex items-center gap-4 border border-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-white"
                     >
-                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center shadow-inner transition-all duration-300 ${stat.color} group-hover:bg-[#0FC8CA]`}>
+                      <div
+                        className={`w-12 h-12 rounded-lg flex items-center justify-center shadow-inner transition-all duration-300 ${stat.color} group-hover:bg-[#0FC8CA]`}
+                      >
                         <Icon className="text-[#4C4480] text-xl group-hover:text-white" />
                       </div>
                       <div>
@@ -157,14 +169,16 @@ export default function AutomationBannerSection() {
 
             {/* Side Icons - Hidden on small mobile, visible on tablet and desktop */}
             <div className="flex flex-row lg:flex-col gap-3">
-              {[IoHardwareChipSharp, FaMicrochip, FaShieldAlt].map((Icon, idx) => (
-                <div
-                  key={idx}
-                  className="w-10 h-10 md:w-12 md:h-12 bg-white/20 backdrop-blur-md border border-white/40 rounded-xl flex items-center justify-center text-white shadow-lg hover:bg-white hover:text-[#0FC8CA] transition-all cursor-pointer active:scale-90"
-                >
-                  <Icon size={18} />
-                </div>
-              ))}
+              {[IoHardwareChipSharp, FaMicrochip, FaShieldAlt].map(
+                (Icon, idx) => (
+                  <div
+                    key={idx}
+                    className="w-10 h-10 md:w-12 md:h-12 bg-white/20 backdrop-blur-md border border-white/40 rounded-xl flex items-center justify-center text-white shadow-lg hover:bg-white hover:text-[#0FC8CA] transition-all cursor-pointer active:scale-90"
+                  >
+                    <Icon size={18} />
+                  </div>
+                ),
+              )}
             </div>
           </div>
         </div>
