@@ -7,10 +7,10 @@ import phone1c from "../assets/phone1c.png";
 export default function Card1() {
   return (
     <div className="w-full flex justify-center">
-      <section className="bg-[#F1F3F4] w-full p-8 flex justify-center rounded-[143px] shadow-2xl shadow-black-300">
+      <section className="bg-[#F1F3F4] w-full p-8 flex justify-center md:rounded-[143px] rounded-[20px] shadow-2xl shadow-black-300">
         {/* Container for the card */}
         <div className="flex flex-col items-center  space-y-6">
-          <h1 className="text-[#4C4480] text-[42.2px] font-medium tracking-widest">
+          <h1 className="text-[#4C4480] md:text-[42.2px] text-[24px] font-medium tracking-widest">
             PRYDUMANO
           </h1>
 
@@ -19,7 +19,7 @@ export default function Card1() {
               <img
                 src={phone1a}
                 alt="phone1a"
-                className="w-52 h-auto mix-blend-multiply object-contain"
+                className="md:w-52 w-24 h-auto mix-blend-multiply object-contain"
               />
             </div>
             <div className="w-full max-w-lg">

@@ -19,23 +19,11 @@ export default function Navbar() {
 
   const serviceLinks = [
     { name: "Web Development", slug: "/web-development", icon: <FaCode /> },
-    {
-      name: "Digital Marketing",
-      slug: "/digital-marketing",
-      icon: <HiSpeakerphone />,
-    },
+    {name: "Digital Marketing",slug: "/digital-marketing",icon: <HiSpeakerphone />},
     { name: "Graphic Design", slug: "/graphics-design", icon: <FaPenNib /> },
     { name: "SEO Solutions", slug: "/seo", icon: <FaBriefcase /> },
-    {
-      name: "Software Development",
-      slug: "/software-development",
-      icon: <FaRobot />,
-    },
-    {
-      name: "Automation Solutions",
-      slug: "/automation-solutions",
-      icon: <FaCogs />,
-    },
+    {name: "Software Development",slug: "/software-development",icon: <FaRobot />},
+    {name: "Automation Solutions",slug: "/automation-solutions",icon: <FaCogs />},
   ];
 
   return (

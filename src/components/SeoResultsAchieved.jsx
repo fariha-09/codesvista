@@ -31,17 +31,17 @@ export default function SeoResultsAchieved() {
   ];
 
   return (
-    <section className="bg-white py-24 px-6 md:px-20 font-sans overflow-hidden">
+    <section className="bg-white md:py-24 py-10 px-4 md:px-20 font-sans overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* Header Section */}
-        <div className="text-center mb-20 space-y-4">
+        <div className="text-center md:mb-20 mb-10 space-y-4">
           <motion.h2 
            initial={{ y: 40, opacity: 0 }}
                       whileInView={{ y: 0, opacity: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.6 }}
-                      className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text"
+                      className="text-4xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text"
                       style={{
                         textShadow: `0 0 38px rgba(0, 206, 209, 0.45), 0 0 20px rgba(0, 206, 209, 0.25)`,
                       }}
@@ -55,13 +55,13 @@ export default function SeoResultsAchieved() {
         </div>
 
         {/* Results Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 md:gap-8 gap-2">
           {results.map((item, index) => (
             <motion.div
               key={index}
               initial="initial"
               whileHover="hover"
-              className="relative bg-white rounded-[32px] p-10 flex flex-col items-center text-center shadow-[0_15px_50px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden group"
+              className="relative bg-white md:rounded-[32px] rounded-xl md:p-10 px-3 py-5 flex flex-col items-center text-center shadow-[0_15px_50px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden group"
             >
               {/* Middle to Sides Background Hover Layer */}
               <motion.div

@@ -36,17 +36,17 @@ export default function SoftwareTechnologies() {
   );
 
   return (
-    <section className="bg-white py-24 px-6 md:px-20 flex justify-center">
+    <section className="bg-white md:py-24 py-10 px-6 md:px-20 flex justify-center">
       <div className="w-full max-w-[1400px]">
         
         {/* Header Section */}
-        <div className="text-center mb-20 space-y-4">
+        <div className="text-center md:mb-20 mb-10 space-y-4">
             <motion.h2
                                 initial={{ y: 40, opacity: 0 }}
                                 whileInView={{ y: 0, opacity: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6 }}
-                                className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text"
+                                className="text-4xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text"
                                 style={{
                                   textShadow: `0 0 38px rgba(0, 206, 209, 0.45), 0 0 20px rgba(0, 206, 209, 0.25)`,
                                 }}
@@ -70,7 +70,7 @@ export default function SoftwareTechnologies() {
                 Powerful backend solutions built with modern frameworks and languages for performance and scalability.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
               {backendTech.map((tech, idx) => <TechCard key={idx} {...tech} />)}
             </div>
           </div>
@@ -83,7 +83,7 @@ export default function SoftwareTechnologies() {
                 Modern mobile and frontend technologies for creating intuitive user experiences across all platforms.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
               {frontendMobileTech.map((tech, idx) => <TechCard key={idx} {...tech} />)}
             </div>
           </div>

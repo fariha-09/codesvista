@@ -53,9 +53,9 @@ export default function FlutterWhatWeOffer() {
       }}
     >
       <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] py-10 md:py-20">
-        <div className="bg-[#F1F3F4] py-20 px-6 w-full">
+        <div className="bg-[#F1F3F4] md:py-20 py-12 md:px-6 w-full">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 md:mb-16">
             <motion.h2
               initial={{ y: 40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -71,14 +71,14 @@ export default function FlutterWhatWeOffer() {
             >
               What we Offer for Flutter
             </motion.h2>
-            <p className="text-[#4C448080]/50 text-lg md:text-[24px] max-w-3xl mx-auto leading-relaxed mt-4">
+            <p className="text-gray-600 text-lg md:text-[24px] max-w-3xl mx-auto leading-relaxed mt-4">
               Build Scalable & High-Performance Mobile Applications with our
               comprehensive Flutter technology solutions.
             </p>
           </div>
 
           {/* Offer Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-4 md:mx-10">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8 mx-4 md:mx-10">
             {offers.map((item, index) => (
               <motion.div
                 key={index}
@@ -86,16 +86,16 @@ export default function FlutterWhatWeOffer() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white p-10 rounded-[24px] shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1)] flex flex-col items-center text-center transition-transform hover:scale-[1.05] group"
+                className="bg-white md:p-10 py-4 rounded-[24px] shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1)] flex flex-col items-center text-center transition-transform hover:scale-[1.05] group"
               >
                 {/* Icon Container */}
-                <div className="bg-[#F1F3F4] w-[72px] h-[72px] rounded-[16px] flex items-center justify-center mb-6 border border-gray-100 shadow-sm group-hover:bg-[#0FC8CA] transition-colors duration-300">
+                <div className="bg-[#F1F3F4] w-[72px] h-[72px] rounded-[16px] flex items-center justify-center md:mb-6 mb-2 border border-gray-100 shadow-sm group-hover:bg-[#0FC8CA] transition-colors duration-300">
                   <span className="text-[#0FC8CA] text-3xl group-hover:text-white transition-colors duration-300">
                     {item.icon}
                   </span>
                 </div>
 
-                <h3 className="text-[#0FC8CA] font-semibold text-[22px] mb-3">
+                <h3 className="text-[#0FC8CA] font-semibold text-[22px] md:mb-3 mb-1">
                   {item.title}
                 </h3>
 

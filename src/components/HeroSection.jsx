@@ -50,7 +50,7 @@ export default function HeroSection() {
         </div>
 
         {/* CONTENT CONTAINER */}
-        <div className="container mx-auto px-6 md:px-10 relative z-10 flex flex-col lg:flex-row justify-between h-full py-2 lg:py-4 gap-12 lg:gap-0">
+        <div className="container mx-auto px-6 md:px-10 relative z-10 flex flex-col lg:flex-row justify-between h-full py-2 lg:py-4 gap-10 lg:gap-0">
           
           {/* LEFT COLUMN */}
           <div className="w-full lg:w-1/2 space-y-2 lg:space-y-4 flex flex-col justify-center">
@@ -63,7 +63,7 @@ export default function HeroSection() {
               <Typewriter
                 options={{
                   strings: [
-                    "Empowering <br /> Businesses with <br /> Technology",
+                   "Empowering <br /> Businesses with <br /> Technology",
                     "Driving <br /> Innovation with <br /> Custom Code",
                     "Creating <br /> Seamless Digital <br /> Experiences"
                   ],
@@ -129,7 +129,7 @@ export default function HeroSection() {
           <div className="w-full lg:w-1/2 flex flex-col md:flex-row lg:flex-row items-center justify-center lg:justify-end gap-6">
             
             {/* Portfolio Stats Card */}
-            <div className="bg-white/20 backdrop-blur-xl border border-white/30 p-6 md:p-8 rounded-[30px] md:rounded-[40px] shadow-2xl w-full max-w-md">
+            <div className="bg-white/20 relative mt-6 md:mt-0 backdrop-blur-xl border border-white/30 p-6 md:p-8 rounded-[30px] md:rounded-[40px] shadow-2xl w-full max-w-md">
               <div className="flex justify-between items-center mb-6">
                 <div className="flex gap-1.5">
                   <div className="w-3 h-3 rounded-full bg-red-400"></div>
@@ -164,10 +164,7 @@ export default function HeroSection() {
                   );
                 })}
               </div>
-            </div>
-
-            {/* Vertical Tool Icons */}
-            <div className="flex flex-row lg:flex-col gap-3">
+              <div className="absolute -top-10 right-24 md:top-6 md:-right-6 flex flex-row lg:flex-col gap-3">
               {[FaPenNib, FaPaintBrush, RiPencilFill].map((Icon, idx) => (
                 <div
                   key={idx}
@@ -177,6 +174,10 @@ export default function HeroSection() {
                 </div>
               ))}
             </div>
+            </div>
+
+            {/* Vertical Tool Icons */}
+            
           </div>
 
         </div>

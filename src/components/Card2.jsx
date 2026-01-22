@@ -7,10 +7,10 @@ import phone2c from "../assets/phone2c.png";
 export default function Card2() {
   return (
     <div className="w-full flex justify-center">
-      <section className="bg-[#F1F3F4] w-full p-8 flex justify-center rounded-[143px] shadow-2xl">
+      <section className="bg-[#F1F3F4] w-full p-8 flex justify-center md:rounded-[143px] rounded-[20px] shadow-2xl">
         {/* Container for the card */}
         <div className="flex flex-col items-center  space-y-6">
-          <h1 className="text-[#4C4480] text-[42.2px] font-medium tracking-widest">
+          <h1 className="text-[#4C4480] md:text-[42.2px] text-[24px] font-medium tracking-widest">
             Link App
           </h1>
 

@@ -50,16 +50,16 @@ export default function OurSeoProcess() {
   ];
 
   return (
-    <section className="bg-white py-24 px-6 font-serif">
-      <div className="max-w-7xl mx-auto px-4 md:px-12">
+    <section className="bg-white md:py-24 py-16s md:px-6 px-2 font-serif">
+      <div className="max-w-7xl mx-auto  md:px-12">
         {/* Header Section */}
-        <div className="text-center mb-20 space-y-4">
+        <div className="text-center md:mb-20 mb-10 space-y-4">
            <motion.h2
                                 initial={{ y: 40, opacity: 0 }}
                                 whileInView={{ y: 0, opacity: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6 }}
-                                className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text"
+                                className="text-4xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text"
                                 style={{
                                   textShadow: `0 0 38px rgba(0, 206, 209, 0.45), 0 0 20px rgba(0, 206, 209, 0.25)`,
                                 }}
@@ -73,13 +73,13 @@ export default function OurSeoProcess() {
         </div>
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 md:gap-8 gap-2">
           {steps.map((step, index) => (
             <motion.div
               key={index}
               initial="initial"
               whileHover="hover"
-              className="relative cursor-default p-10 bg-gray-50/50 rounded-[40px] flex flex-col items-center text-center overflow-hidden border border-gray-100"
+              className="relative cursor-default md:p-10 px-3 py-6 bg-gray-50/50 md:rounded-[40px] rounded-xl flex flex-col items-center text-center overflow-hidden border border-gray-100"
             >
               {/* Animation Layer: Expands from top-right corner */}
               <motion.div
@@ -107,7 +107,7 @@ export default function OurSeoProcess() {
                     initial: { color: "#1A2B4E", borderColor: "#1A2B4E" },
                     hover: { color: "#FFFFFF", borderColor: "#FFFFFF" }
                   }}
-                  className="absolute -top-4 -right-2 border rounded-full w-10 h-10 flex items-center justify-center font-bold text-sm transition-colors duration-300"
+                  className="absolute md:-top-4 md:-right-2 top-0 right-0 border rounded-full w-10 h-10 flex items-center justify-center font-bold text-sm transition-colors duration-300"
                 >
                   {step.id}
                 </motion.div>
@@ -118,7 +118,7 @@ export default function OurSeoProcess() {
                     initial: { color: "#FFFFFF", backgroundColor: "#0E9C9D" },
                     hover: { color: "#0FC8CA", backgroundColor: "#FFFFFF" }
                   }}
-                  className="w-20 h-20 rounded-2xl flex items-center justify-center mb-8 shadow-sm"
+                  className="md:w-20 md:h-20 w-16 h-16 rounded-2xl flex items-center justify-center md:mb-8 mb-3 shadow-sm"
                 >
                   {step.icon}
                 </motion.div>
@@ -129,7 +129,7 @@ export default function OurSeoProcess() {
                     initial: { color: "#1A2B4E" },
                     hover: { color: "#FFFFFF" }
                   }}
-                  className="text-2xl font-bold mb-4 transition-colors duration-300"
+                  className="md:text-2xl text-xl font-bold md:mb-4 transition-colors duration-300"
                 >
                   {step.title}
                 </motion.h3>
@@ -140,7 +140,7 @@ export default function OurSeoProcess() {
                     initial: { color: "#6B7280" }, 
                     hover: { color: "rgba(255, 255, 255, 0.9)" } 
                   }}
-                  className="text-[15px] leading-relaxed font-medium px-2 transition-colors duration-300"
+                  className="text-[15px] leading-relaxed font-medium md:spx-2 transition-colors duration-300"
                 >
                   {step.desc}
                 </motion.p>

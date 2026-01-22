@@ -11,7 +11,7 @@ import {
   FaHeadset,
   FaCogs,
 } from "react-icons/fa";
-import grids from "../assets/grids.png"; // Your grid background asset
+import grids from "../assets/grids.png"; 
 
 export default function AutomationServices() {
   const services = [
@@ -112,9 +112,9 @@ export default function AutomationServices() {
       className="relative bg-white flex justify-center object-cover"
       style={{ backgroundImage: `url(${grids})` }}
     >
-      <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] p-10 md:p-20">
+      <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] py-16 px-4 md:p-20">
         {/* Header Section */}
-        <div className="text-center mb-20 space-y-4">
+        <div className="text-center md:mb-20 mb-6 space-y-4">
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -127,8 +127,8 @@ export default function AutomationServices() {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-[#2B2C34] text-4xl md:text-6xl font-serif font-bold"
           >
-            Intelligent Systems & <br />{" "}
-            <span className="text-[#0E9C9D]">Automation</span>
+            Intelligent Systems & 
+            <span className="text-[#0E9C9D]"> Automation</span>
           </motion.h2>
           <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             We design smart solutions that automate repetitive tasks, improve
@@ -137,7 +137,7 @@ export default function AutomationServices() {
         </div>
 
         {/* Service Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 gap-5">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -145,7 +145,7 @@ export default function AutomationServices() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -10 }}
-              className="bg-white p-10 rounded-[40px] shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#0E9C9D] transition-all duration-300 group"
+              className="bg-white md:p-10 px-5 py-6 rounded-[40px] shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#0E9C9D] transition-all duration-300 group"
             >
               {/* Icon */}
               <div className="w-16 h-16 bg-[#F1F3F4] rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#0E9C9D] transition-colors duration-300">
@@ -153,15 +153,15 @@ export default function AutomationServices() {
               </div>
 
               {/* Content */}
-              <h3 className="text-2xl font-bold text-[#2B2C34] mb-4 group-hover:text-[#0E9C9D] transition-colors">
+              <h3 className="md:text-2xl text-xl font-bold text-[#2B2C34] md:mb-4 group-hover:text-[#0E9C9D] transition-colors">
                 {service.title}
               </h3>
-              <p className="text-[#4C448080] mb-6 leading-relaxed">
+              <p className="text-[#4C448080] md:mb-6 leading-relaxed">
                 {service.desc}
               </p>
 
               {/* Feature List */}
-              <ul className="space-y-3 border-t border-gray-100 pt-6">
+              <ul className="md:space-y-3 md:border-t md:border-gray-100 md:pt-6 pt-4">
                 {service.features.map((feature, fIndex) => (
                   <li
                     key={fIndex}

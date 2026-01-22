@@ -44,10 +44,10 @@ export default function MarketingPrices() {
         }
       ];
   return (
-   <section className="bg-[#0E9C9D] py-20 px-6 flex flex-col items-center font-sans">
+   <section className="bg-[#0E9C9D] md:py-20 py-8 px-6 flex flex-col items-center font-sans">
          {/* Header */}
-         <div className="text-center mb-16 text-[#F1F3F4]">
-           <h2 className="text-5xl md:text-6xl font-serif font-bold mb-4">Digital Marketing Packages</h2>
+         <div className="text-center md:mb-16 mb-6 text-[#F1F3F4]">
+           <h2 className="text-5xl md:text-6xl font-serif font-bold md:mb-4">Digital Marketing Packages</h2>
            <p className="text-[24px] text-[#F1F3F480]/50 leading-relaxed">Choose the right marketing package to grow your business online   </p>
          </div>
    
@@ -56,7 +56,7 @@ export default function MarketingPrices() {
            {packages.map((pkg, index) => (
              <div 
                key={index} 
-               className={`relative rounded-[32px] p-8 border border-white/20 flex flex-col items-center text-white transition-all duration-300 hover:scale-[1.02] ${
+               className={`relative rounded-[32px] md:p-8  p-4 border border-white/20 flex flex-col items-center text-white transition-all duration-300 hover:scale-[1.02] ${
                  pkg.isPopular ? 'bg-white/10 backdrop-blur-md py-12 -mt-4 shadow-2xl z-10' : 'bg-transparent'
                }`}
              >
@@ -71,17 +71,17 @@ export default function MarketingPrices() {
                  {pkg.icon}
                </div>
    
-               <h3 className="text-3xl font-bold mb-2">{pkg.name}</h3>
+               <h3 className="text-3xl font-bold md:mb-2">{pkg.name}</h3>
                <div className="flex items-baseline mb-2">
                <span className="text-sm font-medium mr-1 uppercase  text-[#F1F3F480]/50">PKR</span>
                  <span className="text-5xl font-bold">{pkg.price}</span>
                </div>
-               <p className="text-[14px] text-[#F1F3F480]/50  mb-8">{pkg.description}</p>
+               <p className="text-[14px] text-[#F1F3F480]/50 mb-2 md:mb-8">{pkg.description}</p>
    
-               <div className="w-full border-t border-white/20 mb-8"></div>
+               <div className="w-full border-t border-white/20 mb-4 md:mb-8"></div>
    
                {/* Features List */}
-               <ul className="w-full space-y-4 mb-10">
+               <ul className="w-full md: space-y-2 md:space-y-4 md:mb-10 mb-4">
                  {pkg.features.map((feature, i) => (
                    <li key={i} className="flex items-center text-sm gap-3">
                      <FaCheck className="text-[#26D0CE] flex-shrink-0" />

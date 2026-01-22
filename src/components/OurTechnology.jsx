@@ -52,14 +52,14 @@ export default function OurTechnology() {
         </div>
 
         {/* Technology Grid */}
-        <div className='grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-8 relative z-10'>
+        <div className='grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 relative z-10'>
           {technology.map((tech, index) => (
             <div 
               key={index} 
-              className="bg-gray-100 md:p-8 p-4 mb-4 md:mb-0 rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-50 flex flex-col items-center text-center transition-transform hover:scale-105 duration-300"
+              className="bg-gray-100 md:p-8 p-2 mb-4 md:mb-0 rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-50 flex flex-col items-center text-center transition-transform hover:scale-105 duration-300"
             >
               {/* Image Container */}
-              <div className="w-20 h-20 flex items-center justify-center mb-6">
+              <div className="w-20 h-20 flex items-center justify-center md:mb-6">
                 <img 
                   src={tech.img} 
                   alt={tech.name} 

@@ -54,9 +54,9 @@ export default function SeoPackages() {
   ];
 
   return (
-    <section className="bg-[#0E9C9D] py-20 px-6 flex flex-col items-center font-sans">
+    <section className="bg-[#0E9C9D] md:py-20 py-10 md:px-6 px-4 flex flex-col items-center font-sans">
       {/* Header */}
-      <div className="text-center mb-16 text-[#F1F3F4]">
+      <div className="text-center md:mb-16 mb-10 text-[#F1F3F4]">
         <h2 className="text-5xl md:text-6xl font-serif font-bold mb-4">SEO & Content Packages</h2>
         <p className="text-[24px] text-[#F1F3F480]/50 leading-relaxed">Choose the right SEO package improve your search rankings</p>
       </div>
@@ -66,7 +66,7 @@ export default function SeoPackages() {
         {packages.map((pkg, index) => (
           <div 
             key={index} 
-            className={`relative rounded-[32px] p-8 border border-white/20 flex flex-col items-center text-white transition-all duration-300 hover:scale-[1.02] ${
+            className={`relative rounded-[32px] md:p-8 p-4 border border-white/20 flex flex-col items-center text-white transition-all duration-300 hover:scale-[1.02] ${
               pkg.isPopular ? 'bg-white/10 backdrop-blur-md py-12 -mt-4 shadow-2xl z-10' : 'bg-transparent'
             }`}
           >
@@ -86,12 +86,12 @@ export default function SeoPackages() {
             <span className="text-sm font-medium mr-1 uppercase  text-[#F1F3F480]/50">PKR</span>
               <span className="text-5xl font-bold">{pkg.price}</span>
             </div>
-            <p className="text-[14px] text-[#F1F3F480]/50  mb-8">{pkg.description}</p>
+            <p className="text-[14px] text-[#F1F3F480]/50 mb-4 md:mb-8">{pkg.description}</p>
 
             <div className="w-full border-t border-white/20 mb-8"></div>
 
             {/* Features List */}
-            <ul className="w-full space-y-4 mb-10">
+            <ul className="w-full space-y-4 md:mb-10 mb-5">
               {pkg.features.map((feature, i) => (
                 <li key={i} className="flex items-center text-sm gap-3">
                   <FaCheck className="text-[#26D0CE] flex-shrink-0" />
@@ -112,15 +112,15 @@ export default function SeoPackages() {
         ))}
       </div>
 
-      <div className="w-full max-w-7xl pt-10 mt-20 border-t border-white/20"></div >
+      <div className="w-full max-w-7xl md:pt-10 mt-20 border-t border-white/20"></div >
       {/* Content Writing Services */}
-      <div className="w-full max-w-7xl mt-16">
-        <div className="text-center mb-12 text-[#F1F3F4]">
+      <div className="w-full max-w-7xl md:mt-16 mt-6">
+        <div className="text-center md:mb-12 mb-4 text-[#F1F3F4]">
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">Content Writing Services</h2>
           <p className="text-lg opacity-70">Professional content writing for all your marketing needs</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 md:gap-6 gap-2">
           {writingServices.map((service, idx) => {
             const Icon = service.icon;
             return (
@@ -128,7 +128,7 @@ export default function SeoPackages() {
                 key={idx}
                 initial="initial"
                 whileHover="hover"
-                className="relative bg-white rounded-2xl p-8 flex flex-col items-center text-center overflow-hidden group transition-all"
+                className="relative bg-white rounded-2xl md:p-8 p-4 flex flex-col items-center text-center overflow-hidden group transition-all"
               >
                 {/* Middle-to-sides hover effect */}
                 <motion.div
@@ -156,7 +156,7 @@ export default function SeoPackages() {
 
       {/* Footer / Custom Solution */}
      <div className='flex flex-col items-center justify-center'>
-         <div className="mt-20 text-center text-white">
+         <div className="md:mt-20 mt-8 text-center text-white">
         <p className="text-[20px] text-[#F1F3F480]/50 mb-6">Need a custom SEO strategy?Let's create one tailored for your business!</p>
        <div className='flex flex-row items-center justify-center'>
          <button className="flex text-[16px] items-center gap-3 bg-[#4C4480] hover:bg-[#3D366A] text-[#F1F3F4] px-10 py-4 rounded-xl font-semibold shadow-2xl transition-all">

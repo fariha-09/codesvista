@@ -47,9 +47,9 @@ export default function AutomationBannerSection() {
           />
         </div>
 
-        <div className="container mx-auto px-6 md:px-10 relative z-10 flex flex-col lg:flex-row justify-between h-full py-12 lg:py-4 gap-10 lg:gap-0">
+        <div className="container mx-auto px-6 md:px-10 relative z-10 flex flex-col lg:flex-row justify-between h-full py-2 lg:py-4 gap-10 lg:gap-0">
           {/* LEFT COLUMN */}
-          <div className="w-full lg:w-1/2 space-y-6 flex flex-col justify-center">
+          <div className="w-full lg:w-1/2 space-y-2 md:space-y-4 flex flex-col justify-center">
             <div className="inline-flex self-start text-white hover:text-black items-center gap-2 bg-white/20 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/20 hover:bg-[#F1F3F4] transition-all cursor-default w-fit">
               <LuCpu size={20} className="text-[#0e9c9d]" />
               <span className="font-medium text-[14px] whitespace-nowrap">
@@ -58,7 +58,7 @@ export default function AutomationBannerSection() {
             </div>
 
             {/* min-h adjusted for mobile text wrapping */}
-            <h1 className="text-4xl md:text-6xl font-serif font-bold text-white leading-tight min-h-[100px] md:min-h-[120px]">
+            <h1 className="text-4xl md:text-6xl font-serif font-bold text-white leading-tight min-h-[90px] md:min-h-[120px]">
               <Typewriter
                 options={{
                   strings: [
@@ -82,7 +82,7 @@ export default function AutomationBannerSection() {
               business growth.
             </p>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 pt-2 md:pt-0">
               {[
                 {
                   label: "Business Automation",
@@ -116,19 +116,18 @@ export default function AutomationBannerSection() {
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#00B8B8] text-[14px] text-[#2B2C34] border border-white/20 px-8 py-3.5 rounded-xl font-bold shadow-lg transition-transform active:scale-95 w-full sm:w-auto">
+            <div className="flex gap-2 md:gap-4 pt-4">
+              <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#00B8B8] text-[14px] text-[#2B2C34] px-2 md:px-8 py-3.5 rounded-xl font-bold shadow-lg transition-transform active:scale-95 sm:w-auto">
                 <PiClipboardTextBold size={20} /> Request AI Audit
               </button>
-              <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#4C4480] hover:text-white text-[14px] text-[#4C4480] px-8 py-3.5 rounded-xl font-bold shadow-lg transition-all duration-300 active:scale-95 w-full sm:w-auto">
-                <FaRobot /> View Solutions
+<button className="flex items-center justify-center gap-2 bg-white hover:bg-[#4C4480] hover:text-white text-[14px] text-[#4C4480] px-2 md:px-8 py-3.5 rounded-xl font-bold shadow-lg transition-all duration-300 active:scale-95 sm:w-auto">                <FaRobot /> View Solutions
               </button>
             </div>
           </div>
 
           {/* RIGHT COLUMN */}
           <div className="w-full lg:w-1/2 flex flex-col md:flex-row items-center justify-center lg:justify-end gap-6">
-            <div className="bg-white/20 backdrop-blur-xl border border-white/30 p-6 md:p-8 rounded-[30px] md:rounded-[40px] shadow-2xl w-full max-w-md">
+            <div className="bg-white/20 relative mt-6 md:mt-0  backdrop-blur-xl border border-white/30 p-6 md:p-8 rounded-[30px] md:rounded-[40px] shadow-2xl w-full max-w-md">
               <div className="flex justify-between items-center mb-6">
                 <div className="flex gap-1.5">
                   <div className="w-3 h-3 rounded-full bg-red-400"></div>
@@ -165,21 +164,22 @@ export default function AutomationBannerSection() {
                   );
                 })}
               </div>
-            </div>
-
-            {/* Side Icons - Hidden on small mobile, visible on tablet and desktop */}
-            <div className="flex flex-row lg:flex-col gap-3">
+               <div className="absolute -top-10 right-24 md:top-6 md:-right-6 flex flex-row lg:flex-col gap-3">
               {[IoHardwareChipSharp, FaMicrochip, FaShieldAlt].map(
                 (Icon, idx) => (
                   <div
                     key={idx}
-                    className="w-10 h-10 md:w-12 md:h-12 bg-white/20 backdrop-blur-md border border-white/40 rounded-xl flex items-center justify-center text-white shadow-lg hover:bg-white hover:text-[#0FC8CA] transition-all cursor-pointer active:scale-90"
+                    className="w-10 h-10 md:w-12 md:h-12 bg-white/20 backdrop-blur-md border animate-bounce border-white/40 rounded-xl flex items-center justify-center text-white shadow-lg hover:bg-white hover:text-[#0FC8CA] transition-all cursor-pointer active:scale-90"
                   >
                     <Icon size={18} />
                   </div>
                 ),
               )}
             </div>
+            </div>
+
+            {/* Side Icons - Hidden on small mobile, visible on tablet and desktop */}
+           
           </div>
         </div>
       </div>

@@ -64,9 +64,9 @@ export default function GraphicDesignPackages() {
     },
   ];
   return (
-    <section className="bg-[#0E9C9D] py-20 px-6 flex flex-col items-center font-sans">
+    <section className="bg-[#0E9C9D] md:py-20 py-10 px-6 flex flex-col items-center font-sans">
       {/* Header */}
-      <div className="text-center mb-16 text-[#F1F3F4]">
+      <div className="text-center md:mb-16 mb-10 text-[#F1F3F4]">
         <h2 className="text-5xl md:text-6xl font-serif font-bold mb-4">
           Graphic Design Packages
         </h2>
@@ -80,7 +80,7 @@ export default function GraphicDesignPackages() {
         {packages.map((pkg, index) => (
           <div
             key={index}
-            className={`relative rounded-[32px] p-8 border border-white/20 flex flex-col items-center text-white transition-all duration-300 hover:scale-[1.02] ${
+            className={`relative rounded-[32px] md:p-8 p-4 border border-white/20 flex flex-col items-center text-white transition-all duration-300 hover:scale-[1.02] ${
               pkg.isPopular
                 ? "bg-white/10 backdrop-blur-md py-12 -mt-4 shadow-2xl z-10"
                 : "bg-transparent"
@@ -104,14 +104,14 @@ export default function GraphicDesignPackages() {
               </span>
               <span className="text-5xl font-bold">{pkg.price}</span>
             </div>
-            <p className="text-[14px] text-[#F1F3F480]/50  mb-8">
+            <p className="text-[14px] text-[#F1F3F480]/50  md:mb-8 mb-4">
               {pkg.description}
             </p>
 
             <div className="w-full border-t border-white/20 mb-8"></div>
 
             {/* Features List */}
-            <ul className="w-full space-y-4 mb-10">
+            <ul className="w-full space-y-4 md:mb-10 mb-4">
               {pkg.features.map((feature, i) => (
                 <li key={i} className="flex items-center text-sm gap-3">
                   <FaCheck className="text-[#26D0CE] flex-shrink-0" />
@@ -135,14 +135,14 @@ export default function GraphicDesignPackages() {
       </div>
 
       {/* Footer / Custom Solution */}
-      <div className="relative z-10 mt-24 w-full max-w-4xl">
-        <div className="bg-black/10 backdrop-blur-md rounded-[32px] p-10 border border-white/5 text-center">
+      <div className="relative z-10 md:mt-24 mt-8 w-full max-w-4xl">
+        <div className="bg-black/10 backdrop-blur-md rounded-[32px] md:p-10 px-4 py-7 border border-white/5 text-center">
           <p className="text-[18px] md:text-[22px] text-white/80 mb-8 max-w-xl mx-auto font-medium leading-relaxed">
             Need individual design items? We offer custom pricing for any design
             project!
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="flex text-[16px] items-center gap-3 bg-[#4C4480] hover:bg-[#3D366A] text-[#F1F3F4] px-12 py-5 rounded-2xl font-bold shadow-2xl transition-all hover:scale-105 active:scale-95">
+          <div className="flex flex-row sm:flex-row items-center justify-center md:gap-4 gap-2">
+            <button className="flex md:text-[16px] items-center gap-3 bg-[#4C4480] hover:bg-[#3D366A] text-[#F1F3F4] md:px-12 md:py-5 p-3 rounded-2xl font-bold shadow-2xl transition-all hover:scale-105 active:scale-95">
               <FaComments size={20} />
               Discuss Custom Project
             </button>

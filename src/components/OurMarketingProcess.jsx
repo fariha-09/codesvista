@@ -54,10 +54,10 @@ export default function OurMarketingProcess() {
   ];
 
   return (
-    <section className="bg-[#2B2C34] py-20 px-6">
-      <div className="max-w-6xl mx-auto px-4 md:px-12">
+    <section className="bg-[#2B2C34] md:py-20 py-10 md:px-6 px-2">
+      <div className="max-w-6xl mx-auto md:px-12">
         
-        <div className="text-center mb-16 space-y-4">
+        <div className="text-center md:mb-16 mb-10 space-y-4">
           <h2 className="text-[#F1F3F4] text-4xl md:text-6xl font-serif font-bold">
             Our Marketing Process
           </h2>
@@ -66,7 +66,7 @@ export default function OurMarketingProcess() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-10">
           {steps.map((step, index) => {
             // FIX: Identify the component here, inside the map
             const StepIcon = step.icon;
@@ -76,7 +76,7 @@ export default function OurMarketingProcess() {
                    key={index}
                    initial="initial"
                    whileHover="hover"
-                   className="relative cursor-default p-8 bg-white/30 rounded-[40px] flex flex-col items-center text-center overflow-hidden"
+                   className="relative cursor-default md:p-8 py-4 px-2 bg-white/30 md:rounded-[40px] rounded-xl flex flex-col items-center text-center overflow-hidden"
                  >
                    <motion.div
                      variants={{
@@ -92,7 +92,7 @@ export default function OurMarketingProcess() {
                      }}
                      transition={{ duration: 0.8, ease: "easeOut" }}
                      style={{ originX: 1, originY: 0 }} 
-                     className="absolute inset-0 z-0 rounded-[40px]"
+                     className="absolute inset-0 z-0 md:rounded-[40px] rounded-xl"
                    />
              
                    <div className="relative z-10 flex flex-col items-center w-full">
@@ -102,7 +102,7 @@ export default function OurMarketingProcess() {
                          initial: { color: "#FFFFFF", borderColor: "#0E9C9D" },
                          hover: { color: "#0E9C9D", borderColor: "#0E9C9D" }
                        }}
-                       className="absolute -top-3 -right-2 border rounded-full w-9 h-9 flex items-center justify-center font-bold text-xs transition-colors duration-300"
+                       className="absolute md:-top-3 tp-0 md:-right-2 right-0 border rounded-full w-9 h-9 flex items-center justify-center font-bold text-xs transition-colors duration-300"
                      >
                        {step.id}
                      </motion.div>
@@ -112,7 +112,7 @@ export default function OurMarketingProcess() {
                          initial: { color: "#0E9C9D", backgroundColor: "#F1F3F4" },
                          hover: { color: "#F1F3F4", backgroundColor: "#0E9C9D" }
                        }}
-                      className=" w-20 h-20 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                      className=" md:w-20 md:h-20 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
                        {StepIcon({ className: "w-10 h-10" })  }
                      </motion.div>
              
@@ -121,7 +121,7 @@ export default function OurMarketingProcess() {
                          initial: { color: "#FFFFFF" },
                          hover: { color: "#0E9C9D" }
                        }}
-                       className="text-2xl font-bold mb-3 transition-colors duration-300"
+                       className="md:text-2xl text-xl font-bold mb-3 transition-colors duration-300"
                      >
                        {step.title}
                      </motion.h3>

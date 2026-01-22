@@ -49,7 +49,7 @@ export default function OurDesignServices() {
            className="relative bg-white flex justify-center object-cover"
            style={{ backgroundImage: `url(${grids})` }}
            >
-           <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] p-4 md:p-20">
+           <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] p-4 pt-16 md:p-20">
               
         
         {/* Header Section */}

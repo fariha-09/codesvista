@@ -103,7 +103,7 @@ export default function Services() {
       className="relative bg-white flex justify-center object-cover"
       style={{ backgroundImage: `url(${grids})` }}
     >
-      <div className="relative w-full md:max-w-[1400px] overflow-hidden bg-white/[98%] px-4 py-4 md:p-20">
+      <div className="relative w-full md:max-w-[1400px] overflow-hidden bg-white/[98%] px-4 pt-10 md:p-20">
         <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 my-6">
           <motion.h2
             initial={{ y: 40, opacity: 0 }}
@@ -223,7 +223,7 @@ export default function Services() {
           ))}
         </div>
 
-        <div className="mt-16 flex justify-center relative z-10">
+        <div className="md:mt-16 mt-8 flex justify-center relative z-10">
           <Link to="/services"
             className="px-8 py-4 rounded-full bg-[#AC1B9E] border-2 font-bold text-white text-lg transition-all duration-300"
           >

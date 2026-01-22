@@ -47,7 +47,7 @@ export default function ExploreByCategory() {
       }}
     >
       {/* 1. Container Card with Grid Overlay */}
-      <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] p-4 md:p-20">
+      <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] p-4 pt-10 md:p-20">
         {/* 2. Header Content */}
         <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 md:mb-16 mb-4 mt-4">
           <motion.h2
@@ -94,7 +94,7 @@ export default function ExploreByCategory() {
                 {/* 2. Content Wrapper (Keeps text/icons on top) */}
                 <div className="relative z-10 flex flex-col items-center">
                   <div
-                    className={`${cat.bgColor} md:w-16 md:h-16 w-12 h-12 rounded-[8px] flex items-center justify-center md:mb-6 mb-2 shadow-lg shadow-black/10 transition-transform group-hover:scale-110`}
+                    className={`${cat.bgColor} md:w-16 md:h-16 w-12 h-12 rounded-[8px] flex items-center justify-center md:mb-6 mb-2 shadow-lg shadow-black/10 transition-transform `}
                   >
                     <Icon className="text-[#FFFFFF] md:text-[30px] text-[20px]" />
                   </div>

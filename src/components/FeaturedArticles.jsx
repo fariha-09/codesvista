@@ -33,6 +33,15 @@ export default function FeaturedArticles() {
       date: "Dec 8, 2024",
       image: blogreact,
     },
+    {
+      tag: "UI/UX",
+      tagStyles: "bg-[#00E9FF] rounded-[8px] text-[#0E7490]",
+      title: "Designing for Mobile-First: A Complete Guide",
+      author: "Ali Hassan",
+      date: "Dec 10, 2024",
+      image: blogmobile,
+    },
+  
   ];
 
   return (
@@ -42,7 +51,7 @@ export default function FeaturedArticles() {
         backgroundImage: `url(${grids})`,
       }}
     >
-      <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] py-4 md:py-20">
+      <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] py-4 pt-16 md:py-20">
         <div className="bg-[#F1F3F4] md:py-20 py-6 px-6 w-full">
           {/* Header */}
           <div className="text-center md:mb-16 mb-4">
@@ -68,18 +77,18 @@ export default function FeaturedArticles() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             <div className="lg:col-span-7 bg-white rounded-[32px] overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
-              <div className="relative h-64 md:h-80 overflow-hidden">
+              <div className="relative h-40 md:h-80 overflow-hidden">
                 <img
                   src={blogcode}
                   alt="Featured"
-                  className="w-full h-full object-cover"
+                  className="md:w-full md:h-full object-cover"
                 />
                 <span className="absolute top-6 left-6 bg-[#F97316] text-white text-[10px] font-bold px-4 py-1.5 rounded-lg uppercase tracking-widest">
                   Featured
                 </span>
               </div>
 
-              <div className="p-8 flex flex-col flex-grow">
+              <div className="md:p-8 p-4 flex flex-col flex-grow">
                 <div className="flex items-center gap-4 mb-4">
                   <span className="text-[#F97316] bg-[#FCEEEB] runded-[4px] px-[10px] py-[4px] text-[10px] font-bold uppercase tracking-widest">
                     Tech Trends
@@ -95,11 +104,10 @@ export default function FeaturedArticles() {
                 <p className="text-[#2B2C3499]/60 text-[16px] leading-relaxed mb-8">
                   Artificial Intelligence is transforming the way we build
                   websites. From automated code generation to intelligent user
-                  interfaces, discover the cutting-edge AI tools and techniques
-                  that are reshaping web development.
+                  interfaces, discover the....
                 </p>
 
-               <div className="mt-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+               <div className="mt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
   <div className="flex items-center gap-3">
     <div className="w-10 h-10 rounded-full bg-gray-200 overflow-hidden shrink-0">
       <img

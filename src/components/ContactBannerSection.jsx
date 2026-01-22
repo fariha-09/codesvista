@@ -151,7 +151,7 @@ export default function ContactBannerSection() {
           {/* RIGHT COLUMN */}
           <div className="w-full lg:w-1/2 flex flex-col md:flex-row items-center justify-center lg:justify-end gap-6">
             {/* Glassmorphism Contact Card */}
-            <div className="bg-white/20 backdrop-blur-xl border border-white/30 p-6 sm:p-8 rounded-[30px] sm:rounded-[40px] shadow-2xl w-full max-w-md">
+            <div className="bg-white/20 backdrop-blur-xl relative mt-6 md:mt-0 border border-white/30 p-6 sm:p-8 rounded-[30px] sm:rounded-[40px] shadow-2xl w-full max-w-md">
               <div className="flex justify-between items-center mb-6">
                 <div className="flex gap-1.5">
                   <div className="w-3 h-3 rounded-full bg-red-400"></div>
@@ -188,10 +188,7 @@ export default function ContactBannerSection() {
                   );
                 })}
               </div>
-            </div>
-
-            {/* Utility Floating Icons */}
-            <div className="flex lg:flex-col flex-row gap-3">
+              <div className="absolute -top-10 right-24 md:top-6 md:-right-6 flex flex-row lg:flex-col gap-3">
               {[
                 MdOutlineSupportAgent,
                 BsClockHistory,
@@ -212,7 +209,11 @@ export default function ContactBannerSection() {
                 </div>
               ))}
             </div>
-          </div>
+          
+            </div>
+
+            {/* Utility Floating Icons */}
+           </div> 
         </div>
       </div>
     </section>

@@ -45,7 +45,7 @@ export default function DesignTools() {
   );
 
   return (
-    <section className="bg-white md:py-24 py-10 px-6 md:px-20 flex justify-center">
+    <section className="bg-white md:py-24 py-16 px-6 md:px-20 flex justify-center">
       <div className="w-full max-w-[1400px]">
         {/* Main Title Section */}
         <div className="text-center md:mb-20 mb-4 space-y-4">
@@ -81,7 +81,7 @@ export default function DesignTools() {
                 ensuring high-quality output and industry-standard file formats.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
               {adobeSuite.map((tool, idx) => (
                 <ToolItem key={idx} {...tool} />
               ))}
@@ -99,7 +99,7 @@ export default function DesignTools() {
                 streamline our workflow and deliver exceptional results.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-2s sm:grid-cols-2 gap-4">
               {additionalTools.map((tool, idx) => (
                 <ToolItem key={idx} {...tool} />
               ))}

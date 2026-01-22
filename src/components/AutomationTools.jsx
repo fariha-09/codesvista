@@ -42,10 +42,10 @@ export default function AutomationTools() {
   );
 
   return (
-    <section className="bg-white py-24 px-6 md:px-20 flex justify-center">
+    <section className="bg-white md:py-24 py-10 px-6 md:px-20 flex justify-center">
       <div className="w-full max-w-[1400px]">
         {/* Main Title Section */}
-        <div className="text-center mb-20 space-y-4">
+        <div className="text-center md:mb-20 mb-6 space-y-4">
           <motion.h2
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -80,7 +80,7 @@ export default function AutomationTools() {
                 business datasets.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
               {aiFrameworks.map((tool, idx) => (
                 <ToolItem key={idx} {...tool} />
               ))}
@@ -99,7 +99,7 @@ export default function AutomationTools() {
                 deployment.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
               {dataCloudTools.map((tool, idx) => (
                 <ToolItem key={idx} {...tool} />
               ))}

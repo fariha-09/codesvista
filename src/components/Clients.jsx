@@ -3,6 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import { FaStar } from "react-icons/fa";
 import 'swiper/css';
+import { motion } from 'framer-motion';
+import grids from '../assets/grids.png';
 
 export default function Clients() {
   const reviews = [
@@ -29,8 +31,30 @@ export default function Clients() {
   ];
 
   return (
-    <section className="mt-18 w-full overflow-hidden py-10">
-      <div className="max-w-[1440px] mx-auto px-4">
+    <section className="relative bg-white flex justify-center" style={{ backgroundImage: `url(${grids})`, backgroundSize: 'cover' }}>
+        <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] p-10 md:p-20">
+          
+          {/* Header Content */}
+          <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-16">
+           <motion.h2
+                initial={{ y: 40, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
+                style={{
+                  textShadow: `
+                              0 0 38px rgba(0, 206, 209, 0.45),
+                              0 0 20px rgba(0, 206, 209, 0.25)
+                            `,
+                }}
+              >
+                What Our Clients Say
+              </motion.h2>
+            <p className="text-gray-600 text-[16px] md:text-xl max-w-3xl mx-auto leading-relaxed">
+              Don't just take our word for it. Here's what our clients have to say about our<br className="hidden md:block"/> work
+            </p>
+          </div>
         <Swiper
           modules={[Autoplay]}
           spaceBetween={40} 

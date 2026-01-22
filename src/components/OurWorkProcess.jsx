@@ -45,10 +45,10 @@ export default function OurWorkProcess() {
   ];
 
   return (
-    <section className="bg-[#0E9C9D] py-20 px-3 md:px-6 font-serif">
+    <section className="bg-[#0E9C9D] md:py-20 py-10 px-3 md:px-6 font-serif">
       <div className="md:max-w-6xl mx-auto md:px-12">
         {/* Header Section */}
-        <div className="text-center mb-16 space-y-4">
+        <div className="text-center md:mb-16 mb-4 space-y-4">
           <h2 className="text-[#F1F3F4] text-4xl md:text-6xl font-serif font-bold">
             Our Work Process
           </h2>

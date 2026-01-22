@@ -44,10 +44,10 @@ export default function SoftwareBannerSection() {
         </div>
 
         {/* CONTENT CONTAINER */}
-        <div className="container mx-auto px-6 md:px-10 relative z-10 flex flex-col lg:flex-row justify-between h-full py-12 lg:py-4 gap-12 lg:gap-0">
+        <div className="container mx-auto px-6 md:px-10 relative z-10 flex flex-col lg:flex-row justify-between h-full py-2 lg:py-4 gap-12 lg:gap-0">
           
           {/* LEFT COLUMN */}
-          <div className="w-full lg:w-1/2 space-y-6 lg:space-y-4 flex flex-col justify-center">
+          <div className="w-full lg:w-1/2 space-y-2 lg:space-y-4 flex flex-col justify-center">
             <div className="inline-flex self-start items-center gap-2 text-white hover:text-black bg-white/20 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/20 hover:bg-[#F1F3F4] transition-all cursor-default">
               <LuSquareCode size={20} className="text-[#0e9c9d]" />
               <span className="font-medium text-[14px] whitespace-nowrap">
@@ -56,7 +56,7 @@ export default function SoftwareBannerSection() {
             </div>
 
             {/* Heading with fixed height to prevent layout shift during typing */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.1] min-h-[120px] md:min-h-auto">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.1] min-h-[90px] md:min-h-auto">
               <Typewriter
                 options={{
                   strings: [
@@ -79,7 +79,7 @@ export default function SoftwareBannerSection() {
             </p>
 
             {/* Feature Tags */}
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 pt-2 md:pt-0">
               {[
                 { label: "Web development", icon: FaCode, color: "#3B82F6" },
                 { label: "Mobile App Development", icon: FaMobileScreen, color: "#FF6800" },
@@ -114,11 +114,11 @@ export default function SoftwareBannerSection() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#00B8B8] text-[14px] text-[#2B2C34] px-8 py-3.5 rounded-xl font-bold shadow-lg transition-transform active:scale-95 w-full sm:w-auto">
-                <PiClipboardTextBold size={20} /> Get Free Quote
-              </button>
-              <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#4C4480] hover:text-white text-[14px] text-[#4C4480] px-8 py-3.5 rounded-xl font-bold shadow-lg transition-all duration-300 active:scale-95 w-full sm:w-auto">
+            <div className="flex gap-2 md:gap-4 pt-4">
+                          <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#00B8B8] text-[14px] text-[#2B2C34] px-2 md:px-8 py-3.5 rounded-xl font-bold shadow-lg transition-transform active:scale-95 sm:w-auto">
+                            <PiClipboardTextBold size={20} /> Get Free Quote
+                          </button>
+              <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#4C4480] hover:text-white text-[14px] text-[#4C4480] px-2 md:px-8 py-3.5 rounded-xl font-bold shadow-lg transition-all duration-300 active:scale-95 sm:w-auto">
                 <MdEngineering /> Explore Services
               </button>
             </div>
@@ -128,7 +128,7 @@ export default function SoftwareBannerSection() {
           <div className="w-full lg:w-1/2 flex flex-col md:flex-row lg:flex-row items-center justify-center lg:justify-end gap-6">
             
             {/* Stats Card */}
-            <div className="bg-white/20 backdrop-blur-xl border border-white/30 p-6 md:p-8 rounded-[30px] md:rounded-[40px] shadow-2xl w-full max-w-md">
+            <div className="bg-white/20 relative mt-6 md:mt-0 backdrop-blur-xl border border-white/30 p-6 md:p-8 rounded-[30px] md:rounded-[40px] shadow-2xl w-full max-w-md">
               <div className="flex justify-between items-center mb-6">
                 <div className="flex gap-1.5">
                   <div className="w-3 h-3 rounded-full bg-red-400"></div>
@@ -163,10 +163,7 @@ export default function SoftwareBannerSection() {
                   );
                 })}
               </div>
-            </div>
-
-            {/* Vertical Tool Icons */}
-      <div className="flex flex-row lg:flex-col gap-3">
+              <div className="absolute -top-10 right-24 md:top-6 md:-right-6 flex flex-row lg:flex-col gap-3">
               {[
                 { icon: () => <path d="M2 16C1.45 16 0.979167 15.8042 0.5875 15.4125C0.195833 15.0208 0 14.55 0 14V2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0H18C18.55 0 19.0208 0.195833 19.4125 0.5875C19.8042 0.979167 20 1.45 20 2V14C20 14.55 19.8042 15.0208 19.4125 15.4125C19.0208 15.8042 18.55 16 18 16H2ZM2 14H18V4H2V14ZM8.95 12.55L5.4 9L6.85 7.55L8.95 9.65L13.15 5.45L14.6 6.9L8.95 12.55Z" /> },
                 { icon: () => <path d="M7 16H12.5C12.7833 16 13.0458 15.9292 13.2875 15.7875C13.5292 15.6458 13.7 15.45 13.8 15.2L15.9 10.3C15.9333 10.2167 15.9583 10.1333 15.975 10.05C15.9917 9.96667 16 9.88333 16 9.8V9C16 8.71667 15.9042 8.47917 15.7125 8.2875C15.5208 8.09583 15.2833 8 15 8H10.4L11 4.6C11.0333 4.43333 11.025 4.275 10.975 4.125C10.925 3.975 10.8417 3.84167 10.725 3.725L10 3L5.4 8C5.26667 8.13333 5.16667 8.28333 5.1 8.45C5.03333 8.61667 5 8.8 5 9V14C5 14.55 5.19583 15.0208 5.5875 15.4125C5.97917 15.8042 6.45 16 7 16ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20ZM10 18C12.2333 18 14.125 17.225 15.675 15.675C17.225 14.125 18 12.2333 18 10C18 7.76667 17.225 5.875 15.675 4.325C14.125 2.775 12.2333 2 10 2C7.76667 2 5.875 2.775 4.325 4.325C2.775 5.875 2 7.76667 2 10C2 12.2333 2.775 14.125 4.325 15.675C5.875 17.225 7.76667 18 10 18Z" /> },
@@ -174,7 +171,7 @@ export default function SoftwareBannerSection() {
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="w-10 h-10 md:w-12 md:h-12 bg-white/20 backdrop-blur-md border border-white/40 rounded-xl flex items-center justify-center text-white shadow-lg hover:bg-white hover:text-[#0FC8CA] transition-all cursor-pointer active:scale-90"
+                  className="w-10 h-10 md:w-12 md:h-12 bg-white/20 backdrop-blur-md animate-bounce border border-white/40 rounded-xl flex items-center justify-center text-white shadow-lg hover:bg-white hover:text-[#0FC8CA] transition-all cursor-pointer active:scale-90"
                 >
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
                     <item.icon />
@@ -182,6 +179,10 @@ export default function SoftwareBannerSection() {
                 </div>
               ))}
             </div>
+            </div>
+
+            {/* Vertical Tool Icons */}
+      
           </div>
         </div>
       </div>

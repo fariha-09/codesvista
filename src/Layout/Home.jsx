@@ -1,3 +1,4 @@
+import Clients from "../components/Clients"
 import ClosingSection from "../components/ClosingSection"
 import FAQS from "../components/FAQS"
 import Footer from "../components/Footer"
@@ -22,8 +23,9 @@ export default function Home() {
      <WhyChooseUs/>
      <OurTechnology/>
      <OurWorkProcess/>
-     <OurDesignPortfolio/>
-     <FAQS/>
+     <Clients/>
+     {/* <OurDesignPortfolio/>
+     <FAQS/> */}
      <ClosingSection/>
      <Footer/>
     </>

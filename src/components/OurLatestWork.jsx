@@ -99,7 +99,7 @@ export default function OurLatestWork() {
       }}
     >
       {/* 1. Container Card with Grid Overlay */}
-      <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] p-10 md:p-20">
+      <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] p-4 pt-16 md:p-20">
         {/* Header Section */}
         <div className="text-center mb-12">
            <motion.h2
@@ -107,7 +107,7 @@ export default function OurLatestWork() {
                       whileInView={{ y: 0, opacity: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.6 }}
-                      className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text"
+                      className="text-4xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text"
                       style={{
                         textShadow: `
                                       0 0 38px rgba(0, 206, 209, 0.45),
@@ -126,7 +126,7 @@ export default function OurLatestWork() {
         </div>
 
         {/* Filter Bar - Exactly as in Figma Screenshot */}
-        <div className="md:flex md:flex-wrap grid grid-cols-2 justify-center items-center gap-2 md:gap-4 bg-white/80 backdrop-blur-md p-4 rounded-2xl shadow-sm border border-gray-100 mb-16 max-w-fit mx-auto">
+       <div className="flex flex-wrap justify-center items-center gap-4 bg-white/80 backdrop-blur-md p-4 rounded-2xl shadow-sm border border-gray-100 mb-16 max-w-fit mx-auto">
           {categories.map((cat) => {
             const IconComponent = cat.icon;
             const isActive = activeTab === cat.name;
@@ -134,14 +134,14 @@ export default function OurLatestWork() {
               <button
                 key={cat.name}
                 onClick={() => setActiveTab(cat.name)}
-                className={`flex items-center md:gap-2 gap-1  md:px-5 px-1 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 ${
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 ${
                   isActive
                     ? "bg-[#6D28D9] text-white shadow-lg shadow-indigo-200"
                     : "text-gray-600 hover:bg-gray-50 border border-transparent hover:border-gray-200"
                 }`}
               >
                 <IconComponent
-                  className={`md:text-lg text-sm transition-colors duration-300 ${
+                  className={`text-lg transition-colors duration-300 ${
                     isActive ? "text-[#FFFFFF]" : "text-[#2B2C34]"
                   }`}
                 />
@@ -204,8 +204,8 @@ export default function OurLatestWork() {
           ))}
         </div>
 
-      <div className="flex justify-center mt-16">
-  <button className="flex items-center gap-2 bg-[#F97316] text-[#FFFFFF] text-[16px] font-semibold py-3 px-8 rounded-[8px] transition-all duration-300 hover:bg-[#ea580c] hover:shadow-lg hover:shadow-orange-100 active:scale-95">
+      <div className="flex justify-center md:mt-16 mt-8">
+  <button className="flex items-center gap-2 bg-[#AC1B9E] text-[#FFFFFF] text-[16px] font-semibold py-3 px-8 rounded-[8px] transition-all duration-300 hover:bg-[#8d1281] hover:shadow-lg hover:shadow-orange-100 active:scale-95">
     <FaPlus className="text-sm" />
     Load More Projects
   </button>

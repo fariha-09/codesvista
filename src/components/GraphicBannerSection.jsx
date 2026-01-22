@@ -60,7 +60,7 @@ export default function GraphicBannerSection() {
               <span className="font-medium text-[14px]">Graphic Design</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.1] min-h-[120px] md:min-h-auto">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.1] min-h-[90px] md:min-h-auto">
               <Typewriter
                 options={{
                   strings: [
@@ -133,7 +133,7 @@ export default function GraphicBannerSection() {
           <div className="w-full lg:w-1/2 flex flex-col md:flex-row lg:flex-row items-center justify-center lg:justify-end gap-6">
             
             {/* Portfolio Stats Card */}
-            <div className="bg-white/20 backdrop-blur-xl border border-white/30 p-6 md:p-8 rounded-[30px] md:rounded-[40px] shadow-2xl w-full max-w-md">
+            <div className="bg-white/20 relative mt-6 md:mt-0 backdrop-blur-xl border border-white/30 p-6 md:p-8 rounded-[30px] md:rounded-[40px] shadow-2xl w-full max-w-md">
               <div className="flex justify-between items-center mb-6">
                 <div className="flex gap-1.5">
                   <div className="w-3 h-3 rounded-full bg-red-400"></div>
@@ -168,10 +168,7 @@ export default function GraphicBannerSection() {
                   );
                 })}
               </div>
-            </div>
-
-            {/* Vertical Tool Icons - Becomes horizontal on small screens */}
-            <div className="flex flex-row lg:flex-col gap-3">
+               <div className="absolute -top-10 right-24 md:top-6 md:-right-6 flex flex-row lg:flex-col gap-3">
               {[FaPenNib, FaPaintBrush, RiPencilFill].map((Icon, idx) => (
                 <div
                   key={idx}
@@ -181,6 +178,10 @@ export default function GraphicBannerSection() {
                 </div>
               ))}
             </div>
+            </div>
+
+            {/* Vertical Tool Icons - Becomes horizontal on small screens */}
+           
           </div>
 
         </div>

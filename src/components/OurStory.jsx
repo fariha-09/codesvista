@@ -53,7 +53,7 @@ export default function OurStory() {
                 Founded in 2019, Astron Hosts began with a simple mission: to make
                 technology accessible and beneficial for businesses of all sizes.
               </p>
-              <p className="max-w-2xl">
+              <p className="md:max-w-2xl md:block hidden">
                 What started as a small team of passionate developers has grown
                 into a comprehensive software house that delivers end-to-end
                 digital solutions. We've helped hundreds of businesses transform

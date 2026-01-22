@@ -97,7 +97,7 @@ export default function AppTechnologies() {
                 performance.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
               {platforms.map((tech, i) => (
                 <TechCard key={i} {...tech} />
               ))}
@@ -116,7 +116,7 @@ export default function AppTechnologies() {
                 integration.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
               {infrastructure.map((tech, i) => (
                 <TechCard key={i} {...tech} />
               ))}

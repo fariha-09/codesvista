@@ -38,16 +38,16 @@ export default function SoftwareDevelopmentFAQs() {
       className="relative bg-white flex justify-center object-cover"
       style={{ backgroundImage: `url(${grids})` }}
     >
-      <div className="relative w-full max-w-[1400px] flex justify-center overflow-hidden bg-white/[98%] p-10 md:px-20">
-        <div className="bg-[#FFFFFF] w-[98%] justify-center py-10">
+      <div className="relative w-full max-w-[1400px] flex justify-center overflow-hidden bg-white/[98%] py-10 md:px-20">
+        <div className="bg-[#FFFFFF] w-[98%] justify-center md:py-10 pt-6">
           {/* Header Content */}
-          <div className="text-center space-y-4 relative z-10 mb-20">
+          <div className="text-center space-y-4 relative z-10 md:mb-20 mb-8">
             <motion.h2
               initial={{ y: 40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
+              className="text-4xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
               style={{
                 textShadow: `
                             0 0 38px rgba(0, 206, 209, 0.45),
@@ -74,7 +74,7 @@ export default function SoftwareDevelopmentFAQs() {
               >
                 <button
                   onClick={() => toggleAccordion(index)}
-                  className="w-full py-8 flex justify-between items-center text-left hover:bg-gray-50/50 transition-all px-4 group"
+                  className="w-full md:py-8 py-4 flex justify-between items-center text-left hover:bg-gray-50/50 transition-all px-4 group"
                 >
                   <span className="text-lg md:text-xl font-medium text-[#4C4480] group-hover:text-[#AC1B9E] transition-colors">
                     {faq.question}
