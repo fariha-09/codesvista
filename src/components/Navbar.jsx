@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import logo from "../assets/logo.png";
 import { Quote, Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -8,6 +8,24 @@ import { HiSpeakerphone } from "react-icons/hi";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  
+  const navRef = useRef(null);
+
+  // CLICK OUTSIDE TO CLOSE
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setIsOpen(false);
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -19,16 +37,17 @@ export default function Navbar() {
 
   const serviceLinks = [
     { name: "Web Development", slug: "/web-development", icon: <FaCode /> },
-    {name: "Digital Marketing",slug: "/digital-marketing",icon: <HiSpeakerphone />},
+    { name: "Digital Marketing", slug: "/digital-marketing", icon: <HiSpeakerphone /> },
     { name: "Graphic Design", slug: "/graphics-design", icon: <FaPenNib /> },
     { name: "SEO Solutions", slug: "/seo", icon: <FaBriefcase /> },
-    {name: "Software Development",slug: "/software-development",icon: <FaRobot />},
-    {name: "Automation Solutions",slug: "/automation-solutions",icon: <FaCogs />},
+    { name: "Software Development", slug: "/software-development", icon: <FaRobot /> },
+    { name: "Automation Solutions", slug: "/automation-solutions", icon: <FaCogs /> },
   ];
 
   return (
-    <nav className="bg-white backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav ref={navRef} className="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+      {/* max-w-6xl for shorter width */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link to="/">
             <img src={logo} alt="Codestechvista" className="w-20" />
@@ -36,32 +55,29 @@ export default function Navbar() {
 
           {/* Desktop Links */}
           <div className="hidden lg:flex items-center space-x-8">
-            <Link
-              to="/"
-              className="text-[#4C4480] font-medium hover:text-[#AC1B9E] transition-colors"
-            >
+            <Link to="/" className="text-[#4C4480] font-medium hover:text-[#AC1B9E] transition-colors">
               Home
             </Link>
-            <Link
-              to="/about"
-              className="text-[#4C4480] font-medium hover:text-[#AC1B9E] transition-colors"
-            >
+            <Link to="/about" className="text-[#4C4480] font-medium hover:text-[#AC1B9E] transition-colors">
               About Us
             </Link>
 
-            {/* Services Dropdown */}
+            {/* Services Dropdown - Desktop */}
             <div
               className="relative group py-7"
               onMouseEnter={() => setIsDropdownOpen(true)}
               onMouseLeave={() => setIsDropdownOpen(false)}
             >
-              <button className="flex items-center gap-1 text-[#4C4480] font-medium hover:[#AC1B9E] focus:outline-none">
-                Services{" "}
+              <Link 
+                to="/services" 
+                className="flex items-center gap-1 text-[#4C4480] font-medium hover:text-[#AC1B9E] transition-colors focus:outline-none"
+              >
+                Services
                 <ChevronDown
                   size={16}
                   className={`transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`}
                 />
-              </button>
+              </Link>
 
               {isDropdownOpen && (
                 <div className="absolute left-0 mt-0 w-64 bg-white shadow-xl border border-gray-100 rounded-xl overflow-hidden z-50">
@@ -69,12 +85,11 @@ export default function Navbar() {
                     {serviceLinks.map((service) => (
                       <Link
                         key={service.name}
-                        // FIX: Changed from service.href to service.slug
                         to={`/services${service.slug}`}
                         className="flex items-center gap-3 px-4 py-3 text-sm text-[#4C4480] hover:bg-gray-50 hover:text-[#AC1B9E] transition-colors"
                         onClick={() => setIsDropdownOpen(false)}
                       >
-                        <span className="text-gray-400 hover:text-[#AC1B9E] text-xl">
+                        <span className="text-gray-400 text-xl group-hover:text-[#AC1B9E]">
                           {service.icon}
                         </span>
                         {service.name}
@@ -85,22 +100,13 @@ export default function Navbar() {
               )}
             </div>
 
-            <Link
-              to="/portfolio"
-              className="text-[#4C4480] font-medium hover:text-[#AC1B9E] transition-colors"
-            >
+            <Link to="/portfolio" className="text-[#4C4480] font-medium hover:text-[#AC1B9E] transition-colors">
               Portfolio
             </Link>
-            <Link
-              to="/blog"
-              className="text-[#4C4480] font-medium hover:text-[#AC1B9E] transition-colors"
-            >
+            <Link to="/blog" className="text-[#4C4480] font-medium hover:text-[#AC1B9E] transition-colors">
               Blog
             </Link>
-            <Link
-              to="/contact"
-              className="text-[#4C4480] font-medium hover:text-[#AC1B9E] transition-colors"
-            >
+            <Link to="/contact" className="text-[#4C4480] font-medium hover:text-[#AC1B9E] transition-colors">
               Contact
             </Link>
           </div>
@@ -123,37 +129,61 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu Drawer */}
+      {/* Mobile Menu Drawer - Transparent and Blurry */}
       {isOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 p-4 space-y-2 shadow-lg max-h-[80vh] overflow-y-auto">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.href}
-              className="block text-[#4C4381] font-medium py-3 border-b border-gray-50"
-              onClick={() => setIsOpen(false)}
+        <div className="lg:hidden bg-white/90 backdrop-blur-lg border-t border-gray-100 p-4 space-y-1 shadow-lg max-h-[85vh] overflow-y-auto">
+          <Link to="/" className="block text-[#4C4381] font-medium py-3 border-b border-gray-50/50" onClick={() => setIsOpen(false)}>Home</Link>
+          <Link to="/about" className="block text-[#4C4381] font-medium py-3 border-b border-gray-50/50" onClick={() => setIsOpen(false)}>About Us</Link>
+          
+          <div className="border-b border-gray-50/50">
+            <div 
+              className="flex justify-between items-center py-3 cursor-pointer"
+              onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
             >
-              {link.name}
-            </Link>
-          ))}
-
-          <div className="py-2">
-            <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">
-              Our Services
-            </p>
-            <div className="grid grid-cols-1 gap-1 pl-2">
-              {serviceLinks.map((service) => (
-                <Link
-                  key={service.name}
-                  // FIX: Using service.slug correctly here
-                  to={`/services${service.slug}`}
-                  className="flex items-center gap-3 py-2 text-[#4C4381]"
+              <span className="text-[#4C4381] font-medium">Services</span>
+              <ChevronDown 
+                size={20} 
+                className={`text-[#4C4381] transition-transform ${isMobileServicesOpen ? "rotate-180" : ""}`} 
+              />
+            </div>
+            
+            {isMobileServicesOpen && (
+              <div className="pl-4 pb-3 space-y-2 bg-gray-100/50 rounded-lg mt-1">
+                <Link 
+                  to="/services" 
+                  className="flex items-center gap-3 py-2 text-[#AC1B9E] font-semibold text-sm"
                   onClick={() => setIsOpen(false)}
                 >
-                  {service.icon} <span className="text-sm">{service.name}</span>
+                  View All Services
                 </Link>
-              ))}
-            </div>
+                {serviceLinks.map((service) => (
+                  <Link
+                    key={service.name}
+                    to={`/services${service.slug}`}
+                    className="flex items-center gap-3 py-2 text-[#4C4381]"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <span className="text-gray-400">{service.icon}</span>
+                    <span className="text-sm">{service.name}</span>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <Link to="/portfolio" className="block text-[#4C4381] font-medium py-3 border-b border-gray-50/50" onClick={() => setIsOpen(false)}>Portfolio</Link>
+          <Link to="/blog" className="block text-[#4C4381] font-medium py-3 border-b border-gray-50/50" onClick={() => setIsOpen(false)}>Blog</Link>
+          <Link to="/contact" className="block text-[#4C4381] font-medium py-3 border-b border-gray-50/50" onClick={() => setIsOpen(false)}>Contact</Link>
+          
+          <div className="pt-4">
+            <Link
+              to="/getquote"
+              className="flex items-center justify-center gap-2 bg-[#AC1B9E] text-white py-3 rounded-xl font-semibold"
+              onClick={() => setIsOpen(false)}
+            >
+              <Quote size={18} />
+              <span>Get Free Quote</span>
+            </Link>
           </div>
         </div>
       )}
