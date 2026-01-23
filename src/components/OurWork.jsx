@@ -18,17 +18,17 @@ const StickyCard = ({ CardComponent, index, total }) => {
 
   // This scales the card down slightly (to 0.9) as it gets stuck
   // The scale effect is stronger for cards earlier in the stack
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1 - (total - index) * 0.05]);
-
+const scale = useTransform(scrollYProgress, [0, 1], [1, 1 - (total - index) * 0.02]);
   return (
-    <div 
+   <div 
       ref={container}
-      className="sticky w-full flex justify-center mb-10 md:mb-20"
-      style={{ top: `${80 + (index * 30)}px` }} 
+      className="sticky w-full flex justify-center"
+      // CHANGED: Increased the multiplier (40) so more of the "under" cards show
+      style={{ top: `${100 + (index * 40)}px`, marginBottom: '10vh' }} 
     >
       <motion.div
         style={{ scale }}
-        className="w-full flex justify-center origin-top"
+        className="w-full flex justify-center origin-top shadow-2xl rounded-[20px] md:rounded-[143px]"
       >
         <CardComponent />
       </motion.div>

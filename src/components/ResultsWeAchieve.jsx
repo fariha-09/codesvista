@@ -65,10 +65,10 @@ export default function ResultsWeAchieve() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-[30px] p-8 shadow-[0_15px_40px_rgba(0,0,0,0.04)] border border-gray-50 flex flex-col items-center text-center group"
+                className="bg-white rounded-[30px] md:p-8 p-3 shadow-[0_15px_40px_rgba(0,0,0,0.04)] border border-gray-50 flex flex-col items-center text-center group"
               >
                 {/* Icon Container (The "Small Box" Look) */}
-                <div className="w-16 h-16 bg-white rounded-2xl shadow-[0_8px_25px_rgba(0,0,0,0.06)] flex items-center justify-center mb-6 transition-transform group-hover:scale-110">
+                <div className="w-16 h-16 bg-white rounded-2xl shadow-[0_8px_25px_rgba(0,0,0,0.06)] flex items-center justify-center md:mb-6 mb-2 transition-transform group-hover:scale-110">
                   <Icon className="text-2xl text-[#E53E3E]" /> {/* Icon color adjusted to match image theme */}
                 </div>
 
@@ -78,7 +78,7 @@ export default function ResultsWeAchieve() {
                 </h3>
 
                 {/* Label */}
-                <p className="text-[#AC1B9E] font-medium text-sm">
+                <p className="text-[#AC1B9E] font-medium text-sm px-6">
                   {item.label}
                 </p>
               </motion.div>

@@ -141,7 +141,7 @@ export default function Services() {
               />
 
               <div className="relative z-10 flex flex-col items-center h-full">
-                <div className="w-20 h-20 mb-6 flex items-center justify-center">
+                <div className="w-20 h-20 md:mb-6 flex items-center justify-center">
                   <img
                     src={service.image}
                     alt={service.title}
@@ -155,17 +155,17 @@ export default function Services() {
                     initial: { color: "#4C4480" },
                     hover: { color: "#AC1B9E" }
                   }}
-                  className="text-xl font-bold mb-4"
+                  className="text-xl font-bold md:mb-4"
                 >
                   {service.title}
                 </motion.h3>
 
-                <p className="text-[#4C448099]/60 text-[18px] max-w-100 font-medium leading-relaxed mb-6">
+                <p className="text-[#4C448099]/60 text-[18px] max-w-100 font-medium leading-relaxed md:mb-6">
                   {service.desc}
                 </p>
 
                 {/* 3. Tags with Corrected Background Animation */}
-                <div className="flex gap-2 mb-8">
+                <div className="flex gap-2 md:mb-8 mb-3">
                   {service.tags.map((tag, tIdx) => (
                     <motion.span
                       key={tIdx}
