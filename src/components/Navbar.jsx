@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import logo from "../assets/logo.png";
-import { Quote, Menu, X, ChevronDown } from "lucide-react";
+import { Quote, Menu, X, ChevronDown, Home, Info, Briefcase, FileText, Mail, LayoutGrid } from "lucide-react"; 
 import { Link } from "react-router-dom";
-import { FaCode, FaPenNib, FaBriefcase, FaRobot, FaCogs,FaMobileAlt } from "react-icons/fa";
+import { FaCode, FaPenNib, FaBriefcase, FaRobot, FaCogs, FaMobileAlt } from "react-icons/fa";
 import { HiSpeakerphone } from "react-icons/hi";
 
 export default function Navbar() {
@@ -27,14 +27,6 @@ export default function Navbar() {
     };
   }, []);
 
-  const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "About Us", href: "/about" },
-    { name: "Portfolio", href: "/portfolio" },
-    { name: "Blog", href: "/blog" },
-    { name: "Contact", href: "/contact" },
-  ];
-
   const serviceLinks = [
     { name: "Web Development", slug: "/web-development", icon: <FaCode /> },
     { name: "Digital Marketing", slug: "/digital-marketing", icon: <HiSpeakerphone /> },
@@ -45,21 +37,23 @@ export default function Navbar() {
     { name: "App Development", slug: "/app-development", icon: <FaMobileAlt /> },
   ];
 
+  // Common class for the animated underline
+  const underlineStyle = "relative after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-[2px] after:bg-[#AC1B9E] after:transition-all after:duration-300 hover:after:w-full";
+
   return (
     <nav ref={navRef} className="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
-      {/* max-w-6xl for shorter width */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link to="/">
             <img src={logo} alt="Codestechvista" className="w-20" />
           </Link>
 
-          {/* Desktop Links */}
+          {/* Desktop Links - FIXED ORDER */}
           <div className="hidden lg:flex items-center space-x-8">
-            <Link to="/" className="text-[#4C4480] font-medium hover:text-[#AC1B9E] transition-colors">
+            <Link to="/" className={`text-[#4C4480] font-medium hover:text-[#AC1B9E] transition-colors ${underlineStyle}`}>
               Home
             </Link>
-            <Link to="/about" className="text-[#4C4480] font-medium hover:text-[#AC1B9E] transition-colors">
+            <Link to="/about" className={`text-[#4C4480] font-medium hover:text-[#AC1B9E] transition-colors ${underlineStyle}`}>
               About Us
             </Link>
 
@@ -71,7 +65,7 @@ export default function Navbar() {
             >
               <Link 
                 to="/services" 
-                className="flex items-center gap-1 text-[#4C4480] font-medium hover:text-[#AC1B9E] transition-colors focus:outline-none"
+                className={`flex items-center gap-1 text-[#4C4480] font-medium hover:text-[#AC1B9E] transition-colors focus:outline-none ${underlineStyle}`}
               >
                 Services
                 <ChevronDown
@@ -81,7 +75,7 @@ export default function Navbar() {
               </Link>
 
               {isDropdownOpen && (
-                <div className="absolute left-0 mt-0 w-64 bg-white shadow-xl border border-gray-100 rounded-xl overflow-hidden z-50">
+                <div className="absolute left-0 mt-0 w-64 bg-white shadow-xl border border-gray-100 rounded-xl overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-200">
                   <div className="py-2">
                     {serviceLinks.map((service) => (
                       <Link
@@ -101,13 +95,13 @@ export default function Navbar() {
               )}
             </div>
 
-            <Link to="/portfolio" className="text-[#4C4480] font-medium hover:text-[#AC1B9E] transition-colors">
+            <Link to="/portfolio" className={`text-[#4C4480] font-medium hover:text-[#AC1B9E] transition-colors ${underlineStyle}`}>
               Portfolio
             </Link>
-            <Link to="/blog" className="text-[#4C4480] font-medium hover:text-[#AC1B9E] transition-colors">
+            <Link to="/blog" className={`text-[#4C4480] font-medium hover:text-[#AC1B9E] transition-colors ${underlineStyle}`}>
               Blog
             </Link>
-            <Link to="/contact" className="text-[#4C4480] font-medium hover:text-[#AC1B9E] transition-colors">
+            <Link to="/contact" className={`text-[#4C4480] font-medium hover:text-[#AC1B9E] transition-colors ${underlineStyle}`}>
               Contact
             </Link>
           </div>
@@ -122,7 +116,7 @@ export default function Navbar() {
             </Link>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 text-[#4C4480]"
+              className="lg:hidden p-2 text-[#4C4480] hover:bg-gray-100 rounded-full transition-colors"
             >
               {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -130,18 +124,28 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu Drawer - Transparent and Blurry */}
+      {/* Mobile Menu Drawer - FIXED ORDER WITH ICONS */}
       {isOpen && (
-        <div className="lg:hidden bg-white/90 backdrop-blur-lg border-t border-gray-100 p-4 space-y-1 shadow-lg max-h-[85vh] overflow-y-auto">
-          <Link to="/" className="block text-[#4C4381] font-medium py-3 border-b border-gray-50/50" onClick={() => setIsOpen(false)}>Home</Link>
-          <Link to="/about" className="block text-[#4C4381] font-medium py-3 border-b border-gray-50/50" onClick={() => setIsOpen(false)}>About Us</Link>
+        <div className="lg:hidden bg-white/90 backdrop-blur-lg border-t border-gray-100 p-4 space-y-1 shadow-lg max-h-[85vh] overflow-y-auto animate-in slide-in-from-top duration-300">
           
+          <Link to="/" className="flex items-center gap-3 text-[#4C4381] font-medium py-3 border-b border-gray-50/50 hover:pl-2 transition-all duration-200" onClick={() => setIsOpen(false)}>
+            <Home size={20} className="text-[#AC1B9E]" /> Home
+          </Link>
+          
+          <Link to="/about" className="flex items-center gap-3 text-[#4C4381] font-medium py-3 border-b border-gray-50/50 hover:pl-2 transition-all duration-200" onClick={() => setIsOpen(false)}>
+            <Info size={20} className="text-[#AC1B9E]" /> About Us
+          </Link>
+          
+          {/* Services Dropdown - Mobile */}
           <div className="border-b border-gray-50/50">
             <div 
-              className="flex justify-between items-center py-3 cursor-pointer"
+              className="flex justify-between items-center py-3 cursor-pointer hover:pl-2 transition-all duration-200"
               onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
             >
-              <span className="text-[#4C4381] font-medium">Services</span>
+              <div className="flex items-center gap-3">
+                <LayoutGrid size={20} className="text-[#AC1B9E]"/>
+                <span className="text-[#4C4381] font-medium">Services</span>
+              </div>
               <ChevronDown 
                 size={20} 
                 className={`text-[#4C4381] transition-transform ${isMobileServicesOpen ? "rotate-180" : ""}`} 
@@ -149,19 +153,15 @@ export default function Navbar() {
             </div>
             
             {isMobileServicesOpen && (
-              <div className="pl-4 pb-3 space-y-2 bg-gray-100/50 rounded-lg mt-1">
-                <Link 
-                  to="/services" 
-                  className="flex items-center gap-3 py-2 text-[#AC1B9E] font-semibold text-sm"
-                  onClick={() => setIsOpen(false)}
-                >
+              <div className="pl-4 pb-3 space-y-2 bg-gray-100/50 rounded-lg mt-1 animate-in zoom-in-95 duration-200">
+                <Link to="/services" className="flex items-center gap-3 py-2 text-[#AC1B9E] font-semibold text-sm" onClick={() => setIsOpen(false)}>
                   View All Services
                 </Link>
                 {serviceLinks.map((service) => (
                   <Link
                     key={service.name}
                     to={`/services${service.slug}`}
-                    className="flex items-center gap-3 py-2 text-[#4C4381]"
+                    className="flex items-center gap-3 py-2 text-[#4C4381] hover:text-[#AC1B9E] transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
                     <span className="text-gray-400">{service.icon}</span>
@@ -172,14 +172,22 @@ export default function Navbar() {
             )}
           </div>
 
-          <Link to="/portfolio" className="block text-[#4C4381] font-medium py-3 border-b border-gray-50/50" onClick={() => setIsOpen(false)}>Portfolio</Link>
-          <Link to="/blog" className="block text-[#4C4381] font-medium py-3 border-b border-gray-50/50" onClick={() => setIsOpen(false)}>Blog</Link>
-          <Link to="/contact" className="block text-[#4C4381] font-medium py-3 border-b border-gray-50/50" onClick={() => setIsOpen(false)}>Contact</Link>
+          <Link to="/portfolio" className="flex items-center gap-3 text-[#4C4381] font-medium py-3 border-b border-gray-50/50 hover:pl-2 transition-all duration-200" onClick={() => setIsOpen(false)}>
+            <Briefcase size={20} className="text-[#AC1B9E]" /> Portfolio
+          </Link>
+          
+          <Link to="/blog" className="flex items-center gap-3 text-[#4C4381] font-medium py-3 border-b border-gray-50/50 hover:pl-2 transition-all duration-200" onClick={() => setIsOpen(false)}>
+            <FileText size={20} className="text-[#AC1B9E]" /> Blog
+          </Link>
+          
+          <Link to="/contact" className="flex items-center gap-3 text-[#4C4381] font-medium py-3 border-b border-gray-50/50 hover:pl-2 transition-all duration-200" onClick={() => setIsOpen(false)}>
+            <Mail size={20} className="text-[#AC1B9E]" /> Contact
+          </Link>
           
           <div className="pt-4">
             <Link
               to="/getquote"
-              className="flex items-center justify-center gap-2 bg-[#AC1B9E] text-white py-3 rounded-xl font-semibold"
+              className="flex items-center justify-center gap-2 bg-[#AC1B9E] text-white py-3 rounded-xl font-semibold active:scale-95 transition-transform"
               onClick={() => setIsOpen(false)}
             >
               <Quote size={18} />
