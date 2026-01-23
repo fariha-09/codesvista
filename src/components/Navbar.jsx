@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import logo from "../assets/logo.png";
 import { Quote, Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-import { FaCode, FaPenNib, FaBriefcase, FaRobot, FaCogs } from "react-icons/fa";
+import { FaCode, FaPenNib, FaBriefcase, FaRobot, FaCogs,FaMobileAlt } from "react-icons/fa";
 import { HiSpeakerphone } from "react-icons/hi";
 
 export default function Navbar() {
@@ -42,6 +42,7 @@ export default function Navbar() {
     { name: "SEO Solutions", slug: "/seo", icon: <FaBriefcase /> },
     { name: "Software Development", slug: "/software-development", icon: <FaRobot /> },
     { name: "Automation Solutions", slug: "/automation-solutions", icon: <FaCogs /> },
+    { name: "App Development", slug: "/app-development", icon: <FaMobileAlt /> },
   ];
 
   return (
