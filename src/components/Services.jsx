@@ -128,7 +128,7 @@ export default function Services() {
               key={index}
               initial="initial"
               whileHover="hover"
-              className="relative bg-transparent border border-[#4C4480] rounded-[30px] py-2 px-3 flex flex-col items-center text-center shadow-sm hover:shadow-md  group overflow-hidden  transition-all duration-300"
+              className="relative bg-[#F8F9FA] border border-[#4C4480] rounded-[30px] py-2 px-3 flex flex-col items-center text-center shadow-sm hover:shadow-md  group overflow-hidden  transition-all duration-300"
             >
               {/* 1. Expansion Circle */}
               <motion.div
