@@ -12,7 +12,7 @@ export default function StartConversation() {
       }}
     >
       {/* 1. Container Card with Grid Overlay */}
-      <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] p-10 md:p-20">
+      <div className="relative w-full  overflow-hidden bg-white/[98%] p-10 md:p-20">
         {/* Header Content */}
         <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 md:mb-16 mb-6">
            <motion.h2

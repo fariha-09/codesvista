@@ -79,7 +79,7 @@ export default function WhyChooseUs() {
       }}
     >
       {/* 1. Container Card with Grid Overlay */}
-      <div className="relative w-full md:max-w-[1400px]  overflow-hidden bg-white/[98%] p-4 md:p-20">
+      <div className="relative w-full overflow-hidden bg-white/[98%] p-4 md:p-20">
         {/* 2. Header Content */}
         <div className="md:max-w-4xl mx-auto text-center space-y-4 relative z-10 mt-12 mb-6 md:mb-16">
           <motion.h2

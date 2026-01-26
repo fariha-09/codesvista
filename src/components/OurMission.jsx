@@ -36,7 +36,7 @@ export default function OurMission() {
       }}
     >
       {/* 1. Container Card with Grid Overlay */}
-      <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] px-4 pt-16  md:p-10 lg:p-20 ">
+      <div className="relative w-full overflow-hidden bg-white/[98%] px-4 pt-16  md:p-10 lg:p-20 ">
         {/* 2. Header Content */}
         <div className="max-w-4xl mx-auto text-center space-x-2 md:space-y-4 relative z-10 mb-6 md:mb-16">
           <motion.h2

@@ -48,7 +48,7 @@
         className="relative bg-white flex justify-center object-cover"
         style={{ backgroundImage: `url(${grids})` }}
         >
-        <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] px-4 py-16  md:p-20">
+        <div className="relative w-full overflow-hidden bg-white/[98%] px-4 py-16  md:p-20">
             <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 md:mb-16 mb-4">
             <motion.h2
                 initial={{ y: 40, opacity: 0 }}

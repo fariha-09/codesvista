@@ -87,7 +87,7 @@ export default function OurOffers() {
         backgroundSize: 'contain'
       }}
     >
-      <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] p-6 md:p-20">
+      <div className="relative w-full overflow-hidden bg-white/[98%] p-6 md:p-20">
         
         {/* Header Content */}
         <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-12 md:mb-16">
@@ -200,11 +200,11 @@ export default function OurOffers() {
                       Learn More <FaArrowRight />
                     </Link>
                     <Link
-  to="/getquote" 
-  className="flex-1 inline-flex items-center justify-center border border-[#AC1B9E] text-[#4C4480CC]/80 py-3 rounded-xl text-sm font-bold hover:bg-[#B5179E10] transition-colors text-center"
->
-  Get Free Quote
-</Link>
+                      to="/getquote" 
+                      className="flex-1 inline-flex items-center justify-center border border-[#AC1B9E] text-[#4C4480CC]/80 py-3 rounded-xl text-sm font-bold hover:bg-[#B5179E10] transition-colors text-center"
+                       >
+                      Get Free Quote
+                    </Link>
                   </div>
                 </div>
               </div>

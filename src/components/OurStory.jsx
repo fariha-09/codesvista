@@ -12,8 +12,7 @@ export default function OurStory() {
       }}
     >
       {/* 1. Container Card with Grid Overlay */}
-      {/* Changed px-6 to px-5 and p-10 to pt-12 for better mobile spacing */}
-      <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] px-5 py-12 md:p-10 lg:p-20">
+      <div className="relative w-full overflow-hidden bg-white/[98%] px-5 py-12 md:p-10 lg:p-20">
         
         {/* Main Heading */}
         <div className="text-center mb-10 md:mb-16">

@@ -36,7 +36,7 @@ export default function MissionBannerSection() {
   return (
     <section className="relative bg-[#0fc8ca] min-h-screen lg:min-h-[88vh] w-full flex justify-center lg:px-10 font-sans overflow-hidden">
       {/* INNER CARD */}
-      <div className="relative w-full max-w-[1500px] h-full lg:h-[88vh] overflow-hidden lg:shadow-2xl">
+      <div className="relative w-full h-full lg:h-[88vh] overflow-hidden lg:shadow-2xl">
         <div className="absolute inset-0 z-0">
           <img
             src={grid}

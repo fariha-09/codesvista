@@ -47,7 +47,7 @@ export default function BlogBannerSection() {
 
   return (
     <section className="relative bg-[#0fc8ca] min-h-[88vh] w-full flex justify-center font-sans overflow-hidden">
-      <div className="relative w-full max-w-[1500px] flex flex-col justify-center">
+      <div className="relative w-full  flex flex-col justify-center">
         {/* Background Grid */}
         <div className="absolute inset-0 z-0">
           <img

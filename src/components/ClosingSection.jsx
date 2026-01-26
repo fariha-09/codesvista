@@ -8,7 +8,7 @@ export default function ClosingSection() {
       className="relative bg-white flex justify-center object-cover bg-center"
       style={{ backgroundImage: `url(${grids})` }}
     >
-      <div className="relative w-full max-w-[1400px] flex justify-center overflow-hidden bg-white/[98%] pt-0 md:pt-10 md:px-20">
+      <div className="relative w-full  flex justify-center overflow-hidden bg-white/[98%] pt-0 md:pt-10 md:px-20">
         {/* Main Teal Container */}
         <div className="bg-[#0E9C9D] w-full py-6 md:py-20 px-6 flex flex-col items-center text-center">
           <h1 className="text-white text-4xl md:text-[48px] font-serif font-bold mb-6">

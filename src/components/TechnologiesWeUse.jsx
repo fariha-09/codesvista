@@ -46,7 +46,7 @@ export default function TechnologiesWeUse() {
       style={{ backgroundImage: `url(${grids})`, backgroundSize: 'cover' }}
     >
       {/* Container Card */}
-      <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/95 backdrop-blur-sm p-6 sm:p-10 md:p-20">
+      <div className="relative w-full overflow-hidden bg-white/95 backdrop-blur-sm p-6 sm:p-10 md:p-20">
         
         {/* Header Content */}
         <motion.div 

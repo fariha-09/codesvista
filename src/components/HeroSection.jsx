@@ -63,9 +63,9 @@ export default function HeroSection() {
               <Typewriter
                 options={{
                   strings: [
-                   "Empowering <br /> Businesses with <br /> Technology",
-                    "Driving <br /> Innovation with <br /> Custom Code",
-                    "Creating <br /> Seamless Digital <br /> Experiences"
+                   "Empowering  Businesses with Technology",
+                    "Driving  Innovation with Custom Code",
+                    "Creating  Seamless Digital Experiences"
                   ],
                   autoStart: true,
                   loop: true,

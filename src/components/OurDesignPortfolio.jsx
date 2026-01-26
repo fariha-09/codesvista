@@ -15,7 +15,7 @@ export default function OurDesignPortfolio() {
        backgroundImage: `url(${grids})`,
      }}>
          {/* 1. Container Card with Grid Overlay */}
-         <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] p-2 md:p-20">
+         <div className="relative w-full  overflow-hidden bg-white/[98%] p-2 md:p-20">
    
            {/* 2. Header Content */}
            <div className="max-w-4xl mx-auto text-center md:space-y-4 space-y-2 relative z-10 md:mb-16 mb-6">

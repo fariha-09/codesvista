@@ -52,7 +52,7 @@ export default function FlutterWhatWeOffer() {
         backgroundImage: `url(${grids})`,
       }}
     >
-      <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] py-10 md:py-20">
+      <div className="relative w-full overflow-hidden bg-white/[98%] py-10 md:py-20">
         <div className="bg-[#F1F3F4] md:py-20 py-12 md:px-6 w-full">
           {/* Header */}
           <div className="text-center mb-10 md:mb-16">

@@ -112,7 +112,7 @@ export default function AutomationServices() {
       className="relative bg-white flex justify-center object-cover"
       style={{ backgroundImage: `url(${grids})` }}
     >
-      <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] py-16 px-4 md:p-20">
+      <div className="relative w-full overflow-hidden bg-white/[98%] py-16 px-4 md:p-20">
         {/* Header Section */}
         <div className="text-center md:mb-20 mb-6 space-y-4">
           <motion.span

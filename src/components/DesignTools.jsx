@@ -46,7 +46,7 @@ export default function DesignTools() {
 
   return (
     <section className="bg-white md:py-24 py-16 px-6 md:px-20 flex justify-center">
-      <div className="w-full max-w-[1400px]">
+      <div className="w-full">
         {/* Main Title Section */}
         <div className="text-center md:mb-20 mb-4 space-y-4">
           <motion.h2

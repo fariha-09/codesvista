@@ -40,7 +40,7 @@ export default function PortfolioStats() {
             backgroundImage: `url(${grids})`,
           }}>
               {/* 1. Container Card with Grid Overlay */}
-              <div className="relative w-full max-w-[1400px]  overflow-hidden bg-white/[98%] p-4 pt-14 md:p-20">
+              <div className="relative w-full overflow-hidden bg-white/[98%] p-4 pt-14 md:p-20">
             <div className="max-w-7xl mx-auto md:px-4">
                 <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 md:gap-6 gap-4">
                     {stats.map((stat, index) => {

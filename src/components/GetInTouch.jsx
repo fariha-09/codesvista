@@ -12,7 +12,7 @@ export default function GetInTouch() {
       }}
     >
       {/* 1. Container Card with Grid Overlay  */}
-      <div className="relative w-full max-w-[1400px] flex flex-col gap-6 px-6 md:flex-row overflow-hidden bg-white/[98%] p-4 md:p-20">
+      <div className="relative w-full flex flex-col gap-6 px-6 md:flex-row overflow-hidden bg-white/[98%] p-4 md:p-20">
         {/* Left Side: Form Card */}
         <div className="flex-1 bg-[#F1F3F4] p-6 md:p-16 rounded-t-[40px] md:rounded-tr-none md:rounded-l-[40px] flex flex-col justify-center">
           <h1 className="text-[#4C4480] text-3xl font-bold md:mb-10 mb-4">

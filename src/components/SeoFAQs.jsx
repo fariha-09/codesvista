@@ -40,7 +40,7 @@ export default function SeoFAQs() {
       className="relative bg-white flex justify-center object-cover"
       style={{ backgroundImage: `url(${grids})` }}
     >
-      <div className="relative w-full max-w-[1400px] flex justify-center overflow-hidden bg-white/[98%] py-10 md:px-20">
+      <div className="relative w-full flex justify-center overflow-hidden bg-white/[98%] py-10 md:px-20">
         <div className="bg-[#FFFFFF] w-[98%] justify-center md:py-10">
           {/* Header Content */}
           <div className="text-center space-y-4 relative z-10 md:mb-20 mb-8">
