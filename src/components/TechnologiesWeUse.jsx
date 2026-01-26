@@ -75,7 +75,7 @@ export default function TechnologiesWeUse() {
               </p>
             </div>
             
-            <div className="flex flex-wrap gap-3">
+            <div className="grid grid-cols-2 lg:grid-cols-2 gap-3">
               {frontend.map((tech, i) => (
                 <motion.div 
                   key={i} 
@@ -101,7 +101,7 @@ export default function TechnologiesWeUse() {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="grid grid-cols-2 lg:grid-cols-2 gap-3">
               {backend.map((tech, i) => (
                 <motion.div 
                   key={i} 

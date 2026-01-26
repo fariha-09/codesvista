@@ -12,7 +12,7 @@ export default function Navbar() {
   
   const navRef = useRef(null);
 
-  // LOCK SCROLL WHEN OPEN
+  // LOCK SCROLL WHEN MOBILE MENU IS OPEN
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -48,9 +48,9 @@ export default function Navbar() {
 
   return (
     <>
-      {/* 1. THE ACTUAL NAV */}
-      <nav ref={navRef} className="absolute top-0 left-0 w-full bg-white/10 backdrop-blur-md z-50 border-b border-gray-200/20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* 1. FIXED NAV BAR */}
+      <nav ref={navRef} className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md z-[100] border-b border-gray-200/20 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="flex justify-between items-center h-20">
             <Link to="/">
               <img src={logo} alt="Codestechvista" className="w-20" />
@@ -96,56 +96,55 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu Drawer */}
+        {/* Mobile Menu Drawer (Aligned to Right) */}
         {isOpen && (
-          <>
-            <div className="fixed inset-0 bg-black/20 z-[-1] lg:hidden" onClick={() => setIsOpen(false)}></div>
-            <div className="lg:hidden bg-white/40 backdrop-blur-xl border-t border-gray-100/20 p-4 space-y-1 shadow-lg max-h-[85vh] overflow-y-auto animate-in slide-in-from-top duration-300">
-              <Link to="/" className="flex items-center gap-3 text-[#4C4381] font-medium py-2 border-b border-gray-50/50 hover:pl-2 transition-all duration-200" onClick={() => setIsOpen(false)}>
-                <Home size={20} className="text-[#AC1B9E]" /> Home
-              </Link>
-              <Link to="/about" className="flex items-center gap-3 text-[#4C4381] font-medium py-2 border-b border-gray-50/50 hover:pl-2 transition-all duration-200" onClick={() => setIsOpen(false)}>
-                <Info size={20} className="text-[#AC1B9E]" /> About Us
-              </Link>
-              <div className="border-b border-gray-100/50">
-                <div className="flex justify-between items-center py-2 cursor-pointer hover:pl-2 transition-all duration-200" onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}>
-                  <div className="flex items-center gap-3">
-                    <LayoutGrid size={20} className="text-[#AC1B9E]"/><span className="text-[#4C4381] font-medium">Services</span>
-                  </div>
-                  <ChevronDown size={20} className={`text-[#4C4381] transition-transform ${isMobileServicesOpen ? "rotate-180" : ""}`} />
+          <div className="lg:hidden absolute top-20 right-4 w-72 bg-white/95 backdrop-blur-2xl rounded-2xl border border-gray-100 shadow-2xl p-4 space-y-1 animate-in slide-in-from-right-4 duration-300">
+            <Link to="/" className="flex items-center gap-3 text-[#4C4381] font-medium py-2 hover:bg-gray-50 rounded-lg px-2" onClick={() => setIsOpen(false)}>
+              <Home size={18} className="text-[#AC1B9E]" /> Home
+            </Link>
+            <Link to="/about" className="flex items-center gap-3 text-[#4C4381] font-medium py-2 hover:bg-gray-50 rounded-lg px-2" onClick={() => setIsOpen(false)}>
+              <Info size={18} className="text-[#AC1B9E]" /> About Us
+            </Link>
+            
+            <div className="border-b border-gray-100/50">
+              <div className="flex justify-between items-center py-2 cursor-pointer hover:bg-gray-50 rounded-lg px-2" onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}>
+                <div className="flex items-center gap-3">
+                  <LayoutGrid size={20} className="text-[#AC1B9E]"/><span className="text-[#4C4381] font-medium">Services</span>
                 </div>
-                {isMobileServicesOpen && (
-                  <div className="pl-4 pb-3 space-y-2 bg-white/30 rounded-lg mt-1 animate-in zoom-in-95 duration-200">
-                    <Link to="/services" className="flex items-center gap-3 py-2 text-[#AC1B9E] font-semibold text-sm" onClick={() => setIsOpen(false)}>View All Services</Link>
-                    {serviceLinks.map((service) => (
-                      <Link key={service.name} to={`/services${service.slug}`} className="flex items-center gap-3 py-2 text-[#4C4381] hover:text-[#AC1B9E] transition-colors" onClick={() => setIsOpen(false)}>
-                        <span className="text-gray-400">{service.icon}</span> <span className="text-sm">{service.name}</span>
-                      </Link>
-                    ))}
-                  </div>
-                )}
+                <ChevronDown size={20} className={`text-[#4C4381] transition-transform ${isMobileServicesOpen ? "rotate-180" : ""}`} />
               </div>
-              <Link to="/portfolio" className="flex items-center gap-3 text-[#4C4381] font-medium py-2 border-b border-gray-50/50 hover:pl-2 transition-all duration-200" onClick={() => setIsOpen(false)}>
-                <Briefcase size={20} className="text-[#AC1B9E]" /> Portfolio
-              </Link>
-              <Link to="/blog" className="flex items-center gap-3 text-[#4C4381] font-medium py-2 border-b border-gray-50/50 hover:pl-2 transition-all duration-200" onClick={() => setIsOpen(false)}>
-                <FileText size={20} className="text-[#AC1B9E]" /> Blog
-              </Link>
-              <Link to="/contact" className="flex items-center gap-3 text-[#4C4381] font-medium py-2 border-b border-gray-50/50 hover:pl-2 transition-all duration-200" onClick={() => setIsOpen(false)}>
-                <Mail size={20} className="text-[#AC1B9E]" /> Contact
-              </Link>
-              <div className="pt-4">
-                <Link to="/getquote" className="flex items-center justify-center gap-2 bg-[#AC1B9E] text-white py-3 rounded-xl font-semibold active:scale-95 transition-transform" onClick={() => setIsOpen(false)}>
-                  <Quote size={18} /> <span>Get Free Quote</span>
-                </Link>
-              </div>
+              {isMobileServicesOpen && (
+                <div className="pl-4 pb-3 space-y-2 mt-1 animate-in zoom-in-95 duration-200">
+                  <Link to="/services" className="flex items-center gap-3 py-2 text-[#AC1B9E] font-semibold text-sm" onClick={() => setIsOpen(false)}>View All Services</Link>
+                  {serviceLinks.map((service) => (
+                    <Link key={service.name} to={`/services${service.slug}`} className="flex items-center gap-3 py-2 text-[#4C4381] hover:text-[#AC1B9E] transition-colors px-2 rounded-md" onClick={() => setIsOpen(false)}>
+                      <span className="text-gray-400">{service.icon}</span> <span className="text-sm">{service.name}</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
-          </>
+
+            <Link to="/portfolio" className="flex items-center gap-3 text-[#4C4381] font-medium py-2 hover:bg-gray-50 rounded-lg px-2" onClick={() => setIsOpen(false)}>
+              <Briefcase size={20} className="text-[#AC1B9E]" /> Portfolio
+            </Link>
+            <Link to="/blog" className="flex items-center gap-3 text-[#4C4381] font-medium py-2 hover:bg-gray-50 rounded-lg px-2" onClick={() => setIsOpen(false)}>
+              <FileText size={20} className="text-[#AC1B9E]" /> Blog
+            </Link>
+            <Link to="/contact" className="flex items-center gap-3 text-[#4C4381] font-medium py-2 hover:bg-gray-50 rounded-lg px-2" onClick={() => setIsOpen(false)}>
+              <Mail size={20} className="text-[#AC1B9E]" /> Contact
+            </Link>
+            <div className="pt-4">
+              <Link to="/getquote" className="flex items-center justify-center gap-2 bg-[#AC1B9E] text-white py-3 rounded-xl font-semibold active:scale-95 transition-transform" onClick={() => setIsOpen(false)}>
+                <Quote size={18} /> <span>Get Free Quote</span>
+              </Link>
+            </div>
+          </div>
         )}
       </nav>
 
       {/* 2. THE GHOST SPACER */}
-      {/* This pushes your Hero content down so the text starts after the 80px Navbar */}
+      {/* This ensures the content below doesn't start behind the fixed navbar */}
       <div className="h-20 w-full pointer-events-none"></div>
     </>
   );

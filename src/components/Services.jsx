@@ -103,7 +103,7 @@ export default function Services() {
       className="relative bg-white flex justify-center object-cover"
       style={{ backgroundImage: `url(${grids})` }}
     >
-      <div className="relative w-full md:max-w-[1400px] overflow-hidden bg-white/[98%] px-4 pt-10 md:p-20">
+      <div className="relative w-full overflow-hidden bg-white/[98%] px-4 pt-10 md:p-20">
         <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 my-6">
           <motion.h2
             initial={{ y: 40, opacity: 0 }}
@@ -122,13 +122,13 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8 relative z-10">
           {visibleServices.map((service, index) => (
             <motion.div
               key={index}
               initial="initial"
               whileHover="hover"
-              className="relative bg-transparent border border-[#4C4480] rounded-[30px] py-5 px-3 flex flex-col items-center text-center shadow-sm hover:shadow-md  group overflow-hidden  transition-all duration-300"
+              className="relative bg-transparent border border-[#4C4480] rounded-[30px] py-2 px-3 flex flex-col items-center text-center shadow-sm hover:shadow-md  group overflow-hidden  transition-all duration-300"
             >
               {/* 1. Expansion Circle */}
               <motion.div
@@ -160,7 +160,7 @@ export default function Services() {
                   {service.title}
                 </motion.h3>
 
-                <p className="text-[#4C448099]/60 text-[18px] max-w-100 font-medium leading-relaxed md:mb-6">
+                <p className="text-[#4C448099]/60 text-[18px] max-w-100 font-medium leading-relaxed md:mb-6 mb-3">
                   {service.desc}
                 </p>
 
@@ -200,24 +200,6 @@ export default function Services() {
                   Read More
                     </motion.button>
                 </Link>
-                {/* <motion.button
-                  variants={{
-                    initial: { 
-                      backgroundColor: "rgba(172, 27, 158, 0)", 
-                      color: "#4C4480",
-                      borderColor: "#AC1B9E"
-                    },
-                    hover: { 
-                      backgroundColor: "#AC1B9E", 
-                      color: "#FFFFFF",
-                      borderColor: "#AC1B9E"
-                    },
-                  }}
-                  transition={{ duration: 0.4 }}
-                  className="mt-auto border-2 px-8 py-2 rounded-xl text-sm font-bold"
-                >
-                  Read More
-                </motion.button> */}
               </div>
             </motion.div>
           ))}

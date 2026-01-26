@@ -127,7 +127,7 @@ export default function HeroSection() {
 
           {/* RIGHT COLUMN */}
           <div className="w-full lg:w-1/2 flex flex-col md:flex-row lg:flex-row items-center justify-center lg:justify-end gap-6">
-            
+             
             {/* Portfolio Stats Card */}
             <div className="bg-white/20 relative mt-6 md:mt-0 backdrop-blur-xl border border-white/30 p-6 md:p-8 rounded-[30px] md:rounded-[40px] shadow-2xl w-full max-w-md">
               <div className="flex justify-between items-center mb-6">
@@ -141,7 +141,7 @@ export default function HeroSection() {
                 </span>
               </div>
 
-              <div className="space-y-4">
+              <div className="md:space-y-4 space-y-2">
                 {stats.map((stat, i) => {
                   const Icon = stat.icon;
                   return (

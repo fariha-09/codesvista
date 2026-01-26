@@ -31,7 +31,7 @@ export default function SeoResultsAchieved() {
   ];
 
   return (
-    <section className="bg-white md:py-24 py-10 px-4 md:px-20 font-sans overflow-hidden">
+    <section className="bg-white md:py-24 py-18 px-4 md:px-20 font-sans overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* Header Section */}
@@ -74,20 +74,20 @@ export default function SeoResultsAchieved() {
               />
 
               {/* Icon Container with Gradient Border Effect */}
-              <div className="relative z-10 w-20 h-20 rounded-3xl bg-gradient-to-br from-[#4C4480] to-[#0E9C9D] flex items-center justify-center text-[#0E9C9D] text-3xl mb-8 shadow-lg group-hover:scale-110 transition-transform duration-300">
+              <div className="relative z-10 md:w-20 md:h-20  w-12 h-12 md:rounded-3xl rounded-xl bg-gradient-to-br from-[#4C4480] to-[#0E9C9D] flex items-center justify-center text-[#0E9C9D] text-3xl md:mb-8 mb-3 shadow-lg group-hover:scale-110 transition-transform duration-300">
                 {item.icon}
               </div>
 
               {/* Content */}
               <div className="relative z-10">
-                <h3 className="text-[#1A2B4E] text-4xl font-bold mb-2 tracking-tight">
+                <h3 className="text-[#1A2B4E] md:text-4xl text-xl font-bold mb-2 tracking-tight">
                   {item.value}
                   {item.label.includes("Months") ? "" : ""}
                 </h3>
-                <p className="text-[#0E9C9D] font-bold text-lg mb-4 leading-tight px-2">
+                <p className="text-[#0E9C9D] md:font-bold text-lg md:mb-4 mb-2 leading-tight px-2">
                   {item.label}
                 </p>
-                <div className="w-10 h-[2px] bg-gray-200 mx-auto mb-4 group-hover:bg-[#0E9C9D] transition-colors"></div>
+                <div className="w-10 h-[2px] bg-gray-200 mx-auto md:mb-4 mb-2 group-hover:bg-[#0E9C9D] transition-colors"></div>
                 <p className="text-gray-400 text-sm leading-relaxed max-w-[200px]">
                   {item.desc}
                 </p>

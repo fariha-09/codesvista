@@ -56,22 +56,22 @@ export default function OurTechnology() {
           {technology.map((tech, index) => (
             <div 
               key={index} 
-              className="bg-gray-100 md:p-8 p-2 mb-4 md:mb-0 rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-50 flex flex-col items-center text-center transition-transform hover:scale-105 duration-300"
+              className="bg-gray-100 md:p-8 py-2 md:mb-0 rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-50 flex flex-col items-center text-center transition-transform hover:scale-95 md:hover:scale-105 duration-300"
             >
               {/* Image Container */}
               <div className="w-20 h-20 flex items-center justify-center md:mb-6">
                 <img 
                   src={tech.img} 
                   alt={tech.name} 
-                  className="w-[64px] h-[64px] rounded-[12px] object-contain"
+                  className="md:w-[64px] md:h-[64px] h-12 w-12 rounded-[12px] object-contain"
                 />
               </div>
 
               {/* Text Content */}
-              <h3 className="text-[#4C4480] text-[18px] font-bold mb-2">
+              <h3 className="text-[#4C4480] text-[18px] font-bold md:mb-2 px-4">
                 {tech.name}
               </h3>
-              <p className="text-[#4C448080] text-[14px] font-medium">
+              <p className="text-[#4C448080] text-[14px] font-medium px-4 ">
                 {tech.des}
               </p>
             </div>

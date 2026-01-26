@@ -111,7 +111,7 @@ export default function OurOffers() {
         </div>
 
         {/* Grid Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-items-center px-2 md:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-8 gap-2 justify-items-center px-2 md:px-10">
           {services.map((service, index) => (
             <div
               key={index}
@@ -199,9 +199,12 @@ export default function OurOffers() {
                     >
                       Learn More <FaArrowRight />
                     </Link>
-                    <button className="flex-1 border border-[#AC1B9E] text-[#4C4480CC]/80 py-3 rounded-xl text-sm font-bold hover:bg-[#B5179E10] transition-colors">
-                      Get Free Quote
-                    </button>
+                    <Link
+  to="/getquote" 
+  className="flex-1 inline-flex items-center justify-center border border-[#AC1B9E] text-[#4C4480CC]/80 py-3 rounded-xl text-sm font-bold hover:bg-[#B5179E10] transition-colors text-center"
+>
+  Get Free Quote
+</Link>
                   </div>
                 </div>
               </div>

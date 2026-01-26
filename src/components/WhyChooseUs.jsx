@@ -106,13 +106,13 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 gap-2 relative z-10">
           {features.map((item, index) => (
             <motion.div
               key={index}
               initial="initial"
               whileHover="hover"
-              className="relative p-8 rounded-[40px] border border-gray-100 shadow-sm transition-all flex flex-col items-center text-center overflow-hidden bg-[#F8F9FA]"
+              className="relative md:p-8 p-4 rounded-[40px] border border-gray-100 shadow-sm transition-all flex flex-col items-center text-center overflow-hidden bg-[#F8F9FA]"
             >
               <motion.div
                 variants={{

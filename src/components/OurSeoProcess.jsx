@@ -50,10 +50,10 @@ export default function OurSeoProcess() {
   ];
 
   return (
-    <section className="bg-white md:py-24 py-16s md:px-6 px-2 font-serif">
+    <section className="bg-white md:py-24 py-16s md:px-6 px-2 font-serif mt-16">
       <div className="max-w-7xl mx-auto  md:px-12">
         {/* Header Section */}
-        <div className="text-center md:mb-20 mb-10 space-y-4">
+        <div className="text-4xl md:text-6xl text-center md:mb-20 mb-10 space-y-4">
            <motion.h2
                                 initial={{ y: 40, opacity: 0 }}
                                 whileInView={{ y: 0, opacity: 1 }}
@@ -96,7 +96,7 @@ export default function OurSeoProcess() {
                 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 style={{ originX: 1, originY: 0 }} 
-                className="absolute inset-0 z-0 rounded-[40px]"
+                className="absolute inset-0 z-0 md:rounded-[40px] rounded-xl"
               />
 
               <div className="relative z-10 flex flex-col items-center w-full">
