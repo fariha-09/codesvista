@@ -50,7 +50,7 @@ export default function Navbar() {
     <>
       {/* 1. FIXED NAV BAR */}
       <nav ref={navRef} className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md z-[100] border-b border-gray-200/20 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-20">
           <div className="flex justify-between items-center h-20">
             <Link to="/">
               <img src={logo} alt="Codestechvista" className="w-20" />
