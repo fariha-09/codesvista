@@ -27,10 +27,10 @@ export default function OurTechnology() {
         backgroundImage: `url(${grids})`,
       }}>
           {/* 1. Container Card with Grid Overlay */}
-          <div className="relative w-full overflow-hidden bg-white/[98%] p-4 md:p-20">
+          <div className="relative w-full overflow-hidden bg-white/[98%] p-4 md:px-20">
         
         {/* Header Content */}
-        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 my-10">
+        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 my-10 md:my-16">
           <motion.h2
                      initial={{ y: 40, opacity: 0 }}
                      whileInView={{ y: 0, opacity: 1 }}

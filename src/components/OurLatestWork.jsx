@@ -99,7 +99,7 @@ export default function OurLatestWork() {
       }}
     >
       {/* 1. Container Card with Grid Overlay */}
-      <div className="relative w-full  overflow-hidden bg-white/[98%] p-4 pt-16 md:p-20">
+      <div className="relative w-full  overflow-hidden bg-white/[98%] p-4 pt-16 md:px-20">
         {/* Header Section */}
         <div className="text-center mb-12">
            <motion.h2

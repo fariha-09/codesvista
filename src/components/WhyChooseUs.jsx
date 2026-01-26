@@ -79,9 +79,9 @@ export default function WhyChooseUs() {
       }}
     >
       {/* 1. Container Card with Grid Overlay */}
-      <div className="relative w-full overflow-hidden bg-white/[98%] p-4 md:p-20">
+      <div className="relative w-full overflow-hidden bg-white/[98%] p-4 md:px-20">
         {/* 2. Header Content */}
-        <div className="md:max-w-4xl mx-auto text-center space-y-4 relative z-10 mt-12 mb-6 md:mb-16">
+        <div className="md:max-w-4xl mx-auto text-center space-y-4 relative z-10 mt-10 md:mt-10 mb-6 ">
           <motion.h2
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}

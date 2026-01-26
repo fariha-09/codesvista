@@ -34,8 +34,8 @@ export default function VisionAndMission() {
       className="relative bg-white flex justify-center object-cover"
       style={{ backgroundImage: `url(${grids})` }}
     >
-      <div className="relative w-full overflow-hidden bg-white/[98%] px-4 py-14 md:p-20">
-        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 md:mb-16 mb-6">
+      <div className="relative w-full overflow-hidden bg-white/[98%] px-4 py-14 md:px-20">
+        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 md:mt-16 mb-6">
           <motion.h2
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -70,7 +70,7 @@ export default function VisionAndMission() {
             />
 
             <div className="relative z-10 flex flex-col items-center">
-              <div className="w-20 h-20 rounded-2xl flex items-center justify-center mb-4 md:mb-8 bg-[#10B981] group-hover:bg-white">
+              <div className="w-20 h-20 rounded-2xl flex items-center justify-center mb-4 bg-[#10B981] group-hover:bg-white">
                 <Target size={38} className="text-white group-hover:text-[#0FC8CA]" />
               </div>
               
@@ -108,7 +108,7 @@ export default function VisionAndMission() {
             />
 
             <div className="relative z-10 flex flex-col items-center">
-              <div className="w-20 h-20 bg-[#EC4899] group-hover:bg-white  rounded-2xl flex items-center justify-center d:mb-8 mb-4 shadow-[0_0_30px_rgba(147,51,234,0.3)]">
+              <div className="w-20 h-20 bg-[#EC4899] group-hover:bg-white  rounded-2xl flex items-center justify-center  mb-4 shadow-[0_0_30px_rgba(147,51,234,0.3)]">
                 <FaEye size={40} className="text-white group-hover:text-[#0FC8CA]" />
               </div>
               
