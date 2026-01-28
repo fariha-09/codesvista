@@ -80,7 +80,7 @@ export default function HeroSection() {
             </p>
 
             {/* Feature Tags */}
-            <div className="flex flex-wrap gap-3 pt-2 md:pt-0">
+            {/* <div className="flex flex-wrap gap-3 pt-2 md:pt-0">
               {[
                 { label: "BRAND IDENTITY", icon: FaTags, color: "#3B82F6" },
                 { label: "CREATIVE DESIGN", icon: FaLightbulb, color: "#4ADE80" },
@@ -112,7 +112,7 @@ export default function HeroSection() {
                   <span className="relative z-10">{tag.label}</span>
                 </motion.span>
               ))}
-            </div>
+            </div> */}
 
             {/* CTA Buttons */}
             <div className="flex gap-2 md:gap-4 pt-4">
@@ -164,7 +164,7 @@ export default function HeroSection() {
                   );
                 })}
               </div>
-              <div className="absolute -top-10 right-24 md:top-6 md:-right-6 flex flex-row lg:flex-col gap-3">
+              {/* <div className="absolute -top-10 right-24 md:top-6 md:-right-6 flex flex-row lg:flex-col gap-3">
               {[FaPenNib, FaPaintBrush, RiPencilFill].map((Icon, idx) => (
                 <div
                   key={idx}
@@ -173,7 +173,7 @@ export default function HeroSection() {
                   <Icon size={20} />
                 </div>
               ))}
-            </div>
+            </div> */}
             </div>
 
             {/* Vertical Tool Icons */}

@@ -26,12 +26,12 @@ import codevista from "../assets/codevista.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#4C4480] text-white pt-16 pb-8 px-6 md:px-20 font-sans">
+    <footer className="bg-[#4C4480] text-white pt-8 md:pt-16 pb-8 px-6 md:px-20 font-sans">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 md:gap-12 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12 mb-6">
           {/* Column 1: Brand & Social */}
-          <div className="space-y-6 lg:col-span-4 flex flex-col items-start">
-            <div className="flex items-center gap-2">
+          <div className="flex flex-col gap-9">
+            <div className="flex items-center  gap-2">
               <img src={codevista} alt="codevista" className="w-14 md:w-16" />
               <h2 className="text-[22px] md:text-[25px] text-[#AC1B9E] font-semibold tracking-tight">
                 Codes <span className="text-[#0E9C9D] ">Vista</span>
@@ -42,7 +42,7 @@ export default function Footer() {
               technology solutions. We specialize in web development, digital
               marketing, and custom software solutions.
             </p>
-            <div className="flex gap-6 md:gap-10">
+            <div className="flex gap-6 jus md:gap-10">
               {[
                 FaFacebookF,
                 FaTwitter,
@@ -62,61 +62,63 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Quick Links */}
-          <div className="lg:col-span-2">
-            <h3 className="text-lg md:text-xl text-[#F1F3F4] font-serif font-bold mb-6">
-              Quick Links
-            </h3>
-            <ul className="space-y-4 text-[#F1F3F4] text-[14px]">
-              <li className="flex items-center gap-3 hover:text-white cursor-pointer">
-                <FaHome size={15} /> Home
-              </li>
-              <li className="flex items-center gap-3 hover:text-white cursor-pointer">
-                <FaInfoCircle size={15} /> About Us
-              </li>
-              <li className="flex items-center gap-3 hover:text-white cursor-pointer">
-                <MdRoomService size={15} /> Services
-              </li>
-              <li className="flex items-center gap-3 hover:text-white cursor-pointer">
-                <FaImage size={15} /> Portfolio
-              </li>
-              <li className="flex items-center gap-3 hover:text-white cursor-pointer">
-                <FaBlog size={15} /> Blog
-              </li>
-              <li className="flex items-center gap-3 hover:text-white cursor-pointer">
-                <FaEnvelope size={15} /> Contact
-              </li>
-            </ul>
-          </div>
+          <div className="flex gap-9 justify-between sm:justify-center  ">
+            <div className="lg:col-span-2">
+              <h3 className="text-lg md:text-xl text-[#F1F3F4] font-serif font-bold mb-6">
+                Quick Links
+              </h3>
+              <ul className="space-y-4 text-[#F1F3F4] text-[14px]">
+                <li className="flex items-center gap-3 hover:text-white cursor-pointer">
+                  <FaHome size={15} /> Home
+                </li>
+                <li className="flex items-center gap-3 hover:text-white cursor-pointer">
+                  <FaInfoCircle size={15} /> About Us
+                </li>
+                <li className="flex items-center gap-3 hover:text-white cursor-pointer">
+                  <MdRoomService size={15} /> Services
+                </li>
+                <li className="flex items-center gap-3 hover:text-white cursor-pointer">
+                  <FaImage size={15} /> Portfolio
+                </li>
+                <li className="flex items-center gap-3 hover:text-white cursor-pointer">
+                  <FaBlog size={15} /> Blog
+                </li>
+                <li className="flex items-center gap-3 hover:text-white cursor-pointer">
+                  <FaEnvelope size={15} /> Contact
+                </li>
+              </ul>
+            </div>
 
-          {/* Column 3: Our Services */}
-          <div className="lg:col-span-3">
-            <h3 className="text-lg md:text-xl text-[#F1F3F4] font-serif font-bold mb-6">
-              Our Services
-            </h3>
-            <ul className="space-y-4 text-[#F1F3F4] text-[14px]">
-              <li className="flex items-center gap-3 hover:text-white cursor-pointer">
-                <FaCode size={16} /> Web Development
-              </li>
-              <li className="flex items-center gap-3 hover:text-white cursor-pointer">
-                <HiSpeakerphone size={16} /> Digital Marketing
-              </li>
-              <li className="flex items-center gap-3 hover:text-white cursor-pointer">
-                <FaPenNib size={15} /> Graphic Design
-              </li>
-              <li className="flex items-center gap-3 hover:text-white cursor-pointer">
-                <FaBriefcase size={15} /> Business Solutions
-              </li>
-              <li className="flex items-center gap-3 hover:text-white cursor-pointer">
-                <FaRobot size={16} /> Software Development
-              </li>
-              <li className="flex items-center gap-3 hover:text-white cursor-pointer">
-                <FaCogs size={16} /> Automation Solutions
-              </li>
-            </ul>
+            {/* Column 3: Our Services */}
+            <div className="lg:col-span-3">
+              <h3 className="text-lg md:text-xl text-[#F1F3F4] font-serif font-bold mb-6">
+                Our Services
+              </h3>
+              <ul className="space-y-4 text-[#F1F3F4] text-[14px]">
+                <li className="flex items-center gap-3 hover:text-white cursor-pointer">
+                  <FaCode size={16} /> Web Development
+                </li>
+                <li className="flex items-center gap-3 hover:text-white cursor-pointer">
+                  <HiSpeakerphone size={16} /> Digital Marketing
+                </li>
+                <li className="flex items-center gap-3 hover:text-white cursor-pointer">
+                  <FaPenNib size={15} /> Graphic Design
+                </li>
+                <li className="flex items-center gap-3 hover:text-white cursor-pointer">
+                  <FaBriefcase size={15} /> Business Solutions
+                </li>
+                <li className="flex items-center gap-3 hover:text-white cursor-pointer">
+                  <FaRobot size={16} /> Software Development
+                </li>
+                <li className="flex items-center gap-3 hover:text-white cursor-pointer">
+                  <FaCogs size={16} /> Automation Solutions
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Column 4: Contact Info */}
-          <div className="lg:col-span-3">
+          <div className="lg:col--3">
             <h3 className="text-lg md:text-xl text-[#F1F3F4] font-serif font-bold mb-6">
               Contact Info
             </h3>
@@ -149,26 +151,7 @@ export default function Footer() {
         </div>
 
         {/* Newsletter Section */}
-        <div className="bg-[#F1F3F4] rounded-2xl p-6 md:p-12 flex flex-col xl:flex-row items-center justify-between gap-8 mb-12">
-          <div className="text-center md:text-left w-full">
-            <h3 className="text-[#4C4480] text-[20px] md:text-3xl font-serif font-bold mb-2">
-              Stay Updated with Our Newsletter
-            </h3>
-            <p className="text-[#4C448080]/70 text-[14px] md:text-[16px] font-normal">
-              Get the latest updates on technology trends and our services.
-            </p>
-          </div>
-          <div className="relative w-full max-w-lg">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="w-full bg-[#4C4480]/20 text-gray-700 rounded-lg py-4 px-6 focus:outline-none placeholder:text-[#4C4480] text-[14px] md:text-[16px]"
-            />
-            <button className="absolute right-2 top-11 -translate-y-1/2 bg-[#4C4480] p-2.5 rounded-full hover:bg-[#3b3464] transition-colors">
-              <FaPaperPlane className="text-white size-4" />
-            </button>
-          </div>
-        </div>
+         
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row text-[13px] md:text-[14px] text-[#F1F3F4] gap-4 items-center justify-between border-t border-white/10 pt-8">

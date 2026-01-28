@@ -19,14 +19,15 @@ export default function Home() {
      <HeroSection/>
      <Services/>
      <OurWork/>
-     <Stats/>
+     {/* <Stats/> */}
+          <OurTechnology/>
+
      <WhyChooseUs/>
-     <OurTechnology/>
-     <OurWorkProcess/>
+     {/* <OurWorkProcess/> */}
      <Clients/>
      {/* <OurDesignPortfolio/>
      <FAQS/> */}
-     <ClosingSection/>
+     {/* <ClosingSection/> */}
      <Footer/>
     </>
   );

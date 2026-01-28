@@ -106,13 +106,13 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 gap-2 relative z-10">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 md:gap-8 gap-2 relative z-10">
           {features.map((item, index) => (
             <motion.div
               key={index}
               initial="initial"
               whileHover="hover"
-              className="relative md:p-8 p-4 rounded-[40px] border border-gray-100 shadow-sm transition-all flex flex-col items-center text-center overflow-hidden bg-[#F8F9FA]"
+              className="relative md:p-8 px-2 py-4 md:rounded-[40px] rounded-xl border border-gray-100 shadow-sm transition-all flex flex-col items-center text-center overflow-hidden bg-[#F8F9FA]"
             >
               <motion.div
                 variants={{
@@ -128,19 +128,19 @@ export default function WhyChooseUs() {
                   variants={{
                     hover: { y: -5 },
                   }}
-                  className="bg-[#0E9C9D] w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-[#0E9C9D]/20"
+                  className="bg-[#0E9C9D] md:w-16 md:h-16 h-12 w-12 rounded-2xl flex items-center justify-center md:mb-6 shadow-lg shadow-[#0E9C9D]/20"
                 >
                   {item.icon}
                 </motion.div>
 
-                <h3 className="text-[#4C4480] text-2xl font-bold mb-4">
+                <h3 className="text-[#4C4480] md:text-2xl text-lg font-bold md:mb-4">
                   {item.title}
                 </h3>
-                <p className="text-[#4C448080] text-[15px] leading-relaxed mb-6">
+                {/* <p className="text-[#4C448080] text-[15px] leading-relaxed mb-6">
                   {item.desc}
-                </p>
+                </p> */}
 
-                <div className="w-full space-y-3 text-left pl-4">
+                <div className="w-full md:space-y-3 text-left md:pl-4">
                   {item.points.map((point, i) => (
                     <div key={i} className="flex items-center gap-3">
                       <FaCheckCircle className="text-[#34D399] text-lg shrink-0" />
