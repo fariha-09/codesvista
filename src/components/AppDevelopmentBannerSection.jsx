@@ -11,7 +11,7 @@ export default function AppDevelopmentBannerSection() {
       label: "50+",
       sub: "Apps Developed",
       color: "bg-[#3B82F6]",
-      icon: FaMobileAlt, // Pass the component itself, not a function
+      icon: FaMobileAlt, 
     },
     {
       label: "2-Week",
@@ -127,7 +127,7 @@ export default function AppDevelopmentBannerSection() {
               <span className="text-white text-sm font-semibold opacity-90">Design Portfolio</span>
             </div>
 
-            <div className="space-y-4">
+            <div className="md:space-y-4 space-y-2">
               {stats.map((stat, i) => {
                 const Icon = stat.icon;
                 return (

@@ -1,6 +1,8 @@
 import React from "react";
 import { FaUser } from "react-icons/fa";
 import { motion } from "framer-motion";
+import funder from "../assets/funder.jpg";
+
 
 const teamData = [1, 2, 3]; // Placeholder for 3 team members
 
@@ -30,10 +32,11 @@ export default function OurTeam() {
               className="bg-white p-6 rounded-[32px] shadow-sm flex flex-col items-center text-center md:py-10"
             >
               {/* Profile Image Placeholder */}
-              <div className="w-full aspect-square bg-[#4C4480] rounded-[24px] md:mb-6 flex items-center justify-center text-white flex-col">
-                <div className="flex flex-row justify-center items-center">
-                  <FaUser className="w-12 h-12 mb-2" />
-                  <span className="text-xs opacity-70 text-center">CEO</span>
+              <div className="w-full aspect-square rounded-[24px] md:mb-6 flex items-center justify-center text-white flex-col">
+                <div className="flex flex-row justify-center items-center ">
+                  <img src={funder} alt="Team Member" className="aspect-square rounded-[24px] "/>
+                  {/* <FaUser className="w-12 h-12 mb-2" />
+                  <span className="text-xs opacity-70 text-center">CEO</span> */}
                 </div>
               </div>
 

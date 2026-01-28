@@ -31,8 +31,11 @@ export default function Clients() {
   ];
 
   return (
-    <section className="relative bg-white flex justify-center" style={{ backgroundImage: `url(${grids})`, backgroundSize: 'cover' }}>
-        <div className="relative w-full max-w-[1400px] overflow-hidden bg-white/[98%] p-10 md:p-20">
+    <section className="relative bg-white flex justify-center" 
+    style={{ backgroundImage: `url(${grids})`, 
+    backgroundSize: 'cover'
+     }}>
+        <div className="relative w-full overflow-hidden bg-white/[98%] p-10 md:p-20">
           
           {/* Header Content */}
           <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-16">

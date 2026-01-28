@@ -137,7 +137,7 @@ export default function DevelopmentBannerSection() {
                 </span>
               </div>
 
-              <div className="space-y-4">
+              <div className="md:space-y-4 space-y-2">
                 {stats.map((stat, i) => {
                   const Icon = stat.icon;
                   return (
