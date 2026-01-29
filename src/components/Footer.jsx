@@ -37,7 +37,7 @@ export default function Footer() {
                 Codes <span className="text-[#0E9C9D] ">Vista</span>
               </h2>
             </div>
-            <p className="text-[#F1F3F4] text-[14px] leading-relaxed max-w-sm">
+            <p className="text-[#F1F3F4] text-[16px] font-poppins leading-relaxed max-w-sm">
               A leading software house empowering businesses with cutting-edge
               technology solutions. We specialize in web development, digital
               marketing, and custom software solutions.
@@ -62,12 +62,12 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Quick Links */}
-          <div className="flex gap-9 justify-between sm:justify-center  ">
+          <div className="flex gap-9 justify-between sm:justify-center font-poppins">
             <div className="lg:col-span-2">
               <h3 className="text-lg md:text-xl text-[#F1F3F4] font-serif font-bold mb-6">
                 Quick Links
               </h3>
-              <ul className="space-y-4 text-[#F1F3F4] text-[14px]">
+              <ul className="space-y-2 text-[#F1F3F4] text-[14px]">
                 <li className="flex items-center gap-3 hover:text-white cursor-pointer">
                   <FaHome size={15} /> Home
                 </li>
@@ -90,11 +90,11 @@ export default function Footer() {
             </div>
 
             {/* Column 3: Our Services */}
-            <div className="lg:col-span-3">
+            <div className="lg:col-span-3 font-poppins">
               <h3 className="text-lg md:text-xl text-[#F1F3F4] font-serif font-bold mb-6">
                 Our Services
               </h3>
-              <ul className="space-y-4 text-[#F1F3F4] text-[14px]">
+              <ul className="space-y-2 text-[#F1F3F4] text-[14px]">
                 <li className="flex items-center gap-3 hover:text-white cursor-pointer">
                   <FaCode size={16} /> Web Development
                 </li>
@@ -118,11 +118,21 @@ export default function Footer() {
           </div>
 
           {/* Column 4: Contact Info */}
-          <div className="lg:col--3">
+          <div className="lg:col--3 font-poppins">
             <h3 className="text-lg md:text-xl text-[#F1F3F4] font-serif font-bold mb-6">
               Contact Info
             </h3>
-            <ul className="space-y-5 text-[#F1F3F4] text-[14px]">
+              <div className="flex-1 rounded-[30px] overflow-hidden shadow-sm">
+
+             <iframe
+            title="Google Map"
+            src="https://www.google.com/maps?q=Rawalpindi,Pakistan&output=embed"
+            className="w-full h-full border-0"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+          </div>
+            {/* <ul className="space-y-5 text-[#F1F3F4] text-[14px]">
               <li className="flex gap-3">
                 <FaMapMarkerAlt size={22} className="flex-shrink-0" />
                 <span>
@@ -146,7 +156,7 @@ export default function Footer() {
                 <FaClock className="flex-shrink-0" />
                 <span>Mon-Sat 10:00AM-6:00PM</span>
               </li>
-            </ul>
+            </ul> */}
           </div>
         </div>
 

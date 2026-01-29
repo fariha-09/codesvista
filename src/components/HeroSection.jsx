@@ -9,11 +9,20 @@ import {
   FaLightbulb,
   FaUsers,
 } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaInstagram,
+  FaTiktok,
+  FaYoutube,
+} from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+
 import { MdOutlineBrush } from "react-icons/md";
 import { RiAwardFill, RiPencilFill } from "react-icons/ri";
 import grid from "../assets/grid.jpg";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
+import { FaLinkedinIn } from "react-icons/fa6";
 
 export default function HeroSection() {
   const stats = [
@@ -37,11 +46,62 @@ export default function HeroSection() {
     },
   ];
 
+  const marqueeItems = [
+    "Free Consultation",
+    "Free Demo",
+    "Free Site Audit",
+    "Free Consultation",
+    "Free Demo",
+    "Free Site Audit",
+  ];
+
+  const socialLinks = [
+    { icon: FaFacebook, href: "https://www.facebook.com/p/Codes-Vista-61554340860410/", color: "hover:bg-[#1877F2]" },
+    { icon: FaInstagram, href: "https://www.instagram.com/codes_vista/?hl=en", color: "hover:bg-[#E4405F]" },
+    { icon: FaLinkedinIn, href: "https://www.linkedin.com/company/codestechvista/?originalSubdomain=pk", color: "hover:bg-[#0A66C2]" },
+    { icon: FaTiktok, href: "https://www.tiktok.com/@codes_techvista5052", color: "hover:bg-[#000000]" },
+    { icon: FaYoutube, href: "#", color: "hover:bg-[#FF0000]" },
+  ];
   return (
-    <section className="relative bg-[#0fc8ca] min-h-screen lg:min-h-[88vh] w-full flex justify-center lg:px-10 font-sans overflow-hidden">
+<section className="relative bg-[#0fc8ca] min-h-screen lg:min-h-[88vh] w-full flex flex-col font-sans overflow-hidden">
+            <div className="w-full bg-white/10 backdrop-blur-md border-b border-white/20 py-3 px-6 md:px-16 relative z-30 flex items-center justify-between overflow-hidden">
+        
+        {/* MARQUEE SECTION */}
+        <div className="flex-1 overflow-hidden mr-8">
+          <motion.div
+            className="flex whitespace-nowrap gap-12"
+            animate={{ x: [0, -800] }}
+            transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+          >
+            {[...marqueeItems, ...marqueeItems, ...marqueeItems].map((text, idx) => (
+              <div key={idx} className="flex items-center gap-6">
+                <span className="text-white text-sm font-bold uppercase tracking-widest">
+                  {text}
+                </span>
+                <div className="w-1.5 h-1.5 rounded-full bg-white/30" />
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* SOCIAL ICONS - With Circular Hover BG */}
+        <div className="flex items-center gap-3 md:gap-4 relative z-40 pl-8 border-l border-white/20">
+          {socialLinks.map((social, idx) => (
+            <motion.a
+              key={idx}
+              href={social.href}
+              target="_blank"
+              rel="noreferrer"
+              whileHover={{ scale: 1.1 }}
+              className={`w-10 h-10 flex items-center justify-center rounded-full text-white transition-all duration-300 bg-white/5 ${social.color} hover:shadow-lg`}
+            >
+              <social.icon size={18} />
+            </motion.a>
+          ))}
+        </div>
+      </div>
       {/* INNER CARD */}
-      <div className="relative w-full max-w-[1500px] h-full lg:h-[88vh] overflow-hidden lg:shadow-2xl">
-        <div className="absolute inset-0 z-0">
+<div className="relative w-full max-w-[1500px] h-full lg:h-[88vh] flex-1 overflow-hidden lg:shadow-2xl mx-auto pt-10">        <div className="absolute inset-0 z-0">
           <img
             src={grid}
             alt="grid overlay"
