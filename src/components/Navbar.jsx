@@ -57,7 +57,7 @@ export default function Navbar() {
               </button>
             </div>
 
-            <div className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0">
+            <div className="">
               <Link to="/">
                 <img src={logo} alt="Codestechvista" className="w-18 md:w-20" />
               </Link>
@@ -99,8 +99,8 @@ export default function Navbar() {
                 <Quote size={18} /> <span>Get Quote</span>
               </Link>
               {/* Mobile Icon-only Button (For very small screens if needed, otherwise matches sm logic) */}
-              <Link to="/getquote" className="sm:hidden flex items-center gap-2  bg-[#AC1B9E] text-white p-2.5 rounded-full hover:bg-[#8e1682] transition-all shadow-md active:scale-95">
-                <Quote size={18} /> <span>Get Quote</span>
+              <Link to="/getquote" className="sm:hidden p-2.5 text-gray-600 rounded transition-all active:scale-95">
+                <FileText size={28} /> 
               </Link>
             </div>
           </div>
