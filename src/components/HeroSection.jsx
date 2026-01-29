@@ -1,28 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { PiBuildingApartmentFill, PiClipboardTextBold } from "react-icons/pi";
 import {
   FaShoppingCart,
-  FaPaintBrush,
-  FaPenNib,
-  FaTags,
-  FaPencilRuler,
-  FaLightbulb,
   FaUsers,
-} from "react-icons/fa";
-import {
-  FaLinkedin,
   FaInstagram,
   FaTiktok,
   FaYoutube,
+  FaFacebook,
 } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
-
 import { MdOutlineBrush } from "react-icons/md";
-import { RiAwardFill, RiPencilFill } from "react-icons/ri";
+import { RiAwardFill } from "react-icons/ri";
 import grid from "../assets/grid.jpg";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { FaLinkedinIn } from "react-icons/fa6";
+
+function Counter({value}){
+  const count=useMotionValue(0);
+  const rounded=useTransform(count,(latest)=>{
+
+  const number=parseFloat(value.replace(/[^\d.]/g, ""));
+  const isK=value.toLowerCase().includes("k")
+  const suffix = value.replace(/[\d.]/g, "");
+    
+    const displayValue = Math.round(latest);
+    return `${displayValue}${suffix}`;
+  });
+
+  useEffect(() => {
+    const number = parseFloat(value.replace(/[^\d.]/g, ""));
+    const controls = animate(count, number, { duration: 2, ease: "easeOut" });
+    return controls.stop;
+  }, [value, count]);
+
+  return <motion.span>{rounded}</motion.span>;
+}
 
 export default function HeroSection() {
   const stats = [
@@ -56,37 +68,52 @@ export default function HeroSection() {
   ];
 
   const socialLinks = [
-    { icon: FaFacebook, href: "https://www.facebook.com/p/Codes-Vista-61554340860410/", color: "hover:bg-[#1877F2]" },
-    { icon: FaInstagram, href: "https://www.instagram.com/codes_vista/?hl=en", color: "hover:bg-[#E4405F]" },
-    { icon: FaLinkedinIn, href: "https://www.linkedin.com/company/codestechvista/?originalSubdomain=pk", color: "hover:bg-[#0A66C2]" },
-    { icon: FaTiktok, href: "https://www.tiktok.com/@codes_techvista5052", color: "hover:bg-[#000000]" },
+    {
+      icon: FaFacebook,
+      href: "https://www.facebook.com/p/Codes-Vista-61554340860410/",
+      color: "hover:bg-[#1877F2]",
+    },
+    {
+      icon: FaInstagram,
+      href: "https://www.instagram.com/codes_vista/?hl=en",
+      color: "hover:bg-[#E4405F]",
+    },
+    {
+      icon: FaLinkedinIn,
+      href: "https://www.linkedin.com/company/codestechvista/?originalSubdomain=pk",
+      color: "hover:bg-[#0A66C2]",
+    },
+    {
+      icon: FaTiktok,
+      href: "https://www.tiktok.com/@codes_techvista5052",
+      color: "hover:bg-[#000000]",
+    },
     { icon: FaYoutube, href: "#", color: "hover:bg-[#FF0000]" },
   ];
   return (
-<section className="relative bg-[#0fc8ca] min-h-screen lg:min-h-[88vh] w-full flex flex-col font-sans overflow-hidden">
-      
+    <section className="relative bg-[#0fc8ca] min-h-screen lg:min-h-[88vh] w-full flex flex-col font-sans overflow-hidden">
       {/* TOP BAR */}
       <div className="w-full bg-white/10 backdrop-blur-md border-b border-white/20 py-3 px-6 md:px-16 relative z-30 flex items-center justify-between overflow-hidden">
-        
         {/* MARQUEE SECTION - Takes full width on mobile */}
         <div className="flex-1 overflow-hidden md:mr-8">
           <motion.div
             className="flex whitespace-nowrap gap-35"
-            animate={{ x: [0, -5000] }}
+            animate={{ x: [0, -4000] }}
             transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
           >
-            {[...marqueeItems, ...marqueeItems, ...marqueeItems].map((text, idx) => (
-              <div key={idx} className="flex items-center gap-6">
-                <span className="text-white text-sm font-bold uppercase tracking-widest">
-                  {text}
-                </span>
-                <div className="w-1.5 h-1.5 rounded-full bg-white/30" />
-              </div>
-            ))}
+            {[...marqueeItems, ...marqueeItems, ...marqueeItems].map(
+              (text, idx) => (
+                <div key={idx} className="flex items-center gap-6">
+                  <span className="text-white text-sm font-bold uppercase tracking-widest">
+                    {text}
+                  </span>
+                  <div className="w-1.5 h-1.5 rounded-full bg-white/30" />
+                </div>
+              ),
+            )}
           </motion.div>
         </div>
 
-        {/* SOCIAL ICONS - HIDDEN ON MOBILE (hidden), VISIBLE ON TABLET+ (md:flex) */}
         <div className="hidden md:flex items-center gap-3 md:gap-4 relative z-40 pl-8 border-l border-white/20">
           {socialLinks.map((social, idx) => (
             <motion.a
@@ -103,21 +130,24 @@ export default function HeroSection() {
         </div>
       </div>
       {/* INNER CARD */}
-<div className="relative w-full max-w-[1500px] h-full lg:h-[88vh] flex-1 overflow-hidden lg:shadow-2xl mx-auto pt-10">        <div className="absolute inset-0 z-0">
+      <div className="relative w-full max-w-[1500px] h-full lg:h-[88vh] flex-1 overflow-hidden lg:shadow-2xl mx-auto pt-10">
+        {" "}
+        <div className="absolute inset-0 z-0">
           <img
             src={grid}
             alt="grid overlay"
             className="w-full h-full object-cover opacity-[5%] mix-blend-overlay"
           />
         </div>
-
         {/* CONTENT CONTAINER */}
         <div className="container mx-auto px-6 md:px-10 relative z-10 flex flex-col lg:flex-row justify-between h-full py-2 lg:py-4 gap-10 lg:gap-0">
-          
           {/* LEFT COLUMN */}
           <div className="w-full lg:w-1/2 space-y-2 lg:space-y-4 flex flex-col justify-center">
             <div className="inline-flex self-start items-center gap-2 text-white hover:text-black bg-white/20 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/20 hover:bg-[#F1F3F4] transition-all cursor-default">
-              <PiBuildingApartmentFill size={20} className="text-white group-hover:text-[#0e9c9d]" />
+              <PiBuildingApartmentFill
+                size={20}
+                className="text-white group-hover:text-[#0e9c9d]"
+              />
               <span className="font-medium text-[14px]">Codes Vista</span>
             </div>
 
@@ -125,9 +155,9 @@ export default function HeroSection() {
               <Typewriter
                 options={{
                   strings: [
-                   "Empowering  Businesses with Technology",
+                    "Empowering  Businesses with Technology",
                     "Driving  Innovation with Custom Code",
-                    "Creating  Seamless Digital Experiences"
+                    "Creating  Seamless Digital Experiences",
                   ],
                   autoStart: true,
                   loop: true,
@@ -138,7 +168,9 @@ export default function HeroSection() {
             </h1>
 
             <p className="text-[#F1F3F4] text-base md:text-[18px] font-normal max-w-xl leading-relaxed">
-              We translate your brand’s essence into powerful visual experiences. From precision-crafted logos to engaging marketing assets, we create designs that don't just look good—they perform.
+              We translate your brand’s essence into powerful visual
+              experiences. From precision-crafted logos to engaging marketing
+              assets, we create designs that don't just look good—they perform.
             </p>
 
             {/* Feature Tags */}
@@ -177,7 +209,7 @@ export default function HeroSection() {
             </div> */}
 
             {/* CTA Buttons */}
-            <div className="flex gap-2 md:gap-4 pt-4">
+            <div className="flex gap-2 md:gap-4 pt-4 justify-center md:justify-normal">
               <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#00B8B8] text-[14px] text-[#2B2C34] px-2 md:px-8 py-3.5 rounded-xl font-bold shadow-lg transition-transform active:scale-95 sm:w-auto">
                 <PiClipboardTextBold size={20} /> Get Free Quote
               </button>
@@ -189,7 +221,6 @@ export default function HeroSection() {
 
           {/* RIGHT COLUMN */}
           <div className="w-full lg:w-1/2 flex flex-col md:flex-row lg:flex-row items-center justify-center lg:justify-end gap-6">
-             
             {/* Portfolio Stats Card */}
             <div className="bg-white/20 relative mt-6 md:mt-0 backdrop-blur-xl border border-white/30 p-6 md:p-8 rounded-[30px] md:rounded-[40px] shadow-2xl w-full max-w-md">
               <div className="flex justify-between items-center mb-6">
@@ -199,12 +230,12 @@ export default function HeroSection() {
                   <div className="w-3 h-3 rounded-full bg-green-600"></div>
                 </div>
                 <span className="text-white text-xs font-semibold opacity-90 uppercase tracking-wider">
-                 Design Portfolio
+                  Design Portfolio
                 </span>
               </div>
 
               <div className="md:space-y-4 space-y-2">
-                {stats.map((stat, i) => {
+               {stats.map((stat, i) => {
                   const Icon = stat.icon;
                   return (
                     <div
@@ -216,7 +247,7 @@ export default function HeroSection() {
                       </div>
                       <div>
                         <h4 className="text-white font-bold text-xl md:text-2xl leading-none group-hover:text-[#0FC8CA] transition-colors">
-                          {stat.label}
+                          <Counter value={stat.label} />
                         </h4>
                         <p className="text-white text-xs md:text-sm group-hover:text-[#0FC8CA] transition-colors">
                           {stat.sub}
@@ -239,9 +270,7 @@ export default function HeroSection() {
             </div>
 
             {/* Vertical Tool Icons */}
-            
           </div>
-
         </div>
       </div>
     </section>

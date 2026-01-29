@@ -21,7 +21,7 @@ import {
 } from "react-icons/fa";
 import { MdRoomService } from "react-icons/md";
 import { HiSpeakerphone } from "react-icons/hi";
-
+import { Link } from "react-router-dom";
 import codevista from "../assets/codevista.png";
 
 export default function Footer() {
@@ -133,9 +133,9 @@ export default function Footer() {
           ></iframe>
           </div>
           <div className="flex items-center justify-center">
-          <button className="mt-4 bg-[#AC1B9E] text-white px-6 py-2 rounded-[30px] text-base font-semibold hover:bg-[#8e1682] transition-all shadow-md active:scale-95 ">
+          <Link to="/contact" className="mt-4 bg-[#AC1B9E] text-white px-6 py-2 rounded-[30px] text-base font-semibold hover:bg-[#8e1682] transition-all shadow-md active:scale-95 ">
             Contact Us
-          </button>
+          </Link>
           </div>
             {/* <ul className="space-y-5 text-[#F1F3F4] text-[14px]">
               <li className="flex gap-3">
