@@ -2,8 +2,35 @@ import React, { useState, useEffect, useRef } from "react";
 import logo from "../assets/logo.png";
 import { Quote, Menu, X, ChevronDown, Home, Info, Briefcase, FileText, Mail, LayoutGrid } from "lucide-react"; 
 import { Link } from "react-router-dom";
-import { FaCode, FaPenNib, FaBriefcase, FaRobot, FaCogs, FaMobileAlt } from "react-icons/fa";
+import { FaCode, FaPenNib, FaBriefcase, FaRobot, FaCogs, FaMobileAlt, FaFacebook, FaInstagram, FaLinkedinIn, FaTiktok, FaYoutube } from "react-icons/fa";
 import { HiSpeakerphone } from "react-icons/hi";
+import { MdOutlineSupportAgent } from "react-icons/md";
+import { motion } from "framer-motion";
+
+
+  const socialLinks = [
+    {
+      icon: FaFacebook,
+      href: "https://www.facebook.com/p/Codes-Vista-61554340860410/",
+      color: "hover:bg-[#1877F2]",
+    },
+    {
+      icon: FaInstagram,
+      href: "https://www.instagram.com/codes_vista/?hl=en",
+      color: "hover:bg-[#E4405F]",
+    },
+    {
+      icon: FaLinkedinIn,
+      href: "https://www.linkedin.com/company/codestechvista/?originalSubdomain=pk",
+      color: "hover:bg-[#0A66C2]",
+    },
+    {
+      icon: FaTiktok,
+      href: "https://www.tiktok.com/@codes_techvista5052",
+      color: "hover:bg-[#000000]",
+    },
+    { icon: FaYoutube, href: "#", color: "hover:bg-[#FF0000]" },
+  ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -99,8 +126,8 @@ export default function Navbar() {
                 <Quote size={18} /> <span>Get Quote</span>
               </Link>
               {/* Mobile Icon-only Button (For very small screens if needed, otherwise matches sm logic) */}
-              <Link to="/getquote" className="sm:hidden p-2.5 text-gray-600 rounded transition-all active:scale-95">
-                <FileText size={28} /> 
+              <Link to="/getquote" className="sm:hidden flex items-center gap-2  bg-[#AC1B9E] text-white p-2 rounded-xl hover:bg-[#8e1682] transition-all shadow-md active:scale-95">
+                <MdOutlineSupportAgent size={30} /> 
               </Link>
             </div>
           </div>
@@ -144,6 +171,22 @@ export default function Navbar() {
             <Link to="/contact" className="flex items-center gap-3 text-[#4C4381] font-medium py-2 hover:bg-gray-50 rounded-lg px-2" onClick={() => setIsOpen(false)}>
               <Mail size={20} className="text-[#AC1B9E]" /> Contact
             </Link>
+
+            <div className="flex items-center gap-3 md:gap-4 relative z-40 border-l border-white/20">
+          {socialLinks.map((social, idx) => (
+            <motion.a
+              key={idx}
+              href={social.href}
+              target="_blank"
+              rel="noreferrer"
+              whileHover={{ scale: 1.1 }}
+              className={`w-10 h-10 flex items-center justify-center rounded-full text-[#AC1B9E] hover:text-white transition-all duration-300 bg-white/5 ${social.color} hover:shadow-lg`}
+            >
+              <social.icon size={18} />
+            </motion.a>
+          ))}
+        </div>
+            
             {/* <div className="pt-4">
               <Link to="/getquote" className="flex items-center justify-center gap-2 bg-[#AC1B9E] text-white py-3 rounded-xl font-semibold active:scale-95 transition-transform" onClick={() => setIsOpen(false)}>
                 <Quote size={18} /> <span>Get Free Quote</span>

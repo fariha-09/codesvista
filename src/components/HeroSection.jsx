@@ -98,7 +98,7 @@ export default function HeroSection() {
         <div className="flex-1 overflow-hidden md:mr-8">
           <motion.div
             className="flex whitespace-nowrap gap-35"
-            animate={{ x: [0, -4000] }}
+            animate={{ x: [0, -2000] }}
             transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
           >
             {[...marqueeItems, ...marqueeItems, ...marqueeItems].map(
@@ -130,7 +130,7 @@ export default function HeroSection() {
         </div>
       </div>
       {/* INNER CARD */}
-      <div className="relative w-full max-w-[1500px] h-full lg:h-[88vh] flex-1 overflow-hidden lg:shadow-2xl mx-auto pt-10">
+      <div className="relative w-full max-w-[1500px] h-full lg:h-[88vh] flex-1 overflow-hidden lg:shadow-2xl mx-auto pt-3">
         {" "}
         <div className="absolute inset-0 z-0">
           <img
