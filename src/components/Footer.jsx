@@ -26,7 +26,7 @@ import codevista from "../assets/codevista.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#4C4480] text-white pt-8 md:pt-16 pb-8 px-6 md:px-20 font-sans">
+    <footer className="bg-[#210844] text-white pt-8 md:pt-16 pb-8 px-6 md:px-20 font-sans">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12 mb-6">
           {/* Column 1: Brand & Social */}
@@ -122,15 +122,20 @@ export default function Footer() {
             <h3 className="text-lg md:text-xl text-[#F1F3F4] font-serif font-bold mb-6">
               Contact Info
             </h3>
-              <div className="flex-1 rounded-[30px] overflow-hidden shadow-sm">
+              <div className="flex-1 rounded-[30px] overflow-hidden shadow-sm"> 
 
              <iframe
             title="Google Map"
-            src="https://www.google.com/maps?q=Rawalpindi,Pakistan&output=embed"
+           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3321.546881089896!2d73.06424957416057!3d33.64298897331375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df95215cca989d%3A0x96494a8d7fee2d27!2s6th%20Rd%2C%20Rawalpindi%2C%20Pakistan!5e0!3m2!1sen!2s!4v1769685390506!5m2!1sen!2s"
             className="w-full h-full border-0"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
+          </div>
+          <div className="flex items-center justify-center">
+          <button className="mt-4 bg-[#AC1B9E] text-white px-6 py-2 rounded-[30px] text-base font-semibold hover:bg-[#8e1682] transition-all shadow-md active:scale-95 ">
+            Contact Us
+          </button>
           </div>
             {/* <ul className="space-y-5 text-[#F1F3F4] text-[14px]">
               <li className="flex gap-3">

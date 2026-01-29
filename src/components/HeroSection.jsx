@@ -64,13 +64,15 @@ export default function HeroSection() {
   ];
   return (
 <section className="relative bg-[#0fc8ca] min-h-screen lg:min-h-[88vh] w-full flex flex-col font-sans overflow-hidden">
-            <div className="w-full bg-white/10 backdrop-blur-md border-b border-white/20 py-3 px-6 md:px-16 relative z-30 flex items-center justify-between overflow-hidden">
+      
+      {/* TOP BAR */}
+      <div className="w-full bg-white/10 backdrop-blur-md border-b border-white/20 py-3 px-6 md:px-16 relative z-30 flex items-center justify-between overflow-hidden">
         
-        {/* MARQUEE SECTION */}
-        <div className="flex-1 overflow-hidden mr-8">
+        {/* MARQUEE SECTION - Takes full width on mobile */}
+        <div className="flex-1 overflow-hidden md:mr-8">
           <motion.div
-            className="flex whitespace-nowrap gap-12"
-            animate={{ x: [0, -800] }}
+            className="flex whitespace-nowrap gap-35"
+            animate={{ x: [0, -5000] }}
             transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
           >
             {[...marqueeItems, ...marqueeItems, ...marqueeItems].map((text, idx) => (
@@ -84,8 +86,8 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        {/* SOCIAL ICONS - With Circular Hover BG */}
-        <div className="flex items-center gap-3 md:gap-4 relative z-40 pl-8 border-l border-white/20">
+        {/* SOCIAL ICONS - HIDDEN ON MOBILE (hidden), VISIBLE ON TABLET+ (md:flex) */}
+        <div className="hidden md:flex items-center gap-3 md:gap-4 relative z-40 pl-8 border-l border-white/20">
           {socialLinks.map((social, idx) => (
             <motion.a
               key={idx}
