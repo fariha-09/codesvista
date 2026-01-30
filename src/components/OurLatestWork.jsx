@@ -12,7 +12,7 @@ import realestate from "../assets/realestate.jpg";
 import hospital from "../assets/hospital.jpg";
 import corporate from "../assets/corporate.jpg";
 import educational from "../assets/educational.jpg";
-import { motion } from "framer-motion";
+import { motion,AnimatePresence } from "framer-motion";
 
 const projects = [
   {
@@ -79,6 +79,13 @@ const projects = [
     category: "Web Development",
   },
 ];
+const filters = [
+  "All Projects",
+  "Web Development",
+  "Mobile Apps",
+  "Ecommerce",
+  "UI/UX Design",
+];
 
 const categories = [
   { name: "All Projects", count: 18, icon: RiLayoutGridFill },
@@ -90,6 +97,13 @@ const categories = [
 
 export default function OurLatestWork() {
   const [activeTab, setActiveTab] = useState("All Projects");
+
+  const filteredProjects =
+  activeTab === "All Projects"
+    ? projects
+    : projects.filter((project) => project.category === activeTab);
+
+  
 
   return (
     <section
@@ -126,49 +140,36 @@ export default function OurLatestWork() {
         </div>
 
         {/* Filter Bar - Exactly as in Figma Screenshot */}
-       <div className="flex flex-wrap justify-center items-center gap-4 bg-white/80 backdrop-blur-md p-4 rounded-2xl shadow-sm border border-gray-100 mb-16 max-w-fit mx-auto">
-          {categories.map((cat) => {
-            const IconComponent = cat.icon;
-            const isActive = activeTab === cat.name;
-            return (
-              <button
-                key={cat.name}
-                onClick={() => setActiveTab(cat.name)}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 ${
-                  isActive
-                    ? "bg-[#6D28D9] text-white shadow-lg shadow-indigo-200"
-                    : "text-gray-600 hover:bg-gray-50 border border-transparent hover:border-gray-200"
-                }`}
-              >
-                <IconComponent
-                  className={`text-lg transition-colors duration-300 ${
-                    isActive ? "text-[#FFFFFF]" : "text-[#2B2C34]"
-                  }`}
-                />
-
-                {cat.name}
-
-                <span
-                  className={`ml-1 px-1.5 py-0.5 rounded-md text-[10px] transition-colors duration-300 ${
-                    isActive
-                      ? "bg-white/20 text-white"
-                      : "bg-gray-100 text-[#2B2C34]"
-                  }`}
-                >
-                  {cat.count}
-                </span>
-              </button>
-            );
-          })}
-        </div>
+         <div className="flex flex-wrap justify-center gap-3 md:gap-6 mb-12 relative z-10">
+  {filters.map((filter) => (
+    <button
+      key={filter}
+      onClick={() => setActiveTab(filter)}
+      className={`px-6 py-2 rounded-full font-bold text-sm transition-all duration-300 border ${
+        activeTab === filter
+          ? "bg-[#0FC8CA] text-white border-[#0FC8CA] shadow-lg scale-105"
+          : "bg-white text-[#4C4480] border-gray-200 hover:border-[#0FC8CA] hover:text-[#0FC8CA]"
+      }`}
+    >
+      {filter}
+    </button>
+  ))}
+</div>
+                
 
         {/* Project Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="group bg-white rounded-3xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-gray-50 transition-all duration-500 hover:shadow-xl hover:-translate-y-2"
-            >
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <AnimatePresence>
+    {filteredProjects.map((project, index) => (
+      <motion.div
+        layout
+        key={project.title}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.95 }}
+        transition={{ duration: 0.3 }}
+        className="group bg-white rounded-3xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-gray-50"
+      >
               {/* Image Container */}
               <div className="h-[240px] overflow-hidden relative">
                 <img
@@ -200,9 +201,10 @@ export default function OurLatestWork() {
                   ))}
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            </motion.div>
+    ))}
+  </AnimatePresence>
+</motion.div>
 
       <div className="flex justify-center md:mt-16 mt-8">
   <button className="flex items-center gap-2 bg-[#AC1B9E] text-[#FFFFFF] text-[16px] font-semibold py-3 px-8 rounded-[8px] transition-all duration-300 hover:bg-[#8d1281] hover:shadow-lg hover:shadow-orange-100 active:scale-95">

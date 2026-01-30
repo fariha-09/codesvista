@@ -5,6 +5,11 @@ import {
   FaTags,
   FaPencilRuler,
   FaLightbulb,
+   FaInstagram,
+    FaTiktok,
+    FaYoutube,
+    FaFacebook,
+    FaLinkedinIn,
 } from "react-icons/fa";
 import grid from "../assets/grid.jpg";
 import {
@@ -45,23 +50,94 @@ export default function ContactBannerSection() {
     },
   ];
 
-  return (
-    <section className="relative bg-[#0fc8ca] min-h-[88vh] w-full flex justify-center font-sans overflow-hidden">
-      <div className="relative w-full  flex flex-col justify-center">
-        {/* Background Grid */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src={grid}
-            alt="grid overlay"
-            className="w-full h-full object-cover opacity-[5%] mix-blend-overlay"
-          />
-        </div>
+    const marqueeItems = [
+        "Free Consultation",
+        "Free Demo",
+        "Free Site Audit",
+        "Free Consultation",
+        "Free Demo",
+        "Free Site Audit",
+      ];
+    
+      const socialLinks = [
+        {
+          icon: FaFacebook,
+          href: "https://www.facebook.com/p/Codes-Vista-61554340860410/",
+          color: "hover:bg-[#1877F2]",
+        },
+        {
+          icon: FaInstagram,
+          href: "https://www.instagram.com/codes_vista/?hl=en",
+          color: "hover:bg-[#E4405F]",
+        },
+        {
+          icon: FaLinkedinIn,
+          href: "https://www.linkedin.com/company/codestechvista/?originalSubdomain=pk",
+          color: "hover:bg-[#0A66C2]",
+        },
+        {
+          icon: FaTiktok,
+          href: "https://www.tiktok.com/@codes_techvista5052",
+          color: "hover:bg-[#000000]",
+        },
+        { icon: FaYoutube, href: "#", color: "hover:bg-[#FF0000]" },
+      ];
+  
 
-        {/* MAIN CONTENT */}
-        <div className="container mx-auto px-6 md:px-10 py-2 lg:py-4 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-0">
-          {/* LEFT COLUMN */}
-          <div className="w-full lg:w-1/2 space-y-2 md:space-y-4">
-            <div className="inline-flex text-white hover:text-black items-center gap-2 bg-white/20 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/20 hover:bg-[#F1F3F4] transition-colors cursor-default">
+  return (
+    <section className="relative bg-[#0fc8ca] min-h-screen lg:min-h-[88vh] w-full flex flex-col font-sans overflow-hidden">
+             {/* TOP BAR */}
+             <div className="w-full bg-white/10 backdrop-blur-md border-b border-white/20 py-3 px-6 md:px-16 relative z-30 flex items-center justify-between overflow-hidden">
+               {/* MARQUEE SECTION - Takes full width on mobile */}
+               <div className="flex-1 overflow-hidden md:mr-8">
+                 <motion.div
+                   className="flex whitespace-nowrap gap-35"
+                   animate={{ x: [0, -2000] }}
+                   transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+                 >
+                   {[...marqueeItems, ...marqueeItems, ...marqueeItems].map(
+                     (text, idx) => (
+                       <div key={idx} className="flex items-center gap-6">
+                         <span className="text-white text-sm font-bold uppercase tracking-widest">
+                           {text}
+                         </span>
+                         <div className="w-1.5 h-1.5 rounded-full bg-white/30" />
+                       </div>
+                     ),
+                   )}
+                 </motion.div>
+               </div>
+       
+               <div className="hidden md:flex items-center gap-3 md:gap-4 relative z-40 pl-8 border-l border-white/20">
+                 {socialLinks.map((social, idx) => (
+                   <motion.a
+                     key={idx}
+                     href={social.href}
+                     target="_blank"
+                     rel="noreferrer"
+                     whileHover={{ scale: 1.1 }}
+                     className={`w-10 h-10 flex items-center justify-center rounded-full text-white transition-all duration-300 bg-white/5 ${social.color} hover:shadow-lg`}
+                   >
+                     <social.icon size={18} />
+                   </motion.a>
+                 ))}
+               </div>
+             </div>
+             {/* INNER CARD */}
+             <div className="relative w-full max-w-[1500px] h-full lg:h-[88vh] flex-1 overflow-hidden lg:shadow-2xl mx-auto pt-3">
+        
+               <div className="absolute inset-0 z-0">
+                 <img
+                   src={grid}
+                   alt="grid overlay"
+                   className="w-full h-full object-cover opacity-[5%] mix-blend-overlay"
+                 />
+               </div>
+               {/* CONTENT CONTAINER */}
+               <div className="container mx-auto px-6 md:px-10 relative z-10 flex flex-col lg:flex-row justify-between h-full py-2 lg:py-4 gap-10 lg:gap-0">
+                 {/* LEFT COLUMN */}
+                 <div className="w-full lg:w-1/2 space-y-2 lg:space-y-4 flex flex-col justify-center">
+                   <div className="inline-flex self-start items-center gap-2 text-white hover:text-black bg-white/20 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/20 hover:bg-[#F1F3F4] transition-all cursor-default">
               <PiBuildingApartmentFill size={20} className="text-[#0e9c9d]" />
               <span className="font-medium text-[14px] whitespace-nowrap">
                 Contact Us
@@ -92,7 +168,7 @@ export default function ContactBannerSection() {
             </p>
 
             {/* Feature Badges */}
-            <div className="flex flex-wrap gap-3 pt-3 md:pt-0">
+            {/* <div className="flex flex-wrap gap-3 pt-3 md:pt-0">
               {[
                 {
                   label: "24/7 Support",
@@ -136,7 +212,7 @@ export default function ContactBannerSection() {
                   <span className="relative z-10">{item.label}</span>
                 </motion.span>
               ))}
-            </div>
+            </div> */}
 
             {/* Action Buttons */}
             <div className="flex gap-2 md:gap-4 pt-4">
@@ -188,7 +264,7 @@ export default function ContactBannerSection() {
                   );
                 })}
               </div>
-              <div className="absolute -top-10 right-24 md:top-6 md:-right-6 flex flex-row lg:flex-col gap-3">
+              {/* <div className="absolute -top-10 right-24 md:top-6 md:-right-6 flex flex-row lg:flex-col gap-3">
               {[
                 MdOutlineSupportAgent,
                 BsClockHistory,
@@ -209,7 +285,7 @@ export default function ContactBannerSection() {
                 </div>
               ))}
             </div>
-          
+           */}
             </div>
 
             {/* Utility Floating Icons */}

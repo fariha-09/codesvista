@@ -45,9 +45,20 @@ export default function OurStory() {
           {/* LEFT COLUMN: TEXT */}
           {/* Aligned items to 'start' on mobile for a cleaner 'Story' look */}
           <div className="w-full lg:w-1/2 flex flex-col gap-4 md:gap-6 items-start">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight w-full text-left">
-              Our Story
-            </h2>
+ <motion.h2
+            initial={{ y: -20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-3xl md:text-5xl lg:text-6xl font-semibold font-serif text-[#0FC8CA] tracking-tight leading-tight px-2"
+            style={{
+              textShadow: `
+                0 0 30px rgba(0, 206, 209, 0.3),
+                0 0 15px rgba(0, 206, 209, 0.15)
+              `,
+            }}
+          >              Our Story
+            </motion.h2>
 
             {/* Paragraph Container */}
             {/* Added 'text-left' and 'md:text-left' to ensure consistency across views */}

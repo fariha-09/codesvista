@@ -19,9 +19,8 @@ export default function Home() {
      <HeroSection/>
      <Services/>
      <OurWork/>
-     {/* <Stats/> */}
-          <OurTechnology/>
-
+     <Stats/>
+      <OurTechnology/>
      <WhyChooseUs/>
      {/* <OurWorkProcess/> */}
      <Clients/>
