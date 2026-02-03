@@ -60,6 +60,7 @@ export default function VisionAndMission() {
           <motion.div 
             initial="initial"
             whileHover="hover"
+             whileTap="hover" 
             style={missionCardStyle}
             className="group border border-black/10 rounded-[40px] p-4 md:p-14 flex flex-col items-center text-center relative overflow-hidden cursor-default"
           >
@@ -99,6 +100,7 @@ export default function VisionAndMission() {
           <motion.div 
             initial="initial"
             whileHover="hover"
+             whileTap="hover" 
             style={visionCardStyle}
             className="group border border-black/10 rounded-[40px] p-4 md:p-14 flex flex-col items-center text-center relative overflow-hidden cursor-default"
           >
