@@ -12,14 +12,16 @@ import grids from "../assets/grids.png";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const [activeCard, setActiveCard] = useState(null);
+
+
+export default function Services() {
+
+  const [activeCard, setActiveCard] = useState(null);
 
 const handleTap = (index) => {
   setActiveCard(index);
   setTimeout(() => setActiveCard(null), 600);
 };
-
-export default function Services() {
   const services = [
     {
       title: "Web Development",
@@ -231,3 +233,4 @@ export default function Services() {
     </section>
   );
 }
+
