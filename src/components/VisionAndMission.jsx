@@ -1,4 +1,4 @@
-import React from "react";  // Removed useState since it's no longer needed
+import React, { useState } from "react";
 import { Target } from "lucide-react";
 import { BsCheckCircleFill } from "react-icons/bs";
 import { FaEye } from "react-icons/fa";
@@ -6,7 +6,12 @@ import grids from "../assets/grids.png";
 import { motion } from "framer-motion";
 
 export default function VisionAndMission() {
-  // Removed activeCard state and handleTap function
+  const [activeCard, setActiveCard] = useState(null);
+
+  const handleTap = (card) => {
+    setActiveCard(card);
+    setTimeout(() => setActiveCard(null), 700);
+  };
 
   const missionCardStyle = {
     background: `radial-gradient(circle at top center, #10B9810D 5%, #10B98100 0%), 
@@ -51,11 +56,12 @@ export default function VisionAndMission() {
           {/* Mission Card */}
           <motion.div
             initial="initial"
+            animate={activeCard === "mission" ? "hover" : "initial"}
             whileHover="hover"
             whileTap="hover"
-            // Removed animate, onTap, and style prop (kept in className)
-            className="group border border-black/10 rounded-[40px] p-4 md:p-14 flex flex-col items-center text-center relative overflow-hidden"
+            onTap={() => handleTap("mission")}
             style={missionCardStyle}
+            className="group border border-black/10 rounded-[40px] p-4 md:p-14 flex flex-col items-center text-center relative overflow-hidden"
           >
             <motion.div
               variants={overlayVariants}
@@ -107,11 +113,12 @@ export default function VisionAndMission() {
           {/* Vision Card */}
           <motion.div
             initial="initial"
+            animate={activeCard === "vision" ? "hover" : "initial"}
             whileHover="hover"
             whileTap="hover"
-            // Removed animate, onTap, and style prop (kept in className)
-            className="group border border-black/10 rounded-[40px] p-4 md:p-14 flex flex-col items-center text-center relative overflow-hidden"
+            onTap={() => handleTap("vision")}
             style={visionCardStyle}
+            className="group border border-black/10 rounded-[40px] p-4 md:p-14 flex flex-col items-center text-center relative overflow-hidden"
           >
             <motion.div
               variants={overlayVariants}
