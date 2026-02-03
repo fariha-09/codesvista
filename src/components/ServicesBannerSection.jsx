@@ -1,15 +1,53 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { PiBuildingApartmentFill, PiClipboardTextBold } from "react-icons/pi";
 import {
   FaShoppingCart,
   FaTags,
   FaPencilRuler,
   FaLightbulb,
+  FaUsers,
+    FaInstagram,
+    FaTiktok,
+    FaYoutube,
+    FaFacebook,
 } from "react-icons/fa";
 import grid from "../assets/grid.jpg";
 import { IoCodeSharp } from "react-icons/io5";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
+import { FaLinkedinIn } from "react-icons/fa6";
+const marqueeItems = [
+    "Free Consultation",
+    "Free Demo",
+    "Free Site Audit",
+    "Free Consultation",
+    "Free Demo",
+    "Free Site Audit",
+  ];
+
+  const socialLinks = [
+    {
+      icon: FaFacebook,
+      href: "https://www.facebook.com/p/Codes-Vista-61554340860410/",
+      color: "hover:bg-[#1877F2]",
+    },
+    {
+      icon: FaInstagram,
+      href: "https://www.instagram.com/codes_vista/?hl=en",
+      color: "hover:bg-[#E4405F]",
+    },
+    {
+      icon: FaLinkedinIn,
+      href: "https://www.linkedin.com/company/codestechvista/?originalSubdomain=pk",
+      color: "hover:bg-[#0A66C2]",
+    },
+    {
+      icon: FaTiktok,
+      href: "https://www.tiktok.com/@codes_techvista5052",
+      color: "hover:bg-[#000000]",
+    },
+    { icon: FaYoutube, href: "#", color: "hover:bg-[#FF0000]" },
+  ];
 
 export default function ServicesBannerSection() {
   const stats = [
@@ -47,22 +85,59 @@ export default function ServicesBannerSection() {
   ];
 
   return (
-    <section className="relative bg-[#0fc8ca] min-h-screen lg:min-h-[88vh] w-full flex justify-center lg:px-10 font-sans overflow-hidden">
-      <div className="relative w-full max-w-[1500px] h-full lg:h-[88vh] overflow-hidden lg:shadow-2xl">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={grid}
-            alt="grid overlay"
-            className="w-full h-full object-cover opacity-[5%] mix-blend-overlay"
-          />
-        </div>
-
-        {/* MAIN CONTENT GRID */}
-        <div className="container mx-auto px-6 md:px-10 relative z-10 flex flex-col lg:flex-row justify-between h-full py-2 lg:py-4 gap-10 lg:gap-0">
-          
-          {/* LEFT COLUMN: TEXT */}
-          <div className="w-full lg:w-1/2 space-y-2 lg:space-y-4 flex flex-col justify-center">
-            <div className="inline-flex self-start items-center gap-2 text-white hover:text-black bg-white/20 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/20 hover:bg-[#F1F3F4] transition-all cursor-default">
+    <section className="relative bg-[#0fc8ca] min-h-screen lg:min-h-[88vh] w-full flex flex-col font-sans overflow-hidden">
+          {/* TOP BAR */}
+          <div className="w-full bg-white/10 backdrop-blur-md border-b border-white/20 py-3 px-6 md:px-16 relative z-30 flex items-center justify-between overflow-hidden">
+            {/* MARQUEE SECTION - Takes full width on mobile */}
+            <div className="flex-1 overflow-hidden md:mr-8">
+              <motion.div
+                className="flex whitespace-nowrap gap-35"
+                animate={{ x: [0, -2000] }}
+                transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+              >
+                {[...marqueeItems, ...marqueeItems, ...marqueeItems].map(
+                  (text, idx) => (
+                    <div key={idx} className="flex items-center gap-6">
+                      <span className="text-white text-sm font-bold uppercase tracking-widest">
+                        {text}
+                      </span>
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/30" />
+                    </div>
+                  ),
+                )}
+              </motion.div>
+            </div>
+    
+            <div className="hidden md:flex items-center gap-3 md:gap-4 relative z-40 pl-8 border-l border-white/20">
+              {socialLinks.map((social, idx) => (
+                <motion.a
+                  key={idx}
+                  href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  className={`w-10 h-10 flex items-center justify-center rounded-full text-white transition-all duration-300 bg-white/5 ${social.color} hover:shadow-lg`}
+                >
+                  <social.icon size={18} />
+                </motion.a>
+              ))}
+            </div>
+          </div>
+          {/* INNER CARD */}
+          <div className="relative w-full max-w-[1500px] h-full lg:h-[88vh] flex-1 overflow-hidden lg:shadow-2xl mx-auto pt-3">
+            {" "}
+            <div className="absolute inset-0 z-0">
+              <img
+                src={grid}
+                alt="grid overlay"
+                className="w-full h-full object-cover opacity-[5%] mix-blend-overlay"
+              />
+            </div>
+            {/* CONTENT CONTAINER */}
+            <div className="container mx-auto px-6 md:px-10 relative z-10 flex flex-col lg:flex-row justify-between h-full py-2 lg:py-4 gap-10 lg:gap-0">
+              {/* LEFT COLUMN */}
+              <div className="w-full lg:w-1/2 space-y-2 lg:space-y-4 flex flex-col justify-center">
+                <div className="inline-flex self-start items-center gap-2 text-white hover:text-black bg-white/20 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/20 hover:bg-[#F1F3F4] transition-all cursor-default">
               <PiBuildingApartmentFill size={20} className="text-white" />
               <span className="font-medium text-[14px]">Our Services</span>
             </div>
@@ -88,7 +163,7 @@ export default function ServicesBannerSection() {
             </p>
 
             {/* Feature Tags */}
-            <div className="flex flex-wrap gap-3 pt-2 md:pt-0">
+            {/* <div className="flex flex-wrap gap-3 pt-2 md:pt-0">
               {[
                 { label: "BRAND IDENTITY", icon: FaTags, color: "#3B82F6" },
                 { label: "CREATIVE DESIGN", icon: FaLightbulb, color: "#4ADE80" },
@@ -114,17 +189,18 @@ export default function ServicesBannerSection() {
                   <span className="relative z-10">{tag.label}</span>
                 </motion.span>
               ))}
-            </div>
+            </div> */}
 
-            <div className="flex gap-2 md:gap-4 pb-4">
-              <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#00B8B8] text-[14px] text-[#2B2C34] px-4 md:px-8 py-3.5 rounded-xl font-bold shadow-lg transition-transform active:scale-95">
-                <PiClipboardTextBold size={20} /> Get Free Quote
-              </button>
-              <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#4C4480] hover:text-white text-[14px] text-[#4C4480] px-4 md:px-8 py-3.5 rounded-xl font-bold shadow-lg transition-all active:scale-95">
-                <FaShoppingCart /> Explore Services
-              </button>
-            </div>
-          </div>
+           {/* CTA Buttons */}
+                      <div className="flex gap-2 md:gap-4 pt-4 justify-center md:justify-normal">
+                        <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#00B8B8] text-[14px] text-[#2B2C34] px-2 md:px-8 py-3.5 rounded-xl font-bold shadow-lg transition-transform active:scale-95 sm:w-auto">
+                          <PiClipboardTextBold size={20} /> Get Free Quote
+                        </button>
+                        <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#4C4480] hover:text-white text-[14px] text-[#4C4480] px-2 md:px-8 py-3.5 rounded-xl font-bold shadow-lg transition-all duration-300 active:scale-95 sm:w-auto">
+                          <FaShoppingCart /> Explore Services
+                        </button>
+                      </div>
+                    </div>
 
           {/* RIGHT COLUMN: CARD & BOUNCING ICONS */}
           <div className="w-full lg:w-1/2 flex flex-col md:flex-row items-center justify-center lg:justify-end gap-6 relative">
@@ -158,7 +234,7 @@ export default function ServicesBannerSection() {
             </div>
 
             {/* Bouncing Side Icons - Positioned absolute relative to the Right Column container */}
-            <div className="absolute -top-10 right-24 md:top-10 md:-right-6 flex flex-row lg:flex-col gap-3 z-10">
+            {/* <div className="absolute -top-10 right-24 md:top-10 md:-right-6 flex flex-row lg:flex-col gap-3 z-10">
               {[IoCodeSharp, FaLightbulb, FaPencilRuler].map((SideIcon, idx) => (
                 <div
                   key={idx}
@@ -167,7 +243,7 @@ export default function ServicesBannerSection() {
                   <SideIcon size={20} />
                 </div>
               ))}
-            </div>
+            </div> */}
 
           </div>
         </div>
