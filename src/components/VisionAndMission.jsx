@@ -126,9 +126,16 @@ export default function VisionAndMission() {
                 <FaEye size={40} className="text-white group-hover:text-[#0FC8CA]" />
               </div>
               
-              <h2 className="text-3xl group-hover:text-white  font-serif font-bold md:mb-6 mb-2 transition-colors duration-300 ">
-                Our Vision
-              </h2>
+             
+                  <motion.h2
+  variants={{
+    initial: { color: "#000" },
+    hover: { color: "#fff" }
+  }}
+  className="text-3xl font-serif font-semibold md:mb-6 mb-2 transition-colors duration-300 group-hover:text-white"
+>
+                Our Vision</motion.h2>
+           
               <p className="text-[#4C448080]/50 group-hover:text-white text-[17px] leading-relaxed mb-2 md:mb-10 transition-colors duration-300 ">
                 To be the leading software house that transforms how businesses leverage technology, creating a future where digital innovation drives global progress.
               </p>
