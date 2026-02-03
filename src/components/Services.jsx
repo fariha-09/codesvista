@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import application from "../assets/application.png";
 import code from "../assets/code.png";
 import datascience from "../assets/datascience.png";
@@ -11,6 +11,13 @@ import webdevelopment from "../assets/webdevelopment.png";
 import grids from "../assets/grids.png";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+
+const [activeCard, setActiveCard] = useState(null);
+
+const handleTap = (index) => {
+  setActiveCard(index);
+  setTimeout(() => setActiveCard(null), 600);
+};
 
 export default function Services() {
   const services = [
@@ -124,12 +131,15 @@ export default function Services() {
 
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8 relative z-10">
           {visibleServices.map((service, index) => (
-            <motion.div
-              key={index}
-              initial="initial"
-              whileHover="hover"
-              className="relative bg-[#F8F9FA] border border-[#4C4480] rounded-[30px] py-2 px-3 flex flex-col items-center text-center shadow-sm hover:shadow-md  group overflow-hidden  transition-all duration-300"
-            >
+           <motion.div
+  key={index}
+  initial="initial"
+  animate={activeCard === index ? "hover" : "initial"}
+  whileHover="hover"
+  whileTap="hover"
+  onTap={() => handleTap(index)}
+  className="relative bg-[#F8F9FA] ..."
+>
               {/* 1. Expansion Circle */}
               <motion.div
                 variants={{
