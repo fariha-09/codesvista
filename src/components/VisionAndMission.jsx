@@ -21,7 +21,9 @@ export default function VisionAndMission() {
   // Animation variants for the white expansion effect
   const overlayVariants = {
     initial: { scale: 0, opacity: 0 },
-    hover: { scale: 1.5, opacity: 1 }
+    hover: { scale: 1.5, opacity: 1 },
+    onTap: { scale: 1.5, opacity: 1 }
+    
   };
 
   const contentVariants = {
@@ -65,6 +67,7 @@ export default function VisionAndMission() {
             <motion.div
               variants={overlayVariants}
               transition={{ duration: 0.7, ease: "easeOut" }}
+              onTap={{ y: 0, opacity: 1 }}
               style={{ originX: 1, originY: 0 }} 
               className="absolute inset-0 bg-[#0FC8CA] text-white z-0 pointer-events-none"
             />
