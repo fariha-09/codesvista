@@ -36,13 +36,20 @@ export default function VisionAndMission() {
   };
 
   const overlayVariants = {
-    initial: { scale: 0, opacity: 0 },
-    hover: {
-      scale: 1.15,
-      opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
+  initial: {
+    scale: 0,
+    opacity: 0,
+    originX: 1,
+    originY: 0,
+  },
+  hover: {
+    scale: 1.15,
+    opacity: 1,
+    originX: 1,
+    originY: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
   const iconMissionVariants = {
     initial: { backgroundColor: "#10B981", color: "#fff" },
