@@ -42,7 +42,7 @@ export default function Services() {
       image: application,
       tags: ["Social Media", "PPC Campaigns"],
     },
-     {
+    {
       title: "Graphics Design",
       slug: "graphics-design",
       desc: "Creating visually compelling graphics, branding assets, and marketing materials that effectively communicate your brand's message.",
@@ -56,14 +56,14 @@ export default function Services() {
       image: layers,
       tags: ["Responsive Design", "Custom Solutions"],
     },
-  
+
     {
       title: "SEO",
       slug: "seo",
       desc: "We optimize your online presence to improve visibility on search engines like Google, driving quality organic traffic to your site.",
       image: seo,
       tags: ["On-Page SEO", "Off-Page SEO"],
-    },  
+    },
     {
       title: "Automation Solutions",
       slug: "automation-solutions",
@@ -71,8 +71,8 @@ export default function Services() {
       image: machinelearning,
       tags: ["Machine Learning", "Data Analysis"],
     },
-    
-     {
+
+    {
       title: "E-commerce Solutions",
       slug: "ecommerce-solutions",
       desc: "Developing robust e-commerce platforms that provide seamless shopping experiences, secure transactions, and efficient inventory management.",
@@ -86,7 +86,7 @@ export default function Services() {
       image: layers,
       tags: ["Responsive Design", "Custom Solutions"],
     },
-   
+
     {
       title: "UI/UX Design",
       slug: "ui-ux-design",
@@ -125,21 +125,22 @@ export default function Services() {
             Our Services
           </motion.h2>
           <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Comprehensive technology solutions to drive your business growth and digital transformation.
+            Comprehensive technology solutions to drive your business growth and
+            digital transformation.
           </p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8 relative z-10">
           {visibleServices.map((service, index) => (
-           <motion.div
-  key={index}
-  initial="initial"
-  animate={activeCard === index ? "hover" : "initial"}
-  whileHover="hover"
-  whileTap="hover"
-  onTap={() => handleTap(index)}
-  className="relative bg-[#F8F9FA] ..."
->
+            <motion.div
+              key={index}
+              initial="initial"
+              animate={activeCard === index ? "hover" : "initial"}
+              whileHover="hover"
+              whileTap="hover"
+              onTap={() => handleTap(index)}
+              className="relative bg-[#F8F9FA] ..."
+            >
               {/* 1. Expansion Circle */}
               <motion.div
                 variants={{
@@ -160,10 +161,10 @@ export default function Services() {
                 </div>
 
                 {/* 2. Title with Color Change */}
-                <motion.h3 
+                <motion.h3
                   variants={{
                     initial: { color: "#4C4480" },
-                    hover: { color: "#AC1B9E" }
+                    hover: { color: "#AC1B9E" },
                   }}
                   className="md:text-xl font-bold md:mb-4"
                 >
@@ -180,7 +181,10 @@ export default function Services() {
                     <motion.span
                       key={tIdx}
                       variants={{
-                        initial: { backgroundColor: "#F3F4F6", color: "#4C4480" },
+                        initial: {
+                          backgroundColor: "#F3F4F6",
+                          color: "#4C4480",
+                        },
                         hover: { backgroundColor: "#4C4480", color: "#FFFFFF" },
                       }}
                       transition={{ duration: 0.4 }}
@@ -191,24 +195,24 @@ export default function Services() {
                   ))}
                 </div>
                 <Link to={`/services/${service.slug}`} className="mt-auto">
-                    <motion.button
-                       variants={{
-                    initial: { 
-                      backgroundColor: "rgba(172, 27, 158, 0)", 
-                      color: "#4C4480",
-                      borderColor: "#AC1B9E"
-                    },
-                    hover: { 
-                      backgroundColor: "#AC1B9E", 
-                      color: "#FFFFFF",
-                      borderColor: "#AC1B9E"
-                    },
-                  }}
-                  transition={{ duration: 0.4 }}
-                  className="mt-auto border-2 px-8 py-2 rounded-xl text-sm font-bold"
-                >
-                  Read More
-                    </motion.button>
+                  <motion.button
+                    variants={{
+                      initial: {
+                        backgroundColor: "rgba(172, 27, 158, 0)",
+                        color: "#4C4480",
+                        borderColor: "#AC1B9E",
+                      },
+                      hover: {
+                        backgroundColor: "#AC1B9E",
+                        color: "#FFFFFF",
+                        borderColor: "#AC1B9E",
+                      },
+                    }}
+                    transition={{ duration: 0.4 }}
+                    className="mt-auto border-2 px-8 py-2 rounded-xl text-sm font-bold"
+                  >
+                    Read More
+                  </motion.button>
                 </Link>
               </div>
             </motion.div>
@@ -216,7 +220,8 @@ export default function Services() {
         </div>
 
         <div className="md:mt-16 mt-8 flex justify-center relative z-10">
-          <Link to="/services"
+          <Link
+            to="/services"
             className="px-8 py-4 rounded-full bg-[#AC1B9E] border-2 font-bold text-white text-lg transition-all duration-300"
           >
             View All Services
