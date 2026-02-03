@@ -32,7 +32,7 @@ export default function ResultsWeAchieve() {
          className="relative bg-white flex justify-center object-cover"
          style={{ backgroundImage: `url(${grids})` }}
        >
-         <div className="relative w-full overflow-hidden bg-white/[98%] px-4 py-16 md:px-20">
+         <div className="relative w-full overflow-hidden bg-white/[98%] px-4 py-6 md:px-20">
            <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-10 md:mt-10">
            <motion.h2
                       initial={{ y: 40, opacity: 0 }}

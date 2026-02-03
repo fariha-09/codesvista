@@ -75,9 +75,9 @@ export default function RecentArticles() {
       }}
     >
       {/* 1. Container Card with Grid Overlay */}
-      <div className="relative w-full overflow-hidden bg-white/[98%] p-10 md:px-20">
+      <div className="relative w-full overflow-hidden bg-white/[98%] p-4 md:px-20">
         {/* Header Content */}
-        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-16">
+        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 md:mb-16 ">
            <motion.h2
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -100,7 +100,7 @@ export default function RecentArticles() {
         </div>
 
         {/* Article Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 gap-2 relative z-10">
           {articles.map((item, index) => (
             <div key={index} className="bg-[#F8F9FA] rounded-[32px] overflow-hidden flex flex-col h-full group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               {/* Image Container */}

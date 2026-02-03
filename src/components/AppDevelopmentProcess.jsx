@@ -70,11 +70,11 @@ const steps = [
   ];
 
   return (
-    <section className="bg-[#2B2C34] py-20 px-6">
-      <div className="max-w-6xl mx-auto px-4 md:px-12">
+    <section className="bg-[#2B2C34] md:py-20 py-8 md:px-6">
+      <div className="md:max-w-6xl mx-auto px-1 md:px-12">
         
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-[#F1F3F4] text-4xl md:text-6xl font-serif font-bold">
+        <div className="text-center md:mb-16 mb-2 space-y-4">
+          <h2 className="text-[#F1F3F4] text-2xl md:text-6xl font-serif font-bold">
             Our Development Process
           </h2>
           <p className="text-[#F1F3F4] text-lg md:text-xl max-w-3xl mx-auto">
@@ -82,7 +82,7 @@ const steps = [
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-10">
           {steps.map((step, index) => {
             // FIX: Identify the component here, inside the map
             const StepIcon = step.icon;
@@ -92,7 +92,7 @@ const steps = [
                    key={index}
                    initial="initial"
                    whileHover="hover"
-                   className="relative cursor-default p-8 bg-white/30 rounded-[40px] flex flex-col items-center text-center overflow-hidden"
+                   className="relative cursor-default md:p-8 p-4 bg-white/30 rounded-[40px] flex flex-col items-center text-center overflow-hidden"
                  >
                    <motion.div
                      variants={{
@@ -128,8 +128,8 @@ const steps = [
                          initial: { color: "#0E9C9D", backgroundColor: "#F1F3F4" },
                          hover: { color: "#F1F3F4", backgroundColor: "#0E9C9D" }
                        }}
-                      className=" w-20 h-20 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
-                       {StepIcon({ className: "w-10 h-10" })  }
+                      className=" md:w-20 md:h-20 w-12 h-12  rounded-2xl flex items-center justify-center md:mb-6 shadow-sm">
+                       {StepIcon({ className: "md:w-10 md:h-10 w-6 h-6" })  }
                      </motion.div>
              
                      <motion.h3 
@@ -137,7 +137,7 @@ const steps = [
                          initial: { color: "#FFFFFF" },
                          hover: { color: "#0E9C9D" }
                        }}
-                       className="text-2xl font-bold mb-3 transition-colors duration-300"
+                       className="md:text-2xl text-lg font-bold md:mb-3 mb-1 transition-colors duration-300"
                      >
                        {step.title}
                      </motion.h3>
@@ -147,7 +147,7 @@ const steps = [
                          initial: { color: "rgba(241, 243, 244, 0.7)" },
                          hover: { color: "#0E9C9D" } 
                        }}
-                       className="text-[14px] leading-relaxed font-medium px-2 transition-colors duration-300"
+                       className="md:text-[14px] text-[12px] leading-relaxed font-medium px-2 transition-colors duration-300"
                      >
                        {step.desc}
                      </motion.p>

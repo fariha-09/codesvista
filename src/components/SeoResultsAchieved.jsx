@@ -31,7 +31,7 @@ export default function SeoResultsAchieved() {
   ];
 
   return (
-    <section className="bg-white md:py-24 py-18 px-4 md:px-20 font-sans overflow-hidden">
+    <section className="bg-white md:py-24 py-10 px-4 md:px-20 font-sans overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* Header Section */}

@@ -64,13 +64,13 @@ export default function GraphicDesignPackages() {
     },
   ];
   return (
-    <section className="bg-[#0E9C9D] md:py-20 py-10 px-6 flex flex-col items-center font-sans">
+    <section className="bg-[#0E9C9D] md:py-20 py-8 px-6 flex flex-col items-center font-sans">
       {/* Header */}
-      <div className="text-center md:mb-16 mb-10 text-[#F1F3F4]">
-        <h2 className="text-5xl md:text-6xl font-serif font-bold mb-4">
+      <div className="text-center md:mb-16 mb-2 text-[#F1F3F4]">
+        <h2 className="text-3xl md:text-6xl  font-serif font-bold mb-4">
           Graphic Design Packages
         </h2>
-        <p className="text-[24px] text-[#F1F3F480]/50 leading-relaxed">
+        <p className="md:text-[24px] text-[20px] text-[#F1F3F480]/80 leading-normal">
           Affordable design packages to meet your creative needs
         </p>
       </div>
@@ -93,18 +93,18 @@ export default function GraphicDesignPackages() {
             )}
 
             {/* Icon */}
-            <div className="w-16 h-16 bg-[#F1F3F4] rounded-2xl flex items-center justify-center text-[#0FB7B7] text-3xl mb-6 shadow-xl">
+            <div className="md:w-16 md:h-16 h-12 w-12 bg-[#F1F3F4] rounded-2xl flex items-center justify-center text-[#0FB7B7] text-3xl mb-6 shadow-xl">
               {pkg.icon}
             </div>
 
-            <h3 className="text-3xl font-bold mb-2">{pkg.name}</h3>
+            <h3 className="md:text-3xl text-2xl font-bold mb-2">{pkg.name}</h3>
             <div className="flex items-baseline mb-2">
-              <span className="text-sm font-medium mr-1 uppercase  text-[#F1F3F480]/50">
+              <span className="text-sm font-medium mr-1 uppercase  text-[#F1F3F480]/80">
                 PKR
               </span>
-              <span className="text-5xl font-bold">{pkg.price}</span>
+              <span className="md:text-5xl  text-2xl font-bold">{pkg.price}</span>
             </div>
-            <p className="text-[14px] text-[#F1F3F480]/50  md:mb-8 mb-4">
+            <p className="text-[14px] text-[#F1F3F480]/80  md:mb-8 mb-2">
               {pkg.description}
             </p>
 
@@ -122,7 +122,7 @@ export default function GraphicDesignPackages() {
 
             {/* Buttons */}
             <button
-              className={`w-full py-4 rounded-xl font-bold transition-all shadow-lg active:scale-95 ${
+              className={`md:w-full w-[55%] md:py-4 py-2 rounded-xl font-bold transition-all shadow-lg active:scale-95 ${
                 pkg.isPopular
                   ? "bg-[#AC1B9E] hover:bg-[#921473] text-[#F1F3F4] text-[16px]"
                   : "bg-[#F1F3F4] text-[#4C4480] text-[16px] hover:bg-gray-100"

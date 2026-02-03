@@ -48,14 +48,14 @@
         className="relative bg-white flex justify-center object-cover"
         style={{ backgroundImage: `url(${grids})` }}
         >
-        <div className="relative w-full overflow-hidden bg-white/[98%] px-4 py-16  md:p-20">
+        <div className="relative w-full overflow-hidden bg-white/[98%] px-4 py-6  md:p-20">
             <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 md:mb-16 mb-4">
             <motion.h2
                 initial={{ y: 40, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="text-4xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text"
+                className="text-2xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text"
                 style={{
                 textShadow: `0 0 38px rgba(0, 206, 209, 0.45), 0 0 20px rgba(0, 206, 209, 0.25)`,
                 }}

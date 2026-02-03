@@ -13,7 +13,7 @@ export default function GetFreeQuote() {
     >
       {/* 1. Container Card with Grid Overlay */}
       <div className="relative w-full   overflow-hidden bg-white/[98%] p-4 md:px-20">
-        <div className=" mx-auto w-full max-w-[900px] bg-[#F1F3F4] rounded-[60px] p-6  md:p-20">
+        <div className=" mx-auto w-full max-w-[900px] bg-[#F1F3F4] rounded-[30px] p-6  md:p-20">
           {/* 2. Header Content */}
           <div className="max-w-4xl mx-auto text-center space-y-2 md:space-y-4 md:mb-12 mb-4">
             <motion.h2

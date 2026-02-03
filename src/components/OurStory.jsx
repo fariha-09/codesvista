@@ -12,7 +12,7 @@ export default function OurStory() {
       }}
     >
       {/* 1. Container Card with Grid Overlay */}
-      <div className="relative w-full overflow-hidden bg-white/[98%] px-5 py-12 md:px-10 lg:p-20">
+      <div className="relative w-full overflow-hidden bg-white/[98%] px-5 py-2 md:px-10 lg:p-20">
         
         {/* Main Heading */}
         <div className="text-center mb-10 md:mb-16">
@@ -21,7 +21,7 @@ export default function OurStory() {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-3xl md:text-5xl lg:text-6xl font-semibold font-serif text-[#0FC8CA] tracking-tight leading-tight px-2"
+            className="text-2xl md:text-5xl lg:text-6xl font-semibold font-serif text-[#0FC8CA] tracking-tight leading-tight px-2"
             style={{
               textShadow: `
                 0 0 30px rgba(0, 206, 209, 0.3),
@@ -35,12 +35,12 @@ export default function OurStory() {
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="h-1 w-16 md:w-24 bg-[#0FC8CA] mx-auto mt-4 rounded-full"
+            className="h-1 w-16 md:w-24 bg-[#0FC8CA] mx-auto mt-2 rounded-full"
           />
         </div>
 
         {/* Content Grid */}
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-center">
+        <div className="flex flex-col lg:flex-row gap-2 lg:gap-20 items-center">
           
           {/* LEFT COLUMN: TEXT */}
           {/* Aligned items to 'start' on mobile for a cleaner 'Story' look */}
@@ -50,7 +50,7 @@ export default function OurStory() {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-3xl md:text-5xl lg:text-6xl font-semibold font-serif text-[#0FC8CA] tracking-tight leading-tight px-2"
+            className="text-2xl md:text-5xl lg:text-6xl font-semibold font-serif text-[#0FC8CA] tracking-tight leading-tight px-2"
             style={{
               textShadow: `
                 0 0 30px rgba(0, 206, 209, 0.3),
@@ -63,20 +63,20 @@ export default function OurStory() {
             {/* Paragraph Container */}
             {/* Added 'text-left' and 'md:text-left' to ensure consistency across views */}
             <div className="flex flex-col gap-4 md:gap-6 text-[#555] text-sm md:text-base leading-relaxed text-left">
-              <p className="w-full">
-                Founded in 2019, <strong>Astron Hosts</strong> began with a simple mission: to make
+              <p className="md:w-full w-94">
+                Founded in 2019, began with a simple mission: to make
                 technology accessible and beneficial for businesses of all sizes.
               </p>
               
               {/* Hidden on very small screens to keep mobile view concise, or visible if preferred */}
-              <p className="w-full">
+              <p className="md:w-full hidden md:flex-none">
                 What started as a small team of passionate developers has grown
                 into a comprehensive software house that delivers end-to-end
                 digital solutions. We've helped hundreds of businesses transform
                 their digital presence.
               </p>
               
-              <p className="w-full">
+              <p className="md:w-full w-94">
                 Our journey has been marked by continuous learning, innovation,
                 and an unwavering commitment to client success. Every project we
                 undertake is an opportunity to push boundaries and create

@@ -51,7 +51,7 @@ export default function FeaturedArticles() {
         backgroundImage: `url(${grids})`,
       }}
     >
-      <div className="relative w-full overflow-hidden bg-white/[98%] py-4 pt-16 md:py-20">
+      <div className="relative w-full overflow-hidden bg-white/[98%] py-4 pt-4 md:py-20">
         <div className="bg-[#F1F3F4] md:py-20 py-6 px-6 w-full">
           {/* Header */}
           <div className="text-center md:mb-16 mb-4">
@@ -75,7 +75,7 @@ export default function FeaturedArticles() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 md:gap-8 gap-2">
             <div className="lg:col-span-7 bg-white rounded-[32px] overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
               <div className="relative h-40 md:h-80 overflow-hidden">
                 <img
@@ -107,7 +107,7 @@ export default function FeaturedArticles() {
                   interfaces, discover the....
                 </p>
 
-               <div className="mt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+               <div className="md:mt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between md:gap-6 gap-2">
   <div className="flex items-center gap-3">
     <div className="w-10 h-10 rounded-full bg-gray-200 overflow-hidden shrink-0">
       <img
@@ -134,7 +134,7 @@ export default function FeaturedArticles() {
               </div>
             </div>
 
-            <div className="lg:col-span-5 flex flex-col gap-6">
+            <div className="lg:col-span-5 flex flex-col md:gap-6 gap-2">
               {sideArticles.map((article, index) => (
                 <div
                   key={index}

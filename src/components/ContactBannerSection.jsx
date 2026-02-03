@@ -227,7 +227,7 @@ export default function ContactBannerSection() {
           {/* RIGHT COLUMN */}
           <div className="w-full lg:w-1/2 flex flex-col md:flex-row items-center justify-center lg:justify-end gap-6">
             {/* Glassmorphism Contact Card */}
-            <div className="bg-white/20 backdrop-blur-xl relative mt-6 md:mt-0 border border-white/30 p-6 sm:p-8 rounded-[30px] sm:rounded-[40px] shadow-2xl w-full max-w-md">
+            <div className="bg-white/20 backdrop-blur-xl relative md:mt-0 border border-white/30 p-6 sm:p-8 rounded-[30px] sm:rounded-[40px] shadow-2xl w-full max-w-md">
               <div className="flex justify-between items-center mb-6">
                 <div className="flex gap-1.5">
                   <div className="w-3 h-3 rounded-full bg-red-400"></div>

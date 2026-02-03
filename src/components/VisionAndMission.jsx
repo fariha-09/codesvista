@@ -26,7 +26,7 @@ export default function VisionAndMission() {
 
   const contentVariants = {
     initial: { color: "inherit" },
-    hover: { color: "#000000" } // Optional: darkens text when background turns white
+    hover: { color: "#000000" } 
   };
 
   return (
@@ -65,7 +65,7 @@ export default function VisionAndMission() {
             <motion.div
               variants={overlayVariants}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              style={{ originX: 1, originY: 0 }} // Expands from top right
+              style={{ originX: 1, originY: 0 }} 
               className="absolute inset-0 bg-[#0FC8CA] text-white z-0 pointer-events-none"
             />
 

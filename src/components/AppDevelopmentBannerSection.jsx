@@ -192,7 +192,7 @@ export default function AppDevelopmentBannerSection() {
 
         {/* RIGHT COLUMN */}
         <div className="w-full lg:w-1/2 flex items-center justify-center lg:justify-end md:mt-12 lg:mt-0">
-          <div className="bg-white/20 relative mt-6 md:mt-0 backdrop-blur-xl border border-white/30 p-6 md:p-8 rounded-[30px] md:rounded-[40px] shadow-2xl w-full max-w-md">
+          <div className="bg-white/20 relative md:mt-0 backdrop-blur-xl border border-white/30 p-6 md:p-8 rounded-[30px] md:rounded-[40px] shadow-2xl w-full max-w-md">
             <div className="flex justify-between items-center mb-6">
               <div className="flex gap-1.5">
                 <div className="w-3 h-3 rounded-full bg-red-400"></div>

@@ -42,7 +42,7 @@ export default function AutomationTools() {
   );
 
   return (
-    <section className="bg-white md:py-24 py-10 px-6 md:px-20 flex justify-center">
+    <section className="bg-white md:py-24 py-8 px-6 md:px-20 flex justify-center">
       <div className="w-full max-w-[1400px]">
         {/* Main Title Section */}
         <div className="text-center md:mb-20 mb-6 space-y-4">

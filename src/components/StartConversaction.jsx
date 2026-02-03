@@ -12,7 +12,7 @@ export default function StartConversation() {
       }}
     >
       {/* 1. Container Card with Grid Overlay */}
-      <div className="relative w-full  overflow-hidden bg-white/[98%] p-10 md:p-20">
+      <div className="relative w-full  overflow-hidden bg-white/[98%] p-8  md:p-20">
         {/* Header Content */}
         <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 md:mb-16 mb-6">
            <motion.h2
@@ -20,7 +20,7 @@ export default function StartConversation() {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl md:pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
+            className="text-2xl md:text-5xl md:pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
             style={{
               textShadow: `
       0 0 38px rgba(0, 206, 209, 0.45),

@@ -44,7 +44,7 @@ export default function WhyChooseUs() {
       ],
     },
     {
-      title: "Expert Team",
+      title:  `Expert Trained Team`,
       desc: "Our designers are certified experts in the latest industry standards. We blend artistic talent with user-experience.",
       icon: <FaUsers className="text-[#F1F3F4] text-3xl" />,
       points: [
@@ -79,9 +79,9 @@ export default function WhyChooseUs() {
       }}
     >
       {/* 1. Container Card with Grid Overlay */}
-      <div className="relative w-full overflow-hidden bg-white/[98%] p-4 md:px-20">
+      <div className="relative w-full overflow-hidden bg-white/[98%] px-4 md:px-20">
         {/* 2. Header Content */}
-        <div className="md:max-w-4xl mx-auto text-center space-y-4 relative z-10 mt-10 md:mt-10 mb-6 ">
+        <div className="md:max-w-4xl mx-auto text-center space-y-4 relative z-10 mt-0 md:mt-10 mb-6 ">
           <motion.h2
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}

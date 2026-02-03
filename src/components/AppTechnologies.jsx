@@ -59,7 +59,7 @@ export default function AppTechnologies() {
       className="relative bg-white flex justify-center overflow-hidden"
       style={{ backgroundImage: `url(${grids})`, backgroundSize: "cover" }}
     >
-      <div className="relative w-full  bg-white/[98%] p-10 md:px-20">
+      <div className="relative w-full  bg-white/[98%] p-8 md:px-20">
         {/* Header Content */}
         <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-20">
           <motion.h2
