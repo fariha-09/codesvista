@@ -22,7 +22,6 @@ export default function VisionAndMission() {
   const overlayVariants = {
     initial: { scale: 0, opacity: 0 },
     hover: { scale: 1.5, opacity: 1 },
-    onTap: { scale: 1.5, opacity: 1 }
     
   };
 
@@ -78,9 +77,19 @@ export default function VisionAndMission() {
                 <Target size={38} className="text-white group-hover:text-[#0FC8CA]" />
               </div>
               
-              <h2 className="text-3xl font-serif font-semibold md:mb-6 mb-2 transition-colors duration-300 group-hover:text-white">
-                Our Mission
-              </h2>
+              {/* <h2 className="text-3xl font-serif font-semibold md:mb-6 mb-2 transition-colors duration-300 group-hover:text-white"> */}
+              <motion.h2
+  variants={{
+    initial: { color: "#000" },
+    hover: { color: "#fff" }
+  }}
+  className="text-3xl font-serif font-semibold md:mb-6 mb-2 transition-colors duration-300 group-hover:text-white"
+>
+ Our Mission
+          
+</motion.h2>
+               
+          
               <p className="text-[#4C448080]/50 text-[17px] leading-relaxed mb-2 md:mb-10 transition-colors duration-300 group-hover:text-white">
                 To empower businesses with cutting-edge technology solutions that drive innovation, efficiency, and sustainable growth.
               </p>
