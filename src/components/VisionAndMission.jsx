@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";  // Removed useState since it's no longer needed
 import { Target } from "lucide-react";
 import { BsCheckCircleFill } from "react-icons/bs";
 import { FaEye } from "react-icons/fa";
@@ -6,12 +6,7 @@ import grids from "../assets/grids.png";
 import { motion } from "framer-motion";
 
 export default function VisionAndMission() {
-  const [activeCard, setActiveCard] = useState(null);
-
-  const handleTap = (card) => {
-    setActiveCard(card);
-    setTimeout(() => setActiveCard(null), 700);
-  };
+  // Removed activeCard state and handleTap function
 
   const missionCardStyle = {
     background: `radial-gradient(circle at top center, #10B9810D 5%, #10B98100 0%), 
@@ -56,12 +51,11 @@ export default function VisionAndMission() {
           {/* Mission Card */}
           <motion.div
             initial="initial"
-            animate={activeCard === "mission" ? "hover" : "initial"}
             whileHover="hover"
             whileTap="hover"
-            onTap={() => handleTap("mission")}
-            style={missionCardStyle}
+            // Removed animate, onTap, and style prop (kept in className)
             className="group border border-black/10 rounded-[40px] p-4 md:p-14 flex flex-col items-center text-center relative overflow-hidden"
+            style={missionCardStyle}
           >
             <motion.div
               variants={overlayVariants}
@@ -113,12 +107,11 @@ export default function VisionAndMission() {
           {/* Vision Card */}
           <motion.div
             initial="initial"
-            animate={activeCard === "vision" ? "hover" : "initial"}
             whileHover="hover"
             whileTap="hover"
-            onTap={() => handleTap("vision")}
-            style={visionCardStyle}
+            // Removed animate, onTap, and style prop (kept in className)
             className="group border border-black/10 rounded-[40px] p-4 md:p-14 flex flex-col items-center text-center relative overflow-hidden"
+            style={visionCardStyle}
           >
             <motion.div
               variants={overlayVariants}
