@@ -122,7 +122,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8 relative z-10">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8 relative z-10">
           {visibleServices.map((service, index) => (
             <motion.div
               key={index}
@@ -141,7 +141,7 @@ export default function Services() {
               />
 
               <div className="relative z-10 flex flex-col items-center h-full">
-                <div className="w-20 h-20 md:mb-6 flex items-center justify-center">
+                <div className="w-14 h-14 mb-2 md:w-20 md:h-20 md:mb-6 flex items-center justify-center">
                   <img
                     src={service.image}
                     alt={service.title}
@@ -155,17 +155,17 @@ export default function Services() {
                     initial: { color: "#4C4480" },
                     hover: { color: "#AC1B9E" }
                   }}
-                  className="text-xl font-bold md:mb-4"
+                  className="md:text-xl font-bold md:mb-4"
                 >
                   {service.title}
                 </motion.h3>
 
-                <p className="text-[#4C448099]/60 text-[18px] max-w-100 font-medium leading-relaxed md:mb-6 mb-3">
+                <p className="text-[#4C448099]/60 text-[18px] max-w-100 font-medium leading-relaxed md:mb-6 mb-3 hidden md:flex">
                   {service.desc}
                 </p>
 
                 {/* 3. Tags with Corrected Background Animation */}
-                <div className="flex gap-2 md:mb-8 mb-3">
+                <div className="flex flex-col md:flex-row gap-1 md:mb-8 mb-3">
                   {service.tags.map((tag, tIdx) => (
                     <motion.span
                       key={tIdx}

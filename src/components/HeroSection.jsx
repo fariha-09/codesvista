@@ -59,11 +59,9 @@ export default function HeroSection() {
   ];
 
   const marqueeItems = [
-    "Free Consultation",
-    "Free Demo",
+    "Free Consultancy",
     "Free Site Audit",
-    "Free Consultation",
-    "Free Demo",
+    "Free Consultancy",
     "Free Site Audit",
   ];
 
