@@ -59,8 +59,8 @@ export default function SeoPackages() {
         {packages.map((pkg, index) => (
           <div 
             key={index} 
-            className={`relative rounded-[32px] md:p-8 p-4 border border-white/20 flex flex-col items-center text-white transition-all duration-300 hover:scale-[1.02] ${
-              pkg.isPopular ? 'bg-white/10 backdrop-blur-md py-12 -mt-4 shadow-2xl z-10' : 'bg-transparent'
+            className={`relative rounded-[32px] md:p-8 p-4 border border-white/20 flex flex-col items-center text-gray-700 transition-all duration-300 hover:scale-[1.02] ${
+              pkg.isPopular ? 'bg-white backdrop-blur-md py-12 -mt-4 shadow-2xl z-10' : 'bg-white'
             }`}
           >
             {pkg.isPopular && (
@@ -76,10 +76,10 @@ export default function SeoPackages() {
 
             <h3 className="md:text-3xl text-2xl font-bold md:mb-2">{pkg.name}</h3>
             <div className="flex items-baseline mb-2">
-              <span className="text-sm font-medium mr-1 uppercase text-[#F1F3F480]/80">PKR</span>
+              <span className="text-sm font-medium mr-1 uppercase text-gray-700">PKR</span>
               <span className="md:text-5xl text-2xl font-bold">{pkg.price}</span>
             </div>
-            <p className="text-[14px] text-[#F1F3F480]/80 md:mb-8 mb-2">{pkg.description}</p>
+            <p className="text-[14px] text-gray-700 md:mb-8 mb-2">{pkg.description}</p>
 
             <div className="w-full border-t border-white/20 md:mb-8 mb-4"></div>
 
@@ -88,7 +88,7 @@ export default function SeoPackages() {
               {pkg.features.map((feature, i) => (
                 <li key={i} className="flex items-center text-sm gap-3">
                   <FaCheck className="text-[#26D0CE] md:flex-shrink-0" />
-                  <span className="md:text-[16px] text-[13px] text-[#F1F3F4]">{feature}</span>
+                  <span className="md:text-[16px] text-[13px] text-gray-700">{feature}</span>
                 </li>
               ))}
             </ul>
@@ -97,7 +97,7 @@ export default function SeoPackages() {
             <button className={`md:w-full w-[55%] md:py-4 py-2 rounded-xl font-bold transition-all shadow-lg active:scale-95 ${
               pkg.isPopular 
                 ? 'bg-[#AC1B9E] hover:bg-[#921473] text-[#F1F3F4] text-[16px]' 
-                : 'bg-[#F1F3F4] text-[#4C4480] text-[16px] hover:bg-gray-100'
+                : 'bg-[#0e9c9d] text-white text-[16px] hover:bg-gray-100 hover:text-[#4C4480]'
             }`}>
               {pkg.buttonText}
             </button>

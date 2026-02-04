@@ -176,26 +176,35 @@ const handleTap = (index) => {
                 <p className="text-[#4C448099]/60 text-[18px] max-w-100 font-medium leading-relaxed md:mb-6 mb-3 hidden md:flex">
                   {service.desc}
                 </p>
-
-                {/* 3. Tags with Corrected Background Animation */}
-                <div className="flex flex-col md:flex-row gap-1 md:mb-8 mb-3">
-                  {service.tags.map((tag, tIdx) => (
-                    <motion.span
-                      key={tIdx}
-                      variants={{
-                        initial: {
-                          backgroundColor: "#F3F4F6",
-                          color: "#4C4480",
-                        },
-                        hover: { backgroundColor: "#4C4480", color: "#FFFFFF" },
-                      }}
-                      transition={{ duration: 0.4 }}
-                      className="text-[14px] font-medium px-3 py-2 rounded-full"
-                    >
-                      {tag}
-                    </motion.span>
-                  ))}
-                </div>
+          
+{/* Mobile Tags with Bullets / Desktop Tags as Badges */}
+<div className="flex flex-col md:flex-row items-start md:items-center justify-center gap-2 md:gap-2 md:mb-8 mb-4 w-full px-2">
+  {service.tags.map((tag, tIdx) => (
+    <div
+      key={tIdx}
+      className="flex items-center text-[12px] md:text-[14px] font-semibold"
+    >
+      <span className="md:hidden mr-2 text-[#AC1B9E] text-lg">•</span>
+      
+      <motion.span
+        variants={{
+          initial: { 
+            backgroundColor: "transparent", 
+            color: "#4C4480" 
+          },
+          hover: { 
+            backgroundColor: window.innerWidth >= 768 ? "#4C4480" : "transparent", 
+            color: window.innerWidth >= 768 ? "#FFFFFF" : "black-600" 
+          },
+        }}
+        // Tailwind classes: bg-transparent on mobile, gray on desktop
+        className="md:bg-[#F3F4F6] bg-transparent md:px-3 md:py-2 md:rounded-full px-0 py-0 transition-colors duration-400"
+      >
+        {tag}
+      </motion.span>
+    </div>
+  ))}
+</div>
                 <Link to={`/services/${service.slug}`} className="mt-auto">
                   <motion.button
                     variants={{

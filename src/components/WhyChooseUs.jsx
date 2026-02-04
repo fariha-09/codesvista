@@ -24,13 +24,14 @@ export default function WhyChooseUs() {
       ],
     },
     {
-      title: "Perfect Quality",
+      title: "Perfect Satisfied Quality",
       desc: "Excellence is our standard. We guarantee high-fidelity designs that align perfectly with your brand identity, offering revisions until you are thrilled.",
       icon: <FaAward className="text-[#F1F3F4] text-3xl" />,
       points: [
+        "Unlimited revisions during the design ",
         "100% satisfaction guarantee",
-        "Rigorous visual consistency checks",
-        "Unlimited revisions during the design phase",
+        "Visual consistency checks"
+
       ],
     },
     {
@@ -38,9 +39,10 @@ export default function WhyChooseUs() {
       desc: "We don't just work for you; we work with you. Our team maintains open lines of communication to ensure your vision is captured in every pixel.",
       icon: <FaHeadset className="text-[#F1F3F4] text-3xl" />,
       points: [
-        "Direct access to your lead designer",
+        // "Direct access to your lead designer",
         "Regular progress video updates",
         "Free maintenance included",
+        "Direct access to designer "
       ],
     },
     {
@@ -57,7 +59,10 @@ export default function WhyChooseUs() {
       title: "Security First",
       desc: "Enterprise-grade security measures to protect your data and ensure your business operations remain safe.",
       icon: <FaShieldAlt className="text-[#F1F3F4] text-3xl" />,
-      points: ["SSL encryption", "Regular security audits", "GDPR compliant"],
+      points: ["SSL encryption", 
+        "Regular security audits", 
+        "GDPR compliant"
+      ],
     },
     {
       title: "Scalable Solutions",
