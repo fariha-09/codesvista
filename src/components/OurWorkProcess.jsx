@@ -130,7 +130,7 @@ export default function OurWorkProcess() {
                 </motion.p>
               </div>
 
-              <div className="absolute inset-0 border border-white/20 rounded-[40px] pointer-events-none" />
+              <div className="absolute inset-0 border border-white/20 md:rounded-[40px] rounded-xl pointer-events-none" />
             </motion.div>
           ))}
         </div>
