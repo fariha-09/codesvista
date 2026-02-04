@@ -160,7 +160,7 @@ export default function AppDevelopmentProcess() {
                       initial: { color: "rgba(241, 243, 244, 0.7)" },
                       hover: { color: "#333333" } 
                     }}
-                    className="md:text-[14px] text-[11px] md:text-[13px] leading-relaxed font-medium px-1 md:px-2 transition-colors duration-300"
+                    className="md:text-[14px] text-[11px] leading-relaxed font-medium px-1 md:px-2 transition-colors duration-300"
                   >
                     {step.desc}
                   </motion.p>
