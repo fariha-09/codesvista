@@ -19,7 +19,7 @@ export default function Home() {
      <HeroSection/>
      <Services/>
      <OurWork/>
-     <Stats/>
+     {/* <Stats/> */}
       <OurTechnology/>
      <WhyChooseUs/>
      {/* <OurWorkProcess/> */}

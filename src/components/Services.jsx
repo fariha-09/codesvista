@@ -178,11 +178,11 @@ const handleTap = (index) => {
                 </p>
           
 {/* Mobile Tags with Bullets / Desktop Tags as Badges */}
-<div className="flex flex-col md:flex-row items-start md:items-center justify-center gap-2 md:gap-2 md:mb-8 mb-4 w-full px-2">
+<div className="flex flex-col md:flex-row items-start md:items-center justify-center md:gap-2 md:mb-8 mb-4 w-full px-2">
   {service.tags.map((tag, tIdx) => (
     <div
       key={tIdx}
-      className="flex items-center text-[12px] md:text-[14px] font-semibold"
+      className="flex items-center text-xs md:text-[14px] font-semibold"
     >
       <span className="md:hidden mr-2 text-[#AC1B9E] text-lg">•</span>
       

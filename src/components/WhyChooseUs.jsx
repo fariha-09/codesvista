@@ -138,18 +138,22 @@ export default function WhyChooseUs() {
                   {item.icon}
                 </motion.div>
 
-                <h3 className="text-[#4C4480] md:text-2xl text-lg font-bold md:mb-4">
+                <h3 className="text-[#4C4480] md:text-2xl text-lg font-bold md:mb-4 min-h-[44px] md:min-h-0">
                   {item.title}
                 </h3>
+
                 {/* <p className="text-[#4C448080] text-[15px] leading-relaxed mb-6">
                   {item.desc}
                 </p> */}
 
-                <div className="w-full md:space-y-3 text-left md:pl-4">
+                <div className="w-full space-y-2 md:space-y-3 text-left md:pl-4">
                   {item.points.map((point, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <FaCheckCircle className="text-[#34D399] text-lg shrink-0" />
-                      <span className="text-[#4C448080] text-sm font-medium">
+                    <div
+                      key={i}
+                      className="flex items-start gap-3 min-h-[22px] md:min-h-0"
+                    >
+                      <FaCheckCircle className="text-[#34D399] text-lg shrink-0 mt-[2px]" />
+                      <span className="text-[#4C448080] text-sm font-medium leading-snug">
                         {point}
                       </span>
                     </div>

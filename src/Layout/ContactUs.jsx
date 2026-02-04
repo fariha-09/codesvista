@@ -13,10 +13,10 @@ export default function ContactUs() {
     <>
     <Navbar/>
       <ContactBannerSection />
-      <StartConversaction />
-      <ProjectStats />
+      {/* <StartConversaction />
+      <ProjectStats /> */}
       <GetInTouch/>
-      <GetFreeQuote/>
+      {/* <GetFreeQuote/> */}
       <FAQS/>
       <Footer/>
     </>

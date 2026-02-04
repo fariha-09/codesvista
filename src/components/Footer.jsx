@@ -19,6 +19,9 @@ import {
   FaRobot,
   FaCogs,
 } from "react-icons/fa";
+import { FaLaptopCode, FaPalette, FaChartLine, FaServer } from "react-icons/fa";
+import { MdCampaign, MdOutlineAutoFixHigh } from "react-icons/md";
+
 import { MdRoomService } from "react-icons/md";
 import { HiSpeakerphone } from "react-icons/hi";
 import { Link } from "react-router-dom";
@@ -42,19 +45,24 @@ export default function Footer() {
               technology solutions. We specialize in web development, digital
               marketing, and custom software solutions.
             </p>
-            <div className="flex gap-6 jus md:gap-10">
+            <div className="flex gap-6 md:gap-10">
               {[
-                FaFacebookF,
-                FaTwitter,
-                FaLinkedinIn,
-                FaInstagram,
-                FaEnvelope,
-              ].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="hover:text-cyan-400 transition-colors"
-                >
+                {
+                  Icon: FaFacebookF,
+                  color: "text-blue-500 hover:text-blue-600",
+                },
+                { Icon: FaTwitter, color: "text-sky-400 hover:text-sky-500" },
+                {
+                  Icon: FaLinkedinIn,
+                  color: "text-blue-600 hover:text-blue-700",
+                },
+                {
+                  Icon: FaInstagram,
+                  color: "text-pink-500 hover:text-pink-600",
+                },
+                { Icon: FaEnvelope, color: "text-red-400 hover:text-red-500" },
+              ].map(({ Icon, color }, i) => (
+                <a key={i} href="#" className={`${color} transition-colors`}>
                   <Icon size={18} />
                 </a>
               ))}
@@ -67,24 +75,25 @@ export default function Footer() {
               <h3 className="text-lg md:text-xl text-[#F1F3F4] font-serif font-bold mb-6">
                 Quick Links
               </h3>
-              <ul className="space-y-2 text-[#F1F3F4] text-[14px]">
-                <li className="flex items-center gap-3 hover:text-white cursor-pointer">
-                  <FaHome size={15} /> Home
+              <ul className="space-y-2 text-[14px]">
+                <li className="flex items-center gap-3 cursor-pointer hover:text-white">
+                  <FaHome size={15} className="text-green-400" /> Home
                 </li>
-                <li className="flex items-center gap-3 hover:text-white cursor-pointer">
-                  <FaInfoCircle size={15} /> About Us
+                <li className="flex items-center gap-3 cursor-pointer hover:text-white">
+                  <FaInfoCircle size={15} className="text-blue-400" /> About Us
                 </li>
-                <li className="flex items-center gap-3 hover:text-white cursor-pointer">
-                  <MdRoomService size={15} /> Services
+                <li className="flex items-center gap-3 cursor-pointer hover:text-white">
+                  <MdRoomService size={15} className="text-purple-400" />{" "}
+                  Services
                 </li>
-                <li className="flex items-center gap-3 hover:text-white cursor-pointer">
-                  <FaImage size={15} /> Portfolio
+                <li className="flex items-center gap-3 cursor-pointer hover:text-white">
+                  <FaImage size={15} className="text-pink-400" /> Portfolio
                 </li>
-                <li className="flex items-center gap-3 hover:text-white cursor-pointer">
-                  <FaBlog size={15} /> Blog
+                <li className="flex items-center gap-3 cursor-pointer hover:text-white">
+                  <FaBlog size={15} className="text-orange-400" /> Blog
                 </li>
-                <li className="flex items-center gap-3 hover:text-white cursor-pointer">
-                  <FaEnvelope size={15} /> Contact
+                <li className="flex items-center gap-3 cursor-pointer hover:text-white">
+                  <FaEnvelope size={15} className="text-red-400" /> Contact
                 </li>
               </ul>
             </div>
@@ -94,24 +103,35 @@ export default function Footer() {
               <h3 className="text-lg md:text-xl text-[#F1F3F4] font-serif font-bold mb-6">
                 Our Services
               </h3>
-              <ul className="space-y-2 text-[#F1F3F4] text-[14px]">
-                <li className="flex items-center gap-3 hover:text-white cursor-pointer">
-                  <FaCode size={16} /> Web Development
+              <ul className="space-y-2 text-[14px]">
+                <li className="flex items-center gap-3 cursor-pointer hover:text-white">
+                  <FaLaptopCode size={16} className="text-cyan-400" />
+                  Web Development
                 </li>
-                <li className="flex items-center gap-3 hover:text-white cursor-pointer">
-                  <HiSpeakerphone size={16} /> Digital Marketing
+
+                <li className="flex items-center gap-3 cursor-pointer hover:text-white">
+                  <MdCampaign size={16} className="text-yellow-400" />
+                  Digital Marketing
                 </li>
-                <li className="flex items-center gap-3 hover:text-white cursor-pointer">
-                  <FaPenNib size={15} /> Graphic Design
+
+                <li className="flex items-center gap-3 cursor-pointer hover:text-white">
+                  <FaPalette size={15} className="text-pink-400" />
+                  Graphic Design
                 </li>
-                <li className="flex items-center gap-3 hover:text-white cursor-pointer">
-                  <FaBriefcase size={15} /> Business Solutions
+
+                <li className="flex items-center gap-3 cursor-pointer hover:text-white">
+                  <FaChartLine size={15} className="text-indigo-400" />
+                  Business Solutions
                 </li>
-                <li className="flex items-center gap-3 hover:text-white cursor-pointer">
-                  <FaRobot size={16} /> Software Development
+
+                <li className="flex items-center gap-3 cursor-pointer hover:text-white">
+                  <FaServer size={16} className="text-emerald-400" />
+                  Software Development
                 </li>
-                <li className="flex items-center gap-3 hover:text-white cursor-pointer">
-                  <FaCogs size={16} /> Automation Solutions
+
+                <li className="flex items-center gap-3 cursor-pointer hover:text-white">
+                  <MdOutlineAutoFixHigh size={16} className="text-gray-300" />
+                  Automation Solutions
                 </li>
               </ul>
             </div>
@@ -122,21 +142,20 @@ export default function Footer() {
             <h3 className="text-lg md:text-xl text-[#F1F3F4] font-serif font-bold mb-6">
               Contact Info
             </h3>
-              <div className="flex-1 rounded-[30px] overflow-hidden shadow-sm"> 
-
-             <iframe
-            title="Google Map"
-           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3321.546881089896!2d73.06424957416057!3d33.64298897331375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df95215cca989d%3A0x96494a8d7fee2d27!2s6th%20Rd%2C%20Rawalpindi%2C%20Pakistan!5e0!3m2!1sen!2s!4v1769685390506!5m2!1sen!2s"
-            className="w-full h-full border-0"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-          </div>
-          <div className="flex items-center justify-center">
-          <Link to="/contact" className="mt-4 bg-[#AC1B9E] text-white px-6 py-2 rounded-[30px] text-base font-semibold hover:bg-[#8e1682] transition-all shadow-md active:scale-95 ">
+            <div className="flex-1 rounded-[30px] overflow-hidden shadow-sm">
+              <iframe
+                title="Google Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3321.546881089896!2d73.06424957416057!3d33.64298897331375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df95215cca989d%3A0x96494a8d7fee2d27!2s6th%20Rd%2C%20Rawalpindi%2C%20Pakistan!5e0!3m2!1sen!2s!4v1769685390506!5m2!1sen!2s"
+                className="w-full h-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div className="flex items-center justify-center">
+              {/* <Link to="/contact" className="mt-4 bg-[#AC1B9E] text-white px-6 py-2 rounded-[30px] text-base font-semibold hover:bg-[#8e1682] transition-all shadow-md active:scale-95 ">
             Contact Us
-          </Link>
-          </div>
+          </Link> */}
+            </div>
             {/* <ul className="space-y-5 text-[#F1F3F4] text-[14px]">
               <li className="flex gap-3">
                 <FaMapMarkerAlt size={22} className="flex-shrink-0" />
@@ -166,7 +185,6 @@ export default function Footer() {
         </div>
 
         {/* Newsletter Section */}
-         
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row text-[13px] md:text-[14px] text-[#F1F3F4] gap-4 items-center justify-between border-t border-white/10 pt-8">
