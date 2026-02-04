@@ -99,7 +99,7 @@ export default function DesignTools() {
                 streamline our workflow and deliver exceptional results.
               </p>
             </div>
-            <div className="grid grid-cols-2s sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
               {additionalTools.map((tool, idx) => (
                 <ToolItem key={idx} {...tool} />
               ))}
