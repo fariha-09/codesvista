@@ -1,12 +1,11 @@
-import React from 'react';
-import { FaPenToSquare } from "react-icons/fa6";
-import { FaEye, FaDownload } from "react-icons/fa";
+import React, { useState } from 'react';
 import { LuSquareCode } from "react-icons/lu";
 import { MdOutlineLaunch } from "react-icons/md";
 import { motion } from "framer-motion";
 
-
 export default function OurDevelopmentProcess() {
+  const [activeCard, setActiveCard] = useState(null);
+
   const steps = [
     {
       id: "01",
@@ -31,44 +30,41 @@ export default function OurDevelopmentProcess() {
     {
       id: "03",
       title: "Development",
-      desc: "Our developers build your website using the latest technologies.",
+      desc: "Our developers build your website using the latest high-performance technologies.",
       icon: (props) => <LuSquareCode {...props} />,
     },
     {
       id: "04",
       title: "Testing",
-      desc: "We discuss your requirements, goals, and vision for the website.",
+      desc: "We rigorously test for bugs, performance issues, and responsiveness across devices.",
       icon: ({ className }) => (
-        <svg className={className} viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg"> <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M19.0187 25.4646L15.0167 21.4625L17 19.4792L19.0187 21.4979L23.5167 17L25.5 18.9833L19.0187 25.4646ZM0 25.5V22.6667H12.75V25.5H0ZM0 19.8333V17H12.75V19.8333H0ZM0 14.1667V11.3333H25.5V14.1667H0ZM0 8.5V5.66667H25.5V8.5H0ZM0 2.83333V0H25.5V2.83333H0Z" fill="currentColor"/>
-</svg>
- </svg>
+        <svg className={className} viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.0187 25.4646L15.0167 21.4625L17 19.4792L19.0187 21.4979L23.5167 17L25.5 18.9833L19.0187 25.4646ZM0 25.5V22.6667H12.75V25.5H0ZM0 19.8333V17H12.75V19.8333H0ZM0 14.1667V11.3333H25.5V14.1667H0ZM0 8.5V5.66667H25.5V8.5H0ZM0 2.83333V0H25.5V2.83333H0Z" fill="currentColor"/>
+        </svg>
       ),
     },
     {
       id: "05",
       title: "Launch",
-      desc: "We create wireframes and designs that align with your brand identity.",
+      desc: "After final approval, we deploy your project to the live server for the world to see.",
       icon: (props) => <MdOutlineLaunch {...props} />,
     },
     {
       id: "06",
       title: "Support",
-      desc: "Our developers build your website using the latest technologies.",
-      icon:  ({ className }) => (
-        <svg className={className} viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg"> <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"> 
-<path d="M14.1667 7.08333C14.5681 7.08333 14.9045 6.94757 15.176 6.67604C15.4476 6.40451 15.5833 6.06806 15.5833 5.66667C15.5833 5.26528 15.4476 4.92882 15.176 4.65729C14.9045 4.38576 14.5681 4.25 14.1667 4.25C13.7653 4.25 13.4288 4.38576 13.1573 4.65729C12.8858 4.92882 12.75 5.26528 12.75 5.66667C12.75 6.06806 12.8858 6.40451 13.1573 6.67604C13.4288 6.94757 13.7653 7.08333 14.1667 7.08333ZM12.75 18.4167H15.5833V9.91667H12.75V18.4167ZM0 28.3333V2.83333C0 2.05417 0.277431 1.38715 0.832292 0.832292C1.38715 0.277431 2.05417 0 2.83333 0H25.5C26.2792 0 26.9462 0.277431 27.501 0.832292C28.0559 1.38715 28.3333 2.05417 28.3333 2.83333V19.8333C28.3333 20.6125 28.0559 21.2795 27.501 21.8344C26.9462 22.3892 26.2792 22.6667 25.5 22.6667H5.66667L0 28.3333ZM4.4625 19.8333H25.5V2.83333H2.83333V21.4271L4.4625 19.8333Z" fill="currentColor"/>
-</svg>
-</svg>
-)
+      desc: "We provide ongoing maintenance and updates to keep your platform running smoothly.",
+      icon: ({ className }) => (
+        <svg className={className} viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"> 
+          <path d="M14.1667 7.08333C14.5681 7.08333 14.9045 6.94757 15.176 6.67604C15.4476 6.40451 15.5833 6.06806 15.5833 5.66667C15.5833 5.26528 15.4476 4.92882 15.176 4.65729C14.9045 4.38576 14.5681 4.25 14.1667 4.25C13.7653 4.25 13.4288 4.38576 13.1573 4.65729C12.8858 4.92882 12.75 5.26528 12.75 5.66667C12.75 6.06806 12.8858 6.40451 13.1573 6.67604C13.4288 6.94757 13.7653 7.08333 14.1667 7.08333ZM12.75 18.4167H15.5833V9.91667H12.75V18.4167ZM0 28.3333V2.83333C0 2.05417 0.277431 1.38715 0.832292 0.832292C1.38715 0.277431 2.05417 0 2.83333 0H25.5C26.2792 0 26.9462 0.277431 27.501 0.832292C28.0559 1.38715 28.3333 2.05417 28.3333 2.83333V19.8333C28.3333 20.6125 28.0559 21.2795 27.501 21.8344C26.9462 22.3892 26.2792 22.6667 25.5 22.6667H5.66667L0 28.3333ZM4.4625 19.8333H25.5V2.83333H2.83333V21.4271L4.4625 19.8333Z" fill="currentColor"/>
+        </svg>
+      )
     }
   ];
 
   return (
     <section className="bg-[#2B2C34] md:py-20 py-10 md:px-6 px-4">
-      <div className="max-w-6xl mx-auto  md:px-12">
-        
-        <div className="text-center md:mb-16 mb-4 space-y-4">
+      <div className="max-w-6xl mx-auto md:px-12">
+        <div className="text-center md:mb-16 mb-8 space-y-4">
           <h2 className="text-[#F1F3F4] text-4xl md:text-6xl font-serif font-bold">
             Our Development Process
           </h2>
@@ -77,79 +73,80 @@ export default function OurDevelopmentProcess() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-10">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-10">
           {steps.map((step, index) => {
-            // FIX: Identify the component here, inside the map
             const StepIcon = step.icon;
+            const isHovered = activeCard === index;
 
             return (
-             <motion.div
-                   key={index}
-                   initial="initial"
-                   whileHover="hover"
-                   className="relative cursor-default md:p-8 py-4 px-2  bg-white/30 md:rounded-[40px] rounded-xl flex flex-col items-center text-center overflow-hidden"
-                 >
-                   <motion.div
-                     variants={{
-                       initial: { 
-                         scale: 0, 
-                         opacity: 30,
-                         backgroundColor: "#F1F1F1" 
-                       },
-                       hover: { 
-                         scale: 1, 
-                         opacity: 1,
-                       }
-                     }}
-                     transition={{ duration: 0.8, ease: "easeOut" }}
-                     style={{ originX: 1, originY: 0 }} 
-                     className="absolute inset-0 z-0 md:rounded-[40px] rounded-xl"
-                   />
-             
-                   <div className="relative z-10 flex flex-col items-center w-full">
-                     
-                     <motion.div 
-                       variants={{
-                         initial: { color: "#FFFFFF", borderColor: "#0E9C9D" },
-                         hover: { color: "#0E9C9D", borderColor: "#0E9C9D" }
-                       }}
-                       className="absolute md:-top-3 top-0 md:-right-2 right-0 border rounded-full w-9 h-9 flex items-center justify-center font-bold text-xs transition-colors duration-300"
-                     >
-                       {step.id}
-                     </motion.div>
-             
-                     <motion.div
-                      variants={{
-                         initial: { color: "#0E9C9D", backgroundColor: "#F1F3F4" },
-                         hover: { color: "#F1F3F4", backgroundColor: "#0E9C9D" }
-                       }}
-                      className="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
-                       {StepIcon({ className: "w-10 h-10" })  }
-                     </motion.div>
-             
-                     <motion.h3 
-                       variants={{
-                         initial: { color: "#FFFFFF" },
-                         hover: { color: "#0E9C9D" }
-                       }}
-                       className="md:text-2xl text-xl font-bold mb-3 transition-colors duration-300"
-                     >
-                       {step.title}
-                     </motion.h3>
-             
-                     <motion.p 
-                       variants={{
-                         initial: { color: "rgba(241, 243, 244, 0.7)" },
-                         hover: { color: "#0E9C9D" } 
-                       }}
-                       className="md:text-[14px] text-[12px] leading-relaxed font-medium px-2 transition-colors duration-300"
-                     >
-                       {step.desc}
-                     </motion.p>
-                   </div>
-             
-                   <div className="absolute inset-0 border border-white/20 md:rounded-[40px] pointer-events-none" />
-                 </motion.div>
+              <motion.div
+                key={index}
+                initial="initial"
+                animate={isHovered ? "hover" : "initial"}
+                whileHover="hover"
+                whileTap="hover" // Mobile touch trigger
+                onClick={() => setActiveCard(isHovered ? null : index)}
+                className="relative cursor-pointer md:p-8 py-6 px-3 bg-white/10 md:rounded-[40px] rounded-2xl flex flex-col items-center text-center overflow-hidden border border-white/5"
+              >
+                {/* Background Fill Layer */}
+                <motion.div
+                  variants={{
+                    initial: { scale: 0, opacity: 0, backgroundColor: "#F1F1F1" },
+                    hover: { scale: 2, opacity: 1, backgroundColor: "#F1F1F1" }
+                  }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  style={{ originX: 1, originY: 0 }}
+                  className="absolute inset-0 z-0"
+                />
+
+                <div className="relative z-10 flex flex-col items-center w-full">
+                  {/* Step ID */}
+                  <motion.div 
+                    variants={{
+                      initial: { color: "#FFFFFF", borderColor: "#0E9C9D" },
+                      hover: { color: "#0E9C9D", borderColor: "#0E9C9D" }
+                    }}
+                    className="absolute md:-top-3 -top-2 md:-right-2 -right-1 border rounded-full w-8 h-8 md:w-9 md:h-9 flex items-center justify-center font-bold text-xs transition-colors duration-300 bg-[#2B2C34]/50 backdrop-blur-sm"
+                  >
+                    {step.id}
+                  </motion.div>
+
+                  {/* Icon */}
+                  <motion.div
+                    variants={{
+                      initial: { color: "#0E9C9D", backgroundColor: "#F1F3F4" },
+                      hover: { color: "#F1F3F4", backgroundColor: "#0E9C9D" }
+                    }}
+                    className="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-6 shadow-sm"
+                  >
+                    <StepIcon className="w-8 h-8 md:w-10 md:h-10" />
+                  </motion.div>
+
+                  {/* Text Content */}
+                  <motion.h3 
+                    variants={{
+                      initial: { color: "#FFFFFF" },
+                      hover: { color: "#0E9C9D" }
+                    }}
+                    className="md:text-2xl text-lg font-bold mb-3 transition-colors duration-300"
+                  >
+                    {step.title}
+                  </motion.h3>
+
+                  <motion.p 
+                    variants={{
+                      initial: { color: "rgba(241, 243, 244, 0.7)" },
+                      hover: { color: "#444" } // Dark color for contrast on white background
+                    }}
+                    className="md:text-[14px] text-[13px] leading-relaxed font-medium px-1 transition-colors duration-300"
+                  >
+                    {step.desc}
+                  </motion.p>
+                </div>
+
+                {/* Constant Subtle Border */}
+                <div className="absolute inset-0 border border-white/10 md:rounded-[40px] rounded-2xl pointer-events-none" />
+              </motion.div>
             );
           })}
         </div>
@@ -157,4 +154,3 @@ export default function OurDevelopmentProcess() {
     </section>
   );
 }
-

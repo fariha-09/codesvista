@@ -229,9 +229,9 @@ export default function OurMarketingProcess() {
               <motion.div
                 key={index}
                 initial="initial"
-                animate={activeCard === index ? "hover" : "initial"} // mobile tap support
-                whileHover="hover" // desktop hover
-                whileTap="hover" // mobile tap triggers hover variant
+                animate={activeCard === index ? "hover" : "initial"} 
+                whileHover="hover" 
+                whileTap="hover" 
                 onTap={() => handleTap(index)}
                 className="relative cursor-default md:p-8 py-4 px-2 bg-white/30 md:rounded-[40px] rounded-xl flex flex-col items-center text-center overflow-hidden"
               >
