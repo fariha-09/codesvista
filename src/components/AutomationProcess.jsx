@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   FaSearch,
   FaDatabase,
@@ -11,6 +12,9 @@ import {
 import { motion } from "framer-motion";
 
 export default function AutomationProcess() {
+  // State to handle mobile touch/toggle interactions
+  const [activeCard, setActiveCard] = useState(null);
+
   const steps = [
     {
       id: "01",
@@ -63,7 +67,7 @@ export default function AutomationProcess() {
   ];
 
   return (
-    <section className="bg-[#2B2C34] md:py-20 py-10 md:px-6 px-2">
+    <section className="bg-[#2B2C34] md:py-20 py-10 md:px-6 px-4">
       <div className="max-w-6xl mx-auto md:px-12">
         <div className="text-center md:mb-16 mb-10 space-y-4">
           <h2 className="text-[#F1F3F4] text-4xl md:text-6xl font-serif font-bold">
@@ -75,69 +79,78 @@ export default function AutomationProcess() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-10">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-10">
           {steps.map((step, index) => {
             const StepIcon = step.icon;
+            const isSelected = activeCard === index;
 
             return (
               <motion.div
                 key={index}
                 initial="initial"
+                animate={isSelected ? "hover" : "initial"}
                 whileHover="hover"
-                className="relative cursor-default md:p-8 p-4 bg-white/30 rounded-[40px] flex flex-col items-center text-center overflow-hidden"
+                whileTap="hover" // Triggers on mobile touch
+                onClick={() => setActiveCard(isSelected ? null : index)} // Toggles state
+                className="relative cursor-pointer md:p-8 py-8 px-4 bg-white/10 rounded-[40px] flex flex-col items-center text-center overflow-hidden border border-white/5"
               >
+                {/* Background Expansion Layer */}
                 <motion.div
                   variants={{
                     initial: {
                       scale: 0,
-                      opacity: 30,
+                      opacity: 0,
                       backgroundColor: "#F1F1F1",
                     },
                     hover: {
-                      scale: 1,
+                      scale: 2.5, // Ensure coverage for larger cards
                       opacity: 1,
                     },
                   }}
-                  transition={{ duration: 0.9, ease: "easeOut" }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
                   style={{ originX: 1, originY: 0 }}
-                  className="absolute inset-0 z-0 md:rounded-[40px] rounded-xl"
+                  className="absolute inset-0 z-0 pointer-events-none"
                 />
 
                 <div className="relative z-10 flex flex-col items-center w-full">
+                  {/* Step ID Bubble */}
                   <motion.div
                     variants={{
-                      initial: { color: "#FFFFFF", borderColor: "#0E9C9D" },
+                      initial: { color: "#FFFFFF", borderColor: "rgba(14, 156, 157, 0.4)" },
                       hover: { color: "#0E9C9D", borderColor: "#0E9C9D" },
                     }}
-                    className="absolute md:-top-3 md:-right-2 top-0 right-0 border rounded-full w-9 h-9 flex items-center justify-center font-bold text-xs transition-colors duration-300"
+                    className="absolute md:-top-3 md:-right-2 -top-4 -right-2 border rounded-full w-9 h-9 flex items-center justify-center font-bold text-xs transition-colors duration-300"
                   >
                     {step.id}
                   </motion.div>
 
+                  {/* Icon Box */}
                   <motion.div
                     variants={{
                       initial: { color: "#0E9C9D", backgroundColor: "#F1F3F4" },
                       hover: { color: "#F1F3F4", backgroundColor: "#0E9C9D" },
                     }}
-                    className=" md:w-20 md:h-20 h-16 w-16 rounded-2xl flex items-center justify-center md:mb-6 mb-1 shadow-sm"
+                    className="md:w-20 md:h-20 h-14 w-14 rounded-2xl flex items-center justify-center mb-6 shadow-sm"
                   >
-                    {StepIcon({ className: "md:w-10 md:h-10 w-6 h-6" })}
+                    <StepIcon className="md:w-10 md:h-10 w-7 h-7" />
                   </motion.div>
 
+                  {/* Title */}
                   <motion.h3
                     variants={{
                       initial: { color: "#FFFFFF" },
                       hover: { color: "#0E9C9D" },
                     }}
-                    className="md:text-2xl text-xl font-bold md:mb-3 mb-2 transition-colors duration-300"
+                    className="md:text-2xl text-lg font-bold mb-3 transition-colors duration-300"
                   >
                     {step.title}
                   </motion.h3>
 
+                  {/* Description */}
                   <motion.p
                     variants={{
-                      initial: { color: "#FFFFFF" },
-                      hover: { color: "#0E9C9D" },
+                      initial: { color: "rgba(241, 243, 244, 0.8)" },
+                      hover: { color: "#333333" }, // Dark gray for readability on light hover bg
                     }}
                     className="md:text-[14px] text-[12px] leading-relaxed font-medium md:px-2 transition-colors duration-300"
                   >
@@ -145,7 +158,8 @@ export default function AutomationProcess() {
                   </motion.p>
                 </div>
 
-                <div className="absolute inset-0 border border-white/20 rounded-[40px] pointer-events-none" />
+                {/* Aesthetic Border Overlay */}
+                <div className="absolute inset-0 border border-white/10 rounded-[40px] pointer-events-none" />
               </motion.div>
             );
           })}

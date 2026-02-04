@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { 
   FaClipboardList, 
   FaBezierCurve, 
@@ -12,7 +13,10 @@ import {
 import { motion } from "framer-motion";
 
 export default function AppDevelopmentProcess() {
-const steps = [
+  // Track active card for mobile/touch devices
+  const [activeCard, setActiveCard] = useState(null);
+
+  const steps = [
     {
       id: "01",
       title: "Analysis & Planning",
@@ -70,91 +74,101 @@ const steps = [
   ];
 
   return (
-    <section className="bg-[#2B2C34] md:py-20 py-8 md:px-6">
-      <div className="md:max-w-6xl mx-auto px-1 md:px-12">
+    <section className="bg-[#2B2C34] md:py-20 py-12 md:px-6 px-4">
+      <div className="max-w-6xl mx-auto md:px-12">
         
-        <div className="text-center md:mb-16 mb-2 space-y-4">
-          <h2 className="text-[#F1F3F4] text-2xl md:text-6xl font-serif font-bold">
+        <div className="text-center md:mb-16 mb-8 space-y-4">
+          <h2 className="text-[#F1F3F4] text-3xl md:text-6xl font-serif font-bold">
             Our Development Process
           </h2>
-          <p className="text-[#F1F3F4] text-lg md:text-xl max-w-3xl mx-auto">
+          <p className="text-[#F1F3F4] text-lg md:text-xl max-w-3xl mx-auto opacity-80">
             A specialized 9-step lifecycle for building high-performance Flutter applications.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-10">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-10">
           {steps.map((step, index) => {
-            // FIX: Identify the component here, inside the map
             const StepIcon = step.icon;
+            const isSelected = activeCard === index;
 
             return (
-             <motion.div
-                   key={index}
-                   initial="initial"
-                   whileHover="hover"
-                   className="relative cursor-default md:p-8 p-4 bg-white/30 rounded-[40px] flex flex-col items-center text-center overflow-hidden"
-                 >
-                   <motion.div
-                     variants={{
-                       initial: { 
-                         scale: 0, 
-                         opacity: 30,
-                         backgroundColor: "#F1F1F1" 
-                       },
-                       hover: { 
-                         scale: 1, 
-                         opacity: 1,
-                       }
-                     }}
-                     transition={{ duration: 0.8, ease: "easeOut" }}
-                     style={{ originX: 1, originY: 0 }} 
-                     className="absolute inset-0 z-0 rounded-[40px]"
-                   />
-             
-                   <div className="relative z-10 flex flex-col items-center w-full">
-                     
-                     <motion.div 
-                       variants={{
-                         initial: { color: "#FFFFFF", borderColor: "#0E9C9D" },
-                         hover: { color: "#0E9C9D", borderColor: "#0E9C9D" }
-                       }}
-                       className="absolute -top-3 -right-2 border rounded-full w-9 h-9 flex items-center justify-center font-bold text-xs transition-colors duration-300"
-                     >
-                       {step.id}
-                     </motion.div>
-             
-                     <motion.div
-                      variants={{
-                         initial: { color: "#0E9C9D", backgroundColor: "#F1F3F4" },
-                         hover: { color: "#F1F3F4", backgroundColor: "#0E9C9D" }
-                       }}
-                      className=" md:w-20 md:h-20 w-12 h-12  rounded-2xl flex items-center justify-center md:mb-6 shadow-sm">
-                       {StepIcon({ className: "md:w-10 md:h-10 w-6 h-6" })  }
-                     </motion.div>
-             
-                     <motion.h3 
-                       variants={{
-                         initial: { color: "#FFFFFF" },
-                         hover: { color: "#0E9C9D" }
-                       }}
-                       className="md:text-2xl text-lg font-bold md:mb-3 mb-1 transition-colors duration-300"
-                     >
-                       {step.title}
-                     </motion.h3>
-             
-                     <motion.p 
-                       variants={{
-                         initial: { color: "rgba(241, 243, 244, 0.7)" },
-                         hover: { color: "#0E9C9D" } 
-                       }}
-                       className="md:text-[14px] text-[12px] leading-relaxed font-medium px-2 transition-colors duration-300"
-                     >
-                       {step.desc}
-                     </motion.p>
-                   </div>
-             
-                   <div className="absolute inset-0 border border-white/20 rounded-[40px] pointer-events-none" />
-                 </motion.div>
+              <motion.div
+                key={index}
+                initial="initial"
+                animate={isSelected ? "hover" : "initial"}
+                whileHover="hover"
+                whileTap="hover" // Visual feedback on touch
+                onClick={() => setActiveCard(isSelected ? null : index)} // Mobile toggle
+                className="relative cursor-pointer md:p-8 py-6 px-3 bg-white/10 rounded-[30px] md:rounded-[40px] flex flex-col items-center text-center overflow-hidden border border-white/5"
+              >
+                {/* Expanding hover background */}
+                <motion.div
+                  variants={{
+                    initial: { 
+                      scale: 0, 
+                      opacity: 0,
+                      backgroundColor: "#F1F1F1" 
+                    },
+                    hover: { 
+                      scale: 2.5, 
+                      opacity: 1,
+                    }
+                  }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  style={{ originX: 1, originY: 0 }} 
+                  className="absolute inset-0 z-0 pointer-events-none"
+                />
+
+                <div className="relative z-10 flex flex-col items-center w-full">
+                  
+                  {/* Step ID Bubble */}
+                  <motion.div 
+                    variants={{
+                      initial: { color: "#FFFFFF", borderColor: "rgba(14, 156, 157, 0.4)" },
+                      hover: { color: "#0E9C9D", borderColor: "#0E9C9D" }
+                    }}
+                    className="absolute md:-top-3 -top-2 md:-right-2 -right-1 border rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center font-bold text-[10px] md:text-xs transition-colors duration-300"
+                  >
+                    {step.id}
+                  </motion.div>
+
+                  {/* Icon Box */}
+                  <motion.div
+                    variants={{
+                      initial: { color: "#0E9C9D", backgroundColor: "#F1F3F4" },
+                      hover: { color: "#F1F3F4", backgroundColor: "#0E9C9D" }
+                    }}
+                    className="md:w-20 md:h-20 w-14 h-14 rounded-2xl flex items-center justify-center mb-4 md:mb-6 shadow-sm"
+                  >
+                    <StepIcon className="md:w-10 md:h-10 w-6 h-6" />
+                  </motion.div>
+
+                  {/* Title */}
+                  <motion.h3 
+                    variants={{
+                      initial: { color: "#FFFFFF" },
+                      hover: { color: "#0E9C9D" }
+                    }}
+                    className="md:text-2xl text-base font-bold mb-2 transition-colors duration-300"
+                  >
+                    {step.title}
+                  </motion.h3>
+
+                  {/* Description */}
+                  <motion.p 
+                    variants={{
+                      initial: { color: "rgba(241, 243, 244, 0.7)" },
+                      hover: { color: "#333333" } 
+                    }}
+                    className="md:text-[14px] text-[11px] md:text-[13px] leading-relaxed font-medium px-1 md:px-2 transition-colors duration-300"
+                  >
+                    {step.desc}
+                  </motion.p>
+                </div>
+
+                {/* Constant Thin Border */}
+                <div className="absolute inset-0 border border-white/10 rounded-[30px] md:rounded-[40px] pointer-events-none" />
+              </motion.div>
             );
           })}
         </div>
@@ -162,4 +176,3 @@ const steps = [
     </section>
   );
 }
-
