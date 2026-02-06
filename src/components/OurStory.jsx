@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import grids from "../assets/grids.png";
 import pfimg1 from "../assets/pfimg1.jpg";
 import { motion } from "framer-motion";
 
 export default function OurStory() {
+    const [showMore, setShowMore] = useState(false);
+
   return (
     <section
       className="relative bg-white flex justify-center object-cover"
@@ -63,27 +65,35 @@ export default function OurStory() {
             {/* Paragraph Container */}
             {/* Added 'text-left' and 'md:text-left' to ensure consistency across views */}
             <div className="flex flex-col gap-4 md:gap-6 text-[#555] text-sm md:text-base leading-relaxed text-left">
-              <p className="md:w-full w-94">
-                Founded in 2019, began with a simple mission: to make
-                technology accessible and beneficial for businesses of all sizes.
+  <p className="md:w-full">
+                Founded in 2019 by Mr. Raja Danish, a visionary full-stack developer, Codes TechVista started with a clear mission: to make technology accessible, efficient, and valuable for businesses of all sizes. Alongside him, Muhammad Danyial, our Marketing Director, helped build a results-driven team committed to delivering professional digital solutions that drive real business growth.
               </p>
               
-              {/* Hidden on very small screens to keep mobile view concise, or visible if preferred */}
-              <p className="md:w-full hidden md:flex-none">
-                What started as a small team of passionate developers has grown
-                into a comprehensive software house that delivers end-to-end
-                digital solutions. We've helped hundreds of businesses transform
-                their digital presence.
-              </p>
-              
-              <p className="md:w-full w-94">
-                Our journey has been marked by continuous learning, innovation,
-                and an unwavering commitment to client success. Every project we
-                undertake is an opportunity to push boundaries and create
-                something extraordinary.
-              </p>
-            </div>
-          </div>
+              {showMore && (
+    <>
+      <p className="md:w-full">
+        From a small freelancing venture, Codes TechVista has grown into a full-service software house with over 40 skilled in-house professionals across specialized departments — each led by dedicated project managers and team leads to ensure seamless execution. We prioritize clear communication, precise revisions, client convenience, and provide free demos, budget-friendly solutions, and a 2-month complimentary support period.
+      </p>
+
+      <p className="md:w-full">
+        Our journey is fueled by innovation, disciplined execution, and client-centric service. We optimize business processes using automation, AI, and modern tools, allowing clients to focus on growth while we handle the technology.
+      </p>
+
+      <p className="md:w-full">
+        Our mission remains steadfast: to deliver fully professional, high-quality digital solutions that empower businesses, accelerate growth, and drive meaningful digital transformation globally.
+      </p>
+    </>
+  )}
+
+  {/* READ MORE BUTTON */}
+  <button
+    onClick={() => setShowMore(!showMore)}
+    className="mt-2 text-[#0FC8CA] font-semibold hover:underline transition"
+  >
+    {showMore ? "Read Less ▲" : "Read More ▼"}
+  </button>
+</div>
+</div>
 
           {/* RIGHT COLUMN: IMAGE */}
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">

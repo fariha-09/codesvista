@@ -153,9 +153,9 @@ export default function HeroSection() {
               <Typewriter
                 options={{
                   strings: [
-                    "Empowering  Businesses with Technology",
-                    "Driving  Innovation with Custom Code",
-                    "Creating  Seamless Digital Experiences",
+                    "Streamline processes, save time, drive growth",
+                    "Elevate your brand, attract ideal customers",
+                    "Custom websites and apps, growth guaranteed",
                   ],
                   autoStart: true,
                   loop: true,
@@ -166,9 +166,8 @@ export default function HeroSection() {
             </h1>
 
             <p className="text-[#F1F3F4] text-base md:text-[18px] font-normal max-w-xl leading-relaxed">
-              We translate your brand’s essence into powerful visual
-              experiences. From precision-crafted logos to engaging marketing
-              assets, we create designs that don't just look good—they perform.
+              Want more customers and sales online?<br/>
+              We create smart websites, marketing, and tools that save you time, attract more clients, and help your business grow.
             </p>
 
             {/* Feature Tags */}

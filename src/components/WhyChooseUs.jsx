@@ -104,9 +104,7 @@ export default function WhyChooseUs() {
           </motion.h2>
 
           <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            We combine creative vision, technical mastery, and strategic
-            thinking to deliver
-            <br /> design solutions that elevate your brand.
+           We integrate creative vision, technical skill, and strategic thinking to deliver design solutions that amplify your brand presence.
           </p>
         </div>
 

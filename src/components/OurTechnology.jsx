@@ -47,7 +47,7 @@ export default function OurTechnology() {
             Our Technology Stack
           </motion.h2>
           <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            We use cutting-edge technologies to build robust, scalable, and modern solutions
+            Using modern technologies and frameworks, we build high-performance, scalable digital solutions designed to drive real business results.
           </p>
         </div>
 

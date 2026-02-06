@@ -19,8 +19,7 @@ export default function OurTeam() {
             Our Team
           </h2>
           <p className="text-[#F1F3F4] text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Driving digital transformation through innovation, expertise, and
-            unwavering commitment to excellence
+           Leading digital transformation with innovative solutions, technical expertise, and a steadfast commitment to excellence
           </p>
         </div>
 

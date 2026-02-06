@@ -36,20 +36,20 @@ export default function VisionAndMission() {
   };
 
   const overlayVariants = {
-  initial: {
-    scale: 0,
-    opacity: 0,
-    originX: 1,
-    originY: 0,
-  },
-  hover: {
-    scale: 1.15,
-    opacity: 1,
-    originX: 1,
-    originY: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
+    initial: {
+      scale: 0,
+      opacity: 0,
+      originX: 1,
+      originY: 0,
+    },
+    hover: {
+      scale: 1.15,
+      opacity: 1,
+      originX: 1,
+      originY: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
 
   const iconMissionVariants = {
     initial: { backgroundColor: "#10B981", color: "#fff" },
@@ -86,8 +86,8 @@ export default function VisionAndMission() {
           </motion.h2>
 
           <p className="text-gray-600 text-lg md:text-xl">
-            Driving digital transformation through innovation, expertise, and
-            unwavering commitment to excellence
+            Leading digital transformation with innovation, expert execution,
+            and a strong commitment to operational excellence.
           </p>
         </div>
 
@@ -126,15 +126,18 @@ export default function VisionAndMission() {
               </motion.h3>
 
               <motion.p variants={textVariants} className="mb-6">
-                To empower businesses with cutting-edge technology solutions that
-                drive innovation, efficiency, and sustainable growth.
+                Our mission is to empower businesses with innovative software
+                and digital solutions that streamline operations, accelerate
+                growth, and deliver measurable results through modern
+                technology.
               </motion.p>
 
               <div className="w-full space-y-3">
                 {[
+                  "Transparent process and clear communication",
+                  "Focus on results, not promises",
+                  "Ensure quality, reliability, and scalability",
                   "Build long-term partnerships",
-                  "Deliver exceptional value to clients",
-                  "Faster innovation and creativity",
                 ].map((item) => (
                   <motion.div
                     key={item}
@@ -181,16 +184,17 @@ export default function VisionAndMission() {
               </motion.h3>
 
               <motion.p variants={textVariants} className="mb-6">
-                To be the leading software house that transforms how businesses
-                leverage technology, creating a future driven by digital
-                innovation.
+                Our vision is to lead digital transformation by redefining how
+                businesses use technology to innovate, scale, and succeed in a
+                connected world.
               </motion.p>
 
               <div className="w-full space-y-3">
                 {[
-                  "Shape the digital future",
+                  "Transforming businesses through digital innovation",
+                  "Empowering organizations for global impact",
+                  "Empowering organizations for global impact",
                   "Lead industry innovation",
-                  "Expand global reach",
                 ].map((item) => (
                   <motion.div
                     key={item}

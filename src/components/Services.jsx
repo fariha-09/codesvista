@@ -26,35 +26,35 @@ const handleTap = (index) => {
     {
       title: "Web Development",
       slug: "web-development",
-      desc: "We build responsive, high-performance websites and dynamic web applications tailored to meet your specific business goals.",
+      desc: "We build fast, responsive, user-friendly websites — custom-coded or CMS-powered, optimized for speed, performance, and growth with dashboards for full control and management.",
       image: code,
       tags: ["Responsive Design", "Seo Optimized"],
     },
     {
       title: "App Development",
       slug: "app-development",
-      desc: "Creating user-friendly mobile applications for iOS and Android platforms that deliver seamless performance and engaging user experiences.",
+      desc: "We build modern, cross-platform apps — Flutter and React Native, custom-designed, fast, user-friendly, with dashboards for full control and management.",
       image: application,
       tags: ["iOS", "Android"],
     },
     {
       title: "Digital Marketing",
       slug: "digital-marketing",
-      desc: "Strategically promoting your brand across digital channels to increase visibility, engage your audience, and drive conversions.",
+      desc: "We deliver digital marketing solutions — strategy, SEO, social media, and campaigns designed to multiply sales and grow your business.",
       image: application,
       tags: ["Social Media", "PPC Campaigns"],
     },
     {
       title: "Graphics Design",
       slug: "graphics-design",
-      desc: "Creating visually compelling graphics, branding assets, and marketing materials that effectively communicate your brand's message.",
+      desc: "We create custom graphic designs logos, branding, company profiles, menus, stationery, and posts, tailored to client needs.",
       image: webdevelopment,
       tags: ["Visual Design", "Brand Identity"],
     },
     {
       title: "Software Development",
       slug: "software-development",
-      desc: "Engineering custom, scalable software solutions to streamline your operations, solve complex challenges, and improve efficiency.",
+      desc: "We create custom software and automation — chatbots, POS, CRM, and business tools to save time and boost growth.",
       image: layers,
       tags: ["Responsive Design", "Custom Solutions"],
     },
@@ -62,7 +62,7 @@ const handleTap = (index) => {
     {
       title: "SEO",
       slug: "seo",
-      desc: "We optimize your online presence to improve visibility on search engines like Google, driving quality organic traffic to your site.",
+      desc: "We provide comprehensive SEO services — technical, on-page, and off-page strategies designed to boost organic traffic and business growth.",
       image: seo,
       tags: ["On-Page SEO", "Off-Page SEO"],
     },
@@ -92,14 +92,14 @@ const handleTap = (index) => {
     {
       title: "UI/UX Design",
       slug: "ui-ux-design",
-      desc: "Crafting intuitive interfaces (UI) and seamless experiences (UX) to ensure digital products are aesthetically pleasing and easy to use.",
+      desc: "We create Figma designs and interactive prototypes — understanding client requirements to deliver precise, user-friendly, and high-quality designs.",
       image: uiux,
       tags: ["UI Design", "UX Design"],
     },
     {
       title: "Video Editing",
       slug: "video-editing",
-      desc: "Producing and editing high-quality videos for marketing, training, and promotional purposes that captivate your audience.",
+      desc: "Expert video production — animated, AI, humanized, and 3D videos, fully customized to meet client requirements.",
       image: videoediting,
       tags: ["PRO QUALITY", "CREATIVE"],
     },
@@ -127,8 +127,7 @@ const handleTap = (index) => {
             Our Services
           </motion.h2>
           <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Comprehensive technology solutions to drive your business growth and
-            digital transformation.
+           Smart digital solutions — from automation and AI to websites, branding, and marketing — built to save time and accelerate your business growth.
           </p>
         </div>
 

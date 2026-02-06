@@ -55,8 +55,7 @@ export default function Clients() {
                 What Our Clients Say
               </motion.h2>
             <p className="text-gray-600 text-[16px] md:text-xl max-w-3xl mx-auto leading-relaxed">
-              Don't just take our word for it. Here's what our clients have to say about our<br className="hidden md:block"/> work
-            </p>
+Don’t just take our word for it — see what our clients say about our work and results.            </p>
           </div>
         <Swiper
           modules={[Autoplay]}

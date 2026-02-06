@@ -151,7 +151,11 @@ export default function MissionBannerSection() {
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.1] min-h-[60px] md:min-h-auto">
               <Typewriter
                 options={{
-                  strings: ["Empowering Businesses", "Innovative Solutions", "About Codes Vista"],
+                  strings: [
+                    "Trusted experts delivering real digital results", 
+                    "Innovation, quality, and performance in every project",
+                     "Your growth powered by our expertise"
+                    ],
                   autoStart: true,
                   loop: true,
                   deleteSpeed: 50,
@@ -161,8 +165,7 @@ export default function MissionBannerSection() {
             </h1>
 
             <p className="text-[#F1F3F4] text-base md:text-[18px] font-normal max-w-xl leading-relaxed ">
-              We are passionate about empowering businesses with innovative technology solutions that drive growth, efficiency, and success in the digital age.
-            </p>
+We are passionate about empowering businesses through innovative technology solutions that drive growth, efficiency, and long-term digital success.m            </p>
 
             {/* Feature Tags */}
             {/* <div className="flex flex-wrap gap-3 pt-2 md:pt-0">
