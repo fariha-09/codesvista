@@ -44,10 +44,10 @@ export default function OurWork() {
       className="relative bg-white flex justify-center object-cover"
       style={{ backgroundImage: `url(${grids})` }}
     >
-      <div className="relative w-full bg-white/[98%] p-5 md:px-20">
+      <div className="relative w-full bg-white/[98%] md:px-20">
         
         {/* Header Content */}
-        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 md:mt-2 mt-2 mb-10">
+        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-10">
           <motion.h2
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}

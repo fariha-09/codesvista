@@ -69,25 +69,30 @@ export default function HeroSection() {
     {
       icon: FaFacebook,
       href: "https://www.facebook.com/p/Codes-Vista-61554340860410/",
-      color: "hover:bg-[#1877F2]",
+      color: "text-[#1877F2] hover:bg-[#1877F2] hover:text-white",
     },
     {
       icon: FaInstagram,
       href: "https://www.instagram.com/codes_vista/?hl=en",
-      color: "hover:bg-[#E4405F]",
+      color: "text-[#E4405F] hover:bg-[#E4405F] hover:text-white",
     },
     {
       icon: FaLinkedinIn,
       href: "https://www.linkedin.com/company/codestechvista/?originalSubdomain=pk",
-      color: "hover:bg-[#0A66C2]",
+      color: "text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white",
     },
     {
       icon: FaTiktok,
       href: "https://www.tiktok.com/@codes_techvista5052",
-      color: "hover:bg-[#000000]",
+      color: "text-black hover:bg-black hover:text-white",
     },
-    { icon: FaYoutube, href: "#", color: "hover:bg-[#FF0000]" },
+    {
+      icon: FaYoutube,
+      href: "#",
+      color: "text-[#FF0000] hover:bg-[#FF0000] hover:text-white",
+    },
   ];
+
   return (
     <section className="relative bg-[#0fc8ca] min-h-screen lg:min-h-[88vh] w-full flex flex-col font-sans overflow-hidden">
       {/* TOP BAR */}
@@ -122,7 +127,7 @@ export default function HeroSection() {
               whileHover={{ scale: 1.1 }}
               className={`w-10 h-10 flex items-center justify-center rounded-full text-white transition-all duration-300 bg-white/5 ${social.color} hover:shadow-lg`}
             >
-              <social.icon size={18} />
+              <social.icon size={22} />
             </motion.a>
           ))}
         </div>
@@ -226,7 +231,7 @@ export default function HeroSection() {
                   <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
                   <div className="w-3 h-3 rounded-full bg-green-600"></div>
                 </div>
-                <span className="text-white text-xs font-semibold opacity-90 uppercase tracking-wider">
+                <span className="text-white text-sm font-semibold  uppercase tracking-wider">
                   Design Portfolio
                 </span>
               </div>
@@ -237,7 +242,7 @@ export default function HeroSection() {
                   return (
                     <div
                       key={i}
-                      className="group bg-white/10 p-4 rounded-2xl flex items-center gap-4 border border-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-[#F1F3F4]"
+                      className="group bg-white/10 p-4 rounded-2xl flex items-center gap-4 border border-white/10 backdrop-blur- transition-all duration-300 hover:bg-[#F1F3F4]"
                     >
                       <div className={`w-12 h-12 rounded-lg flex items-center justify-center shadow-inner transition-all duration-300 ${stat.color} group-hover:bg-[#0FC8CA]`}>
                         <Icon className="text-[#4C4480] text-xl group-hover:text-white transition-colors" />
@@ -246,7 +251,7 @@ export default function HeroSection() {
                         <h4 className="text-white font-bold text-xl md:text-2xl leading-none group-hover:text-[#0FC8CA] transition-colors">
                           <Counter value={stat.label} />
                         </h4>
-                        <p className="text-white text-xs md:text-sm group-hover:text-[#0FC8CA] transition-colors">
+                        <p className="text-white text-xs md:text-base group-hover:text-[#0FC8CA] transition-colors">
                           {stat.sub}
                         </p>
                       </div>

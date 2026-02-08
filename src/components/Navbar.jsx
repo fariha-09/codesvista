@@ -9,28 +9,32 @@ import { motion } from "framer-motion";
 
 
   const socialLinks = [
-    {
-      icon: FaFacebook,
-      href: "https://www.facebook.com/p/Codes-Vista-61554340860410/",
-      color: "hover:bg-[#1877F2]",
-    },
-    {
-      icon: FaInstagram,
-      href: "https://www.instagram.com/codes_vista/?hl=en",
-      color: "hover:bg-[#E4405F]",
-    },
-    {
-      icon: FaLinkedinIn,
-      href: "https://www.linkedin.com/company/codestechvista/?originalSubdomain=pk",
-      color: "hover:bg-[#0A66C2]",
-    },
-    {
-      icon: FaTiktok,
-      href: "https://www.tiktok.com/@codes_techvista5052",
-      color: "hover:bg-[#000000]",
-    },
-    { icon: FaYoutube, href: "#", color: "hover:bg-[#FF0000]" },
-  ];
+      {
+        icon: FaFacebook,
+        href: "https://www.facebook.com/p/Codes-Vista-61554340860410/",
+        color: "text-[#1877F2] hover:bg-[#1877F2] hover:text-white",
+      },
+      {
+        icon: FaInstagram,
+        href: "https://www.instagram.com/codes_vista/?hl=en",
+        color: "text-[#E4405F] hover:bg-[#E4405F] hover:text-white",
+      },
+      {
+        icon: FaLinkedinIn,
+        href: "https://www.linkedin.com/company/codestechvista/?originalSubdomain=pk",
+        color: "text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white",
+      },
+      {
+        icon: FaTiktok,
+        href: "https://www.tiktok.com/@codes_techvista5052",
+        color: "text-black hover:bg-black hover:text-white",
+      },
+      {
+        icon: FaYoutube,
+        href: "#",
+        color: "text-[#FF0000] hover:bg-[#FF0000] hover:text-white",
+      },
+    ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

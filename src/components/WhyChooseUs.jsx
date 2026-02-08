@@ -104,7 +104,9 @@ export default function WhyChooseUs() {
           </motion.h2>
 
           <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-           We integrate creative vision, technical skill, and strategic thinking to deliver design solutions that amplify your brand presence.
+            We integrate creative vision, technical skill, and strategic
+            thinking to deliver design solutions that amplify your brand
+            presence.
           </p>
         </div>
 
@@ -115,7 +117,16 @@ export default function WhyChooseUs() {
               key={index}
               initial="initial"
               whileHover="hover"
-              className="relative md:p-8 px-2 py-4 md:rounded-[40px] rounded-xl border border-gray-100 shadow-sm transition-all flex flex-col items-center text-center overflow-hidden bg-[#F8F9FA]"
+              className="
+    relative md:p-8 px-2 py-4
+    md:rounded-[40px] rounded-xl
+    border border-cyan-300/40
+    transition-all duration-300
+    flex flex-col items-center text-center
+    overflow-hidden bg-[#F8F9FA]
+    hover:-translate-y-2 hover:scale-[1.02]
+    hover:shadow-[0_25px_60px_rgba(0,175,193,0.35)]
+  "
             >
               <motion.div
                 variants={{
