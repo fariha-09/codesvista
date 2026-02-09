@@ -182,7 +182,7 @@ export default function Services() {
                 </p>
 
                 {/* Tags (converted to points style like WhyChooseUs) */}
-                <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-6 px-1 place-items-center mb-6">
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-6 px-1 place-items-start ml-7 mb-6">
                   {service.tags.map((tag, i) => (
                     <div key={i} className="flex items-center gap-2">
                       <FaCheckCircle className="text-[#34D399] text-base shrink-0" />
@@ -197,15 +197,11 @@ export default function Services() {
                 <motion.button
                   variants={{
                     initial: {
-                      backgroundColor: "#0FC8CA",
-                      color: "#FFFFFF",
+                      backgroundColor: "#",
+                      color: "#0FC8CA",
                       borderColor: "#0FC8CA",
                     },
-                    hover: {
-                      backgroundColor: "#0FC8CA",
-                      color: "#FFFFFF",
-                      boxShadow: "0 12px 30px rgba(15,200,202,0.45)",
-                    },
+                    
                   }}
                   transition={{ duration: 0.35 }}
                   className="border-2 px-8 py-2 rounded-xl text-sm font-bold"
