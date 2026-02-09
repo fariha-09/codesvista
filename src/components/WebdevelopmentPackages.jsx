@@ -1,149 +1,145 @@
-import React from 'react';
-import { FaCheck, FaStar, FaCrown, FaGem, FaComments } from 'react-icons/fa';
+import { FaCheck, FaStar, FaCrown, FaGem } from "react-icons/fa";
 
 export default function WebdevelopmentPackages() {
   const packages = [
     {
-      name: "Basic Website",
+      name: "Basic",
       price: "25,000",
-      description: "Perfect for small businesses",
-      icon: <FaStar />,
+      desc: "Perfect for small businesses",
+      icon: FaStar,
+      img: "/basic.jpeg",
       features: [
-        "Up to 5 pages", "Responsive design", "Contact form", 
-        "SEO optimization", "3 months support", "Free domain setup", "Social media integration"
+        "Single Branch Focus",
+        "Essential POS",
+        "Real-time Stock Tracking",
+        "Daily Sales Summary",
+        "Low Entry Cost",
+        "6 months support",
+        "Digital Invoicing",
       ],
-      buttonText: "Choose Basic",
-      isPopular: false
+      btn: "Choose Basic",
+      popular: false,
     },
     {
       name: "Professional",
       price: "50,000",
-      description: "Great for growing businesses",
-      icon: <FaCrown />,
+      desc: "Great for growing businesses",
+      icon: FaCrown,
+      img: "/profession.jpeg",
       features: [
-        "Up to 10 pages", "Custom design", "Admin panel", 
-        "Blog system", "Gallery/Portfolio", "6 months support", 
-        "Google Analytics", "Live chat integration"
+        "Multi-Branch Sync",
+        "Advanced Inventory",
+        "Loyalty Engine",
+        "Excel/CSV Exports",
+        "Digital Invoicing",
+        "Priority Response",
+        "Google Analytics",
+        "Live chat integration",
       ],
-      buttonText: "Choose Professional",
-      isPopular: true
+      btn: "Choose Professional",
+      popular: true,
     },
     {
       name: "Enterprise",
       price: "100,000",
-      description: "For large businesses",
-      icon: <FaGem />,
+      desc: "Best for large businesses",
+      icon: FaGem,
+      img: "/enterprise.jpeg",
       features: [
-        "Unlimited pages", "Advanced features", "User management", 
-        "API integrations", "Advanced SEO", "12 months support", 
-        "Performance optimization", "Priority support"
+        "Unlimited Expansion",
+        "Full White-Labeling",
+        "Loyalty Engine",
+        "Priority Response",
+        "Daily Sales Summary",
+        "Commission Management",
+        "Live chat integration",
       ],
-      buttonText: "Choose Enterprise",
-      isPopular: false
-    }
+      btn: "Choose Enterprise",
+      popular: false,
+    },
   ];
 
   return (
-    <section className="bg-[#0E9C9D] md:py-20 py-12 px-4 flex flex-col items-center font-sans">
+    <section className="bg-white mb-4 px-4">
       {/* Header */}
-      <div className="text-center md:mb-16 mb-2 text-[#F1F3F4]">
-        <h2 className="text-3xl md:text-6xl font-serif font-bold md:mb-4">
-          Web Development Packages
+      <div className="text-center mb-16">
+        <h2 className="text-4xl md:text-5xl font-bold text-[#4C4480] mb-3">
+          Chose Your Plan
         </h2>
-        <p className="md:text-[24px] text-[20px] text-[#F1F3F480]/50 leading-normal">
-          Choose the perfect package for your business needs and budget
-        </p>
       </div>
 
-      {/* Pricing Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-4 max-w-7xl w-full items-start">
-        {packages.map((pkg, index) => (
+      {/* Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {packages.map((p, i) => (
           <div
-            key={index}
-            className={`relative rounded-[28px] md:rounded-[32px]
-  md:p-8 p-6
-  border border-white/20
-  flex flex-col items-center text-gray-600
-  transition-all duration-300
-  ${
-    pkg.isPopular
-      ? "bg-white py-10 md:py-12 md:-mt-4 shadow-2xl z-10"
-      : "bg-white"
-  }`}
+            key={i}
+            className={`relative rounded-[32px] p-8 border
+              ${
+                p.popular
+                  ? "border-[#0FC8CA] shadow-2xl md:-mt-6"
+                  : "border-gray-200 shadow-lg"
+              }
+              bg-white flex flex-col items-center text-center`}
           >
-            {pkg.isPopular && (
-              <span className="absolute -top-0 bg-[#0FC8CA] text-[12px] text-[#F1F3F4] font-bold uppercase tracking-widest px-4 py-1 rounded-[6px] shadow-lg">
-                Most Popular
+            {/* Popular badge */}
+            {p.popular && (
+              <span className="absolute top-4 right-4 bg-[#0FC8CA]/20 text-[#0FC8CA] text-xs font-bold px-4 py-1 rounded-full">
+                MOST POPULAR
               </span>
             )}
 
-            {/* Icon */}
-            <div
-              className="h-14 w-14 md:h-16 md:w-16 bg-[#F1F3F4]
-rounded-2xl flex items-center justify-center
-text-[#0FB7B7] text-3xl mb-4 md:mb-6 shadow-xl"
-            >
-              {pkg.icon}
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+              <img src={p.img} alt="" />
+              <p.icon className="text-[#0FC8CA] text-3xl" />
             </div>
 
-            <h3 className="md:text-3xl text-2xl font-bold md:mb-2 ">
-              {pkg.name}
-            </h3>
-            <div className="flex items-baseline mb-2">
-              <span className="text-sm font-medium mr-1 uppercase  text-gray-600">
-                PKR
-              </span>
-              <span className="md:text-5xl  text-2xl font-bold">
-                {pkg.price}
+            {/* Title */}
+            <h3 className="text-2xl font-bold text-[#4C4480] mb-2">{p.name}</h3>
+
+            {/* Price */}
+            <div className="flex items-baseline mb-1">
+              <span className="text-sm mr-1 text-gray-500">PKR</span>
+              <span className="text-4xl font-bold text-[#4C4480]">
+                {p.price}
               </span>
             </div>
-            <p className="text-[14px] text-gray-600  md:mb-8 mb-2">
-              {pkg.description}
-            </p>
 
-            <div className="w-full border-t border-white/20 md:mb-8 mb-4"></div>
+            <p className="text-gray-500 mb-6">{p.desc}</p>
 
-            {/* Features List */}
-            <ul className="w-full space-y-3 md:space-y-4 mb-6 md:mb-10">
-              {pkg.features.map((feature, i) => (
-                <li key={i} className="flex items-start gap-3 text-lg">
-                  <FaCheck className="text-[#26D0CE] mt-[3px] shrink-0" />
-                  <span className="text-gray-600 leading-snug">
-                    {feature}
+            <div className="w-full h-[1.5px] bg-[#0FC8CA]/40 mb-6" />
+
+            {/* Features */}
+
+            <ul className="space-y-4 mb-8 w-full flex flex-col items-center">
+              {p.features.map((f, idx) => (
+                <li
+                  key={idx}
+                  className="grid grid-cols-[20px_1fr] gap-3 text-gray-600 items-start w-[210px]"
+                >
+                  {/* Check Image */}
+                  <span className="w-6 flex justify-center mt-[2px]">
+                    <FaCheck className="text-[#0FC8CA]" />
                   </span>
+
+                  {/* Text */}
+                  <span className="leading-snug text-left">{f}</span>
                 </li>
               ))}
             </ul>
 
-            {/* Buttons */}
+            {/* Button */}
             <button
-              className={`w-full md:w-full py-3 md:py-4 rounded-xl font-bold
-  transition-all shadow-lg active:scale-95
-  ${
-    pkg.isPopular
-      ? "bg-[#AC1B9E] hover:bg-[#921473] text-white text-[16px]"
-      : "bg-[#0E9C9D] text-white text-[16px] hover:bg-gray-100 hover:text-[#0E9C9D]"
-  }`}
+              className={`w-full py-3 rounded-xl font-semibold transition
+                ${
+                  p.popular
+                    ? "bg-[#0FC8CA] text-white hover:bg-[#0bb1b3]"
+                    : "bg-[#0FC8CA] text-white hover:bg-[#0bb1b3]"
+                }`}
             >
-              {pkg.buttonText}
+              {p.btn}
             </button>
           </div>
         ))}
-      </div>
-
-      {/* Footer / Custom Solution */}
-      <div className="flex flex-col items-center justify-center">
-        <div className="md:mt-20 mt-4 text-center text-white">
-          <p className="text-[20px] text-[#F1F3F480]/50 mb-6">
-            Need a custom solution? We can build exactly what you need!
-          </p>
-          <div className="flex flex-row items-center justify-center">
-            <button className="flex text-[16px] items-center gap-3 bg-[#4C4480] hover:bg-[#3D366A] text-[#F1F3F4] px-10 py-4 rounded-xl font-semibold shadow-2xl transition-all">
-              <FaComments size={20} />
-              Discuss Custom Project
-            </button>
-          </div>
-        </div>
       </div>
     </section>
   );

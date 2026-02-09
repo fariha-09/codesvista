@@ -61,8 +61,9 @@ export default function HeroSection() {
   const marqueeItems = [
     "Free Consultancy",
     "Free Site Audit",
-    "Free Consultancy",
-    "Free Site Audit",
+    "24/7 Support",
+    "Custom Solutions",
+    "Affordable Pricing",
   ];
 
   const socialLinks = [
@@ -125,9 +126,9 @@ export default function HeroSection() {
               target="_blank"
               rel="noreferrer"
               whileHover={{ scale: 1.1 }}
-              className={`w-10 h-10 flex items-center justify-center rounded-full text-white transition-all duration-300 bg-white/5 ${social.color} hover:shadow-lg`}
+              className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 bg-white/5 ${social.color} hover:shadow-lg`}
             >
-              <social.icon size={22} />
+              <social.icon size={22}/>
             </motion.a>
           ))}
         </div>
@@ -151,7 +152,7 @@ export default function HeroSection() {
                 size={20}
                 className="text-white group-hover:text-[#0e9c9d]"
               />
-              <span className="font-medium text-[14px]">Codes Vista</span>
+              <span className="font-semibold text-[14px]">Codes Vista</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.1] min-h-[100px] md:min-h-auto">
@@ -171,8 +172,10 @@ export default function HeroSection() {
             </h1>
 
             <p className="text-[#F1F3F4] text-base md:text-[18px] font-normal max-w-xl leading-relaxed">
-              Want more customers and sales online?<br/>
-              We create smart websites, marketing, and tools that save you time, attract more clients, and help your business grow.
+              Want more customers and sales online?
+              <br />
+              We create smart websites, marketing, and tools that save you time,
+              attract more clients, and help your business grow.
             </p>
 
             {/* Feature Tags */}
@@ -237,21 +240,23 @@ export default function HeroSection() {
               </div>
 
               <div className="md:space-y-4 space-y-2">
-               {stats.map((stat, i) => {
+                {stats.map((stat, i) => {
                   const Icon = stat.icon;
                   return (
                     <div
                       key={i}
                       className="group bg-white/10 p-4 rounded-2xl flex items-center gap-4 border border-white/10 backdrop-blur- transition-all duration-300 hover:bg-[#F1F3F4]"
                     >
-                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center shadow-inner transition-all duration-300 ${stat.color} group-hover:bg-[#0FC8CA]`}>
+                      <div
+                        className={`w-12 h-12 rounded-lg flex items-center justify-center shadow-inner transition-all duration-300 ${stat.color} group-hover:bg-[#0FC8CA]`}
+                      >
                         <Icon className="text-[#4C4480] text-xl group-hover:text-white transition-colors" />
                       </div>
                       <div>
                         <h4 className="text-white font-bold text-xl md:text-2xl leading-none group-hover:text-[#0FC8CA] transition-colors">
                           <Counter value={stat.label} />
                         </h4>
-                        <p className="text-white text-xs md:text-base group-hover:text-[#0FC8CA] transition-colors">
+                        <p className="text-white text-xs font-semibold md:text-base group-hover:text-[#0FC8CA] transition-colors">
                           {stat.sub}
                         </p>
                       </div>

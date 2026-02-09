@@ -11,51 +11,51 @@ import webdevelopment from "../assets/webdevelopment.png";
 import grids from "../assets/grids.png";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-
-
+import { FaCheckCircle } from "react-icons/fa";
+import { HiOutlineCode, HiOutlineCog, HiOutlineColorSwatch, HiOutlineDeviceMobile, HiOutlineSearch } from "react-icons/hi";
+import { HiOutlineMegaphone } from "react-icons/hi2";
 
 export default function Services() {
-
   const [activeCard, setActiveCard] = useState(null);
 
-const handleTap = (index) => {
-  setActiveCard(index);
-  setTimeout(() => setActiveCard(null), 600);
-};
+  const handleTap = (index) => {
+    setActiveCard(index);
+    setTimeout(() => setActiveCard(null), 600);
+  };
   const services = [
     {
       title: "Web Development",
       slug: "web-development",
       desc: "We build fast, responsive, user-friendly websites — custom-coded or CMS-powered, optimized for speed, performance, and growth with dashboards for full control and management.",
-      image: code,
+      image: HiOutlineCode,
       tags: ["Responsive Design", "Seo Optimized"],
     },
     {
       title: "App Development",
       slug: "app-development",
       desc: "We build modern, cross-platform apps — Flutter and React Native, custom-designed, fast, user-friendly, with dashboards for full control and management.",
-      image: application,
-      tags: ["iOS", "Android"],
+      image: HiOutlineDeviceMobile,
+      tags: ["IOS(iphone)", "Android"],
     },
     {
       title: "Digital Marketing",
       slug: "digital-marketing",
       desc: "We deliver digital marketing solutions — strategy, SEO, social media, and campaigns designed to multiply sales and grow your business.",
-      image: application,
+      image: HiOutlineMegaphone,
       tags: ["Social Media", "PPC Campaigns"],
     },
     {
       title: "Graphics Design",
       slug: "graphics-design",
       desc: "We create custom graphic designs logos, branding, company profiles, menus, stationery, and posts, tailored to client needs.",
-      image: webdevelopment,
+      image: HiOutlineColorSwatch,
       tags: ["Visual Design", "Brand Identity"],
     },
     {
       title: "Software Development",
       slug: "software-development",
       desc: "We create custom software and automation — chatbots, POS, CRM, and business tools to save time and boost growth.",
-      image: layers,
+      image: HiOutlineCog,
       tags: ["Responsive Design", "Custom Solutions"],
     },
 
@@ -63,49 +63,21 @@ const handleTap = (index) => {
       title: "SEO",
       slug: "seo",
       desc: "We provide comprehensive SEO services — technical, on-page, and off-page strategies designed to boost organic traffic and business growth.",
-      image: seo,
+      image: HiOutlineSearch,
       tags: ["On-Page SEO", "Off-Page SEO"],
-    },
-    {
-      title: "Automation Solutions",
-      slug: "automation-solutions",
-      desc: "Implementing intelligent automation systems to streamline business processes, enhance productivity, and reduce operational costs.",
-      image: machinelearning,
-      tags: ["Machine Learning", "Data Analysis"],
-    },
-
-    {
-      title: "E-commerce Solutions",
-      slug: "ecommerce-solutions",
-      desc: "Developing robust e-commerce platforms that provide seamless shopping experiences, secure transactions, and efficient inventory management.",
-      image: application,
-      tags: ["Multi-platform", "Secure Transactions"],
-    },
-    {
-      title: "Software Development",
-      slug: "software-development",
-      desc: "Engineering custom, scalable software solutions to streamline your operations, solve complex challenges, and improve efficiency.",
-      image: layers,
-      tags: ["Responsive Design", "Custom Solutions"],
-    },
-
-    {
-      title: "UI/UX Design",
-      slug: "ui-ux-design",
-      desc: "We create Figma designs and interactive prototypes — understanding client requirements to deliver precise, user-friendly, and high-quality designs.",
-      image: uiux,
-      tags: ["UI Design", "UX Design"],
-    },
-    {
-      title: "Video Editing",
-      slug: "video-editing",
-      desc: "Expert video production — animated, AI, humanized, and 3D videos, fully customized to meet client requirements.",
-      image: videoediting,
-      tags: ["PRO QUALITY", "CREATIVE"],
     },
   ];
 
   const visibleServices = services.slice(0, 6);
+  const cardVariants = {
+    initial: { scale: 1 },
+    hover: { scale: 1.02 },
+  };
+
+  const overlayVariants = {
+    initial: { scaleX: 0, opacity: 0 },
+    hover: { scaleX: 1, opacity: 1 },
+  };
 
   return (
     <section
@@ -127,7 +99,9 @@ const handleTap = (index) => {
             Our Services
           </motion.h2>
           <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-           Smart digital solutions — from automation and AI to websites, branding, and marketing — built to save time and accelerate your business growth.
+            Smart digital solutions from automation and AI to websites,
+            branding, and marketing built to save time and accelerate your
+            business growth.
           </p>
         </div>
 
@@ -135,95 +109,109 @@ const handleTap = (index) => {
           {visibleServices.map((service, index) => (
             <motion.div
               key={index}
+              variants={cardVariants}
               initial="initial"
-              animate={activeCard === index ? "hover" : "initial"}
               whileHover="hover"
-              whileTap="hover"
-              onTap={() => handleTap(index)}
-              className="relative bg-[#F8F9FA] border border-[#4C4480] rounded-[30px] py-2 px-3 flex flex-col items-center text-center shadow-sm hover:shadow-md group overflow-hidden transition-all duration-300"
+              className="
+    relative md:p-8 px- py-4
+    md:rounded-[40px] rounded-xl
+    border border-cyan-300/40
+    bg-[#F8F9FA]
+    flex flex-col items-center text-center
+    overflow-hidden
+    transition-all duration-300
+    hover:-translate-y-2
+    hover:shadow-[0_25px_60px_rgba(0,175,193,0.35)]
+  "
             >
-              {/* 1. Expansion Circle */}
+              {/* Hover Overlay (SAME AS WhyChooseUs) */}
               <motion.div
-                variants={{
-                  initial: { scale: 0, opacity: 0 },
-                  hover: { scale: 1.8, opacity: 1 },
-                }}
-                transition={{ duration: 0.6, ease: "easeInOut" }}
-                className="absolute inset-0 bg-gray-200 rounded-full origin-center pointer-events-none z-0"
+                variants={overlayVariants}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                className="
+    absolute inset-0 z-0 origin-center
+    bg-gradient-to-br
+    from-[#0FC8CA]/20
+    via-white/60
+    to-[#AC1B9E]/20
+    backdrop-blur-[2px]
+  "
               />
 
-              <div className="relative z-10 flex flex-col items-center h-full">
-                <div className="w-14 h-14 mb-2 md:w-20 md:h-20 md:mb-6 flex items-center justify-center">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-contain  transition-transform duration-300"
-                  />
-                </div>
+              <div className="relative z-10 flex flex-col items-center h-full w-full">
+                {/* Icon / Image Wrapper (same feel as WhyChooseUs) */}
+                <motion.div
+                  variants={{ hover: { y: -6, rotate: 3 } }}
+                  className="
+    bg-[#0FC8CA]
+    md:w-18 md:h-18 w-14 h-14
+    rounded-2xl
+    flex items-center justify-center
+    mb-4
+    shadow-xl shadow-[#0FC8CA]/30
+    ring-1 ring-white/40
+  "
+                >
+                  <service.image className="text-white md:text-4xl text-3xl font-bold" />
+                </motion.div>
 
-                {/* 2. Title with Color Change */}
-                <motion.h3
-                  variants={{
-                    initial: { color: "#4C4480" },
-                    hover: { color: "#AC1B9E" },
-                  }}
-                  className="md:text-xl font-bold md:mb-4"
+                {/* Title */}
+                <h3
+                  className="
+  text-[#2E2A5F]
+  md:text-2xl
+  font-bold
+  tracking-tight
+  mb-2
+"
                 >
                   {service.title}
-                </motion.h3>
+                </h3>
 
-                <p className="text-[#4C448099]/60 text-[18px] max-w-100 font-medium leading-relaxed md:mb-6 mb-3 hidden md:flex">
+                {/* Description */}
+                <p
+                  className="
+  text-[#4C4480]/70
+  text-sm
+  leading-relaxed
+  mb-4
+  hidden md:block
+"
+                >
                   {service.desc}
                 </p>
-          
-{/* Mobile Tags with Bullets / Desktop Tags as Badges */}
-<div className="flex flex-col md:flex-row items-start md:items-center justify-center md:gap-2 md:mb-8 mb-4 w-full px-2">
-  {service.tags.map((tag, tIdx) => (
-    <div
-      key={tIdx}
-      className="flex items-center text-xs md:text-[14px] font-semibold"
-    >
-      <span className="md:hidden mr-2 text-[#AC1B9E] text-lg">•</span>
-      
-      <motion.span
-        variants={{
-          initial: { 
-            backgroundColor: "transparent", 
-            color: "#4C4480" 
-          },
-          hover: { 
-            backgroundColor: window.innerWidth >= 768 ? "#4C4480" : "transparent", 
-            color: window.innerWidth >= 768 ? "#FFFFFF" : "black-600" 
-          },
-        }}
-        // Tailwind classes: bg-transparent on mobile, gray on desktop
-        className="md:bg-[#F3F4F6] bg-transparent md:px-3 md:py-2 md:rounded-full px-0 py-0 transition-colors duration-400"
-      >
-        {tag}
-      </motion.span>
-    </div>
-  ))}
-</div>
-                <Link to={`/services/${service.slug}`} className="mt-auto">
-                  <motion.button
-                    variants={{
-                      initial: {
-                        backgroundColor: "rgba(172, 27, 158, 0)",
-                        color: "#4C4480",
-                        borderColor: "#AC1B9E",
-                      },
-                      hover: {
-                        backgroundColor: "#AC1B9E",
-                        color: "#FFFFFF",
-                        borderColor: "#AC1B9E",
-                      },
-                    }}
-                    transition={{ duration: 0.4 }}
-                    className="mt-auto border-2 px-8 py-2 rounded-xl text-sm font-bold"
-                  >
-                    Read More
-                  </motion.button>
-                </Link>
+
+                {/* Tags (converted to points style like WhyChooseUs) */}
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-6 px-1 place-items-center mb-6">
+                  {service.tags.map((tag, i) => (
+                    <div key={i} className="flex items-center gap-2">
+                      <FaCheckCircle className="text-[#34D399] text-base shrink-0" />
+                      <span className="text-[#4C4480]/70 text-sm font-medium">
+                        {tag}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Button */}
+                <motion.button
+                  variants={{
+                    initial: {
+                      backgroundColor: "#0FC8CA",
+                      color: "#FFFFFF",
+                      borderColor: "#0FC8CA",
+                    },
+                    hover: {
+                      backgroundColor: "#0FC8CA",
+                      color: "#FFFFFF",
+                      boxShadow: "0 12px 30px rgba(15,200,202,0.45)",
+                    },
+                  }}
+                  transition={{ duration: 0.35 }}
+                  className="border-2 px-8 py-2 rounded-xl text-sm font-bold"
+                >
+                  Read More
+                </motion.button>
               </div>
             </motion.div>
           ))}
@@ -241,4 +229,3 @@ const handleTap = (index) => {
     </section>
   );
 }
-

@@ -24,7 +24,7 @@ export default function OurTechnology() {
     { name: "MongoDB", des: "NoSQL Database", img: mongodb, category: "Tools" },
   ];
 
-  const filters = ["All", "Languages", "Stack", "Technologies", "Tools"];
+  const filters = ["All", "Software", "Languages", "Framework", "Stack", "Technologies", "Tools"];
 
   const filteredTech = activeFilter === "All" 
     ? technology 
@@ -52,7 +52,7 @@ export default function OurTechnology() {
         </div>
 
         {/* --- FILTER BUTTONS --- */}
-        <div className="flex flex-wrap justify-center gap-3 md:gap-6 mb-12 relative z-10">
+        <div className="flex flex-wrap justify-center gap-3 mb-12 relative z-10">
           {filters.map((filter) => (
             <button
               key={filter}
