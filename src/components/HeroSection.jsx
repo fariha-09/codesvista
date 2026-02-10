@@ -14,15 +14,15 @@ import grid from "../assets/grid.jpg";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { FaLinkedinIn } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
-function Counter({value}){
-  const count=useMotionValue(0);
-  const rounded=useTransform(count,(latest)=>{
+function Counter({ value }) {
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => {
+    const number = parseFloat(value.replace(/[^\d.]/g, ""));
+    const isK = value.toLowerCase().includes("k");
+    const suffix = value.replace(/[\d.]/g, "");
 
-  const number=parseFloat(value.replace(/[^\d.]/g, ""));
-  const isK=value.toLowerCase().includes("k")
-  const suffix = value.replace(/[\d.]/g, "");
-    
     const displayValue = Math.round(latest);
     return `${displayValue}${suffix}`;
   });
@@ -128,7 +128,7 @@ export default function HeroSection() {
               whileHover={{ scale: 1.1 }}
               className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 bg-white/5 ${social.color} hover:shadow-lg`}
             >
-              <social.icon size={22}/>
+              <social.icon size={22} />
             </motion.a>
           ))}
         </div>
@@ -215,12 +215,16 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex gap-2 md:gap-4 pt-4 justify-center md:justify-normal">
-              <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#00B8B8] text-[14px] text-[#2B2C34] px-2 md:px-8 py-3.5 rounded-xl font-bold shadow-lg transition-transform active:scale-95 sm:w-auto">
-                <PiClipboardTextBold size={20} /> Get Free Quote
-              </button>
-              <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#4C4480] hover:text-white text-[14px] text-[#4C4480] px-2 md:px-8 py-3.5 rounded-xl font-bold shadow-lg transition-all duration-300 active:scale-95 sm:w-auto">
-                <FaShoppingCart /> Explore Services
-              </button>
+              <Link to="/getquote">
+                <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#AA4B9C] text-[14px] hover:text-white text-[#2B2C34] px-2 md:px-8 py-3.5 rounded-xl font-bold shadow-lg transition-transform active:scale-95 sm:w-auto">
+                  <PiClipboardTextBold size={20} /> Get Free Quote
+                </button>
+              </Link>
+              <Link to="/services">
+                <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#AA4B9C] hover:text-white text-[14px] text-[#4C4480] px-2 md:px-8 py-3.5 rounded-xl font-bold shadow-lg transition-all duration-300 active:scale-95 sm:w-auto">
+                  <FaShoppingCart /> Explore Services
+                </button>
+              </Link>
             </div>
           </div>
 

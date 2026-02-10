@@ -7,6 +7,7 @@ import OurStory from '../components/OurStory';
 import OurMission from '../components/OurMission';
 import OurTeam from '../components/OurTeam';
 import Footer from '../components/Footer';
+import OurCEO from '../components/OurCEO';
 
 export default function OurMissionAndVision() {
   return (
@@ -16,7 +17,8 @@ export default function OurMissionAndVision() {
       <VisionAndMission/>
       <OurStory/>
       <OurMission/>
-      <OurTeam/>
+      <OurCEO/>
+      {/* <OurTeam/> */}
       <Footer/>
       {/* <HeroSection/> */}
     </>

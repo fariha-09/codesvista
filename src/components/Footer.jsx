@@ -26,6 +26,7 @@ import { MdRoomService } from "react-icons/md";
 import { HiSpeakerphone } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import codevista from "../assets/codevista.png";
+import { SiFiverr, SiTiktok, SiUpwork } from "react-icons/si";
 
 export default function Footer() {
   return (
@@ -45,25 +46,51 @@ export default function Footer() {
               technology solutions. We specialize in web development, digital
               marketing, and custom software solutions.
             </p>
-            <div className="flex gap-6 md:gap-10">
+            <div className="flex gap-5 md:gap-6">
               {[
                 {
                   Icon: FaFacebookF,
                   color: "text-blue-500 hover:text-blue-600",
+                  href: "#",
                 },
-                { Icon: FaTwitter, color: "text-sky-400 hover:text-sky-500" },
+                {
+                  Icon: FaTwitter,
+                  color: "text-sky-400 hover:text-sky-500",
+                  href: "#",
+                },
                 {
                   Icon: FaLinkedinIn,
                   color: "text-blue-600 hover:text-blue-700",
+                  href: "#",
                 },
                 {
                   Icon: FaInstagram,
                   color: "text-pink-500 hover:text-pink-600",
+                  href: "#",
                 },
-                { Icon: FaEnvelope, color: "text-red-400 hover:text-red-500" },
-              ].map(({ Icon, color }, i) => (
-                <a key={i} href="#" className={`${color} transition-colors`}>
-                  <Icon size={18} />
+                {
+                  Icon: FaEnvelope,
+                  color: "text-red-400 hover:text-red-500",
+                  href: "#",
+                },
+                {
+                  Icon: SiTiktok,
+                  color: "text-black hover:text-gray-700",
+                  href: "#",
+                },
+                {
+                  Icon: SiFiverr,
+                  color: "text-green-500 hover:text-green-600",
+                  href: "#",
+                },
+                {
+                  Icon: SiUpwork,
+                  color: "text-green-700 hover:text-green-800",
+                  href: "#",
+                },
+              ].map(({ Icon, color, href }, i) => (
+                <a key={i} href={href} className={`${color} transition-colors`}>
+                  <Icon size={22} />
                 </a>
               ))}
             </div>

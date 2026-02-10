@@ -202,14 +202,14 @@ export default function Navbar() {
               className="flex items-center gap-3 text-[#4C4381] font-medium py-2 hover:bg-gray-50 rounded-lg px-2"
               onClick={() => setIsOpen(false)}
             >
-              <Home size={18} className="text-[#AC1B9E]" /> Home
+              <Home size={18} className="text-[#0FBDBF]" /> Home
             </Link>
             <Link
               to="/about"
               className="flex items-center gap-3 text-[#4C4381] font-medium py-2 hover:bg-gray-50 rounded-lg px-2"
               onClick={() => setIsOpen(false)}
             >
-              <Info size={18} className="text-[#AC1B9E]" /> About Us
+              <Info size={18} className="text-[#0FBDBF]" /> About Us
             </Link>
 
             <div className="border-b border-gray-100/50">
@@ -218,7 +218,7 @@ export default function Navbar() {
                 onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
               >
                 <div className="flex items-center gap-3">
-                  <LayoutGrid size={20} className="text-[#AC1B9E]" />
+                  <LayoutGrid size={20} className="text-[#0FBDBF]" />
                   <span className="text-[#4C4381] font-medium">Services</span>
                 </div>
                 <ChevronDown
@@ -255,21 +255,21 @@ export default function Navbar() {
               className="flex items-center gap-3 text-[#4C4381] font-medium py-2 hover:bg-gray-50 rounded-lg px-2"
               onClick={() => setIsOpen(false)}
             >
-              <Briefcase size={20} className="text-[#AC1B9E]" /> Portfolio
+              <Briefcase size={20} className="text-[#0FBDBF]" /> Portfolio
             </Link>
             <Link
               to="/blog"
               className="flex items-center gap-3 text-[#4C4381] font-medium py-2 hover:bg-gray-50 rounded-lg px-2"
               onClick={() => setIsOpen(false)}
             >
-              <FileText size={20} className="text-[#AC1B9E]" /> Blog
+              <FileText size={20} className="text-[#0FBDBF]" /> Blog
             </Link>
             <Link
               to="/contact"
               className="flex items-center gap-3 text-[#4C4381] font-medium py-2 hover:bg-gray-50 rounded-lg px-2"
               onClick={() => setIsOpen(false)}
             >
-              <Mail size={20} className="text-[#AC1B9E]" /> Contact
+              <Mail size={20} className="text-[#0FBDBF]" /> Contact
             </Link>
 
             <div className="flex items-center gap-3 md:gap-4 relative z-40 border-l border-white/20">
@@ -280,7 +280,7 @@ export default function Navbar() {
                   target="_blank"
                   rel="noreferrer"
                   whileHover={{ scale: 1.1 }}
-                  className={`w-10 h-10 flex items-center justify-center rounded-full text-[#AC1B9E] hover:text-white transition-all duration-300 bg-white/5 ${social.color} hover:shadow-lg`}
+                  className={`w-10 h-10 flex items-center justify-center rounded-full hover:text-white transition-all duration-300 bg-white/5 ${social.color} hover:shadow-lg`}
                 >
                   <social.icon size={18} />
                 </motion.a>
@@ -406,16 +406,16 @@ export default function Navbar() {
 //         {isOpen && (
 //           <div className="lg:hidden absolute top-20 right-4 w-72 bg-white/95 backdrop-blur-2xl rounded-2xl border border-gray-100 shadow-2xl p-4 space-y-1 animate-in slide-in-from-right-4 duration-300">
 //             <Link to="/" className="flex items-center gap-3 text-[#4C4381] font-medium py-2 hover:bg-gray-50 rounded-lg px-2" onClick={() => setIsOpen(false)}>
-//               <Home size={18} className="text-[#AC1B9E]" /> Home
+//               <Home size={18} className="text-[#0FBDBF]" /> Home
 //             </Link>
 //             <Link to="/about" className="flex items-center gap-3 text-[#4C4381] font-medium py-2 hover:bg-gray-50 rounded-lg px-2" onClick={() => setIsOpen(false)}>
-//               <Info size={18} className="text-[#AC1B9E]" /> About Us
+//               <Info size={18} className="text-[#0FBDBF]" /> About Us
 //             </Link>
             
 //             <div className="border-b border-gray-100/50">
 //               <div className="flex justify-between items-center py-2 cursor-pointer hover:bg-gray-50 rounded-lg px-2" onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}>
 //                 <div className="flex items-center gap-3">
-//                   <LayoutGrid size={20} className="text-[#AC1B9E]"/><span className="text-[#4C4381] font-medium">Services</span>
+//                   <LayoutGrid size={20} className="text-[#0FBDBF]"/><span className="text-[#4C4381] font-medium">Services</span>
 //                 </div>
 //                 <ChevronDown size={20} className={`text-[#4C4381] transition-transform ${isMobileServicesOpen ? "rotate-180" : ""}`} />
 //               </div>
@@ -432,13 +432,13 @@ export default function Navbar() {
 //             </div>
 
 //             <Link to="/portfolio" className="flex items-center gap-3 text-[#4C4381] font-medium py-2 hover:bg-gray-50 rounded-lg px-2" onClick={() => setIsOpen(false)}>
-//               <Briefcase size={20} className="text-[#AC1B9E]" /> Portfolio
+//               <Briefcase size={20} className="text-[#0FBDBF]" /> Portfolio
 //             </Link>
 //             <Link to="/blog" className="flex items-center gap-3 text-[#4C4381] font-medium py-2 hover:bg-gray-50 rounded-lg px-2" onClick={() => setIsOpen(false)}>
-//               <FileText size={20} className="text-[#AC1B9E]" /> Blog
+//               <FileText size={20} className="text-[#0FBDBF]" /> Blog
 //             </Link>
 //             <Link to="/contact" className="flex items-center gap-3 text-[#4C4381] font-medium py-2 hover:bg-gray-50 rounded-lg px-2" onClick={() => setIsOpen(false)}>
-//               <Mail size={20} className="text-[#AC1B9E]" /> Contact
+//               <Mail size={20} className="text-[#0FBDBF]" /> Contact
 //             </Link>
 //             <div className="pt-4">
 //               <Link to="/getquote" className="flex items-center justify-center gap-2 bg-[#AC1B9E] text-white py-3 rounded-xl font-semibold active:scale-95 transition-transform" onClick={() => setIsOpen(false)}>

@@ -81,7 +81,7 @@ export default function Services() {
 
   return (
     <section
-      className="relative bg-white flex justify-center object-cover"
+      className="relative bg-white flex justify-center object-cover w-[95%] mx-auto"
       style={{ backgroundImage: `url(${grids})` }}
     >
       <div className="relative w-full overflow-hidden bg-white/[98%] px-4 pt-2 md:p-10">
@@ -213,10 +213,10 @@ export default function Services() {
           ))}
         </div>
 
-        <div className="md:mt-16 mt-8 flex justify-center relative z-10">
+        <div className="md:mt-16 my-5 flex justify-center relative z-10">
           <Link
             to="/services"
-            className="px-8 py-4 rounded-full bg-[#AC1B9E] border-2 font-bold text-white text-lg transition-all duration-300"
+            className="px-4 md:px-8 py-3 md:py-4 rounded-full bg-[#AC1B9E] border-2 font-bold text-white text-lg transition-all duration-300"
           >
             View All Services
           </Link>

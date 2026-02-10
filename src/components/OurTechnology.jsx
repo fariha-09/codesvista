@@ -13,51 +13,57 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function OurTechnology() {
   const [activeFilter, setActiveFilter] = useState("All");
 
-  const technology = [
-    {
-      name: "HTML5 & CSS3",
-      des: "Modern web standards",
-      img: htmlcss,
-      category: "Languages",
-    },
-    {
-      name: "JavaScript",
-      des: "Interactive experiences",
-      img: js,
-      category: "Languages",
-    },
-    {
-      name: "React.js",
-      des: "Dynamic user interfaces",
-      img: react,
-      category: "Stack",
-    },
-    {
-      name: "Node.js",
-      des: "Server-side development",
-      img: node,
-      category: "Technologies",
-    },
-    {
-      name: "PHP",
-      des: "Backend development",
-      img: php,
-      category: "Languages",
-    },
-    {
-      name: "Python",
-      des: "AI & Machine Learning",
-      img: python,
-      category: "Languages",
-    },
-    {
-      name: "Laravel",
-      des: "PHP Framework",
-      img: laravel,
-      category: "Technologies",
-    },
-    { name: "MongoDB", des: "NoSQL Database", img: mongodb, category: "Tools" },
-  ];
+ const technology = [
+   {
+     name: "HTML5 & CSS3",
+     des: "Modern web standards",
+     img: htmlcss,
+     category: ["Languages", "Framework"],
+   },
+   {
+     name: "JavaScript",
+     des: "Interactive experiences",
+     img: js,
+     category: ["Languages", "Software"],
+   },
+   {
+     name: "React.js",
+     des: "Dynamic user interfaces",
+     img: react,
+     category: ["Stack", "Framework"],
+   },
+   {
+     name: "Node.js",
+     des: "Server-side development",
+     img: node,
+     category: ["Technologies", "AI Automation"],
+   },
+   {
+     name: "PHP",
+     des: "Backend development",
+     img: php,
+     category: ["Languages", "Framework"],
+   },
+   {
+     name: "Python",
+     des: "AI & Machine Learning",
+     img: python,
+     category: ["Languages", "AI Automation"],
+   },
+   {
+     name: "Laravel",
+     des: "PHP Framework",
+     img: laravel,
+     category: ["Technologies", "Framework"],
+   },
+   {
+     name: "MongoDB",
+     des: "NoSQL Database",
+     img: mongodb,
+     category: ["Tools", "Technologies"],
+   },
+ ];
+
 
   const filters = [
     "All",
@@ -73,16 +79,20 @@ export default function OurTechnology() {
   const filteredTech =
     activeFilter === "All"
       ? technology
-      : technology.filter((tech) => tech.category === activeFilter);
+      : technology.filter((tech) =>
+          Array.isArray(tech.category)
+            ? tech.category.includes(activeFilter)
+            : tech.category === activeFilter,
+        );
 
   return (
     <section
-      className="relative bg-white flex justify-center object-cover"
+      className="relative bg-white flex justify-center object-cover "
       style={{ backgroundImage: `url(${grids})` }}
     >
       <div className="relative w-full overflow-hidden bg-white/[98%] p-4 md:px-20 pb-20">
         {/* Header Content */}
-        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 my-10 md:my-16">
+        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10">
           <motion.h2
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -102,7 +112,7 @@ export default function OurTechnology() {
         </div>
 
         {/* --- FILTER BUTTONS --- */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12 relative z-10">
+        <div className="flex flex-wrap justify-center gap-3 mb-5 relative z-10">
           {filters.map((filter) => (
             <button
               key={filter}

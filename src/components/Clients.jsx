@@ -31,47 +31,48 @@ export default function Clients() {
   ];
 
   return (
-    <section className="relative bg-white flex justify-center" 
-    style={{ backgroundImage: `url(${grids})`, 
-    backgroundSize: 'cover'
-     }}>
-        <div className="relative w-full overflow-hidden bg-white/[98%] p-10 md:p-20">
-          
-          {/* Header Content */}
-          <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-16">
-           <motion.h2
-                initial={{ y: 40, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
-                style={{
-                  textShadow: `
+    <section
+      className="relative bg-white flex justify-center"
+      style={{ backgroundImage: `url(${grids})`, backgroundSize: "cover" }}
+    >
+      <div className="relative w-full overflow-hidden bg-white/[98%] p-4 md:p-9">
+        {/* Header Content */}
+        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10 mb-16">
+          <motion.h2
+            initial={{ y: 40, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-5xl pb-2 font-semibold font-serif text-[#0FC8CA] tracking-tight bg-clip-text "
+            style={{
+              textShadow: `
                               0 0 38px rgba(0, 206, 209, 0.45),
                               0 0 20px rgba(0, 206, 209, 0.25)
                             `,
-                }}
-              >
-                What Our Clients Say
-              </motion.h2>
-            <p className="text-gray-600 text-[16px] md:text-xl max-w-3xl mx-auto leading-relaxed">
-Don’t just take our word for it — see what our clients say about our work and results.            </p>
-          </div>
+            }}
+          >
+            What Our Clients Say
+          </motion.h2>
+          <p className="text-gray-600 text-[16px] md:text-xl max-w-3xl mx-auto leading-relaxed">
+            Don’t just take our word for it — see what our clients say about our
+            work and results.{" "}
+          </p>
+        </div>
         <Swiper
           modules={[Autoplay]}
-          spaceBetween={40} 
-          slidesPerView={1.1} 
+          spaceBetween={40}
+          slidesPerView={1.1}
           centeredSlides={true}
           loop={true}
           speed={4000}
-          autoplay={{ 
-            delay: 3, 
+          autoplay={{
+            delay: 3,
             disableOnInteraction: false,
             pauseOnMouseEnter: true, // Recommended false for seamless ticker effect
           }}
           breakpoints={{
             1024: {
-              slidesPerView: 2.2, 
+              slidesPerView: 2.2,
               spaceBetween: 50,
             },
           }}
@@ -87,7 +88,7 @@ Don’t just take our word for it — see what our clients say about our work an
                 </div>
                 <p className="text-[#4C4480] md:text-[21px] font-normal italic leading-relaxed max-w-90 mb-4">
                   {review.text}
-                </p>                
+                </p>
                 <h3 className="text-[#4C4480] font-bold text-[18px]">
                   {review.name}
                 </h3>
@@ -106,12 +107,17 @@ Don’t just take our word for it — see what our clients say about our work an
         .swiper-slide {
           opacity: 0.3;
           transform: scale(0.9);
-          transition: opacity 0.6s ease, transform 0.6s ease;
+          transition:
+            opacity 0.6s ease,
+            transform 0.6s ease,
+            box-shadow 0.6s ease;
+          box-shadow: none; /* default no shadow */
         }
-        
+
         .swiper-slide-active {
           opacity: 1;
           transform: scale(1);
+          box-shadow: 0 25px 60px rgba(0, 175, 193, 0.35); /* same as WhyChooseUs hover shadow */
         }
       `}</style>
     </section>

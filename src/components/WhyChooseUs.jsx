@@ -111,7 +111,7 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 md:gap-8 gap-2 relative z-10 mb-9">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 md:gap-8 gap-4 relative z-10 mb-9">
           {features.map((item, index) => (
             <motion.div
               key={index}
